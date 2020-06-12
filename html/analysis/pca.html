@@ -1,0 +1,568 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Principal Components Analysis &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://artsengagementproject.site/analysis/pca.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysis of Principal Components x Demographic Factors" href="pca-demographics.html" />
+    <link rel="prev" title="Dictionaries of Language Patterns" href="dictionaries.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://artsengagementproject.site/analysis/pca.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Principal Components Analysis" />
+<meta property="og:description" content="Principal Components Analysis  We used a Principle Components Analysis (PCA) in R (‘prcomp’ function) to integrate multiple variables and conduct an analysis fo" />
+<meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Arts Engagement Project at The University of Michigan</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../intro.html">The Arts Engagement Project</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Project Overview</p>
+</li>
+  <li class="">
+    <a href="../overview/background.html">Background</a>
+  </li>
+  <li class="">
+    <a href="../overview/studydesign.html">Study Design</a>
+  </li>
+  <li class="">
+    <a href="../overview/presentations.html">Presentations</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Insights</p>
+</li>
+  <li class="">
+    <a href="../insights/insights.html">Insights Overview</a>
+  </li>
+  <li class="">
+    <a href="../insights/barriers.html">Barriers to Involvement</a>
+  </li>
+  <li class="">
+    <a href="../insights/othergrowth.html">Personal Growth</a>
+  </li>
+  <li class="">
+    <a href="../insights/feel.html">Emotional Impact</a>
+  </li>
+  <li class="">
+    <a href="../insights/development.html">Developmental Role</a>
+  </li>
+  <li class="">
+    <a href="../insights/role.html">College Experience</a>
+  </li>
+  <li class="">
+    <a href="../insights/experience.html">Transformative Experiences</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Analyses</p>
+</li>
+  <li class="">
+    <a href="methods.html">Methods Overview</a>
+  </li>
+  <li class="">
+    <a href="topics.html">Topic Modeling and Interpretation</a>
+  </li>
+  <li class="">
+    <a href="stm-workflow.html">Structural Topic Model Workflow</a>
+  </li>
+  <li class="">
+    <a href="dictionaries.html">Dictionaries of Language Patterns</a>
+  </li>
+  <li class="active">
+    <a href="">Principal Components Analysis</a>
+  </li>
+  <li class="">
+    <a href="pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
+  </li>
+  <li class="">
+    <a href="pca-density-plots.html">Plots for Principal Components x Demographic Factors</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/analysis/pca.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fanalysis/pca.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/analysis/pca.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="principal-components-analysis">
+<h1>Principal Components Analysis<a class="headerlink" href="#principal-components-analysis" title="Permalink to this headline">¶</a></h1>
+<p>We used a Principle Components Analysis (PCA) in R (‘prcomp’ function) to integrate multiple variables and conduct an analysis for each question and set of responses. PCA is a multivariate statistical technique that extracts important information about the inter-correlations of multiple variables and re-represents that information as new variables called principle components. These new principle components can then be used to show the similarity and graphic relationships between variables as a way of exploring the data. Because PCA condenses multiple variables into fewer dimensions, the new principle components may also be used to integrate new descriptions of the combined variables. These reified principle components may then be used as covariates to estimate relationships with other variables such as demographic factors.</p>
+<p>Twenty-seven dictionary-based variables (LIWC, AIC, and Docuscope) were not relevant and were excluded from the analysis, leaving a total of 221 dictionary-based variables in the PCA. This was in addition to the measures of topic prevalence, which each had different numbers of topic variables depending on the question/response type. In order to remove variables with high numbers of 0s (no observations), we set a 0.3 maximum threshold, leaving variable columns with 70% or more observations in the analysis. The number of responses and variables included for each question in the analysis are provided in Table 1. Because of the different scales used by the different dictionaries and topic measures (for example, topic prevalence is 0-1 while AIC is measured on a scale from 1-7), the PCA was based on a correlation matrix. The data were also centered around zero and rotated.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;corrplot&quot;)</span>
+<span class="c1">#install.packages(&quot;ggplot2&quot;)</span>
+<span class="c1">#install.packages(&quot;plotly&quot;)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;factoextra&quot;</span><span class="p">)</span>
+<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;FactoMineR&quot;</span><span class="p">)</span>
+
+<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>   <span class="c1"># plotting;</span>
+<span class="n">library</span><span class="p">(</span><span class="n">plotly</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">haven</span><span class="p">)</span>     <span class="c1"># SPSS/.sav file import</span>
+<span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>     <span class="c1"># data manipulation</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">&quot;corrplot&quot;</span><span class="p">)</span><span class="c1">#</span>
+<span class="n">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>   <span class="c1"># string manipulation</span>
+<span class="n">library</span><span class="p">(</span><span class="n">labelled</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">&quot;FactoMineR&quot;</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="s2">&quot;factoextra&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#data &lt;- read.csv(&#39;pcadata.csv&#39;)</span>
+<span class="n">load</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;merged_artsengagement.rda&#39;</span><span class="p">)</span>
+<span class="n">ls</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>'data'</li>
+	<li>'df'</li>
+</ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">df</span>
+<span class="c1">#print the dimension of the dataframe</span>
+<span class="n">dim</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>4828</li>
+	<li>7288</li>
+</ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stripnames &lt;- function(data, question) {
+    data &lt;- data %&gt;% select(starts_with(question))
+    varnames &lt;- names(data)
+    newnames &lt;- varnames
+    for (i in seq(2, length(varnames))) {
+        newnames[i] &lt;- substr(varnames[i], gregexpr(&quot;\\.\\.&quot;, varnames[i])[[1]][1]+2, nchar(varnames[i]))
+    }
+    names(data) &lt;- newnames
+    return(data)
+}
+
+mergeQuestion &lt;- function(data, question) {
+    if(substr(question, 3,3) == &#39;_&#39;) {
+        question &lt;- substr(question, 4, nchar(question))
+    }
+    # if you&#39;re aware of other prefixes, add them here
+    yrs &lt;- c(&#39;&#39;,&#39;fl_&#39;,&#39;f1_&#39;,&#39;f2_&#39;,&#39;so_&#39;,&#39;jr_&#39;,&#39;sr_&#39;,&#39;sl_&#39;)
+    mergeddf &lt;- data.frame()
+    for(yr in yrs) {
+        qyr &lt;- paste0(yr, question)
+        if(data %&gt;% select(starts_with(qyr)) %&gt;% ncol == 0) { next }
+        tempdf &lt;- stripnames(df, qyr)
+        names(tempdf)[1] &lt;- question
+        mergeddf &lt;- bind_rows(mergeddf, tempdf)        
+    }
+    return(mergeddf)
+}
+
+stripVars &lt;- function(data) {
+    #remove irrelavant variables
+    removenames &lt;- names(data %&gt;% select(matches(&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;)))
+    data &lt;- data[ , !names(data) %in% removenames]
+    return(data)
+}
+
+#example input for parameter question: &quot;sr_career&quot;
+#threshold: set the threshold for cos2. only variables with cos2&gt; threshold will be kept in biplots
+#percent: set the percentage of 0 in a column; columns with percentage of 0 values &gt; percent will be removed
+pca_biplot &lt;- function(question,threshold,percent) {
+    
+    
+    if(substr(question, 3,3) == &#39;_&#39;) {
+        question &lt;- substr(question, 4, nchar(question))
+    }
+    
+    # select columns relevant to the question
+    data_subset &lt;- mergeQuestion(data, question) %&gt;% stripVars
+    print(dim(data_subset))
+    #create file for eigenvales and output
+    eigfile &lt;- paste(question,&quot;_eigenvalues.txt&quot;, sep=&quot;&quot;)
+    sink(eigfile, append=FALSE, split=TRUE)       
+    
+    #remove rows with no response
+    data_subset &lt;- data_subset[complete.cases(data_subset),]
+    print(dim(data_subset))
+    # replace NULL with 0
+    # this shouldnt be necessary -- investigate if so
+    # data_subset[is.na(data_subset)] &lt;- 0
+
+    #remove columns with percentage of 0 values &gt; percent 
+    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+
+    print(dim(data_subset))
+
+    print(names(data_subset))
+
+    #scale all the variables
+    data_subset[, -c(1)] &lt;- scale(data_subset[, -c(1)])
+
+    #create new dataframe pcadata to store scaled variables
+    pcadata&lt;-data_subset[,-c(1)]
+
+
+
+    #remove columns that only have NULL; columns that only have 0 after scaling will become NULL
+    pcadata2=Filter(function(x)!all(is.na(x)), pcadata)
+    print(dim(pcadata2))
+
+
+    #fit PCA uses correlatio matrix, rotation, centered
+    pca.fit &lt;- prcomp(pcadata2, retx= TRUE, center=TRUE, scale=TRUE)
+    eig.val &lt;- get_eigenvalue(pca.fit)
+
+
+    #get variable contributions
+    var &lt;- get_pca_var(pca.fit)
+    #print(var$contrib)
+    #print(var$coord)
+    #print(pca.fit)
+
+ 
+    # Print Eigenvalues and variable contributions and close sink
+    print(eig.val)
+
+    sink(append=TRUE, type=&quot;message&quot;)
+    sink()
+
+    # Export into a TXT file
+    write.infile(pca.fit, file=paste(question,&quot;_pca_results.txt&quot;, sep=&quot;&quot;), sep = &quot;\t&quot;)
+
+
+    #print screeplot              
+    pdf(file=paste(question,&quot;_screeplot.pdf&quot;, sep=&quot;&quot;))    
+    screeplot=fviz_eig(pca.fit, addlabels = TRUE, ylim = c(0, 50))
+    print(screeplot)
+    dev.off()
+
+    #make biplot for PC1&amp;2               
+    p12=fviz_pca_var(pca.fit, axes = c(1, 2), col.var = &quot;cos2&quot;, alpha.var=&quot;cos2&quot;, select.var = list(cos2 = threshold),
+                 gradient.cols = c(&quot;goldenrod1&quot;, &quot;firebrick2&quot;, &quot;navy&quot;), 
+                 repel = TRUE # Avoid text overlapping
+                 )+ xlim(-1, 1) + ylim (-1, 1)
+                    
+                    
+    #make biplot for PC3&amp;4              
+    p34=fviz_pca_var(pca.fit, axes = c(3, 4), col.var = &quot;cos2&quot;, alpha.var=&quot;cos2&quot;, select.var = list(cos2 = threshold),
+                 gradient.cols = c(&quot;goldenrod1&quot;, &quot;firebrick2&quot;, &quot;navy&quot;), 
+                 repel = TRUE # Avoid text overlapping
+                 )+ xlim(-1, 1) + ylim (-1, 1)
+
+    #print biplot                
+    pdf(file=paste(question,&quot;_biplot12.pdf&quot;, sep=&quot;&quot;))
+    print(p12)
+    dev.off()
+                    
+    #print biplot                
+    pdf(file=paste(question,&quot;_biplot34.pdf&quot;, sep=&quot;&quot;))
+    print(p34)
+    dev.off()
+
+    #print charts of variable contrib and cos2
+
+    pdf(file=paste(question,&quot;_corr_cos2_viz.pdf&quot;, sep=&quot;&quot;))
+    corrcos2viz &lt;- corrplot(var$cos2, is.corr=FALSE, tl.cex = .5)   
+    print(corrcos2viz)
+    dev.off()
+
+    pdf(file=paste(question,&quot;_corr_contrib_viz.pdf&quot;, sep=&quot;&quot;))
+    corrcontribviz &lt;- corrplot(var$contrib, is.corr=FALSE, tl.cex = .5)    
+    print(corrcontribviz)
+    dev.off()
+
+
+    # Contributions of variables to PC1
+    pdf(file=paste(question,&quot;_contributionPC1.pdf&quot;, sep=&quot;&quot;))
+    c1=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 1, top = 10)
+    print(c1)              
+    dev.off()
+    # Contributions of variables to PC2
+    pdf(file=paste(question,&quot;_contributionPC2.pdf&quot;, sep=&quot;&quot;))
+    c2=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 2, top = 10)
+    print(c2)
+    dev.off()
+    # Contributions of variables to PC3
+    pdf(file=paste(question,&quot;_contributionPC3.pdf&quot;, sep=&quot;&quot;))
+    c3=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 3, top = 10)
+    print(c3)
+    dev.off()
+    # Contributions of variables to PC4
+    pdf(file=paste(question,&quot;_contributionPC4.pdf&quot;, sep=&quot;&quot;))
+    c4=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 4, top = 10)
+    print(c4)
+    dev.off()
+    # Contributions of variables to PC5
+    pdf(file=paste(question,&quot;_contributionPC5.pdf&quot;, sep=&quot;&quot;))
+    c5=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 5, top = 10)
+    print(c5)
+    dev.off()
+
+
+
+    ###### interactive pca plot
+    #add text response back to pcadata2
+    pcadata2$text&lt;-data_subset[[question]]
+    res.pca &lt;- PCA(pcadata2[,!(colnames(pcadata2) %in% c(&quot;text&quot;))], graph = FALSE)
+
+    #make biplot with individual dots
+    test2&lt;-fviz_pca_biplot(res.pca, axes = c(1, 2), geom=c(&#39;point&#39;,&#39;text&#39;), col.ind = &quot;light blue&quot;,
+                    pointshape = 19, pointsize = 2,alpha.ind = 0.3,
+                    label = &quot;var&quot;, 
+                    alpha.var =&quot;cos2&quot;, select.var = list(cos2 = threshold),
+                     col.var = &quot;cos2&quot;,gradient.cols = c(&quot;blue&quot;, &quot;red&quot;)
+
+                    )
+                    
+                    
+      #labs(fill = &quot;identity&quot;)# Change legend title
+
+    #add hover text
+    mytext=paste(pcadata2$text) 
+    pp=ggplotly(p=test2,width=800,height=800)
+    ppp=style(pp,text=mytext,hoverinfo=&quot;text&quot;, traces = c(1,2,3))
+    htmlwidgets::saveWidget(as_widget(ppp), paste(question,&quot;_plotly12.html&quot;, sep=&quot;&quot;))
+                    
+    test3&lt;-fviz_pca_biplot(res.pca, axes = c(3, 4), geom=c(&#39;point&#39;,&#39;text&#39;), col.ind = &quot;light blue&quot;,
+                    pointshape = 19, pointsize = 2,alpha.ind = 0.3,
+                    label = &quot;var&quot;, 
+                    alpha.var =&quot;cos2&quot;, select.var = list(cos2 = threshold),
+                     col.var = &quot;cos2&quot;,gradient.cols = c(&quot;blue&quot;, &quot;red&quot;)
+
+                    )
+                    
+    #add hover text
+    mytext=paste(pcadata2$text) 
+    pp=ggplotly(p=test3,width=800,height=800)
+    ppp=style(pp,text=mytext,hoverinfo=&quot;text&quot;, traces = c(1,2,3))
+    htmlwidgets::saveWidget(as_widget(ppp), paste(question,&quot;_plotly34.html&quot;, sep=&quot;&quot;))
+}
+                
+            
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#example input for parameter question: &quot;career&quot;</span>
+<span class="c1">#1st is threshold: set the threshold for cos2. only variables with cos2&gt; threshold will be kept in biplots</span>
+<span class="c1">#2nd is percent: set the percentage of 0 in a column; columns with percentage of 0 values &gt; percent will be removedpca_biplot(&#39;barriers&#39;,0.3,0.4)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;career&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;development&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;othergrowth&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;society&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;role&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;barriers&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;feel&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;definition&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;aftercollege4&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;behavior2&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;childhood2&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dictionaries.html" title="previous page">Dictionaries of Language Patterns</a>
+    <a class='right-next' id="next-link" href="pca-demographics.html" title="next page">Analysis of Principal Components x Demographic Factors</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gabriel Harp<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-44678143-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

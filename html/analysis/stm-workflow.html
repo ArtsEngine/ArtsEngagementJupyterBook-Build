@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Structural Topic Model Workflow &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://artsengagementproject.site/analysis/stm-workflow.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dictionaries of Language Patterns" href="dictionaries.html" />
+    <link rel="prev" title="Topic Modeling and Interpretation" href="topics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://artsengagementproject.site/analysis/stm-workflow.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Structural Topic Model Workflow" />
+<meta property="og:description" content="Structural Topic Model Workflow  Order of operations:  Preliminary structural topic model (STM) created with a number of topics decided by spectral initializati" />
+<meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Arts Engagement Project at The University of Michigan</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../intro.html">The Arts Engagement Project</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Project Overview</p>
+</li>
+  <li class="">
+    <a href="../overview/background.html">Background</a>
+  </li>
+  <li class="">
+    <a href="../overview/studydesign.html">Study Design</a>
+  </li>
+  <li class="">
+    <a href="../overview/presentations.html">Presentations</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Insights</p>
+</li>
+  <li class="">
+    <a href="../insights/insights.html">Insights Overview</a>
+  </li>
+  <li class="">
+    <a href="../insights/barriers.html">Barriers to Involvement</a>
+  </li>
+  <li class="">
+    <a href="../insights/othergrowth.html">Personal Growth</a>
+  </li>
+  <li class="">
+    <a href="../insights/feel.html">Emotional Impact</a>
+  </li>
+  <li class="">
+    <a href="../insights/development.html">Developmental Role</a>
+  </li>
+  <li class="">
+    <a href="../insights/role.html">College Experience</a>
+  </li>
+  <li class="">
+    <a href="../insights/experience.html">Transformative Experiences</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Analyses</p>
+</li>
+  <li class="">
+    <a href="methods.html">Methods Overview</a>
+  </li>
+  <li class="">
+    <a href="topics.html">Topic Modeling and Interpretation</a>
+  </li>
+  <li class="active">
+    <a href="">Structural Topic Model Workflow</a>
+  </li>
+  <li class="">
+    <a href="dictionaries.html">Dictionaries of Language Patterns</a>
+  </li>
+  <li class="">
+    <a href="pca.html">Principal Components Analysis</a>
+  </li>
+  <li class="">
+    <a href="pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
+  </li>
+  <li class="">
+    <a href="pca-density-plots.html">Plots for Principal Components x Demographic Factors</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/analysis/stm-workflow.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+            <div class="dropdown-buttons sourcebuttons">
+                <a class="repository-button" href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Source repository"><i class="fab fa-github"></i>repository</button></a>
+                <a class="issues-button" href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fanalysis/stm-workflow.html&body=Your%20issue%20content%20here."><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left" title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                
+            </div>
+        </div>
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/analysis/stm-workflow.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#preliminary-stm" class="nav-link">Preliminary STM</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#nbclust-cluster-analysis" class="nav-link">NbClust Cluster Analysis</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#improved-stms" class="nav-link">Improved STMs</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#outputting-stm-data" class="nav-link">Outputting STM Data</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#stm-refinement" class="nav-link">STM Refinement</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="structural-topic-model-workflow">
+<h1>Structural Topic Model Workflow<a class="headerlink" href="#structural-topic-model-workflow" title="Permalink to this headline">¶</a></h1>
+<p>Order of operations:</p>
+<ol class="simple">
+<li><p>Preliminary structural topic model (STM) created with a number of topics decided by spectral initialization (k=0).</p></li>
+<li><p>Clustering algorithms are run over the prelimary STMs’ topic-prevalence by document matrix to find a number of topics that better fits the data.</p></li>
+<li><p>STM data saved as JSON to be used with the visualization webapp.</p></li>
+<li><p>Manual STM refinement.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load libraries</span>
+<span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">stm</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">jsonlite</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">doMC</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">foreach</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">NbClust</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># load data</span>
+<span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/tidy_questions_best.Rda&#39;</span><span class="p">)</span>
+<span class="c1"># load helper script</span>
+<span class="n">source</span><span class="p">(</span><span class="s1">&#39;../github/stmjson.R&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set number of cores to use on following computations</span>
+<span class="n">registerDoMC</span><span class="p">(</span><span class="n">cores</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="c1"># Set seed</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="nb">set</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="preliminary-stm">
+<h2>Preliminary STM<a class="headerlink" href="#preliminary-stm" title="Permalink to this headline">¶</a></h2>
+<p>Used to find baseline topic number using spectral initialization (K=0)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># STM does not produce meaningful clusters for these questions and are best removed.</span>
+<span class="n">questions</span> <span class="o">&lt;-</span> <span class="n">questions</span><span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start &lt;- Sys.time()
+verbosity &lt;- FALSE
+
+procs &lt;- foreach(n = seq(length(questions))) %dopar% textProcessor(documents = questions[[n]][[1]],
+                                                                  metadata = questions[[n]][2],
+                                                                  customstopwords = c(&#39;art&#39;,&#39;arts&#39;),
+                                                                  verbose = verbosity)
+
+docs &lt;- foreach(n = seq(length(questions))) %dopar% prepDocuments(documents = procs[[n]]$documents, 
+                                                                 vocab = procs[[n]]$vocab, meta = procs[[n]]$meta,
+                                                                 lower.thresh = ifelse(procs[[n]]$documents %&gt;%
+                                                                                       length &gt; 1000, 4, 3),
+                                                                 verbose = verbosity)
+
+prelim_stms &lt;- foreach(n = seq(length(questions))) %dopar% stm(documents = docs[[n]]$documents,
+                                                               vocab = docs[[n]]$vocab, K = 0, 
+                                                               data = docs[[n]]$meta, verbose = verbosity,
+                                                               seed = seed)
+
+time_taken &lt;- Sys.time() - start
+time_taken
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Time difference of 2.267745 mins
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nbclust-cluster-analysis">
+<h2>NbClust Cluster Analysis<a class="headerlink" href="#nbclust-cluster-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Used to find rough estimates of the best number of topics (clusters) for each question. The preliminary spectral initialization tends to overestimate the best number of topics for intuitive sense-making of the data as a whole, so clustering algorithms can then find topics likely to co-occur with each other and recommend a number of topics collapsing those groups into single topics. By using many clustering algorithms using varying techniques we can</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pcas &lt;- foreach(n = seq(length(prelim_stms))) %dopar% prcomp(x = (prelim_stms[[n]]$theta), scale. = T)
+
+nbcs &lt;- foreach(n = seq(length(pcas))) %dopar% NbClust(data = select(data.frame(pcas[[n]]$x),
+                                                                     1:(prelim_stms[[n]]$settings$dim$K - 5)),
+                                                       diss = daisy(pcas[[n]]$x),
+                                                       distance=NULL,
+                                                       min.nc=3,
+                                                       max.nc=27,
+                                                       method=&#39;complete&#39;,
+                                                       index=&#39;all&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>*** : The Hubert index is a graphical method of determining the number of clusters.
+                In the plot of Hubert index, we seek a significant knee that corresponds to a 
+                significant increase of the value of the measure i.e the significant peak in Hubert
+                index second differences plot. 
+ 
+</pre></div>
+</div>
+<img alt="../_images/stm-workflow_8_1.png" src="../_images/stm-workflow_8_1.png" />
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>*** : The D index is a graphical method of determining the number of clusters. 
+                In the plot of D index, we seek a significant knee (the significant peak in Dindex
+                second differences plot) that corresponds to a significant increase of the value of
+                the measure. 
+ 
+******************************************************************* 
+* Among all indices:                                                
+* 9 proposed 3 as the best number of clusters 
+* 2 proposed 4 as the best number of clusters 
+* 2 proposed 7 as the best number of clusters 
+* 1 proposed 12 as the best number of clusters 
+* 3 proposed 13 as the best number of clusters 
+* 1 proposed 19 as the best number of clusters 
+* 1 proposed 20 as the best number of clusters 
+* 1 proposed 21 as the best number of clusters 
+* 2 proposed 22 as the best number of clusters 
+* 1 proposed 25 as the best number of clusters 
+* 1 proposed 27 as the best number of clusters 
+
+                   ***** Conclusion *****                            
+ 
+* According to the majority rule, the best number of clusters is  3 
+ 
+ 
+******************************************************************* 
+</pre></div>
+</div>
+<img alt="../_images/stm-workflow_8_3.png" src="../_images/stm-workflow_8_3.png" />
+</div>
+</div>
+<p>This code picks the best number of topics (clusters) for each dataset based on popular vote by the clustering algorithms (excluding the filtered methods). The methods filtered out consistently choose the lowest number of clusters in the provided range and are best not considered for our purposes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>k_candidates &lt;- c()
+for(i in seq(nbcs)) {
+    num_clust &lt;- data.frame(method=nbcs[[i]]$Best.nc %&gt;% t %&gt;% rownames,
+               nc=nbcs[[i]]$Best.nc %&gt;% t %&gt;% as.data.frame() %&gt;% pull(1)) %&gt;% 
+                    filter(method != &#39;Cindex&#39; &amp; method != &#39;DB&#39; &amp; method != &#39;Silhouette&#39; &amp;
+                           method != &#39;Duda&#39; &amp; method != &#39;PseudoT2&#39; &amp; method != &#39;Beale&#39; &amp;
+                           method != &#39;McClain&#39; &amp; method != &#39;Hubert&#39; &amp; method != &#39;Dindex&#39;)
+    num_clust %&lt;&gt;% pull(2) %&gt;% table %&gt;% data.frame %&gt;% arrange(-Freq) %&gt;% slice(1) %&gt;% pull(1)
+    k_candidates %&lt;&gt;% c(levels(num_clust)[num_clust] %&gt;% as.numeric)
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="improved-stms">
+<h2>Improved STMs<a class="headerlink" href="#improved-stms" title="Permalink to this headline">¶</a></h2>
+<p>Using NbClust recommended numbers of topics (stored in the array k_candidates).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start &lt;- Sys.time()
+verbosity &lt;- FALSE
+
+improved_stms &lt;- foreach(n = seq(length(questions))) %dopar% stm(documents = docs[[n]]$documents,
+                                                                 vocab = docs[[n]]$vocab, K = k_candidates[n],
+                                                                 data = docs[[n]]$meta, verbose = verbosity,
+                                                                 seed = seed)
+
+time_taken &lt;- Sys.time() - start
+time_taken
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Time difference of 18.36213 secs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="outputting-stm-data">
+<h3>Outputting STM Data<a class="headerlink" href="#outputting-stm-data" title="Permalink to this headline">¶</a></h3>
+<p>To be used with the webapp (which can be downloaded from https://github.com/ArtsEngine/arts-engagement-project/blob/master/STM_Tree_Viz.html)</p>
+<p>The webapp will load the json named data.js in the same directory, so make a copy of any of the outputted data and rename it data.js, and open the html file in your browser to view.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">question_names</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">()</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">(</span><span class="n">questions</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">question_names</span> <span class="o">%&lt;&gt;%</span> <span class="n">c</span><span class="p">(</span><span class="n">names</span><span class="p">(</span><span class="n">questions</span><span class="p">[[</span><span class="n">i</span><span class="p">]][</span><span class="mi">1</span><span class="p">]))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># set directory to save to
+directory = &#39;./&#39;
+
+for (n in seq(length(questions))) {
+    for (threshold in seq(0,2,0.1)) {
+        possible_error &lt;- tryCatch(
+          create_json(
+                stm = improved_stms[[n]],
+                documents_raw = questions[[n]][question_names[n]] %&gt;% slice(-procs[[n]]$docs.removed) %&gt;% 
+                                                                       slice(-docs[[n]]$docs.removed) %&gt;% 
+                                                                       pull,
+                documents_matrix = docs[[n]]$documents,
+                column_name = question_names[[n]],
+                title = names(questions[n]),
+                clustering_thresh = threshold,
+                verbose = T,
+                directory = directory
+          ), error = function(msg) msg)
+        if (!inherits(possible_error, &quot;error&quot;)) break
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Performing hierarchical topic clustering ... 
+Generating JSON representation of the model ... 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stm-refinement">
+<h2>STM Refinement<a class="headerlink" href="#stm-refinement" title="Permalink to this headline">¶</a></h2>
+<p>Use this space to change the number of topics, lower.thresh, and stopwords of questions to try to make a qualitatively better model after having inspecting/comparing the model in the STM viewer webapp. A good place to start is looking at how well defined the no/none topic is.</p>
+<p>Be sure to write down the question number, best number of topics, and custom stop words</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i &lt;- 1 # question index number to modify
+ntopics &lt;- 17
+
+procs[[i]] &lt;- textProcessor(documents = questions[[i]][[1]], 
+              metadata = questions[[i]][2],
+              customstopwords = c(&#39;art&#39;,&#39;arts&#39;))
+
+docs[[i]] &lt;- prepDocuments(documents = procs[[i]]$documents,
+              vocab = procs[[i]]$vocab,
+              meta = procs[[i]]$meta,
+              lower.thresh = ifelse(procs[[i]]$documents %&gt;% length &gt; 1000, 4, 3))
+
+start &lt;- Sys.time()
+stmobj &lt;- stm(documents = docs[[i]]$documents,
+                vocab = docs[[i]]$vocab,
+                K = ntopics,
+                data = docs[[i]]$meta,
+                verbose = F, seed = seed)
+print(Sys.time() - start)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Building corpus... 
+Converting to Lower Case... 
+Removing punctuation... 
+Removing stopwords... 
+Remove Custom Stopwords...
+Removing numbers... 
+Stemming... 
+Creating Output... 
+Removing 1571 of 2088 terms (2184 of 10266 tokens) due to frequency 
+Removing 12 Documents with No Words 
+Your corpus now has 1043 documents, 517 terms and 8082 tokens.Time difference of 4.885605 secs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># set directory to save to
+directory = &#39;./&#39;
+# names the json data.json
+datajson = TRUE
+
+# comment out one of the following 2 lines
+labels &lt;- NULL
+# labels &lt;- read_json(&#39;labels/sr_othergrowth_labels.json&#39;)
+
+if (is.null(labels)) {
+    labels$topics &lt;- NULL
+    labels$clusters &lt;- NULL
+}
+
+for (threshold in seq(0,2,0.1)) {
+    possible_error &lt;- tryCatch(
+      create_json(
+        stm = stmobj,
+        documents_raw = questions[[i]][question_names[i]] %&gt;% slice(-procs[[i]]$docs.removed) %&gt;% 
+                                                               slice(-docs[[i]]$docs.removed) %&gt;% 
+                                                               pull,
+        documents_matrix = docs[[i]]$documents,
+        column_name = question_names[[i]],
+        title = names(questions[i]),
+        clustering_thresh = threshold,
+        instant = datajson,
+        verbose = T,
+        topic_labels = labels$topics,
+        cluster_labels = labels$clusters,
+        directory = directory
+    ), error = function(msg) msg)
+    if (!inherits(possible_error, &quot;error&quot;)) break
+}
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Performing hierarchical topic clustering ... 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="topics.html" title="previous page">Topic Modeling and Interpretation</a>
+    <a class='right-next' id="next-link" href="dictionaries.html" title="next page">Dictionaries of Language Patterns</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gabriel Harp<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-44678143-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
