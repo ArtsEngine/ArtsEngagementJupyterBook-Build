@@ -1,0 +1,6 @@
+# Linguistic Inquiry and Word Count (LIWC)
+
+Linguistic Inquiry and Word Count (LIWC) is a software application and dictionary that looks for and counts words in psychology-relevant categories across multiple written or transcribed verbal text files {% cite tausczik2010psychological  pennebakerLIWC pennebaker2015development %}.  LIWC individually analyses each word in a text sequentially for matches with its internal dictionaries across approximately 94 separate variables. Dictionary categories include a variety of word and punctuation analytics; summary language variables (analytical thinking, clout, authenticity, and emotional tone); standard linguistic dimensions such as the percentage of pronouns or articles; psychological constructs such as anxiety, tentativeness, perceptual processes, achievement, positive emotion, and temporal orientation; and personal concern categories such as work, home, money, religion. After analyzing and classifying the words in the texts, LIWC calculates the percentage of each LIWC category in a text, and the resulting csv output lists all LIWC categories along with the rates for each category used in the given text {% cite tausczik2010psychological %}. 
+
+**Citations**
+{% bibliography --cited %}

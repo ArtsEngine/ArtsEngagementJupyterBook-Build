@@ -1,0 +1,1096 @@
+# Topic Tree
+
+***Note: If the tree doesn't appear, try refreshing your browser.***
+
+This is a structural topic model visualization, with hierarchical topic clusters. This tree map shows the distribution of topics among the responses to the question, ***“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”***. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of th tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
+
+**Click on any node on the tree below for more information.** Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto|Raleway:600,400,200' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    
+<script>
+   var stm_data = {"children":[{"name":["University Context"],"children":[{"name":["Social Climate"],"children":[{"name":["Apprehension"],"children":[{"name":["Low Confidence"],"summary":["Student responses related to Low Confidence are typically about their perception that they are not as talented, “artsy,” experienced, or able to benefit from participation in the arts as other students who are participating.  As a large and elite institution, U-M draws a bigger pool of talented, arts-focused individuals, creating an entire category of students who would like to participate but believe they will be  “out-competed” for opportunities by others.  This personal evaluation seems to discourage students from even attempting to participate."],"size":[1800],"topic_no":[11],"thoughts":["Fear of auditions, fear of ability and talents compared to others'","Because I am not skilled in the arts. I feels as though I wouldn't be able to benefit in being a participant in the arts such as plays or visual art displays","The great and sad part of UM is the wealth of talented individuals who go here-- makes it hard for me, a moderately talented individual in a number of fields, to try out for a play or musical group and actually make it because I'm competing with, for examle, percussion majors for Groove and theatre majors for a part in a play.","I felt that my talents were not on the same high level as those at the University of Michigan or that my interest in the arts was personal and not as a part of my major, therefore I felt less qualified to participate than others.","Lack of talent bars me from being able to participate.  I can still engage and participate though","I felt that I did not have the experience and talent of others participating in the arts.","Feeling inexperienced or not talented compared to the rest of participants.","My poor abilities in the arts (not a great dancer, not a great artist, etc)","No barriers, but many other things to do. Also, UMich has many other talented artists which discourage people who aren't as naturally talented from participating because they aren't naturally \"artsy;\" I don't think it's a problem you can fix because it's  benefit to have those who are naturally talented.","I have not found a group that is tailored to my interest, more in art of the literary form than the actual artistic form"],"thought_proportions":[0.539,0.5192,0.457,0.4456,0.4018,0.3968,0.3959,0.3892,0.3574,0.3471],"prob":["talent, skill, artist, part, level, abil, particip"],"frex":["talent, skill, artist, abil, field, level, part"],"lift":["artist, field, abil, fear, product, skill, talent"],"score":["talent, product, artist, skill, level, abil, part"],"proportion":["0.03"]},{"name":["Lack of Familiarity"],"summary":["Related to, but differing from the Low Confidence topic that reflects student fears around lack of ability, responses in the Lack of Familiarity area address their desire to try something new in college, but not having the prior arts experiences that would make that possible.  Exposing that inexperience, or having it indeed shut a student out of participation, leads directly to students’ anxiety surrounding college arts participation."],"size":[1800],"topic_no":[15],"thoughts":["My overall experience with the Arts was limited prior to college. As a result, I had limited interest in becoming involved in the arts at the University of Michigan.","My own inhibition. Art is new and novel to me--it was highly emphasized at my high school, so it was something that I appreciated, but I was afraid to try.","I do not have the time. On top of my massive study load and two jobs there is very little time left for enjoyment in something I had previously done in high school. In order to keep a scholarship (and therefore my spot in UM) I need to keep a very high GP. Unfortunately that means sacrificing things I used to enjoy.","Sometimes it is hard for students to try something new with no prior experience in high school (for example writing for a publication without having written for their high school newspaper). Auditions or interviews might scare away prospective students loking to involve themselves in something new. Also, sometimes activities in the arts come last on a students' priority list and since the University fosters great professional and academic competitiveness in their students, art as a hobby can often fall bythe wayside. Lastly, there might be limited access to certain activities in the arts such as performances with fees.","Limited prior experience","Nervousness about doing something new.","I did not have any previous experience with the arts or else very minimal exposure prior to attending U of M, therefore I didn't feel comfortable joining something that I wasn't good at or was just a beginner.","Just prior experience from high school.","Time restraints, comfortability exploring new frontiers.","Yes, not having a lot of previous experience in one area."],"thought_proportions":[0.3434,0.3298,0.2727,0.2566,0.2467,0.2467,0.2286,0.1968,0.171,0.17],"prob":["experi, limit, high, someth, colleg, new, area"],"frex":["limit, experi, high, prior, isnt, area, previous"],"lift":["isnt, limit, prior, compet, experi, previous, high"],"score":["experi, compet, limit, high, someth, prior, new"],"proportion":["0.03"]}],"topic_no":[11,15]},{"name":["Exclusiveness"],"summary":["Responses under Exclusiveness relate to students’ perceptions of the lack of non-competitive arts entry points, existing social bonds that allow only certain students to gain access to opportunities, and the unwillingness for student art organizations to take on less experienced members who are looking for new or growth opportunities.  There is also a frustration reported in having tried to access opportunities multiple times, only to have experienced serial and discouraging rejections, or having to settle for less desirable options."],"children":[{"name":["Competitive Auditions"],"summary":["Competitive Auditions are a fact of life in many arts activities, especially those in the performance areas.  This is a typical barrier for participation, but students report that in some instances, they present the only option for participation in their desired activity.  The high ability levels of peers competing for these opportunities is also a factor (See Low Confidence).  Students report wishing there were more informal or broadly accessible opportunities for participation in the arts."],"size":[1800],"topic_no":[2],"thoughts":["Tryouts for dance teams prevented me from joining certain groups.","I only really enjoy dancing, so making the dance teams only by trying out.  I never tried out because I was too scared of trying out.","I tried out for so many a cappella groups and didn't make any of them :(  I also tried out for a dance group that I didn't make.  I tried to join Arts Chorale but it was too much time for only one credit.  I just want to sing in a choir, but I can't get ito any groups or make time for any!","Too much competition (specifically, as a freshman, I tried out for and got rejected by the Men's Glee Club and other a cappella groups; I've also been rejected for several theatrical performances that I have tried out for)","I wanted to be in an acapella group and had tried out for 4-5 my sophomore and freshman year. I got called back from two different groups but didn't make it from there. It was hard because I really wanted to be in an acapella group and not in a choir, so herefore I haven't gotten to sing here, which makes me sad.","I wanted to be in an a capella group but I wasn't selected - there are a lot of talented students at Michigan so singing groups are very competitive. I joined a choir except I did not identify with or enjoy the music selections at all","Time\r\nAbility (I would have loved to be in a dance group, but it's intensely competitive, and in HS I couldn't get experience due to finances... therefore I couldn't join)","I would really love to be in a choir, but all of the singing groups that I know of on campus are very selective.","The groups are very segregated, you are all in or all out. I feel that you have to give your life to a group, you cant do multiple things or groups, you have to choose one and jump in fully. For example, I am in the Marching Band, while this is a very diferent kind of org, it takes up all of your time and you have to love it. This is how it is with many other clubs too.","I was interested in joining a dance group. There are not that many groups in my style of dance on campus and auditions were competitive. There is simply not enough space for all the talented dancers on campus so I started my own group which was very diffiult but extremely rewarding. Now funding (or lack thereof) is a huge barrier."],"thought_proportions":[0.4608,0.4109,0.3862,0.3812,0.3778,0.3752,0.3552,0.3416,0.3327,0.3274],"prob":["group, thing, join, danc, audit, tri, competit"],"frex":["group, audit, danc, join, competit, sing, choir"],"lift":["audit, group, sing, choir, process, select, danc"],"score":["group, process, danc, audit, join, thing, competit"],"proportion":["0.04"]},{"name":["Unwelcoming Environment"],"summary":["In the Unwelcoming Environment category, students report on the social barriers in place and the judgement they perceived from those already involved with an arts activity.  Those who were already skilled and passionate were seen as unwelcoming to those who were new, less skilled, less committed, or non-arts majors.  Students reported feeling awkward or intimidated about interjecting themselves into an established “clique” or into arts “territory.” Finally, the expected level of engagement in arts activities was often too high for a more casual participant looking to experiment or just have fun."],"size":[1800],"topic_no":[14],"thoughts":["I feel like the people that are involved are super passionate about the arts and sometimes I feel awkward going into their territory","I haven't personally experienced any, but I feel like to be involved you have to be good at the \"arts\" and some people might find that deterring","Very clique-y. Unless you are in the art school/performance school there aren't too many ways to get involved because of perception. If you say you are an actor people assume you are good. If you say you are a econ major for example, people assume you are't talented enough. Majors tend to define people here.","I know a lot of people who want to join choirs/dance clubs/art clubs but feel intimidated that they are too \"novice\" for them.","There are no informal clubs for people that just want to learn about cool media areas of art. There should be a hip-hop music computer creation club and a music video creation club that are informal, hip, modern, and fun.","I feel like they are only for people who are either really good or extremely passionate about the arts not just those who are looking to experiment.","People are rude sometimes, they believe that some people cannot join b/c they're not good at it.","Not being particularly skilled in the area you wish to participate in.  People at UofM tend to be very good at what they do and this may intimidate others.","It seems like theyre already a close knit group of people","Intimidation from people being more experienced than I am."],"thought_proportions":[0.3125,0.3057,0.298,0.2975,0.2828,0.2572,0.2538,0.2408,0.2397,0.2385],"prob":["like, peopl, want, club, feel, good, arent"],"frex":["peopl, experienc, club, want, like, intimid, fun"],"lift":["real, experienc, passion, type, peopl, fun, intimid"],"score":["peopl, want, like, real, club, feel, good"],"proportion":["0.04"]}],"topic_no":[2,14]}],"topic_no":[11,15,2,14]},{"name":["University Structure"],"summary":["University Structure refers to reported barriers such as those related to curriculum requirements, class scheduling, and major/minor programs; the lack of value, support or encouragement for engaging in creative or artistic endeavors; poor arts integration across disciplines; the controlled access to specialized major resources or facilities; the high rigor or access requirements for arts-related coursework and activities; and the general paucity of and long wait-lists for arts courses open to non-arts majors."],"children":[{"name":["Academic Program Requirements"],"summary":["Academic Program Requirements are an arts participation barrier, with respondents citing arts-major programs not allowing access to non-majors who want to explore the arts - either through the addition of minors or by making it easy to select outside arts courses. Non-arts academic programs did not include the arts in their required coursework, or enough unstructured time to participate in extra-curricular arts activities.  Schools and colleges  in the arts did not increase the curricular arts options open to non-majors either because of enrollment restrictions or the limited number of courses offered.  Students also reported having to gain acceptance into specialized programs to access lab and studio equipment, which stymied their full arts ambitions.  Finally, the University did not encourage or prioritize robust arts participation through its limited Creative Expression requirements."],"size":[1800],"topic_no":[20],"thoughts":["One barrier I would say is with the creative writing program. I applied to be a subconcentrator and did not make it into the program. Then, the creative writing minor was brought in as a program that I couldn't participate in because I'm already an Englis major. As a result, I was closed off from some writing classes and opportunities not because I was disinterested, but because with my major I wasn't allowed to add on the minor. This was very frustrating for me, as creative writing is the focus of my stuies and my goals in life.","Poor information about art programs in attracting my attention. Poor promotion and marketing. Prohibitive exclusivity due to the nature of the arts.","There is not enough of a focus on the arts at U-M. Everyone in LSA must obtain a few creative expression requirements, it is a tiny portion of the overall credits needed for graduation.","I was in the School of Art and Design, which seemed like a particular sector of the arts.  It seemed like the arts were somewhat separated, for instance the RC's art program seemed sort of random and narrow.  But though I'm not in the School of Art & Desin any longer, it sounds like they're getting much better with integration in other fields--i.e. computer programming, people from school of engineering.  I think that would boost the arts quite a bit.","I think with such a strong arts,theater and music program there aren't many easy, relaxed programs.","Classes needed for the arts are offered at very specific times every semester, which is fine. However, my involvement then precluded enrollment in many classes that were options (of very few classes total) to fulfill my degree requirements for Neuroscienc. I ended up taking classes I was much less interested in so that I could still be involved in band. Other majors are not as flexible as my own, so other students who were involved in the band had to quit in order to take classes they needed, as the deparments offering the classes would not reschedule the classes to better accomodate these students.","I feel that things either aren't very well advertised or advertised in such a way that doesn't feel accessible to someone who is not a member of the coordinating organization","With many art programs, you need a foot in the door.  One can't simply join an A Capella group at random, without quite a bit of former music training.  That might be an interesting concept, acclimatizing newer students to some of the programs.","Needs a much more centered community for artists attending the university.... sort of a group collaborative that allows your peers and other advisors to critique and push your work. In addition, artists need funding for developing their work... this needsto be offered more and promoted more in order to make Ann Arbor a creative mecca.","A lot of UM groups are pretty closed when you try to join. There doesn't seem to be any room for new members."],"thought_proportions":[0.5853,0.3965,0.3299,0.2328,0.2306,0.2162,0.2126,0.2097,0.2092,0.2088],"prob":["seem, need, advertis, program, creativ, week, exclus"],"frex":["program, advertis, need, seem, exclus, exposur, week"],"lift":["challeng, exposur, program, advertis, quit, need, orient"],"score":["challeng, program, advertis, seem, creativ, need, exposur"],"proportion":["0.03"]},{"name":["University Priorities"],"summary":["Student experience what we are calling University Priorities as a barrier to their arts participation.  As a research university, there is little emphasis placed on creativity as a shared value and a desired outcome of student’s educational journey here.  This is evidenced by the perception that a majority of funding, attention and pride flows to business and engineering, versus, say, our top musical theatre programs - both from U-M and the State of Michigan. The small number of arts-related course offerings, each with long waitlists, would indicate the need for more such courses, but that is not viewed as a priority.  Engaging in arts activities, or anything that is not traditionally regarded resume-building, is discouraged."],"size":[1800],"topic_no":[6],"thoughts":["The University of Michigan is not a school that particularly encourages creative development. Every CE class has an enormous waiting list within a few days of registration. This should lead to the creation of more CE classes. I wish I could have taken oneevery semester.","Michigan is such a research based university...our \"creativity\" is not something the university prides itself on. They're way more about technological innovation. The funding seems to all funnel towards business and engineering programs. For example, I reently learned Michigan has one of the highest ranked musical theatre programs in the country with one ten males and females per grade....but I feel like nobody even knows that!","I am an engineer, and many of my peers are only involved in engineering organizations.  For my first two years at Michigan, I felt pressured to only join organizations that would look good on my resume when applying for engineering jobs. However, I decide to join the Irish dance team during my junior year because I had always wanted to learn Irish dance, and it was one of the best decisions I have made in college.","Sometimes, before my job at UMS, I would have difficulty with being informed about when, where, and what was happening around campus. I think this may also be remedied with experience of spending time here in college. You get to know where to look for thigs. Also, more contemporary, popular music is hard to come by in Ann Arbor. I have to go to Detroit or Royal Oak to see Sufjan Stevens or The Decemberists or Titus Andronicus. The Blind Pig has some cool stuff every now and again, but it's too few and farbetween. I am trying to convince UMS to do more in this department, but the University as a whole should make efforts. I love Lupe Fiasco, but his one show is not enough, and we need more than hip-hop. In terms of non-music efforts, I think Ann Arbor is ding a fantastic job. The Michigan and State Theaters are absolute gems to the community, and UMMA's new corner glass room display is always exciting to look at while walking to class. The summer Art Fair is a lot of fun as well, though it's not put on by he University. Regardless, Ann Arbor and U-M are full of art opportunities; you just have to know where to look. Informing people might be the main place to look for improvement.","Funding cuts. The state of Michigan leads the nation in cuts to arts funding so I feel that these cuts to the arts at a local, state, and nationwide level have in some way or another \"prevented\" me from being involved in the arts whether it be preventing e from going on a field trip for a class or preventing the funding of an arts related organization or event on campus. But even though there is a lack of funding to the arts, I still fill my time by being involved in as many arts organizations as possiblein order to keep the arts thriving on this campus & in the Ann Arbor community.","Alot of opportunities are open to people who are already capable of proving qualifications through resumes and auditions. For those who are looking to start that new thing, there are not as many chances. In order to create an experience open to anyone, I ecame a founding member of a group that offered that.","As a non-art student I have found it difficult to gain access to art equipment.  I lead a Peer Mentor group on campus and have tried several times organize a for-fun activity getting students to try creating art.  For example, I wanted to host a photograpy event where students could shoot a roll of fill, I would send it into the School of Art & Design to have it developed, then we would create prints from the film, but the photo development services are only for Art majors.  Also, I tried hosting a clay mking event where students could make something out of clay and have it fired for them.  Apparently these labs are only for art students as well.  It would be nice if services like these were open to the greater student population so that they could (even f there is an associated cost) so that non-art students can engage in and create art.  Feel free to contact me (ablaty@umich.edu) if there is some way to do events like this.","I have taken two Intro to Dance courses at the University of Michigan. I would really like to be able to take classes within the dance department - even though I am not a dance or performance major.","I am not very talented in the arts and I wish the University of Michigan would help me develop that skill more.","Busy with other activities/challenging coursework, greater emphasis placed on achieving good grades, prepping resumes with internships/professional organizations than on arts"],"thought_proportions":[0.4057,0.3478,0.3463,0.3155,0.2854,0.283,0.2756,0.2711,0.2655,0.2552],"prob":["univers, michigan, wish, offer, open, look, come"],"frex":["michigan, univers, offer, communiti, open, look, wish"],"lift":["emphasi, background, fill, resum, michigan, univers, communiti"],"score":["resum, univers, michigan, open, look, encourag, offer"],"proportion":["0.03"]},{"name":["Departmental Segregation"],"summary":["Student respondents found that the Departmental Segregation--that is, not being allowed to enroll in or have ready access to arts courses offered outside their school, college or academic discipline--kept them from engaging in the arts at U-M.  There is a lack of access to studio space or resources for students not enrolled in specific arts programs or schools, and when enrolled in arts courses, the social isolation of being one of the only “outside” students in an arts course was uncomfortable. There were few “general” arts options for students wanting to explore, and without gaining access to highly competitive student arts organizations, there was an expressed fear that students would not have been able to participate in arts activities at all at college."],"size":[1800],"topic_no":[10],"thoughts":["being pre-med and not being in the art & design school or being a part of music or theatre, etc","For the most part there are not enough avenues for students interested in visual arts such as woodworking, ceramics, etc to gain studio access or resources to engage their visual art of choice.\r\n","Being in LSA school, it is harder to feel comfortable taking classes within the Art and design school.","Because the School of Music and LSA are separate, and on different campuses, it was hard taking classes as a LSA student within the School of Music because I didn't have as frequent access to the resources and I rarely knew anyone in my classes.","the separation between LSA ( history of art) and the Art and Design school  - was very frustrating","I didn't necessarily experience any, but if I hadn't gotten into the Michigan Pops Orchestra, I might have been too intimidated to tryout for the orchestras run by the school of music and then would not have been involved in the arts at all.  More studentrun orchestras would thus be a benefit.","The options are almost too specific, I miss the general options in high school that made everyone feel welcome","Difficulty finding recreational music groups (i.e. ones not necessarily affiliated with the school of music) and limited music classes for non-music majors.","Its a bit harder in LSA to get into the Arts but I transferred so once I got into the mainframe of the Music School is wasn't hard.","a lot of the arts are for students in the art school, and not for those in LSA or other school who truly love art"],"thought_proportions":[0.3968,0.3644,0.3631,0.3521,0.35,0.3309,0.3053,0.2959,0.2923,0.288],"prob":["student, activ, music, school, etc, option, theater"],"frex":["student, music, lsa, design, etc, graphic, option"],"lift":["atmospher, graphic, lsa, paint, somewhat, design, student"],"score":["student, music, activ, atmospher, school, theatr, etc"],"proportion":["0.04"]}],"topic_no":[6,10]},{"name":["Publicity"],"summary":["Student respondents expressed frustration with the difficulty in finding, obtaining and acting on information and Publicity around arts events and activities.  Having to actively look in multiple places for information, not receiving information in advance of events, and the sheer number of activities and events to sort through hampered their participation.  They also cited the geographic problems with the “split campus” from an information flow standpoint, as they perceived that many arts events occurred on the campus they were less likely to frequent.  Not being a member of a particular school or college also restricted access to information.  Finally, the arts were perceived as being less well-marketed to the students than other types of activities."],"children":[{"name":["Awareness"],"summary":["Not having a good Awareness of arts events and activities reportedly kept students from participating in the arts to the extent they would have liked.  Contributing to this barrier area was the lack of coordination between events organizers, calendars, and databases - there was not one good place to see the full picture of arts activities. Clear mechanisms to get both day-of and advance notice of events and activities was desired. Arts marketing efforts do not easily cross the campus divide, and there was a perception that arts activities and events were simply not as comprehensively marketed as other kinds of activities."],"size":[1800],"topic_no":[23],"thoughts":["Knowledge of functions...other than emails and flyers, there seems to be no popular domain with which to post campus-wide events for not only the arts, but other important events and happenings as well. A program to encourage the existing databases and caendars or the formation of a new one would be greatly beneficial.","The arts are not as well publicized as other campus events and it is easy to miss wonderful events simply because you didn't hear about them.","Events are often not publicized well.","The north campus/central campus thing. I feel like there is a great divide, and I often end up missing events that happen because I don't know about them","not knowing about the events going on...lack on knowledge I guess.","I don't hear about it enough and I feel that many events are clustered and messy and it's hard to know when there are events happening. Maybe if there was a website with all the events on a day...","Information regarding events- sometimes I hear about events after the fact.","I guess knowledge about events going on as well as keeping costs to a minimum","knowledge of art-related events","Events are often not publicized enough. I'd like to hear about events some time in advance as to allow it to fit in my schedule."],"thought_proportions":[0.4183,0.3884,0.3827,0.367,0.3534,0.3293,0.3153,0.2836,0.2788,0.2589],"prob":["event, know, knowledg, well, often, public, hear"],"frex":["knowledg, public, hear, event, often, help, well"],"lift":["hear, help, public, knowledg, websit, occasion, email"],"score":["event, help, know, knowledg, often, well, public"],"proportion":["0.03"]},{"name":["Accessibility"],"summary":["Students reported needing to actively seek out information about arts events, creating Accessibility problems.  Not only is information hard to find, requiring real dedicated effort, but often very little information actually exists.  Conversely, so many seemingly similar choices made it hard to figure out what organization or activity might be right for those looking to participate."],"size":[1800],"topic_no":[8],"thoughts":["finding the right one. There are so many different organizations that finding the right one can be difficult.","Not enough time or not actively searching. Also most of the information is not given, instead has to be actively searched for, making it a little harder to know what's available","Being in LSA I sometimes find it difficult to find art classes for nonmajors. I'm very interested in taking some photography, pottery, and yoga classes through the schools of art and dance, but I cannot always find ones offered for nonmajors.","If you do not seek it, it is hard to find","can hardly find any information about art events","Mostly just time. It is always hard to find enough time both because of conflicts with class or group meetings and in terms of balancing homework with all the other club and leadership activities that I have.  It is also no always easy to find out about at events around Ann Arbor.","It's hard to get involved in a performing ensemble if you're not already a proficient musician.  There's very little for beginners","There are almost too many organizations that it's hard to find one that I could get involved with.","hard to make time to take a class. \r\n\r\nhard finding people to go or to participate with you.","There are so many groups one can join that it is easy to find yourself committed to one or two that are not in the arts and then have less time to devote to the arts. This is not always a bad thing, but it's a challenge."],"thought_proportions":[0.358,0.2492,0.2192,0.2143,0.214,0.208,0.2061,0.2026,0.19,0.1832],"prob":["hard, find, one, make, inform, alway, littl"],"frex":["find, hard, alway, inform, your, easi, one"],"lift":["discourag, your, find, search, easi, hard, alway"],"score":["find, discourag, hard, inform, one, alway, easi"],"proportion":["0.03"]}],"topic_no":[23,8]}],"topic_no":[11,15,19,22,20,6,10,8,2,14,23]},{"name":["Priorities & Tradeoffs"],"summary":["In the node of Priorities and Tradeoffs, students cite their heavy Course Load as one of the greatest barriers.  They also state that the arts are not important enough to their majors or their careers to warrant participation. Time, Distance Between Campuses, and Cost (Logistics) were also major barriers. Finally, some students indicate they were just Not Engaged in the arts, or reported they had encountered few or No Barriers to participate at the level they desired. "],"children":[{"name":["Academic Priorities"],"summary":["In addition to the formidable barrier of Course Load, students also found it difficult to prioritize the arts because they were insufficiently connected to their majors, not offered or encouraged as a part of their coursework, or not obviously aligned with their career goals."],"children":[{"name":["Fit With Major and Course Scarcity"],"summary":["Students respondents mainly reported difficulties in taking art courses outside their majors because there were few courses open to non-arts majors, and those that were were inaccessible due to few seats or the lack of space in a course schedule designed to fulfill requirements (Fit With Major and Course Scarcity).  They were unsure how they might fit arts courses into their schedule and needed additional help to do so.  They also commented on needing to prioritize activities that more closely aligned with their career goals."],"size":[1800],"topic_no":[21],"thoughts":["I don't have time since it doesn't correlate with my future career goals or major.","Time, money, and availability (many arts classes seemed restricted to those looking to pursue those areas as a major or career)","The arts classes that available for non majors are very small and it's extremely difficult for freshmen/ sophomores to get a seat in classes like photography or clay for non majors.","Science requirements for science majors make it difficult to take classes in the arts, and sometimes to experience extra art activities.","Since my major is neuroscience and I am premed it is difficult for me to take art classes and be involved in any other art organizations. Also the organizations that I have heard of require you to be more knowledgable about art than I am.","Time, since it is not directly related to my major. Lack of expertise/experience.","I was a double major and having declared an environmental studies major late in the game, I had too many requirements to fulfill in my last two years to be as involved in arts as I would have liked.","Not applicable to major or career goal.","Hard to find time when there are so many requirements for majors and LSA requirements\r\n","It's hard for me to be involved in the arts because of my major which doesn't give me much time to pursue things that I would be interested in pursuing. I also don't know how easy it is for non majors to get into art classes."],"thought_proportions":[0.3347,0.2767,0.2439,0.2368,0.232,0.2301,0.2263,0.2261,0.2242,0.2169],"prob":["mani, major, requir, money, difficult, also, relat"],"frex":["requir, major, choic, scienc, mani, non, restrict"],"lift":["doubl, choic, non, priorit, scienc, concentr, requir"],"score":["choic, major, mani, requir, money, difficult, relat"],"proportion":["0.05"]},{"name":["Course Load"],"summary":["A large percentage of student respondents (15%) indicated simply and directly that their academic Course Load was too great (sometimes in conjunction with other more highly prioritized activities), to be involved in the arts at college."],"size":[1800],"topic_no":[9],"thoughts":["Too large of a course load","Time, due to the heavy courseload as well as other extracurriculars that I have.","Lack of interest, too heavy of engineering course load","Time conflicts with academic obligations.","Engineering curriculum too time demanding","Heavy workload from my courses, other obligations","The course work loads are too demanding to leave free time to go to the arts events","Not enough time due to course load","Course demands not leaving enough time","Too heavy of a course load (not enough time)"],"thought_proportions":[0.3059,0.298,0.2943,0.2893,0.2889,0.2738,0.2724,0.2674,0.2674,0.2674],"prob":["academ, conflict, cours, engin, due, load, manag"],"frex":["conflict, cours, load, manag, schoolwork, athlet, academ"],"lift":["athlet, load, conflict, cours, curriculum, schoolwork, demand"],"score":["conflict, curriculum, academ, load, cours, manag, due"],"proportion":["0.15"]}],"topic_no":[9,21]},{"name":["Time"],"summary":["Time was the single largest reported barrier cited by students, either that involved in participating in the arts activity itself, or in the logistical effort to do so (i.e. travel).  They “could not do everything,” and the arts were sometimes cited as outside the students’ interest areas or priorities, as related to their free time."],"size":[1800],"topic_no":[1],"thoughts":["time constraints with school and extra curriculars","Time commitments and constraints","Time constraints and other commitments.","time committment/ other committments in sorority","Time constraints, and priorities","Time constraints, not a priority for me.","Big time commitment","Strict engineering curriculum, wasn't my priority for the little free time I had for extra curricular activities","Too many commitments, time constraints","Time constraints.  It's difficult to do everything."],"thought_proportions":[0.2181,0.1835,0.1835,0.1835,0.1821,0.1821,0.1797,0.1737,0.1602,0.1601],"prob":["commit, constraint, free, avail, everyth, prioriti, extra"],"frex":["commit, constraint, free, everyth, avail, committ, restraint"],"lift":["committ, commit, constraint, free, restraint, everyth, avail"],"score":["commit, committ, constraint, free, avail, restraint, extra"],"proportion":["0.24"]},{"name":["Logistics"],"summary":["Logistical considerations fill out the majority of this topic area, with students reporting difficulties with transportation,  the geographic locations of arts events, the cost of tickets (sometimes within the frame of cost/benefits, sometimes as a pure affordability concern), and the time or resources it takes to attend or participate.  Students also report wanting to go with friends to events, and speaking to the difficulties coordinating those efforts."],"children":[{"name":["Distance Between Campuses"],"summary":["The perception that North Campus is too far from Central Campus, where many arts activities occur, was noted as a barrier, and this “split campus” was a factor in learning about arts activities as well.  This is a barrier that might be unique to U-M, though this kind of campus “split” or geographic barrier to various kinds of participation is not uncommon at other institutions.  And although the regular bus  trips between the campuses are relatively short and convenient, weather, commute time, inconvenient activity scheduling, and the poor information flow between the campuses were contributing barrier factors."],"size":[1800],"topic_no":[7],"thoughts":["Distance - Especially in the winter. I live in Central Campus and the practices were held in North Campus at nights","I lived in Central campus but orchestra practice was on north campus during evenings, from 7 to 10pm.","I lived on central campus my first two years and it was difficult to know all of the events that happened on North Campus. Now that I live on North Campus I am much more exposed to the events that are happening.","Inconvenient times/places (North Campus, weekend nights)","Most art stuff is on North Campus, and I live on Central","distance (live on central campus, most things are on north campus)","Time Constraints, North Campus location (living on north campus and have to commute to attend events)","I live at home and it is a 45 minute commute so its hard to be on campus for that long and drive that much.","Conflicts with classes, project due dates, and other activities.\r\n\r\nArts at Michigan also tend to be on Central campus not North. I live on North.","Split campus makes learning about arts on north very difficult if you were to live on central."],"thought_proportions":[0.7229,0.6393,0.5783,0.5458,0.5458,0.535,0.461,0.4316,0.4273,0.4087],"prob":["campus, homework, north, live, practic, central, put"],"frex":["campus, north, live, homework, locat, stuff, central"],"lift":["distanc, campus, stuff, commut, held, home, inconveni"],"score":["campus, north, seen, homework, live, central, locat"],"proportion":["0.03"]},{"name":["Cost"],"summary":["Cost, as expressed here in terms of personal affordability as well as a cost/benefit analysis, was not a large barrier, but an expected one for some students.  The arts were sometimes described as a luxury that was hard to justify against the perceived benefit of participation.  Students expressed a desire for access to more free high-quality events and activities, while acknowledging that those events have justifiable costs and value."],"size":[1800],"topic_no":[5],"thoughts":["Sometimes I would rather not pay to see performances, but I understand that the performances need to have these fees due to costs of the production.","I think cost to participate and attend certain art exhibits and performances can be a barrier to involvement. Arts, for me, is an outlet and a luxury, so if I couldn't afford to participate/attend, then I wouldn't. If things were less expensive/free, I wold have participated more.","Nope. Simply comparison of benefit versus cost.","Transportation sometimes. The bus system can be really slow sometimes, and the prices are sometimes high.","Some form of art are not as easily asccessed and some do come with a cost that can be hard to justify sometimes.","Lack of time. \r\nEvents, shows, performances can be too expensive for a student budget.","Sometimes it's expensive - I'd like to get more involved in photography but can't afford the equiptment and studio fees","Perhaps financial barriers--some UMS shows are somewhat expensive","Not willing to spend money to go to shows or performances. Wish there were more free events, and ON CENTRAL CAMPUS","Not enouph time, and costs a bit more than I am willing to spend"],"thought_proportions":[0.3246,0.3225,0.296,0.2351,0.2211,0.2184,0.2183,0.1956,0.1928,0.1888],"prob":["particip, perform, cost, sometim, can, abl, show"],"frex":["cost, perform, sometim, perhap, may, rather, simpli"],"lift":["afford, nope, perhap, rather, cost, sometim, fee"],"score":["cost, nope, particip, sometim, perform, show, may"],"proportion":["0.04"]},{"name":["Friend/Cost Ecosystem"],"summary":["The Friend/Cost Ecosystem topic respondents moved from reporting directly on value or affordability barriers to the desire to have U-M offer subsidies or strategies to work around financial constraints.  Students also indicated that their friends not attending (due to perhaps their own time and cost constraints) kept them from participating as well."],"size":[1800],"topic_no":[3],"thoughts":["This wasn't me, but my friend who is Chinese went to try the Indian style of dance but she just felt overwhelmed but the amount of Indian people there and wound up feeling left out.","Timing conflicts - literally too busy with school/leadership positions/extra curriculars to even sleep, let alone attend art events","I really appreciate the discounted tickets to Hill Auditorium, but I wish that there were more ways to get complimentary tickets to events. For mid-week events, there are often many seats left empty, and I'm sure plenty of students would be willing to wrie reviews or volunteer in exchange for tickets - something like Arts Ambassador, but not restricted to dorm residents.","Time commitments and tickets at Hill are sort of expensive. It would be nice if they let students in for free if they had extra seats; I have no idea how they would accomplish this.","fees for UMS concerts (despite half price student tickets)","ticket price, finding friends to attend events with, too much classical music not enough newer options","School work; usually too busy to attend. Ticket prices also made me hesitant.","Cost.\r\n\r\nI took several art and design classes as a non-art major and had to spend a lot of money out-of-pocket to pay for materials in addition to the lab fee that is already charged to my student account.\r\n\r\nI also enjoy attending UMS concerts, and I wold not be able to attend without the student half-price ticket sale.","I generally found out about different performances or exhibits after they had already taken place from a friend who went.  There needed to be more advertising and marketing for such events.  While i never personally felt a desire to audition for a performnce group, a few of my friends felt discouraged from getting involved because they had to go through an audition process.","Some of my  friends weren't interested in the arts\r\nTransportation\r\nDidn't have enough advance notice about a lot of the art events on campus to be able to attend"],"thought_proportions":[0.2643,0.2393,0.2297,0.2133,0.2073,0.1991,0.1991,0.1961,0.1872,0.1863],"prob":["attend, friend, most, made, concert, ticket, felt"],"frex":["friend, most, ticket, overwhelm, attend, made, took"],"lift":["call, most, went, overwhelm, friend, let, ticket"],"score":["attend, call, friend, ticket, most, made, concert"],"proportion":["0.02"]}],"topic_no":[7,5,3]},{"name":["Not Engaged"],"summary":["Engaging in the arts in college is not a priority or interest area for every student, as should be expected (Not Engaged).  Respondents in this topic listed a variety of personal reasons they were not engaged in the arts at U-M, including but not limited to lack of planning, lack of motivation, lack of art interests, lack of arts talent, and lack of previous exposure.  A percentage of students also indicated they experienced no reportable  barriers to participating at the level to which they had aspired."],"children":[{"name":["No Barriers, Except..."],"size":[1800],"topic_no":[16],"thoughts":["I haven't gotten my schedule down yet so I'm still too scattered to be committed to anything right now.","I don't know about anything until its already done.","None except for time","None, except time constraints","None besides the time commitment","none, besides lack of interest","None. Time conflicts, maybe","None except my own personal laziness","Nothing except I just had no time because of schoolwork","None, besides lack of talent."],"thought_proportions":[0.4506,0.2882,0.2701,0.2378,0.2378,0.2334,0.2317,0.2212,0.221,0.2167],"prob":["none, anyth, workload, mayb, noth, right, except"],"frex":["none, anyth, workload, noth, mayb, except, sure"],"lift":["anyth, none, noth, sure, workload, except, yet"],"score":["none, sure, anyth, workload, noth, except, besid"],"proportion":["0.04"]},{"name":["Lack of Personal Interest"],"size":[1800],"topic_no":[17],"thoughts":["Lack of personal interest. Lack of exposure","Time constraints, lack of motivation to initiate involvement, lack of interest","Lack of motivation or interest.","Lack of personal interest.","My own personal lack of interest.","lack of personal interest","Lack of personal interest, lack of time due to studies/work/volunteering","Time and lack of interest in socializing.","Lack of events of interest to me, personally.","lack of awareness, too expensive, not of my interest"],"thought_proportions":[0.3721,0.3719,0.343,0.343,0.343,0.343,0.3348,0.3079,0.302,0.2902],"prob":["lack, interest, person, awar, main, focus, social"],"frex":["lack, awar, interest, social, person, main, accept"],"lift":["lack, accept, social, cultur, awar, motiv, interest"],"score":["lack, interest, accept, person, awar, social, main"],"proportion":["0.05"]},{"name":["No Barriers"],"size":[1800],"topic_no":[19],"thoughts":["The barriers would be just getting more inormed and the desire to become involved in the arts at the University of Michigan.","I don't see any barriers preventing me from being involved in the arts","I don't experience any barriers preventing me from being involved in the arts. I'm simply not interested in the arts. If I was interested in the arts, then I am positive that there are many ways at U of M that I could get involved in them.","I do not see any barriers preventing me from being involved in the arts at the University of Michigan.","I do not see any barriers preventing one from being involved in the arts at the University of Michigan.","time management, took a lot of initiative on my own part to get involved, want to get involved in other ways (crafts, things that are lower commitment) but found that those were hard to get involved in.","Finding new clubs/organizations to get involved with that I don't know anyone in, learning about all the different ways to get involved","The only barrier I see is that is you lack skills in art, it is hard for you to get involved with dance or theater or such. Which is understandable, however, is a barrier","I hadn't experienced any barriers preventing me from being involved.","I do not experience any barriers preventing me from being involved in the arts."],"thought_proportions":[0.2845,0.2664,0.2567,0.2488,0.241,0.2396,0.2353,0.2218,0.2167,0.2133],"prob":["involv, get, barrier, see, prevent, way, becom"],"frex":["involv, barrier, get, havent, becom, prevent, see"],"lift":["havent, involv, act, becom, barrier, get, prevent"],"score":["havent, involv, get, barrier, see, prevent, way"],"proportion":["0.05"]},{"name":["Ennui"],"size":[1800],"topic_no":[22],"thoughts":["Probably just that there wasn't enough time to attend all of the arts events. Many things occur on the same nights (Friday/Saturday) so you really have to pick and choose.","I didn't experience any. I just don't really prefer to be involved in the arts.","I didn't experience any barriers, I just didn't have a very strong interest in the arts coming into college so I didn't choose to involve myself much in the arts.","more publicizing of arts opportunities, know that arts opportunities probably exist but didnt really know of many specifically","Oftentimes I didn't hear about a really interesting event/performance until after it was over; so basically lack of advertising was my main obstacle.","I don't think I'm good enough at anything specifically to be involved in a really competitive setting.  I played clarinet in high school, but I don't think I'm good enough for any of the highly respected bands here.  I guess I just didn't pursue joining lwer key organizations.","I just think I am not very artistic and it is better I just appreciate it then create it.  I enjoy plays and reading, but I have a really hectic schedule and so I haven't had a lot of time for arts.","I am really interested in the wood working aspect of the arts, but I have not really found anywhere that would facilitate my needs if I wanted to pursue this area. I was very involved in the wood working program at my high school and worked as a builder dring my summer jobs. I would love to be able to keep up this skill, but have not found a place/opportunity to do so. I also feel that it is hard for people who would just like to get involved in the arts to do it just for fun. The classes are for a grade ased on how good you are, but I would like to do things just for the pure enjoyment. I would like more classes that would offer me that opportunity with no negative consequences.","I didn't, its just something I don't particularly enjoy","I was really involved in classical music in high school, but found few opportunities to continue my involvement without doing something through the music school. Besides Pops and a few trio opportunities, there wasn't anything out there for an LSA major.  did a trio my freshman year but the music was not as advanced as what I was used to and I didn't really enjoy it, so I stopped."],"thought_proportions":[0.2404,0.2295,0.2221,0.1928,0.1881,0.1871,0.1859,0.1798,0.1782,0.1684],"prob":["just, realli, didnt, enjoy, play, specif, wasnt"],"frex":["just, realli, didnt, enjoy, far, choos, basic"],"lift":["far, just, realli, didnt, basic, choos, enjoy"],"score":["just, far, realli, didnt, enjoy, specif, play"],"proportion":["0.03"]}],"topic_no":[16,17,19,22]}],"topic_no":[16,17,1,9,7,5,3,21]}],"topic_no":[11,15,19,22,20,6,10,8,2,14,7,5,3,13,21,16,17,1,9,18],"name":["What do you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?"],"this_root":[true],"summary":["A topic model with 24 topics, 3857 documents and a 537 word dictionary."],"proportions":[0.0425,0.0416,0.0202,0.1417,0.0362,0.0281,0.0297,0.0308,0.0433,0.0413,0.0309,0.0352,0.0302,0.0447,0.028,0.0385,0.0489,0.0756,0.0534,0.0252,0.0494,0.0331,0.0329,0.0187]}
+</script>
+<style>
+div.settings-label {
+	font-size: 12px;
+	color: #BBB;
+	font-style: italic;
+	margin-top: -10px;
+	margin-bottom: 40px;
+	font-weight: 300
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: left;
+	padding: 10px;
+	border: 1px solid #D5D5D5;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #333;
+	padding: 10px;
+	border-radius: 3px;
+	background: rgba(255, 255, 255, 1);
+	color: #000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+	border: 1px solid rgba(200, 200, 200, .85);
+}
+
+.sidebar {
+	position: absolute;
+	text-align: left;
+	padding: 10px;
+	border-right: 1px solid #D5D5D5;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 1.1em;
+	color: #333;
+	padding: 10px;
+	background: rgba(255, 255, 255, 1);
+	color: #000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .4)
+}
+
+.sidebar-item {
+	direction: ltr
+}
+
+.sidebar-rule {
+	height: 1px;
+	margin: 1px auto 3px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	background: #ccc;
+	width: 10em
+}
+
+.header-rule {
+	height: 1px;
+	margin: 1px auto 3px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	background: #ccc;
+	width: 16em
+}
+
+.header-rule-short {
+	height: 1px;
+	margin: 1px auto 3px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	background: #ccc;
+	width: 6em
+}
+
+.header0 {
+	color: #000;
+	font-size: .7em;
+	margin-bottom: 2px;
+	text-align: center;
+	font-style: oblique
+}
+
+.header1 {
+	color: #000;
+	font-size: .8em;
+	margin-bottom: 2px;
+	text-align: center
+}
+
+.header2 {
+	text-align: left;
+	font-size: .7em;
+	margin-bottom: 2px;
+	color: #666;
+	text-align: center
+}
+
+.header3 {
+	color: #333;
+	text-align: left;
+	font-size: 13px;
+	font-style: italic;
+	text-align: center
+}
+
+.thoughts {
+	color: #333;
+	text-align: left;
+	opacity: 1;
+    font-size:.7em;
+	text-align: center;
+	transition: .7s ease;
+	font-size: 16px;
+}
+
+.overlay-text {
+	color: black;
+	font-size: 16px;
+	font-weight: 700;
+	opacity: 0;
+	position: absolute;
+	transition: .7s ease;
+	width: 90%;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center
+}
+
+.thought-container {
+	position: relative;
+	margin: 7.5px 8px 0 8px
+}
+
+.thought-container:hover .thoughts {
+	opacity: .15
+}
+
+.thought-container:hover .overlay-text {
+	opacity: 1
+}
+</style>
+<style>
+   *,::after,::before{background-repeat:no-repeat;box-sizing:inherit}::after,::before{text-decoration:inherit;vertical-align:inherit}html{box-sizing:border-box;cursor:default;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,footer,header,nav,section{display:block}body{margin:0}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}nav ol,nav ul{list-style:none}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}::-moz-selection{background-color:#b3d4fc;color:#000;text-shadow:none}::selection{background-color:#b3d4fc;color:#000;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg{fill:currentColor}svg:not(:root){overflow:hidden}table{border-collapse:collapse}button,input,optgroup,select,textarea{margin:0}button,input,select,textarea{color:inherit;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto;resize:vertical}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[tabindex],a,area,button,input,label,select,summary,textarea{-ms-touch-action:manipulation;touch-action:manipulation}[hidden]{display:none}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-hidden=false][hidden]:not(:focus){clip:rect(0,0,0,0);display:inherit;position:absolute}[aria-disabled],[disabled]{cursor:default}.vz-weighted_tree-node text{stroke:#777;stroke-opacity:.5}html{background:#fff;font:100% sans-serif}.scrollbox{background:linear-gradient(white 30%,hsla(0,0%,100%,0)),linear-gradient(hsla(0,0%,100%,0) 10px,#fff 70%) bottom,radial-gradient(at top,rgba(0,0,0,.2),transparent 70%),radial-gradient(at bottom,rgba(0,0,0,.2),transparent 70%) bottom;background-repeat:no-repeat;background-size:100% 20px,100% 20px,100% 10px,100% 10px;background-attachment:local,local,scroll,scroll}.z-depth-2{box-shadow:0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)}.z-depth-3{box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19)}.modal,.z-depth-4{box-shadow:0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21)}.z-depth-5{box-shadow:0 27px 24px 0 rgba(0,0,0,.2),0 40px 77px 0 rgba(0,0,0,.22)}body{margin:0}@media only screen{main{padding-left:0px}}@media only screen and (max-width:961px){main{padding-left:0}}#viz_container{margin:0 auto;padding-top:0}div.container{width:100%;position:absolute;top:100px}.tile{font-family:Raleway;font-weight:300}.heading{font-family:Raleway;font-weight:300}.side-nav li:hover{background-color:#fff}.leftAxis{font-weight:200}.datatip-value{position:absolute;right:10px}.title{font-family:Roboto;font-size:20px;font-weight:200}.vizuly{font-family:Raleway}svg{border-radius:4px;shape-rendering:crispEdges}.vz-data-point{fill-opacity:1;stroke-width:1px;stroke-opacity:1}.vz-tip-hover{font-weight:300}.vz-tip-hover text{opacity:.8}.my-tip{font-family:Raleway;font-weight:300;text-anchor:middle}[type=radio]:checked+label:after{background-color:#448aff;border-color:#3864c9}[type=radio]+label{border-color:#3864c9}.input-field{margin-left:0;padding-bottom:5px;font-family:Roboto}.dropdown-content{font-family:Roboto;font-size:.5em}.dropdown-content li span{font-family:Roboto;font-size:1.75em}div.input-field label{margin-left:-10px}.mdi-navigation-menu{font-size:30px;color:#444}i.mdi-navigation-menu:before{font-size:40px;content:"\e662"}i.mdi-navigation-menu:hover{transition:color .5s ease;color:#0176b4}#myDataTip{font-family:Raleway;line-height:18px}svg.vizuly path.domain{fill:none}.vizuly{fill:#aaa;shape-rendering:auto}.vz-plot-background{fill:#fff}.vz-bar{stroke:#eee;shape-rendering:auto}.vz-area{fill-opacity:.7;shape-rendering:auto}.vz-line{stroke:#777;stroke-width:1px;stroke-opacity:1;fill:none;shape-rendering:auto}.vz-tip{stroke:1px;fill:none;stroke:#777;stroke-opacity:1;shape-rendering:auto}.vz-line-indicator{stroke:#555;stroke-width:1px}.vz-data-point{shape-rendering:auto}.vz-bottomAxis{shape-rendering:crispEdges}.vz-radial-axis-tick{font-weight:300}.vz-skin-axiis{background-image:linear-gradient(to bottom,#d0d0d0,#dfdfdf,#f3f3f3,#d0d0d0);border-radius:5px;border:1px solid #bbb}.vz-skin-ocean{background-image:url(img/vz-skin-galaxy_2.jpg);background-repeat:no-repeat;background-size:cover;border-radius:5px}.vz-axiis-datatip{background:rgba(232,232,232,.9);border-radius:3px;border:1px solid #aaa;fill:#fff;padding:10px;font-face:Raleway;text-transform:uppercase;font-weight:200;color:#000}.vz-material-datatip{background:rgba(35,35,35,.7);border-radius:3px;border:1px solid #aaa;fill:#fff;padding:10px;font-face:Raleway;text-transform:uppercase;font-weight:200;color:#fff}.vz-neon-datatip{background:rgba(106,106,106,.7);border-radius:3px;border:1px solid #777;padding:10px;font-face:Raleway;text-transform:uppercase;font-weight:200;color:#fff}.vz-minimal-datatip{background:rgba(220,220,220,1);border-radius:1px;border:1px solid #333;padding:10px;font-face:Raleway;text-transform:uppercase;color:#333}.vz-minimal-datatip span{font-weight:300!important}.vz-viz circle{shape-rendering:auto}.vz-skin-political-influence{background-color:#eee;border-radius:5px}svg{fill:#fff}i.mdi-navigation-menu:before{font-size:40px;content:"\e662"}i.mdi-navigation-menu:hover{transition:color .5s ease;color:#0176b4}div.vz-weighted_tree-viz{overflow:hidden}.vz-weighted_tree-viz circle{fill:#09f;fill-opacity:1}html{overflow:auto}.vz-weighted_tree-viz{overflow:auto;width:100%;height:100%}.vz-background{overflow:auto}.vz-weighted_tree-viz text{fill:#000}.vz-weighted_tree-viz path{stroke:#777;stroke-opacity:.5}.vz-skin-fire .vz-radial_progress-track{fill-opacity:.1}svg.vz-weighted_tree-viz{fill:none;font-family:Roboto;pointer-events:visible;opacity:1}div.radial_container{float:left;position:relative;top:45%;transform:translateY(-50%)}#viz_container{border-radius:6px;transform:translate(-15%,0px);}
+</style>
+<script>
+   var vizuly={};vizuly.version="1.0",vizuly.core={},vizuly.viz={},vizuly.viz.layout={},vizuly.viz.layout.CLUSTERED="CLUSTERED",vizuly.viz.layout.STACKED="STACKED",vizuly.viz.layout.OVERLAP="OVERLAP",vizuly.viz.layout.STREAM="STREAM",vizuly.svg={},vizuly.theme={},vizuly.skin={},vizuly.ui={},vizuly.core.component=function(a,b,c,d){function e(a,b,c){Object.getOwnPropertyNames(c).forEach(function(d,e,f){"undefined"==typeof b[d]&&(b[d]=c[d],a[d]=function(c){if(!arguments.length)return b[d];var e=b[d];return b[d]=c,b[d]!==e&&b.dispatch[d+"_change"].apply(this,[b[d],e]),a})})}b.parent=a,b.properties=c,b.id=vizuly.core.util.guid(),b.selection=d3.select(a).append("div").attr("id","div_"+b.id).style("width","100%").style("height","100%");var f=[];f.push("mouseover"),f.push("mouseout"),f.push("mousedown"),f.push("click"),f.push("dblclick"),f.push("touch"),f.push("zoom"),f.push("zoomstart"),f.push("zoomend"),f.push("initialize"),f.push("validate"),f.push("measure"),f.push("update"),Object.getOwnPropertyNames(c).forEach(function(a,b,c){f.push(a+"_change")}),d&&d.length>0&&d.forEach(function(a){f.push(a)}),b.dispatch=d3.dispatch.apply(this,f);var g=function(){return e(g,b,b.properties),g};return b.dispatch.component=g(),g.id=function(){return b.id},g.selection=function(){return b.selection},g.on=function(a,c){return b.dispatch.on(a,c),g},g.validate=function(){if(!a){var a=[];if(Object.getOwnPropertyNames(c).forEach(function(c){!b[c]&&Number(0!=b[c])&&a.push(c)}),a.length>0)throw new Error("vizuly.core.util.component.validate(): "+a.concat()+" need to be declared");b.dispatch.validate()}},b.dispatch.component},vizuly.core.util={},vizuly.core.util.size=function(a,b,c){var d={};return d.width=b-vizuly.core.util.measure(a.left,b)-vizuly.core.util.measure(a.right,b),d.height=c-vizuly.core.util.measure(a.top,c)-vizuly.core.util.measure(a.bottom,c),d.top=vizuly.core.util.measure(a.top,c),d.left=vizuly.core.util.measure(a.left,b),d.bottom=vizuly.core.util.measure(a.bottom,c),d.right=vizuly.core.util.measure(a.right,b),d},vizuly.core.util.getTypedScale=function(a){var b;return b="string"==typeof a?d3.scale.ordinal():a instanceof Date?d3.time.scale():d3.scale.linear()},vizuly.core.util.setRange=function(a,b,c){"string"==typeof a.domain()[0]?a.rangeBands([b,c],0):a.range([b,c])},vizuly.core.util.measure=function(a,b){if("string"==typeof a&&"%"==a.substr(a.length-1)){var c=Math.min(Number(a.substr(0,a.length-1)),100)/100;return Math.round(b*c)}return a},vizuly.core.util.guid=function(){return"vzxxxxxxxx".replace(/[xy]/g,function(a){var b=16*Math.random()|0,c="x"===a?b:3&b|8;return c.toString(16)})},vizuly.core.util.getDefs=function(a){var b=a.selection().selectAll("svg defs");return b[0].length<1&&(b=a.selection().select("svg").append("defs")),b},vizuly.core.util.createCSSKey=function(a){return a=String(a).replace(",","_"),a=a.replace(/[\s+,'+,\.,\(,\),\"]/g,""),a="css"+a.toUpperCase()},vizuly.core.util.aggregateNest=function(a,b,c){function d(a,b){if(b)for(var c=0;c<g.length;c++){var d=g[c];void 0!=a[d]&&(a["childProp_"+d]=a[d]),b["childProp_"+d]=a["childProp_"+d]?a["childProp_"+d]:a[d]}}function e(a,f){for(var g=0;g<a.length;g++){var h=a[g];if(h.values){e(h.values,h);for(var i=0;i<h.values.length;i++)for(var j=h.values[i],k=0;k<b.length;k++)isNaN(h["agg_"+b[k]])&&(h["agg_"+b[k]]=0),h["agg_"+b[k]]=c(h["agg_"+b[k]],j["agg_"+b[k]])}else for(var k=0;k<b.length;k++)h["agg_"+b[k]]=Number(h[b[k]]),isNaN(h["agg_"+b[k]])&&(h["agg_"+b[k]]=0);d(h,f)}}for(var f=a[0];f.values;)f=f.values[0];var g=[];Object.getOwnPropertyNames(f).forEach(function(a){g.push(a)}),e(a)},vizuly.core.util.format_YEAR_Mon_MonDay=d3.time.format.multi([[".%L",function(a){return a.getMilliseconds()}],[":%S",function(a){return a.getSeconds()}],["%I:%M",function(a){return a.getMinutes()}],["%I %p",function(a){return a.getHours()}],["%a %d",function(a){return a.getDay()&&1!=a.getDate()}],["%b %d",function(a){return 1!=a.getDate()}],["%b",function(a){return a.getMonth()}],["20%y",function(a){return!0}]]),vizuly.svg.filter={},vizuly.svg.filter.dropShadow=function(a,b,c,d){var e=Math.round(100*b)+"_"+Math.round(100*c)+"_"+Math.round(100*dev),f=a.id(),g=vizuly.core.util.getDefs(a),h=g.selectAll("#vz_filter_"+f+"_"+e).data([e]).enter().append("filter").attr("id","vz_filter_"+f+"_"+e).attr("class","vz-svg-filter-dropShadow").attr("width","300%").attr("height","300%");h.append("feGaussianBlur").attr("in","SourceAlpha").attr("stdDeviation",d),h.append("feOffset").attr("dx",b).attr("dy",c),h.append("feComponentTransfer").append("feFuncA").attr("type","linear").attr("slope",.2);var i=h.append("feMerge");return i.append("feMergeNode"),i.append("feMergeNode").attr("in","SourceGraphic"),"#vz_filter_"+f+"_"+e},vizuly.svg.gradient={},vizuly.svg.gradient.blend=function(a,b,c,d){var e,f,g,h,i=String(b).replace("#","")+String(c).replace("#",""),j="vz_gradient_blend_"+a.id()+"_"+i;"horizontal"==d?(e="100%",f="0%",g="0%",h="0%"):(e="0%",f="0%",g="100%",h="0%");var k=vizuly.core.util.getDefs(a),l=k.selectAll("#"+j).data([i]).enter().append("linearGradient").attr("id",j).attr("class","vz-svg-gradient-blend").attr("x1",e).attr("x2",f).attr("y1",g).attr("y2",h);return l.append("stop").attr("offset","0%").attr("stop-color",b),l.append("stop").attr("offset","100%").attr("stop-color",c),l=k.selectAll("#"+j)},vizuly.svg.gradient.fade=function(a,b,c,d,e){e||(e=[0,1]),d||(d=[.75,.9]);var f,g,h,i,j=String(b).replace("#",""),k="vz_gradient_fade_"+a.id()+"_"+j;"horizontal"==c?(f="0%",g="100%",h="0%",i="0%"):(f="0%",g="0%",h="100%",i="0%");var l=vizuly.core.util.getDefs(a),m=l.selectAll("#"+k).data([j]).enter().append("linearGradient").attr("id",k).attr("class","vz-svg-gradient-fade").attr("x1",f).attr("x2",g).attr("y1",h).attr("y2",i);return m.append("stop").attr("offset",100*e[0]+"%").attr("stop-color",b).attr("stop-opacity",d[0]),m.append("stop").attr("offset",100*e[1]+"%").attr("stop-color",b).attr("stop-opacity",d[1]),m=l.selectAll("#"+k)},vizuly.svg.gradient.radialFade=function(a,b,c,d){d||(d=[0,1]),c||(c=[.75,.9]);var e=String(b).replace("#",""),f="vz_gradient_radial_fade"+a.id()+"_"+e,g=vizuly.core.util.getDefs(a),h=g.selectAll("#"+f).data([e]).enter().append("radialGradient").attr("id",f).attr("class","vz-svg-gradient-radial-fade");return h.append("stop").attr("offset",100*d[0]+"%").attr("stop-color",b).attr("stop-opacity",c[0]),h.append("stop").attr("offset",100*d[1]+"%").attr("stop-color",b).attr("stop-opacity",c[1]),h=g.selectAll("#"+f)},vizuly.svg.gradient.darker=function(a,b,c){var d,e,f,g,h=String(b).replace("#",""),i="vz_gradient_darker_"+a.id()+"_"+h;"horizontal"==c?(d="100%",e="0%",f="0%",g="0%"):(d="0%",e="0%",f="100%",g="0%");var j=vizuly.core.util.getDefs(a),k=j.selectAll("#"+i).data([h]).enter().append("linearGradient").attr("class","vz-gradient-darker").attr("id",i).attr("x1",d).attr("x2",e).attr("y1",f).attr("y2",g);return k.append("stop").attr("offset","0%").attr("stop-color",b).attr("stop-opacity",.75),k.append("stop").attr("offset","100%").attr("stop-color",d3.rgb(b).darker()).attr("stop-opacity",.9),k=j.selectAll("#"+i)},vizuly.svg.text={},vizuly.svg.text.arcPath=function(a,b){var c=.0174533,d={};d.angle=b,d.startAngle=d.angle-179*c,d.endAngle=d.angle+179*c;var e=d3.svg.arc().innerRadius(r).outerRadius(a)(d),f=/[Mm][\d\.\-e,\s]+[Aa][\d\.\-e,\s]+/,g=f.exec(e);return g&&(g=g[0]),g},vizuly.svg.text.wrap=function(a,b,c,d){d=!d&&a.attr("width")?Number(a.attr("width")):d,a.each(function(){var a=d3.select(this);a.selectAll("tspan").remove();var e,f=b.split(/\s+/).reverse(),g=[],h=0,i=a.attr("x"),j=a.attr("y"),k=parseFloat(c);isNaN(k)&&(k=0);for(var l=a.text(null).append("tspan").attr("x",i).attr("y",j).attr("dy","0px");e=f.pop();)g.push(e),l.text(g.join(" ")),l.node().getComputedTextLength()>d&&(h++,g.pop(),l.text(g.join(" ")),g=[e],l=a.append("tspan").attr("class","vz-multi-line").attr("x",i).attr("y",j).attr("dy",+k+"px").text(e),k+=c)})},vizuly.skin.COLUMNBAR_AXIIS="Axiis",vizuly.skin.COLUMNBAR_NEON="Neon",vizuly.skin.COLUMNBAR_MATERIALBLUE="MaterialBlue",vizuly.skin.COLUMNBAR_MATERIALPINK="MaterialPink",vizuly.theme.column_bar=function(a){function b(){l(),"viz.chart.column"==a.type?(m=".vz-left-axis",n=".vz-bottom-axis"):(n=".vz-left-axis",m=".vz-bottom-axis")}function c(){var b=a.width(),c=a.selection();o=Math.max(8,Math.round(a.width()/65)),c.attr("class",s["class"]),c.selectAll(n+" .tick text").style("font-weight",s.ordinalAxis_font_weight).style("fill",s.labelColor).style("fill-opacity",1).style("font-size",o+"px").style("opacity",function(){return b>399?1:0}),c.selectAll(m+" line").style("stroke",s.valueAxis_line_stroke).style("stroke-width",1).style("opacity",s.valueAxis_line_opacity),c.selectAll(m+" text").style("font-size",o+"px").style("fill",s.labelColor).style("fill-opacity",.8);var d=c.selectAll(".vz-plot .vz-bar").style("stroke","#FFF");a.layout()==vizuly.viz.layout.STACKED?d.style("stroke-opacity",1).style("stroke-width",function(){return b/800+"px"}).style("stroke-opacity",.6):d.style("stroke-opacity",s.bar_stroke_opacity),c.selectAll(".vz-bar-group")[0].forEach(function(a,b){d3.select(a).selectAll("rect.vz-bar").attr("filter",function(a,b){return s.bar_filter(a,b)}).style("fill-opacity",function(a,b){return s.bar_fill_opacity(a,b)}).style("fill",function(a,b){return s.bar_fill(a,b)}).style("rx",s.barRadius)}),s.background_transition()}function d(b,c,d){d3.select(b).style("fill",s.bar_mouseover_fill).style("fill-opacity",s.bar_mouseover_opacity).style("stroke",s.bar_mouseover_stroke).attr("filter",s.bar_filter_over()),d3.select(a.selection().selectAll(n+" .tick text")[0][g(c)]).transition().style("font-size",1.2*o+"px").style("font-weight",700).style("fill",s.color).style("text-decoration","underline").style("fill-opacity",1).style("opacity",1)}function e(b,c,d){d3.select(b).style("fill",function(){return s.bar_fill(c,d)}).style("fill-opacity",function(){return s.bar_fill_opacity(c,d)}).style("stroke","#FFF").attr("filter",s.bar_filter()),d3.select(a.selection().selectAll(n+" .tick text")[0][g(c)]).transition().style("font-size",o+"px").style("fill",s.labelColor).style("font-weight",s.ordinalAxis_font_weight).style("text-decoration",null).style("fill-opacity",1).style("opacity",function(){return a.width()>399?1:0})}function f(){a.selection().selectAll(".vz-tip").remove(),"viz.chart.column"==a.type?a.yAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).width).ticks(5).orient("left"):a.xAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).height).ticks(5)}function g(b){return(m=".vz-left-axis")?a.xScale().domain().indexOf(a.y().apply(this,[b])):a.yScale().domain().indexOf(a.x().apply(this,[b]))}function h(){var b=a.width();return"url("+vizuly.svg.filter.dropShadow(a,b/300,b/300,b/200)+")"}function i(){var b=a.width();return"url("+vizuly.svg.filter.dropShadow(a,b/100,b/100,1.5)+")"}function j(){a.selection().selectAll(".vz-background").style("fill-opacity",1),a.selection().selectAll(".vz-background").attr("fill",function(){return"url(#"+r.attr("id")+")"}),r.selectAll("stop").transition().duration(500).attr("stop-color",function(a,b){return 0==b?s.grad0:s.grad1})}function k(a,b){return a="0x"+a.replace("#",""),a=parseInt(a,16),a+=65793,a|=b,"#"+a.toString(16)}function l(){q.forEach(function(b){a.on(b.on,b.callback)})}var m,n,o,p={MaterialBlue:{name:"Material Blue",labelColor:"#FFF",color:"#02C3FF",grad0:"#021F51",grad1:"#039FDB",background_transition:j,bar_filter:function(a,b){return h()},bar_filter_over:function(a,b){return i()},bar_fill:function(a,b){return"#02C3FF"},bar_fill_opacity:function(a,b){return 1-b/4},bar_mouseover_stroke:"#02C3FF",bar_mouseover_fill:"#FFF",bar_stroke_opacity:0,bar_mouseover_opacity:1,ordinalAxis_font_weight:200,valueAxis_line_stroke:"#FFF",valueAxis_line_opacity:.25,barRadius:function(){return 0},datatip_class:"vz-material-datatip","class":"vz-skin-default"},MaterialPink:{name:"Material Pink",labelColor:"#FFF",color:"#F553B1",grad0:"#540936",grad1:"#C12780",background_transition:j,bar_filter:function(a,b){return h()},bar_filter_over:function(a,b){return i()},bar_fill:function(a,b){return"#FF35BE"},bar_fill_opacity:function(a,b){return 1-b/4},bar_stroke_opacity:0,bar_mouseover_stroke:"#FF35BE",bar_mouseover_fill:"#FFF",bar_mouseover_opacity:.9,ordinalAxis_font_weight:200,valueAxis_line_stroke:"#FFF",valueAxis_line_opacity:.25,barRadius:function(){return 0},datatip_class:"vz-material-datatip","class":"vz-skin-default"},Neon:{name:"Neon",labelColor:"#FFF",color:"#D1F704",grad0:"#000000",grad1:"#474747",background_transition:j,bar_filter:function(a,b){return null},bar_filter_over:function(a,b){return i()},bar_fill:function(a,b){return"#D1F704"},bar_fill_opacity:function(a,b){return 1-b/6},bar_stroke_opacity:0,bar_mouseover_stroke:"#D1F704",bar_mouseover_fill:"#FFF",bar_mouseover_opacity:1,ordinalAxis_font_weight:200,valueAxis_line_stroke:"#FFF",valueAxis_line_opacity:.25,barRadius:function(){return a.width()/150},datatip_class:"vz-neon-datatip","class":"vz-skin-default"},Axiis:{name:"Axiis",labelColor:"#444",color:"#000",colorScale:d3.scale.linear().range(["#DF1133","#3333DF"]).domain([0,a.data()[0].length]),background_transition:function(){a.selection().select(".vz-background").transition().style("fill-opacity",0)},bar_filter:function(a,b){return null},bar_filter_over:function(a,b){return null},bar_fill:function(b,c){var d=vizuly.svg.gradient.fade(a,k(this.colorScale(a.xScale().domain().indexOf(a.x().apply(this,[b]))),2245632*c));return"url(#"+d.attr("id")+")"},bar_fill_opacity:function(a,b){return 1-b/4},bar_mouseover_stroke:"#AAA",bar_mouseover_fill:"#000",bar_mouseover_opacity:.8,bar_stroke_opacity:1,ordinalAxis_font_weight:400,valueAxis_line_stroke:"#AAA",valueAxis_line_opacity:1,barRadius:function(){return 0},datatip_class:"vz-axiis-datatip","class":"vz-skin-axiis"},Minimal:{name:"Minimal",labelColor:"#444",color:"#333",grad0:"#F0F0F0",grad1:"#F0F0F0",background_transition:j,bar_filter:function(a,b){return null},bar_filter_over:function(a,b){return null},bar_fill:function(a,b){return"#555"},bar_fill_opacity:function(a,b){return 1-b/4},bar_stroke_opacity:0,bar_mouseover_stroke:"#000",bar_mouseover_fill:"#333",bar_mouseover_opacity:1,ordinalAxis_font_weight:400,valueAxis_line_stroke:"#AAA",valueAxis_line_opacity:.35,barRadius:function(){return 0},datatip_class:"vz-minimal-datatip","class":"vz-skin-default"}},a=a,q=[{on:"measure.theme",callback:f},{on:"update.theme",callback:c},{on:"mouseover.theme",callback:d},{on:"mouseout.theme",callback:e}];b();var r=vizuly.svg.gradient.blend(a,"#000","#000");b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),q.forEach(function(b){a.on(b.on,null)}),a=null)},b.viz=function(b){return arguments.length?(a=b,void l()):a};var s=null;return b.skin=function(a){if(0==arguments.length)return s;if(!p[a])throw new Error("theme/column_bar.js - skin "+a+" does not exist.");return s=p[a],b},b.skins=function(){return p},b},vizuly.skin.LINEAREA_AXIIS="Axiis",vizuly.skin.LINEAREA_NEON="Neon",vizuly.skin.LINEAREA_FIRE="Fire",vizuly.skin.LINEAREA_OCEAN="Ocean",vizuly.skin.LINEAREA_SUNSET="Sunset",vizuly.skin.LINEAREA_BUSINESS="Business",vizuly.theme.radial_linearea=function(a){function b(){h()}function c(){if(i){var b=a.selection();b.attr("class",i["class"]),b.selectAll(".vz-background").attr("fill",function(){return"url(#"+j.attr("id")+")"}),b.selectAll(".vz-plot-background").style("opacity",0),b.selectAll(".vz-area").style("fill",function(a,b){return i.area_fill(a,b)}).style("fill-opacity",function(b,c){return i.area_fill_opacity.apply(a,[b,c])}),b.selectAll(".vz-line").style("stroke-width",function(){return a.outerRadius()/450}).style("stroke",function(a,b){return i.line_stroke(a,b)}).style("opacity",function(b,c){return i.line_opacity.apply(a,[b,c])}),b.selectAll(".vz-data-point").style("opacity",0),b.selectAll(".vz-radial-x-axis-tick").style("font-weight",i.xAxis_font_weight).style("fill",i.labelColor).style("font-weight",300).style("fill-opacity",.4).style("font-size",Math.max(8,Math.round(a.outerRadius()/25))+"px"),b.selectAll(".vz-y-axis-tick").style("stroke",i.yAxis_line_stroke).style("stroke-width",1).style("opacity",i.yAxis_line_opacity),b.selectAll(".vz-y-axis-tick-label").style("font-size",Math.max(8,Math.round(a.outerRadius()/30))+"px").style("fill",i.labelColor).style("font-weight",200).style("fill-opacity",function(){return i===m.Business?1:.4}),i.background_transition()}}function d(b,c,d){a.selection().selectAll(".vz-line").transition().style("stroke-width",function(){return a.outerRadius()/270}).style("stroke",function(a,b){return i.line_over_stroke(a,b)}).style("opacity",function(a,b){return b==d?1:0}),a.selection().selectAll(".vz-area").transition().style("opacity",function(a,b){return b==d?1:.35}),a.selection().selectAll(".vz-plot").append("circle").attr("class","vz-yAxis-mouseover").attr("cx",0).attr("cy",0).attr("r",function(){return a.radiusScale()(b.y+b.y0)}).style("stroke","#FFF").style("fill","none").style("stroke-dasharray",function(){return a.outerRadius()/80+","+a.outerRadius()/80}),a.selection().selectAll(".vz-y-axis-tick").style("opacity",.1),a.selection().selectAll(".vz-point-tip").remove();var e=d3.select(this);e.append("circle").attr("class","vz-point-tip").attr("r",4).style("fill","#000").style("stroke","#FFF").style("stroke-width",2).style("pointer-events","none")}function e(b,c,d){a.selection().selectAll(".vz-line").transition().style("stroke-width",function(){return a.outerRadius()/450}).style("stroke",function(a,b){return i.line_stroke(a,b)}).style("opacity",function(b,c){return i.line_opacity.apply(a,[b,c])}),a.selection().selectAll(".vz-area").transition().style("opacity",1),a.selection().selectAll(".vz-yAxis-mouseover").remove(),a.selection().selectAll(".vz-point-tip").remove(),a.selection().selectAll(".vz-y-axis-tick").style("opacity",i.yAxis_line_opacity)}function f(){a.yAxis().tickSize(a.outerRadius()).ticks(a.layout()==vizuly.viz.layout.OVERLAP?5:7).orient("left")}function g(){a.selection().selectAll(".vz-background").style("fill-opacity",1),j.selectAll("stop").transition().duration(500).attr("stop-color",function(a,b){return 0==b?i.grad0:i.grad1})}function h(){l.forEach(function(b){a.on(b.on,b.callback)})}var a=a,i=null,j=vizuly.svg.gradient.blend(a,"#000","#000"),k=d3.scale.category20(),l=[{on:"measure.theme",callback:f},{on:"update.theme",callback:c},{on:"mouseover.theme",callback:d},{on:"mouseout.theme",callback:e}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),l.forEach(function(b){a.on(b.on,null)}),a=null)},b.viz=function(b){return arguments.length?(a=b,void h()):a},b.skin=function(a){if(0==arguments.length)return i;if(!m[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return i=m[a],b},b.skins=function(){return m};var m={Fire:{name:"Fire",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:g,line_stroke:function(a,b){return this.stroke_colors[b%5]},line_over_stroke:function(a,b){return d3.rgb(this.stroke_colors[b%5]).brighter()},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.4:.6},area_fill:function(b,c){return"url(#"+vizuly.svg.gradient.radialFade(a,this.fill_colors[c%5],[1,.35]).attr("id")+")"},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.7:.9},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,"class":"vz-skin-default"},Sunset:{name:"Sunset",labelColor:"#D8F433",color:"#02C3FF",stroke_colors:["#CD57A4","#B236A3","#FA6F7F","#FA7C3B","#E96B6B"],fill_colors:["#89208F","#C02690","#D93256","#DB3D0C","#B2180E"],grad1:"#7D1439",grad0:"#000",background_transition:g,line_stroke:function(a,b){return this.stroke_colors[b%5]},line_over_stroke:function(a,b){return d3.rgb(this.stroke_colors[b%5]).brighter()},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.4:.9},area_fill:function(b,c){return"url(#"+vizuly.svg.gradient.radialFade(a,this.fill_colors[c%5],[1,.35]).attr("id")+")"},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.8:1},xAxis_font_weight:200,yAxis_line_stroke:"#D8F433",yAxis_line_opacity:.25,"class":"vz-skin-default"},Ocean:{name:"Ocean",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#001432","#001432","#001432","#001432","#001432"],grad1:"#390E1D",grad0:"#92203A",background_transition:function(b){a.selection().select(".vz-background").transition(1e3).style("fill-opacity",0)},line_stroke:function(a,b){return"#FFF"},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return.3},area_fill:function(b,c){return"url(#"+vizuly.svg.gradient.radialFade(a,"#FFF",[1,.35]).attr("id")+")"},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.2:.7},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,"class":"vz-skin-ocean"},Neon:{name:"Neon",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:g,line_stroke:function(a,b){return"#FFF"},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.2:.4},area_fill:function(a,b){return"#D1F704"},area_fill_opacity:function(b,c){var d=d3.scale.linear().range([.1,.8]).domain([0,a.data().length])(c);return this.layout()==vizuly.viz.layout.OVERLAP?.8*d:d},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,"class":"vz-skin-default"},Business:{name:"Business",labelColor:"#000",color:"#000",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#CCC",grad1:"#CCC",background_transition:g,line_stroke:function(a,b){return d3.rgb(k(b)).darker()},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return.7},area_fill:function(a,b){return k(b)},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.9:.95},xAxis_font_weight:200,yAxis_line_stroke:"#000",yAxis_line_opacity:.25,"class":"vz-skin-default"}};return b},vizuly.skin.HALO_FIRE="Fire",vizuly.skin.HALO_SUNSET="Sunset",vizuly.skin.HALO_NEON="Neon",vizuly.skin.HALO_OCEAN="Ocean",vizuly.theme.halo=function(a){function b(){r()}function c(){if(s&&a){var b=a.selection();b.attr("class",s["class"]),b.selectAll(".vz-background").attr("fill",function(){return"url(#"+t.attr("id")+")"}),b.selectAll(".vz-plot-background").style("opacity",0),b.selectAll(".vz-halo-link-path").style("fill",function(a,b){return s.link_fill(a,b)}).style("fill-opacity",s.link_fill_opacity).style("stroke",function(a,b){return s.link_stroke(a,b)}),b.selectAll(".vz-halo-link-node").style("fill",function(a,b){return s.link_fill(a,b)}).style("fill-opacity",s.link_node_fill_opacity),b.selectAll(".vz-halo-node").style("fill",function(a,b){return s.node_fill(a,b)}).style("stroke",function(a,b){return s.node_stroke(a,b)}).style("stroke-width",function(a,b){return u(a.r)}),b.selectAll(".vz-halo-arc-slice").style("fill",function(a,b){return s.arc_fill(a,b)}),b.selectAll(".vz-halo-arc").style("fill",function(a,b){return s.arc_fill(a,b)}),s.background_transition()}}function d(b,c,d){h(),n(d3.select(b)),i(a.selection().selectAll(".vz-halo-link-path.halo-key_"+c.data.key)),c.data.values.forEach(function(b){k(a.selection().selectAll(".vz-halo-node.node-key_"+a.nodeKey()(b)))})}function e(b,c,d){h(),i(d3.select(b.parentNode).selectAll(".vz-halo-link-path")),n(a.selection().selectAll(".vz-halo-arc.halo-key_"+a.haloKey()(c.data))),m(d3.select(b.parentNode).selectAll(".vz-halo-arc-slice")),j(a.selection().selectAll(".vz-halo-node.node-key_"+a.nodeKey()(c.data))),l(d3.select(b.parentNode).selectAll("circle"))}function f(b,c,d){h();var e=a.selection().selectAll(".vz-halo-link-path.node-key_"+c.key);e.each(function(b){var c=a.selection().selectAll(".vz-halo-arc.halo-key_"+a.haloKey()(b.data));n(c)}),i(e),m(a.selection().selectAll(".vz-halo-arc-slice.node-key_"+c.key)),l(a.selection().selectAll(".vz-halo-node.node-key_"+c.key))}function g(a,b,c){o()}function h(){a.selection().selectAll(".vz-halo-node").style("fill-opacity",.1).style("stroke-opacity",.05),a.selection().selectAll(".vz-halo-link-node").style("fill-opacity",0),a.selection().selectAll(".vz-halo-link-path").style("fill-opacity",.025)}function i(a){a.style("fill-opacity",.6).style("stroke-opacity",.25)}function j(a){a.style("stroke-opacity",.8).style("stroke",function(a,b){return s.node_over_stroke(a,b)})}function k(a){a.style("fill-opacity",.8).style("stroke-opacity",.5).style("stroke",function(a,b){return s.node_over_stroke(a,b)})}function l(a){a.style("fill-opacity",.5).style("stroke-opacity",.7).style("stroke",function(a,b){return s.node_over_stroke(a,b)})}function m(a){a.style("fill-opacity",.8).style("stroke-opacity",.8)}function n(a){a.style("fill-opacity",.65).style("stroke-opacity",.8).style("fill",function(a,b){return s.arc_over_fill(a,b)})}function o(){a.selection().selectAll(".vz-halo-arc").style("fill-opacity",null).style("stroke-opacity",null).style("fill",function(a,b){return s.arc_fill(a,b)}),a.selection().selectAll(".vz-halo-node").style("fill-opacity",null).style("stroke-opacity",null).style("stroke",function(a,b){return s.node_stroke(a,b)}),a.selection().selectAll(".vz-halo-link-node").style("fill-opacity",s.link_node_fill_opacity).style("stroke",null),a.selection().selectAll(".vz-halo-link-path").style("fill-opacity",s.link_fill_opacity).style("stroke-opacity",null),a.selection().selectAll(".vz-halo-arc-slice").style("fill-opacity",null).style("stroke-opacity",null)}function p(){var b=Math.min(a.width(),a.height()/2);u.domain([0,b/20]),u.range([0,b/80])}function q(){a.selection().selectAll(".vz-background").style("fill-opacity",1),t.selectAll("stop").transition().duration(500).attr("stop-color",function(a,b){return 0==b?s.grad0:s.grad1})}function r(){v.forEach(function(b){a.on(b.on,b.callback)})}var a=a,s=null,t=vizuly.svg.gradient.blend(a,"#000","#000"),u=d3.scale.linear(),v=[{on:"measure.theme",callback:p},{on:"update.theme",callback:c},{on:"nodeover.theme",callback:f},{on:"nodeout.theme",callback:g},{on:"arcover.theme",callback:d},{on:"arcout.theme",callback:g},{on:"linkover.theme",callback:e},{on:"linkout.theme",callback:g}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),v.forEach(function(b){a.on(b.on,null)}),a=null)},b.viz=function(b){return arguments.length?(a=b,void r()):a},b.skin=function(a){if(0==arguments.length)return s;if(!w[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return s=w[a],b},b.skins=function(){return w};var w={Fire:{name:"Fire",labelColor:"#FFF",labelFill:"#C50A0A",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:q,link_stroke:function(a,b){return this.stroke_colors[b%5]},link_fill:function(a,b){return this.fill_colors[b%5]},link_fill_opacity:.1,link_node_fill_opacity:.1,node_stroke:function(a,b){return this.stroke_colors[b%5]},node_over_stroke:function(a,b){return"#FFF"},node_fill:function(a,b){return this.fill_colors[b%5]},arc_stroke:function(a,b){return"#FFF"},arc_fill:function(a,b){return this.fill_colors[b%5]},arc_over_fill:function(a,b){return"#FFEB3B"},"class":"vz-skin-fire"},Sunset:{name:"Sunset",labelColor:"#FFF",labelFill:"#00236C",stroke_colors:["#CD57A4","#B236A3","#FA6F7F","#FA7C3B","#E96B6B"],fill_colors:["#89208F","#C02690","#D93256","#DB3D0C","#B2180E"],grad0:"#220910",grad1:"#571825",background_transition:q,link_stroke:function(a,b){return this.stroke_colors[b%5]},link_fill:function(a,b){return this.fill_colors[b%5]},link_fill_opacity:.2,link_node_fill_opacity:.5,node_stroke:function(a,b){return this.stroke_colors[b%5]},node_over_stroke:function(a,b){return"#FFF"},node_fill:function(a,b){return this.fill_colors[b%5]},arc_stroke:function(a,b){return"#FFF"},arc_fill:function(a,b){return this.fill_colors[b%5]},arc_over_fill:function(a,b){return"#00236C"},"class":"vz-skin-sunset"},Neon:{name:"Neon",labelColor:"#FFF",labelFill:"#005",grad0:"#000000",grad1:"#474747",background_transition:q,link_stroke:function(a,b){return"#D1F704"},link_fill:function(a,b){return"#D1F704"},link_fill_opacity:.1,link_node_fill_opacity:.1,node_stroke:function(a,b){return"#D1F704"},node_over_stroke:function(a,b){return"#FFF"},node_fill:function(a,b){return"#FFF"},arc_stroke:function(a,b){return"#FFF"},arc_fill:function(a,b){return"#D1F704"},arc_over_fill:function(a,b){return"#03F"},"class":"vz-skin-neon"},Ocean:{name:"Ocean",labelColor:"#FFF",labelFill:"#000",background_transition:function(b){a.selection().select(".vz-background").transition(1e3).style("fill-opacity",0)},link_stroke:function(a,b){return"#FFF"},link_fill:function(a,b){return"#FFF"},link_fill_opacity:.075,link_node_fill_opacity:.075,node_stroke:function(a,b){return"#FFF"},node_over_stroke:function(a,b){return"#FFF"},node_fill:function(a,b){return"#FFF"},arc_stroke:function(a,b){return"#FFF"},arc_fill:function(a,b){return"#FFF"},arc_over_fill:function(a,b){return"#000"},"class":"vz-skin-ocean"}};return b},vizuly.skin.LINEAREA_AXIIS="Axiis",vizuly.skin.LINEAREA_NEON="Neon",vizuly.skin.LINEAREA_FIRE="Fire",vizuly.skin.LINEAREA_OCEAN="Ocean",vizuly.skin.LINEAREA_SUNSET="Sunset",vizuly.skin.LINEAREA_BUSINESS="Business",vizuly.theme.linearea=function(a){function b(){h()}function c(){if(i&&null!=i){var b=a.width(),c=a.height(),d=a.selection();d.attr("class",i["class"]),d.selectAll(".vz-background").attr("fill",function(){return"url(#"+j.attr("id")+")"}),d.selectAll(".vz-plot-background").style("opacity",0),d.selectAll(".vz-area").style("fill",function(a,b){return i.area_fill(a,b)}).style("fill-opacity",function(b,c){return i.area_fill_opacity.apply(a,[b,c])}),d.selectAll(".vz-line").style("stroke-width",function(){return c/450}).style("stroke",function(a,b){return i.line_stroke(a,b)}).style("opacity",function(b,c){return i.line_opacity.apply(a,[b,c])}),d.selectAll(".vz-data-point").style("opacity",0),d.selectAll(".vz-bottom-axis").style("font-weight",i.xAxis_font_weight).style("fill",i.labelColor).style("font-weight",300).style("fill-opacity",.8).style("font-size",Math.max(8,Math.round(b/65))+"px").style("opacity",function(){return b>399?1:0}),d.selectAll(".vz-left-axis line").style("stroke",i.yAxis_line_stroke).style("stroke-width",1).style("opacity",i.yAxis_line_opacity),d.selectAll(".vz-left-axis text").style("font-size",Math.max(8,Math.round(b/65))+"px").style("fill",i.labelColor).style("fill-opacity",.8),i.background_transition()}}function d(b,c,d){a.selection().selectAll(".vz-line").transition().style("stroke",function(a,b){return i.line_over_stroke(a,b)}).style("opacity",function(a,b){return b==d?1:0}),a.selection().selectAll(".vz-area").transition().style("opacity",function(a,b){return b==d?1:.35}),a.selection().selectAll(".vz-point-tip").remove();var e=d3.select(this);e.append("circle").attr("class","vz-point-tip").attr("r",4).style("fill","#000").style("stroke","#FFF").style("stroke-width",2).style("pointer-events","none")}function e(b,c,d){a.selection().selectAll(".vz-line").transition().style("stroke",function(a,b){return i.line_stroke(a,b)}).style("opacity",function(b,c){return i.line_opacity.apply(a,[b,c])}),a.selection().selectAll(".vz-area").transition().style("opacity",1),a.selection().selectAll(".vz-point-tip").remove()}function f(){a.yAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).width).ticks(5).orient("left"),a.xAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).width)}function g(){a.selection().selectAll(".vz-background").style("fill-opacity",1),j.selectAll("stop").transition().duration(500).attr("stop-color",function(a,b){return 0==b?i.grad0:i.grad1})}function h(){l.forEach(function(b){a.on(b.on,b.callback)})}var a=a,i=null,j=vizuly.svg.gradient.blend(a,"#000","#000"),k=d3.scale.category20(),l=[{on:"measure.theme",callback:f},{on:"update.theme",callback:c},{on:"mouseover.theme",callback:d},{on:"mouseout.theme",callback:e}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),l.forEach(function(b){a.on(b.on,null)}),a=null)},b.viz=function(b){return arguments.length?(a=b,void h()):a},b.skin=function(a){if(0==arguments.length)return i;if(!m[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return i=m[a],b},b.skins=function(){return m};var m={Fire:{name:"Fire",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:g,line_stroke:function(a,b){return this.stroke_colors[b%5]},line_over_stroke:function(a,b){return d3.rgb(this.stroke_colors[b%5]).brighter()},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.6:.8},area_fill:function(b,c){return"url(#"+vizuly.svg.gradient.fade(a,this.fill_colors[c%5],"vertical",[.35,1]).attr("id")+")"},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.7:.9},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,data_point_stroke:function(a,b){return this.stroke_colors[b%5]},data_point_fill:function(a,b){return"#FFF"},"class":"vz-skin-default"},Sunset:{name:"Sunset",labelColor:"#D8F433",color:"#02C3FF",stroke_colors:["#CD57A4","#B236A3","#FA6F7F","#FA7C3B","#E96B6B"],fill_colors:["#89208F","#C02690","#D93256","#DB3D0C","#B2180E"],grad1:"#390E1D",grad0:"#92203A",background_transition:g,line_stroke:function(a,b){return this.stroke_colors[b%5]},line_over_stroke:function(a,b){return d3.rgb(this.stroke_colors[b%5]).brighter()},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.4:.9},area_fill:function(b,c){return"url(#"+vizuly.svg.gradient.fade(a,this.fill_colors[c%5],"vertical",[.5,1]).attr("id")+")"},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.8:1},xAxis_font_weight:200,yAxis_line_stroke:"#D8F433",yAxis_line_opacity:.25,"class":"vz-skin-default"},Ocean:{name:"Ocean",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#001432","#001432","#001432","#001432","#001432"],grad1:"#390E1D",grad0:"#92203A",background_transition:function(b){a.selection().select(".vz-background").transition(1e3).style("fill-opacity",0)},line_stroke:function(a,b){return"#000"},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return.3},area_fill:function(a,b){return"#FFF"},area_fill_opacity:function(b,c){return(c+1)/a.data().length*(this.layout()==vizuly.viz.layout.OVERLAP?.8:.85)},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,"class":"vz-skin-ocean"},Neon:{name:"Neon",labelColor:"#FFF",color:"#02C3FF",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:g,line_stroke:function(a,b){return"#FFF"},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return this.layout()==vizuly.viz.layout.STREAM?.4:.6},area_fill:function(a,b){return"#D1F704"},area_fill_opacity:function(a,b){return(b+1)/this.data().length*(this.layout()==vizuly.viz.layout.OVERLAP?.6:.8)},xAxis_font_weight:200,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,"class":"vz-skin-default"},Business:{name:"Business",labelColor:"#000",color:"#000",stroke_colors:["#FFA000","#FF5722","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#CCC",grad1:"#EEE",background_transition:g,line_stroke:function(a,b){return d3.rgb(k(b)).darker()},line_over_stroke:function(a,b){return"#FFF"},line_opacity:function(a,b){return.7},area_fill:function(a,b){return k(b)},area_fill_opacity:function(a,b){return this.layout()==vizuly.viz.layout.OVERLAP?.8:.9},xAxis_font_weight:200,yAxis_line_stroke:"#000",yAxis_line_opacity:.25,"class":"vz-skin-default"}};return b},vizuly.theme.radial_progress=function(a){function b(){f()}function c(){if(j){var b=a.selection();b.attr("class",j["class"]),b.selectAll(".vz-radial_progress-arc").style("fill",function(a,b){return j.arc_fill(a,b)}).style("fill-opacity",function(a,b){return j.arc_fill_opacity(a,b)}).style("stroke",function(a,b){return j.arc_stroke(a,b)}),b.selectAll(".vz-radial_progress-track").style("fill",j.track_fill),b.selectAll(".vz-radial_progress-label").style("fill",j.label_color).style("stroke-opacity",0).style("font-size",.25*a.radius())}}function d(b,c,d){a.selection().selectAll(".vz-radial_progress-label").style("font-weight",700)}function e(b,c,d){a.selection().selectAll(".vz-radial_progress-label").style("font-weight",null)}function f(){i.forEach(function(b){a.on(b.on,b.callback)})}function g(){i.forEach(function(b){a.on(b.on,null)})}var h={Alert:{name:"Alert",label_color:"#CCC",track_fill:"#DDDDDD",progress_colors:["#4CAF50","#FFC107","#FF9800","#E64A19","#FFEB3B"],arc_fill:function(a,b){return this.progress_colors[b%5]},arc_fill_opacity:function(a,b){return 1},arc_stroke:function(a,b){return this.progress_colors[b%5]},"class":"vz-skin-alert"},Fire:{name:"Fire",label_color:"#F13870",track_fill:"#DDDDDD",progress_colors:["#C50A0A","#F57C00","#FF9800","#FFEB3B","#C2185B"],arc_fill:function(a,b){return this.progress_colors[b%5]},arc_fill_opacity:function(a,b){return 1},arc_stroke:function(a,b){return this.progress_colors[b%5]},"class":"vz-skin-fire"},White:{name:"White",label_color:"#FFF",track_fill:null,arc_fill:function(a,b){return"#FFF"},arc_fill_opacity:function(a,b){return.85/Math.exp(.75*b)},arc_stroke:function(a,b){return"#FFF"},"class":"vz-skin-white"},Neon:{name:"Neon",label_color:"#D1F704",track_fill:"#000",progress_colors:["#D1F704","#A8C102","#788A04","#566204","#383F04"],arc_fill:function(a,b){return this.progress_colors[b%5]},arc_fill_opacity:function(a,b){return 1},arc_stroke:function(a,b){return this.progress_colors[b%5]},"class":"vz-skin-neon"},Business:{name:"Business",label_color:"#EEE",track_fill:"#DDDDDD",progress_colors:d3.scale.category20(),arc_fill:function(a,b){return this.progress_colors(b)},arc_fill_opacity:function(a,b){return 1},arc_stroke:function(a,b){return this.progress_colors(b)},"class":"vz-skin-business"}},a=a,i=[{on:"update.theme",callback:c},{on:"mouseover.theme",callback:d},{on:"mouseout.theme",callback:e}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),g(),a=null)},b.viz=function(b){return arguments.length?(a&&g(),a=b,void f()):a},b.skin=function(a){if(0==arguments.length)return j;if(!h[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return j=h[a],b},b.skins=function(){return h};var j=h[vizuly.skin.RADIAL_PROGRESS_BUSINESS];return b},vizuly.skin.RADIAL_PROGRESS_FIRE="Fire",vizuly.skin.RADIAL_PROGRESS_MATERIAL="Material",vizuly.skin.RADIAL_PROGRESS_NEON="Neon",vizuly.skin.RADIAL_PROGRESS_OCEAN="Ocean",vizuly.skin.RADIAL_PROGRESS_ALERT="Alert",vizuly.skin.RADIAL_PROGRESS_BUSINESS="Business",vizuly.theme.range_input=function(a){function b(){f()}function c(){if(j){var b=a.selection();b.attr("class",j["class"]),b.selectAll(".vz-range_input-handle").style("cursor","pointer"),b.selectAll(".vz-range_input-centerpane").style("cursor","pointer"),b.selectAll(".vz-range_input-track").style("opacity",0)}}function d(a,b,c){}function e(a,b,c){}function f(){i.forEach(function(b){a.on(b.on,b.callback)})}function g(){i.forEach(function(b){a.on(b.on,null)})}var h={Default:{name:"Default",label_color:"#CCC"}},a=a,i=[{on:"update.theme",callback:c},{on:"mouseover.theme",callback:d},{on:"mouseout.theme",callback:e}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),g(),a=null)},b.viz=function(b){return arguments.length?(a&&g(),a=b,void f()):a},b.skin=function(a){if(0==arguments.length)return j;if(!h[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return j=h[a],b},b.skins=function(){return h};var j=h.Default;return b},vizuly.skin.SCATTER_NEON="Neon",vizuly.skin.SCATTER_FIRE="Fire",vizuly.skin.SCATTER_OCEAN="Ocean",vizuly.skin.SCATTER_SUNSET="Sunset",vizuly.skin.SCATTER_BUSINESS="Business",vizuly.theme.scatter=function(a){function b(){h()}function c(){if(i){var b=a.width(),c=Math.min(a.width(),a.height())/80,d=a.selection();d.attr("class",i["class"]),d.selectAll(".vz-background").attr("fill",function(){return"url(#"+j.attr("id")+")"}),d.selectAll(".vz-plot-background").style("opacity",0),d.selectAll(".vz-scatter-bottom-axis").style("font-weight",i.xAxis_font_weight).style("fill",i.labelColor).style("font-size",Math.max(8,Math.round(b/85))+"px").style("opacity",function(){return b>399?1:0}),d.selectAll(".vz-scatter-left-axis line").style("stroke",i.yAxis_line_stroke).style("stroke-width",1).style("opacity",i.yAxis_line_opacity),d.selectAll(".vz-scatter-left-axis text").style("font-size",Math.max(8,Math.round(b/85))+"px").style("fill",i.labelColor).style("fill-opacity",.6),d.selectAll(".vz-scatter-node").style("stroke-width",c).style("stroke-opacity",0).style("stroke",function(a,b){return i.node_stroke(a,b)}).style("fill",function(a,b){return i.node_fill(a,b)}).style("fill-opacity",function(a,b){return i.node_fill_opacity(a,b)}),i.background_transition()}}function d(){a.yAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).width).orient("left"),a.xAxis().tickSize(-vizuly.core.util.size(a.margin(),a.width(),a.height()).width)}function e(b,c,d){a.selection().selectAll(".vz-scatter-node").style("opacity",.15),d3.select(b).style("opacity",1).style("stroke-opacity",.5).style("fill-opacity",.9),l.mouseover(b,c,d)}function f(b,c,d){d3.select(b).style("opacity",1).style("fill-opacity",function(a,b){return i.node_fill_opacity(a,b)}),a.selection().selectAll(".vz-scatter-node").style("stroke-opacity",0).style("opacity",1)}function g(){a.selection().selectAll(".vz-background").style("fill-opacity",1),j.selectAll("stop").transition().duration(500).attr("stop-color",function(a,b){return 0==b?i.grad0:i.grad1})}function h(){k.forEach(function(b){a.on(b.on,b.callback)})}var a=a,i=null,j=vizuly.svg.gradient.blend(a,"#000","#000"),k=[{on:"measure.theme",callback:d},{on:"update.theme",callback:c},{on:"mouseover.theme",callback:e},{on:"mouseout.theme",callback:f}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(a.selection().attr("class",null),k.forEach(function(b){a.on(b.on,null)}),a=null)},b.viz=function(b){return arguments.length?(a=b,void h()):a},b.skin=function(a){if(0==arguments.length)return i;if(!m[a])throw new Error("theme/linearea.js - skin "+a+" does not exist.");return i=m[a],b},b.skins=function(){return m};var l=d3.dispatch("mouseover","mouseout");b.on=function(a,c){return l.on(a,c),b};var m={Fire:{name:"Fire",labelColor:"#FFF",labelFill:"#C50A0A",stroke_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],fill_colors:["#C50A0A","#C2185B","#F57C00","#FF9800","#FFEB3B"],grad0:"#000000",grad1:"#474747",background_transition:g,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,node_stroke:function(a,b){return this.stroke_colors[b%5]},node_fill:function(a,b){return this.fill_colors[b%5]},node_fill_opacity:function(a,b){return.5},"class":"vz-skin-fire"},Sunset:{name:"Sunset",labelColor:"#FFF",labelFill:"#00236C",stroke_colors:["#CD57A4","#B236A3","#FA6F7F","#FA7C3B","#E96B6B"],fill_colors:["#89208F","#C02690","#D93256","#DB3D0C","#B2180E"],grad1:"#390E1D",grad0:"#7C1B31",background_transition:g,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,node_stroke:function(a,b){return this.stroke_colors[b%5]},node_fill:function(a,b){return this.fill_colors[b%5]},node_fill_opacity:function(a,b){return.7},"class":"vz-skin-sunset"},Neon:{name:"Neon",labelColor:"#FFF",labelFill:"#005",grad0:"#000000",grad1:"#474747",background_transition:g,yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,node_stroke:function(a,b){return"#FFF"},node_fill:function(a,b){return"#D1F704"},node_fill_opacity:function(a,b){return.6},"class":"vz-skin-neon"},Ocean:{name:"Ocean",labelColor:"#FFF",labelFill:"#000",background_transition:function(b){a.selection().select(".vz-background").transition(1e3).style("fill-opacity",0)},yAxis_line_stroke:"#FFF",yAxis_line_opacity:.25,node_stroke:function(a,b){return"#00F"},node_fill:function(a,b){return"#FFF"},node_fill_opacity:function(a,b){return.4},"class":"vz-skin-ocean"}};return b},vizuly.theme.weighted_tree=function(a){function b(){h()}function c(){if(o){var b=a.selection();j=Math.max(8,Math.round(a.width()/75)),b.selectAll(".vz-weighted_tree-node circle").style("stroke",function(a){return o.node_stroke(a)}).style("stroke-opacity",function(a){return o.node_stroke_opacity(a)}).style("fill",function(a){return o.node_fill(a)}).style("fill-opacity",function(a){return o.node_fill_opacity(a)}),b.selectAll(".vz-weighted_tree-node text").style("font-size",o.font_size()).style("fill",o.label_color).style("fill-opacity",function(a){return o.text_fill_opacity(a)}),b.selectAll(".vz-weighted_tree-link").style("stroke",function(a){return o.link_stroke(a)}).style("stroke-opacity",function(a){return o.link_stroke_opacity(a)})}}function d(){if(o&&a.data()){var b=a.data();a.children()(b).forEach(function(a,b){a.vz_link_color=o.link_colors[b%o.link_colors.length],e(a)}),l=!1,m=!1}}function e(b){a.children()(b)&&a.children()(b).forEach(function(a){a.vz_link_color=b.vz_link_color,e(a)})}function f(b,c,d){var e=a.selection();e.selectAll(".vz-id-"+c.vz_tree_id+" circle").style("fill-opacity",.9),e.selectAll("path.vz-id-"+c.vz_tree_id).style("stroke-opacity",.8),e.selectAll(".vz-id-"+c.vz_tree_id+" text").transition().style("font-size",1.25*j).style("font-weight","bold")}function g(b,c,d){var e=a.selection();e.selectAll(".vz-weighted_tree-node circle").style("fill",function(a){return o.node_fill(a)}).style("fill-opacity",function(a){return o.node_fill_opacity(a)}),e.selectAll(".vz-weighted_tree-node text").transition().style("font-size",j).style("font-weight","normal"),e.selectAll(".vz-weighted_tree-link").style("stroke-opacity",function(a){return o.link_stroke_opacity(a)})}function h(){n.forEach(function(b){a.on(b.on,b.callback)})}function i(){n.forEach(function(b){a.on(b.on,null)})}var j,k={Axiis:{name:"Axiis",label_color:"#333",link_colors:["#bd0026","#fecc5c","#fd8d3c","#f03b20","#B02D5D","#9B2C67","#982B9A","#692DA7","#5725AA","#4823AF","#d7b5d8","#dd1c77","#5A0C7A","#5A0C7A"],link_stroke:function(a,b){return a.target.vz_link_color},link_stroke_opacity:function(b,c){return a.value()(b.target)<=0?.15:.35},node_fill:function(a,b){return a.vz_link_color},node_fill_opacity:function(b,c){return a.value()(b)<=0?.15:.4},node_stroke:function(a,b){return a.vz_link_color},node_stroke_opacity:function(a,b){return.6},text_fill_opacity:function(b,c){return a.value()(b)<=0?.35:1},font_size:function(){return j+"px"}},None:{name:"None",label_color:null,link_colors:["#bd0026","#fecc5c","#fd8d3c","#f03b20","#B02D5D","#9B2C67","#982B9A","#692DA7","#5725AA","#4823AF","#d7b5d8","#dd1c77","#5A0C7A","#5A0C7A"],link_stroke:function(a,b){return null},link_stroke_opacity:function(a,b){return null},node_fill:function(a,b){return null},node_fill_opacity:function(a,b){return null},node_stroke:function(a,b){return null},node_stroke_opacity:function(a,b){return null},text_fill_opacity:function(a,b){return null},font_size:function(){return null}}},a=a,l=!0,m=!0,n=[{on:"update.theme",callback:c},{on:"data_prepped.theme",callback:d},{on:"mouseover.theme",callback:f},{on:"mouseout.theme",callback:g}];b(),b.apply=function(a){return arguments.length>0&&b.skin(a),c(),b},b.release=function(){a&&(o=k.None,c(),i(),a=null)},b.viz=function(b){return arguments.length?(a&&i(),a=b,void h()):a},b.skin=function(a){if(0==arguments.length)return o;if(!k[a])throw new Error("theme/weightedtree.js - skin "+a+" does not exist.");return l=!0,o=k[a],b},b.skins=function(){return k};var o=k[vizuly.skin.WEIGHTED_TREE_AXIIS];return b},vizuly.skin.WEIGHTED_TREE_AXIIS="Axiis",vizuly.ui.range_input=function(a){function b(){l=h.selection.append("svg").attr("id",h.id).style("overflow","auto").attr("class","vizuly"),m=vizuly.core.util.getDefs(j),n=l.append("rect").attr("class","vz-background"),o=l.append("g").attr("class","vz-range_input"),p=o.append("g").attr("class","vz-plot"),v=p.append("rect").attr("class","vz-range_input-track"),s=p.append("rect").attr("class","vz-range_input-sidepane"),t=p.append("rect").attr("class","vz-range_input-centerpane"),u=p.append("rect").attr("class","vz-range_input-sidepane"),q=p.append("rect").attr("class","vz-range_input-handle"),r=p.append("rect").attr("class","vz-range_input-handle"),q.call(z),r.call(A),t.call(B),h.dispatch.initialize()}function c(){j.validate(),k=vizuly.core.util.size(h.margin,h.width,h.height),y.range([0,k.width]),y.domain(h.domain),w=Math.round(k.height*h.trackHeight),x=h.handleWidth,h.dispatch.measure()}function d(){c(),l.attr("width",h.width).attr("height",h.height),n.attr("width",h.width).attr("height",h.height),p.style("width",k.width).style("height",k.height).attr("transform","translate("+k.left+","+k.top+")"),v.attr("width",k.width).attr("height",w).attr("y",(k.height-w)/2),q.attr("width",x).attr("height",k.height).attr("x",y(h.data[0])),r.attr("width",x).attr("height",k.height).attr("x",y(h.data[1])),s.attr("width",y(h.data[0])).attr("height",k.height),u.attr("width",k.width-y(h.data[1])).attr("height",k.height).attr("x",y(h.data[1])),t.attr("width",y(h.data[1])-y(h.data[0])).attr("height",k.height).attr("x",y(h.data[0])),h.dispatch.update()}function e(){var a=y.invert(d3.event.x);a=Math.min(h.data[1]-y.invert(x),Math.max(a,h.domain[0])),h.data[0]=a,h.dispatch.change(j),d()}function f(){var a=y.invert(d3.event.x);a=Math.max(h.data[0]+y.invert(x),Math.min(a,h.domain[1])),h.data[1]=a,h.dispatch.change(j),d()}function g(){var a=y.invert(d3.event.dx)+h.data[0];a=Math.min(h.data[1],Math.max(a,h.domain[0]));var b=h.data[1]-h.data[0];a=Math.min(h.domain[1]-b,a),h.data[0]=a,h.data[1]=a+b,h.dispatch.change(j),d()}var h={},i={data:[.25,.75],margin:{top:"10%",bottom:"7%",left:"8%",right:"7%"},domain:[0,1],duration:500,width:300,height:300,handleWidth:3,trackHeight:.1},j=vizuly.core.component(a,h,i,["change","handleOver","handleOut"]);j.type="viz.ui.range_input";var k,l,m,n,o,p,q,r,s,t,u,v,w,x,y=d3.scale.linear(),z=d3.behavior.drag(),A=d3.behavior.drag(),B=d3.behavior.drag();return z.on("drag",e),A.on("drag",f),B.on("drag",g),b(),j.update=function(){return d(),j},j};var data=stm_data;var id_i=0;function createIDs(o){o.id=id_i;id_i=id_i+1;if(o.children){for(i in o.children){o.id=id_i;id_i=id_i+1;createIDs(o.children[i])}}}createIDs(data);
+</script>
+
+<script>
+		function computeClustProportions(o) {
+    if (o.this_root) {
+        for (var i in o.children) {
+            if (!o.children[i].proportion)
+                computeClustProportions(o.children[i])
+        }
+    } else if (!o.proportion) {
+        var clust_proportion = 0;
+        for (var i in o.children) {
+            clust_proportion += computeClustProportions(o.children[i])
+        }
+        o.proportion = clust_proportion;
+        return clust_proportion
+    } else if (o.proportion) {
+        return Number(o.proportion)
+    }
+}
+
+function combineMetrics(prob, frex, lift, score) {
+    combined = [...frex.slice().split(', '), ...lift.slice().split(', '), ...prob.slice().split(', '), ...score.slice().split(', ')]
+    result = {};
+    for (var i = 0; i < combined.length; ++i) {
+        if (!result[combined[i]])
+            result[combined[i]] = 0;
+        weight = 7 - i % 7 + 1
+        result[combined[i]] += weight
+    }
+    return (Object.keys(result).sort(function(a, b) {
+        return result[b] - result[a]
+    }).join(', '))
+}
+var labels = {
+    'topics': {},
+    'clusters': {}
+}
+clustCount = 1;
+
+function initLabels(o) {
+    if (o.children) {
+        if (!o.this_root) {
+            labels.clusters[o.id.toString()] = {
+                id: o.id,
+                topics: o.topic_no,
+                clustNum: clustCount,
+                name: o.name.toString()
+            };
+            clustCount = clustCount + 1
+        }
+        for (var i in o.children) {
+            initLabels(o.children[i])
+        }
+    } else {
+        labels.topics[o.topic_no] = {
+            name: o.name.toString(),
+            combined: combineMetrics(o.prob[0], o.frex[0], o.lift[0], o.score[0]),
+            prevalence: parseFloat(o.proportion[0])
+        }
+    }
+}
+
+function findWords(o) {
+    if (o.children) {
+        if (!o.this_root) {
+            topic_prevalences = [];
+            for (var i = 0; i < o.topic_no.length; i++) {
+                topic_prevalences.push(labels.topics[o.topic_no[i]].prevalence)
+            }
+            sorted_prevs = topic_prevalences.slice().sort().reverse()
+            duplicates = !0
+            while (duplicates) {
+                duplicates = !1
+                for (var i = 0; i < sorted_prevs.length; i++) {
+                    if (sorted_prevs[i] == sorted_prevs[i + 1]) {
+                        to_add = 1
+                        if (i > 0 && sorted_prevs[i] == Math.round(100 * sorted_prevs[i - 1]) / 100) {
+                            to_add = (10000 * (sorted_prevs[i - 1] - sorted_prevs[i])) + 1
+                        }
+                        to_add *= 0.0001
+                        topic_prevalences[topic_prevalences.indexOf(sorted_prevs[i])] = topic_prevalences[topic_prevalences.indexOf(sorted_prevs[i])] + to_add
+                        sorted_prevs[i] = sorted_prevs[i] + to_add
+                    }
+                }
+            }
+            num_words_per_topic = Math.ceil(8 / o.topic_no.length)
+            cluster_words = new Array(num_words_per_topic * o.topic_no.length)
+            for (j = 0; j < num_words_per_topic; j++) {
+                for (i = 0; i < o.topic_no.length; i++) {
+                    ith_top_topic = topic_prevalences.indexOf(sorted_prevs[i])
+                    cluster_words[i + j * o.topic_no.length] = labels.topics[o.topic_no[ith_top_topic]].combined.split(', ').slice(j, j + 1).toString()
+                }
+            }
+            labels.clusters[o.id.toString()].words = cluster_words.slice(0, 8).join(', ')
+        }
+        for (var i in o.children) {
+            findWords(o.children[i])
+        }
+    }
+}
+initLabels(data);
+findWords(data);
+
+function trimLabel(label) {
+    return label
+    // return (String(label).length >= 18) ? String(label).substr(0, 16).trim() + "…" : label
+}
+var width_left;
+vizuly.viz.weighted_tree = function(parent) {
+    var scope = {};
+    var properties = {
+        "data": null,
+        "margin": {
+            "top": "20%",
+            "bottom": "25%",
+            "left": "13%",
+            "right": "30%"
+        },
+        "width": 1280,
+        "height": 900,
+        "key": null,
+        "tree": d3.layout.tree(),
+        "children": null,
+        "duration": 500,
+        "value": null,
+        "label": labelFunction,
+        "branchPadding": -1,
+        "fixedSpan": -1
+    };
+    var labelFunction = function(d, i) {
+        return d
+    };
+    var viz = vizuly.core.component(parent, scope, properties, ['node_refresh', 'data_prepped']);
+    viz.type = "viz.chart.weighted_tree";
+    var dataIsDirty = !0;
+    var refreshNeeded = !1;
+    viz.on("data_change.internal", onDataChanged);
+    var size;
+    var tree = scope.tree;
+    var nodeScale = d3.scale.sqrt();
+    var root, nodes;
+    var depthSpan;
+    var maxDepth;
+    var maxValues = {};
+    var minValues = {};
+    var diagonal = d3.svg.diagonal().projection(function(d) {
+        return [d.y, d.x]
+    });
+    var nodeRadius = function(node) {
+        if (node.depth == 0) return 95;
+        return (Math.max(scope.value(node) * 100, 10))
+    }
+    var svg, g, background, plot, plotBackground, linkPlot, nodePlot, defs;
+    initialize();
+
+    function initialize() {
+        scope.selection.attr("class", "vz-weighted_tree-viz");
+        svg = scope.selection.append("svg").attr("id", scope.id).style("overflow", "auto").attr("class", "vizuly vz-weighted_tree-viz");
+        defs = vizuly.core.util.getDefs(viz);
+        background = svg.append("g").attr("class", "vz-background");
+        g = svg.append("g").attr("class", "vz-weighted_tree-viz");
+        plot = g.append("g").attr("class", "vz-weighted_tree-plot");
+        plotBackground = plot.append("rect").attr("class", "vz-plot-background");
+        linkPlot = plot.append("g").attr("class", "vz-weighted_tree-link-plot");
+        nodePlot = plot.append("g").attr("class", "vz-weighted_tree-node-plot");
+        scope.dispatch.initialize()
+    }
+
+    function measure() {
+        viz.validate();
+        size = vizuly.core.util.size(scope.margin, scope.width, scope.height * 0.6);
+        tree.size([size.height, size.width]);
+        if (dataIsDirty == !0 || refreshNeeded) {
+            refreshData();
+            if (dataIsDirty == !0) {
+                function collapse(d) {
+                    if (d.children) {
+                        d._children = d.children;
+                        d._children.forEach(collapse);
+                        d.children = null
+                    }
+                }
+                root.children.forEach(collapse)
+            }
+            dataIsDirty = !1;
+            refreshNeeded = !1
+        }
+        var scale;
+        if (scope.branchPadding == -1) {
+            scale = Math.min(size.height, size.width) / scope.children(scope.data).length
+        } else {
+            scale = Math.min(size.height, size.width) * scope.branchPadding
+        }
+        nodeScale.range([1.5, scale / 2]);
+        tree.nodeSize([scale, 0]);
+        depthSpan = (scope.fixedSpan > 0) ? scope.fixedSpan : size.width / (maxDepth + 1);
+        for (var i = 1; i < maxDepth + 1; i++) {
+            var vals = nodes.filter(function(d) {
+                return d.depth == i
+            });
+            maxValues[i] = d3.max(vals, function(d) {
+                return scope.value(d)
+            });
+            minValues[i] = d3.min(vals, function(d) {
+                return scope.value(d)
+            })
+        }
+        scope.dispatch.measure()
+    }
+
+    function refreshData() {
+        function setChildren(node) {
+            if (scope.children(node)) {
+                if (!node._children) {
+                    node.children = scope.children(node);
+                    node.children.forEach(function(d) {
+                        d.x0 = node.x;
+                        d.y0 = node.y;
+                        setChildren(d)
+                    })
+                }
+            }
+        }
+        maxDepth = 0;
+        setChildren(scope.data);
+        root = scope.data;
+        root.x0 = 0;
+        root.y0 = 0;
+        nodes = tree.nodes(root).reverse();
+        nodes.forEach(function(node) {
+            if (node.depth == 0) return;
+            if (!maxValues[node.depth]) {
+                maxValues[node.depth] = -Infinity;
+                minValues[node.depth] = Infinity
+            }
+            maxDepth = Math.max(maxDepth, node.depth)
+        })
+        scope.dispatch.data_prepped()
+    }
+
+    function onDataChanged() {
+        dataIsDirty = !0
+    }
+
+    function update(refresh) {
+        measure();
+        svg.attr("width", scope.width).attr("height", scope.height);
+        background.attr("width", scope.width).attr("height", scope.height);
+        plot.style("width", size.width).style("height", size.height).attr("transform", "translate(" + size.left * 1.5 + "," + (size.top + size.height / 1.8) + ")");
+        width_left = size.left * 1.5
+        updateNode(root)
+    }
+
+    function updateNode(rootNode) {
+        var nodes = tree(root).reverse();
+        var links = tree.links(nodes);
+        positionNodes(rootNode, nodes);
+        var node = nodePlot.selectAll(".vz-weighted_tree-node").data(nodes, function(d) {
+            return d.vz_tree_id || (d.vz_tree_id = scope.key(d))
+        });
+        var nodeEnter = node.enter().append("g").attr("class", function(d) {
+            return "vz-weighted_tree-node vz-id-" + d.vz_tree_id
+        }).attr("transform", function(d) {
+            var y = d.y0 ? d.y0 : rootNode.y0;
+            var x = d.x0 ? d.x0 : rootNode.x0;
+            return "translate(" + y + "," + x + ")"
+        }).on("click", function(d, i) {
+            scope.dispatch.click(this, d, i)
+        }).on("dblclick", function(d, i) {
+            scope.dispatch.dblclick(this, d, i)
+        }).on("mouseover", function(d, i) {
+            scope.dispatch.mouseover(this, d, i)
+        }).on("mouseout", function(d, i) {
+            scope.dispatch.mouseout(this, d, i)
+        });
+        nodeEnter.append("text").attr("x", function(d) {
+            return -15
+        }).attr("dy", function(d) {
+            if (!scope.value(d))
+                return (-1)
+            if (scope.value(d) <= 0.1)
+                return (-15);
+            x = scope.value(d)
+            t = -496.6646657 * Math.pow(x, 4) + 915.0415264 * Math.pow(x, 3) - 560.372921 * Math.pow(x, 2) + 29.462983 * x - 13.84740307
+            return (t)
+        }).attr("text-anchor", function(d) {
+            return d.children || "start"
+        }).attr("id", function(d) {
+            return "node_" + scope.key(d) + '_text'
+        }).style("pointer-events", "none").style("fill", "#222").text(function(d) {
+            if (scope.value(d)) {
+                if (d.topic_no.length == 1) {
+                    return (scope.label(d))
+                }
+                if (labels.clusters[d.id].name.split(', ').length >= 6)
+                    return (trimLabel(labels.clusters[d.id].words))
+                return (trimLabel(labels.clusters[d.id].name))
+            }
+            return ('')
+        });
+        nodeEnter.append("circle").attr("class", "vz-weighted_tree-node-circle").attr("r", 10).style("cursor", "pointer");
+        nodeEnter.append("text").attr("x", function(d) {
+            if (!scope.value(d)) return -50;
+            return scope.value(d) < 0.1 ? -5 : -11
+        }).attr("dy", 6).style("fill", "white").style("stroke", "white").style("pointer-events", "none").text(function(d) {
+            text = Math.round(scope.value(d) * 100).toString();
+            return (scope.value(d) ? text : '')
+        });
+        var link = linkPlot.selectAll(".vz-weighted_tree-link").data(links, function(d) {
+            return d.target.vz_tree_id
+        });
+        link.enter().append("path").attr("class", function(d) {
+            return "vz-weighted_tree-link vz-id-" + d.target.vz_tree_id
+        }).attr("d", function(d) {
+            var y = d.target.y0 ? d.target.y0 : rootNode.y0;
+            var x = d.target.x0 ? d.target.x0 : rootNode.x0;
+            var o = {
+                x: x,
+                y: y
+            };
+            return diagonal({
+                source: o,
+                target: o
+            })
+        }).on("mouseover", function(d, i) {
+            scope.dispatch.mouseover(this, d, i)
+        }).on("mouseout", function(d, i) {
+            scope.dispatch.mouseout(this, d, i)
+        }).style("stroke-linecap", "round");
+        scope.dispatch.update();
+        var nodeUpdate = node.transition();
+        endUpdate(nodeUpdate, function() {
+            scope.dispatch.node_refresh()
+        });
+        nodeUpdate.duration(scope.duration).attr("transform", function(d) {
+            return "translate(" + d.y + "," + d.x + ")"
+        });
+        nodeUpdate.select("circle").attr("r", function(d) {
+            return nodeRadius(d)
+        });
+        var nodeExit = node.exit().transition().duration(scope.duration).attr("transform", function(d) {
+            d.x0 = null;
+            d.y0 = null;
+            return "translate(" + rootNode.y + "," + rootNode.x + ")"
+        }).remove();
+        nodeExit.select("circle").attr("r", 1e-6);
+        nodeExit.select("text");
+        link.transition().duration(scope.duration).attr("d", diagonal).style("stroke-width", function(d) {
+            return nodeRadius(d.target) * 2
+        });
+        link.exit().transition().duration(scope.duration).attr("d", function(d) {
+            var o = {
+                x: rootNode.x,
+                y: rootNode.y
+            };
+            return diagonal({
+                source: o,
+                target: o
+            })
+        }).remove();
+        nodes.forEach(function(d) {
+            d.x0 = d.x;
+            d.y0 = d.y
+        })
+    }
+
+    function positionNodes(rootNode, nodes) {
+        var minY = d3.min(nodes, function(d) {
+            return d.x
+        });
+        var maxY = d3.max(nodes, function(d) {
+            return d.x
+        });
+        var maxX = d3.max(nodes, function(d) {
+            return d.depth
+        }) * depthSpan;
+        var h = Math.max(scope.height, maxY - minY + size.top);
+        var w = Math.max(window.innerWidth);
+        if (size.height / 2 + maxY > h) h = size.height / 2 + maxY + tree.nodeSize()[0];
+        svg.transition().duration(scope.duration).style("height", h + "px").style("width", w + "px");
+        var offsetY = Math.max(0, -minY - size.height / 2) + tree.nodeSize()[0] / 2;
+        nodes.forEach(function(d) {
+            d.y = d.depth * depthSpan;
+            d.x = d.x + offsetY - tree.nodeSize()[0]
+        });
+        scrollTop(rootNode.x)
+    }
+
+    function endUpdate(transition, callback) {
+        var n = 0;
+        transition.each(function() {
+            ++n
+        }).each("end", function() {
+            if (!--n) callback.apply(this, arguments)
+        })
+    }
+
+    function scrollTop(top) {
+        scope.selection.transition().duration(scope.duration).tween("scrolltween", scrollTopTween(top));
+
+        function scrollTopTween(scrollTop) {
+            return function() {
+                var i = d3.interpolateNumber(this.scrollTop, scrollTop);
+                return function(t) {
+                    this.scrollTop = i(t)
+                }
+            }
+        }
+    }
+
+    function toggleNode(d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null
+        } else {
+            d.children = d._children;
+            d._children = null
+        }
+        updateNode(d)
+    }
+    viz.update = function(refresh) {
+        if (refresh == !0) refreshNeeded = !0;
+        update();
+        return viz
+    };
+    viz.toggleNode = function(d) {
+        toggleNode(d)
+    };
+    return viz
+};
+vizuly.theme.weighted_tree = function(viz) {
+    var skins = {
+        "Axiis": {
+            name: "Axiis",
+            label_color: "#222",
+            node_colors: ["#09f"],
+            link_colors: ["#09f"],
+            link_stroke: function(d, i) {
+                return d.target.vz_link_color
+            },
+            link_stroke_opacity: function(d, i) {
+                if (viz.value()(d.target) <= 0) return .15;
+                return 0.4
+            },
+            node_fill: function(d, i) {
+                return d.vz_node_color
+            },
+            node_fill_opacity: function(d, i) {
+                if (viz.value()(d) <= 0) return .15;
+                return 1
+            },
+            node_stroke: function(d, i) {
+                return d.vz_node_color
+            },
+            node_stroke_opacity: function(d, i) {
+                return 1
+            },
+            text_fill_opacity: function(d, i) {
+                if (viz.value()(d) <= 0) return .35;
+                return 1
+            },
+            font_size: function() {
+                return fontSize + "px"
+            }
+        }
+    }
+    var viz = viz;
+    var fontSize;
+    var skinDirty = !0;
+    var dataDirty = !0;
+    var callbacks = [{
+        on: "update.theme",
+        callback: applyTheme
+    }, {
+        on: "data_prepped.theme",
+        callback: prepColorData
+    }, {
+        on: "mouseover.theme",
+        callback: onMouseOver
+    }, {
+        on: "mouseout.theme",
+        callback: onMouseOut
+    }];
+    theme();
+
+    function theme() {
+        applyCallbacks()
+    }
+
+    function applyTheme() {
+        if (!skin) return;
+        var selection = viz.selection();
+        min_dim = (viz.width() < viz.height() ? viz.width : viz.height())
+        fontSize = Math.max(8, Math.round(viz.width() / 90));
+        selection.selectAll(".vz-weighted_tree-node circle").style("stroke", function(d) {
+            return skin.node_stroke(d)
+        }).style("stroke-opacity", function(d) {
+            return skin.node_stroke_opacity(d)
+        }).style("fill", function(d) {
+            return skin.node_fill(d)
+        }).style("fill-opacity", function(d) {
+            return skin.node_fill_opacity(d)
+        });
+        selection.selectAll(".vz-weighted_tree-node text").style("font-size", skin.font_size()).style("fill-opacity", function(d) {
+            return skin.text_fill_opacity(d)
+        });
+        selection.selectAll(".vz-weighted_tree-link").style("stroke", function(d) {
+            return skin.link_stroke(d)
+        }).style("stroke-opacity", function(d) {
+            return skin.link_stroke_opacity(d)
+        })
+    }
+
+    function prepColorData() {
+        if (!skin || !viz.data()) return;
+        var nodes = viz.data();
+        viz.children()(nodes).forEach(function(node, i) {
+            node.vz_link_color = skin.link_colors[i % skin.link_colors.length];
+            node.vz_node_color = skin.node_colors[i % skin.node_colors.length];
+            setLinkColor(node)
+        });
+        skinDirty = !1;
+        dataDirty = !1
+    }
+
+    function setLinkColor(node) {
+        if (!viz.children()(node)) return;
+        viz.children()(node).forEach(function(child) {
+            child.vz_link_color = node.vz_link_color;
+            child.vz_node_color = node.vz_node_color;
+            setLinkColor(child)
+        })
+    }
+
+    function onMouseOver(e, d, i) {
+        var selection = viz.selection();
+        selection.selectAll(".vz-id-" + d.vz_tree_id + " circle").style("fill-opacity", .9);
+        selection.selectAll("path.vz-id-" + d.vz_tree_id).style("stroke-opacity", .8);
+        selection.selectAll(".vz-id-" + d.vz_tree_id + " text").transition().style("font-size", fontSize * 1.25).style("font-weight", "bold")
+    }
+
+    function onMouseOut(e, d, i) {
+        var selection = viz.selection();
+        selection.selectAll(".vz-weighted_tree-node circle").style("fill", function(d) {
+            return skin.node_fill(d)
+        }).style("fill-opacity", function(d) {
+            return skin.node_fill_opacity(d)
+        })
+        selection.selectAll(".vz-weighted_tree-node text").transition().style("font-size", fontSize).style("font-weight", "normal");
+        selection.selectAll(".vz-weighted_tree-link").style("stroke-opacity", function(d) {
+            return skin.link_stroke_opacity(d)
+        })
+    }
+
+    function applyCallbacks() {
+        callbacks.forEach(function(d) {
+            viz.on(d.on, d.callback)
+        })
+    }
+
+    function removeCallbacks() {
+        callbacks.forEach(function(d) {
+            viz.on(d.on, null)
+        })
+    }
+    theme.apply = function(skin) {
+        if (arguments.length > 0)
+            theme.skin(skin);
+        applyTheme();
+        return theme
+    }
+    theme.release = function() {
+        if (!viz) return;
+        skin = skins.None;
+        applyTheme();
+        removeCallbacks();
+        viz = null
+    };
+    theme.viz = function(_) {
+        if (!arguments.length) {
+            return viz
+        }
+        if (viz) {
+            removeCallbacks()
+        }
+        viz = _;
+        applyCallbacks()
+    }
+    theme.skin = function(_) {
+        if (arguments.length == 0) {
+            return skin
+        }
+        if (skins[_]) {
+            skinDirty = !0;
+            skin = skins[_]
+        } else throw new Error("theme/weightedtree.js - skin " + _ + " does not exist.");
+        return theme
+    }
+    theme.skins = function() {
+        return skins
+    }
+    var skin = skins[vizuly.skin.WEIGHTED_TREE_AXIIS];
+    return theme
+}
+vizuly.skin.WEIGHTED_TREE_AXIIS = "Axiis";
+var viz_container;
+var viz;
+var theme;
+toolTipIdStack = [];
+
+function openTree(o) {
+    if (o.children) {
+        for (i in o.children) {
+            viz.toggleNode(o.children[i])
+            openTree(o.children[i])
+        }
+    }
+}
+
+function initialize_graph(data) {
+    computeClustProportions(data);
+    viz = vizuly.viz.weighted_tree(document.getElementById("viz_container"));
+    theme = vizuly.theme.weighted_tree(viz).skin(vizuly.skin.WEIGHTED_TREE_AXIIS);
+    console.log(data);
+    viz.data(data).width(600).height(600).children(function(d) {
+        return d.children
+    }).key(function(d) {
+        return d.id
+    }).value(function(d) {
+        return Number(d.proportion)
+    }).fixedSpan(-1).branchPadding(-1).label(function(d) {
+        return trimLabel(d.name.toString())
+    }).on("measure", onMeasure).on("click", click);
+    changeSize();
+    openTree(data)
+    console.log(data.id)
+    // createDataTipQuestion(20, 20, data.name.toString(), data.summary.toString(), data.id);
+    // toolTipIdStack.push(-1)
+    // d3.select("body").append("div").attr('id', 'labeler').style("position", "fixed").style("top", "0%").style("left", "0%").style("opacity", 0).html('<div class="sidebar" style="display: flex; position:fixed;flex-direction: column; justify-content:center;width: ' + (width_left * 1.1) + 'px; overflow-y:scroll;top:0;bottom:0;direction:rtl;height:' + window.innerHeight + ';background-opacity:0.5">' + '<div>' + '<div class="header1 sidebar-item" style="font-size:20px;font-weight:bold; padding: 15px 15px 10px 15px">' + data.name[0] + '</div>' + '<div class="header2 sidebar-item" style="font-size: 0.66em;padding:0px 4px 5px 4px">' + data.summary[0] + ' (after removing stop words).</div>' + '<button class="sidebar-item" type="button" onclick="download(\'labels\')" style="display: block; margin: 0 auto 0 auto; font-size: 15px">download labels</button>' + '</div>' + '<div style="padding:5px"></div>' + '<div class="sidebar-rule"></div>' + '<div style="padding:10px"></div>' + '<div>' + '<div class="header2 sidebar-item" style="font-size:18px;font-weight:bold;color:#444">STM Tree Overview</div>' + '<div class="thoughts sidebar-item" style="padding: 4px 4px 15px 4px; text-align:center;font-size:15px">This is a structural topic model visualization, with hierarchical topic clusters. The leaf nodes are topics, the branching nodes are topic clusters, and the numbers are the total prevalence of the topic or cluster as a percentage all the documents. The large partially obscured node represents the entire body of texts. The clusters signify that the connected topics are more likely to co-occur in a single response (each response contains a mixture of multiple topics). Click on any node for more information.</div>' + '</div>' + '</div>').transition().style("opacity", 1)
+   // creates left hand sidebar
+}
+
+function checkAllDone(str) {
+    done = !0
+    if (str === 'topics') {
+        for (i = 1; i <= labels.topics.length; i++) {
+            if ((labels.topics[i].name.toString().split(",").length - 1) === 6)
+                done = !1
+        }
+    } else {
+        for (i in labels.clusters) {
+            if ((labels.clusters[i].name.toString().split(",").length - 1) === 6)
+                done = !1
+        }
+    }
+    if (done)
+        console.log('done with ' + str)
+}
+
+function createDataTipTopic(x, y, prop, name, prob, frex, lift, score, thoughts, proportions, id, d) {
+    var datatip_topic = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
+    
+    if (d.summary !== undefined) {
+        datatip_topic += '<div class="header2" style="font-weight:bold;">Topic Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
+    }
+    
+    datatip_topic += '<div class="header2" style="font-weight:bold;">Representative Words<sup style="color:#999" title="The most representative words calculated by various metrics (probability, frex, lift, score), then weighted and combined">?</sup></div><div class="header2"> <div style="margin: 0px 45px 0px 45px"> <words> </div></div><div class="header-rule"></div><div class="header2" style="font-weight:bold;">Representative Documents<sup style="color:#999" title="The documents containing the highest percentage of this topic (documents can contain multiple topics)">?</sup></div><div class="thought-container"> <div class="thoughts"> <doc1> </div><div class="overlay-text"> <proportion1> % representative of this topic </div></div>';
+
+    for (i = 2; i < thoughts.length; i++) {
+        datatip_topic += '<div class="header-rule-short"></div>' + '<div class="thought-container"><div class="thoughts"><doc' + i.toString() + '></div><div class="overlay-text"><proportion' + i.toString() + '>% representative of this topic</div></div>'
+    }
+    datatip_topic += '</div></div>';
+    var html = datatip_topic.replace("<prop>", (prop * 100).toString().substr(0, 2) + '%');
+    html = html.replace("<name>", name);
+    html = html.replace("<id>", id);
+    html = html.replace("<words>", labels.topics[d.topic_no].combined);
+    for (var i = 0; i < thoughts.length; i++) {
+        html = html.replace("<doc" + (i + 1).toString() + ">", thoughts[i]);
+        html = html.replace("<proportion" + (i + 1).toString() + ">", (proportions[i] * 100).toFixed(1))
+    }
+    toolTipIdStack.push(id);
+
+    d3.select("body").append("div").attr("class", "vz-weighted_tree-tip" + id.toString()).attr('id', 'labeler').style("position", "fixed").style("top", "15%").style("left", "40%").style("opacity", 0).html(html).transition().style("opacity", 1);
+   //  var nameInput = document.getElementById('topicLabeler');
+   //  document.querySelector('form.pure-form').addEventListener('submit', function(e) {
+   //      e.preventDefault();
+   //      labels.topics[d.topic_no].name = nameInput.value;
+   //      d.name = labels.topics[d.topic_no].name;
+   //      d3.select('#node_' + id + '_text').text(nameInput.value)
+   //      checkAllDone('topics')
+   //  })
+}
+
+function setY(y) {
+    if (y > window.innerHeight - 350) {
+        return (window.innerHeight - 350 + 'px')
+    }
+    return (y + 'px')
+}
+
+function createDataTipClust(x, y, name, words, topics, id, d) { 
+    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+
+    if (d.summary != null) {
+        datatip_cluster += '<div class="header2" style="font-weight:bold;">Topic Cluster Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
+    }
+    //<div class="header-rule" style="margin-top:0px; margin-bottom:0px"></div>
+    datatip_cluster += '<div class="header2" style="font-weight:bold;margin-top:10px">Cluster of Topics</div>' + '<div class="header2" id="clust_topics" style="margin-top:0px;margin-bottom:0px;list-style-type:none;display:flex;flex-direction:column;max-height:150px;overflow:auto;min-height:50px">'
+
+    for (i in labels.clusters[id].topics)
+        datatip_cluster += '<p class="header2 clust_topic" style="font-size:14px;margin:1px 0px 1px 0px">' + labels.topics[labels.clusters[id].topics[i]].name + '</p>';
+    datatip_cluster = datatip_cluster.substr(0, datatip_cluster.length - 2);
+    datatip_cluster += '</div></div>' + '<div class="header-rule" style="margin-top:0px"></div>' + '<div class="header2" style="font-weight:bold;">Representative Words<sup style="color:#999" title="The most representative words calculated by various metrics (probability, frex, lift, score), then weighted and combined">?</sup></div>' + '<div class="header2">' + '<div style="margin: 0px 45px 0px 45px"><words></div>' + '</div>' + '<div class="header-rule"></div>'
+    if (d.thoughts != null && d.thoughts.length > 0) {
+        // datatip_cluster += '<div class="header2" style="font-weight:bold;">Representative Documents<sup style="color:#999" title="The documents containing the highest percentage of this topic (documents can contain multiple topics)">?</sup></div><div class="thought-container"> <div class="thoughts"> <doc1> </div><div class="overlay-text"> <proportion1> % representative of this topic </div></div>'
+
+        datatip_cluster += '<div class="header2" style="font-weight:bold;">Representative Documents<sup style="color:#999" title="The documents containing the highest percentage of this topic (documents can contain multiple topics)">?</sup></div><div style="max-height:17.5em;min-height:1.5em"><div class="thought-container"><div class="thoughts"><doc1></div><div class="overlay-text"><proportion1>% representative of this topic cluster, with <variance1>% total variance between topics</div></div>';
+        for (i = 2; i <= d.thoughts.length; i++) {
+            datatip_cluster += '<div class="header-rule-short"></div>' + '<div class="thought-container"><div class="thoughts"><doc' + i.toString() + '></div><div class="overlay-text"><proportion' + i.toString() + '>% representative of this topic cluster, with <variance' + i.toString() + '>% total variance between topics</div></div>'
+        }
+        for (var i = 0; i < d.thoughts.length; i++) {
+            datatip_cluster = datatip_cluster.replace("<doc" + (i + 1).toString() + ">", d.thoughts[i]);
+            datatip_cluster = datatip_cluster.replace("<proportion" + (i + 1).toString() + ">", (d.thought_proportions[i] * 100).toFixed(1));
+            datatip_cluster = datatip_cluster.replace("<variance" + (i + 1).toString() + ">", (d.thought_variances[i] * 100).toFixed(1))
+        }
+    } else {
+        datatip_cluster += '<div class="header2" style="font-weight:bold;">No Representative Documents Found<sup style="color:#999" title="The documents containing the highest percentage of this topic (documents can contain multiple topics)">?</sup></div>'
+    }
+    datatip_cluster += '</div>' + '</div>';
+    datatip_cluster = datatip_cluster.replace("<name>", name);
+    datatip_cluster = datatip_cluster.replace("<id>", id);
+    datatip_cluster = datatip_cluster.replace("<words>", words);
+    toolTipIdStack.push(id);
+    d3.select("body").append("div").attr("class", "vz-weighted_tree-tip" + id.toString()).attr('id', 'labeler').style("position", "fixed").style("top", "15%").style("left", "40%").style("opacity", 0).html(datatip_cluster).transition().style("opacity", 1);
+
+    function isOverflown(element) {
+        return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth
+    }
+    $.fn.overflown = function() {
+        var e = this[0];
+        return e.scrollHeight > e.clientHeight || e.scrollWidth > e.clientWidth
+    }
+    if ($("#clust_topics").overflown()) {
+        $('.clust_topic').css('margin-left', '15px')
+    }
+   //  var nameInput = document.getElementById('topicLabeler');
+   //  document.querySelector('form.pure-form').addEventListener('submit', function(e) {
+   //      e.preventDefault();
+   //      labels.clusters[id].name = nameInput.value;
+   //      d3.select('#node_' + id + '_text').text(nameInput.value)
+   //      d.name = labels.clusters[id].name
+   //      checkAllDone('clusters')
+   //  })
+}
+
+<!-- #raw -->
+function createDataTipQuestion(x, y, question, summary, id) {
+    return var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+
+    var datatip_question = '<div class="tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
+      + '<div style="display:flex; justify-content: space-between">' 
+         + '<div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div>' 
+         + '<div class="header1" style="font-weight:bold;margin-right:20px"><question></div>' 
+         + '<div></div>'
+      + '</div>' 
+      + '<div class="header-rule" style="margin-top:0px; margin-bottom:10px"/><div class="header2" style="font-weight:bold;"></div>'
+    //   + '<div class="scrollbox" style="max-height:20px;overflow:auto;display: flex; flex-direction: column;">'
+        + '<div class="header2"><summary>' 
+            + '<div style="margin: 0px 45px 0px 45px"><words></div>' 
+        + '</div>' 
+        + '<div class="header-rule" style="margin-bottom:20px;"></div>' 
+        + '<div class="header2" style="font-weight:bold;"></div><p style="max-height:50px; overflow:auto; font-size:18px; margin-top:10px">This is a structural topic model visualization, with hierarchical topic clusters. The leaf nodes are topics, the branching nodes are topic clusters, and the numbers are the total prevalence of the topic or cluster as a percentage all the documents. The large partially obscured node represents the entire body of texts. The clusters signify that the connected topics are more likely to co-occur in a single response (each response contains a mixture of multiple topics). Click on any node for more information.</p>' 
+    //   + '</div>'
+   //  var datatip_question = '<div class="tooltip" style="display:flex;flex-direction:column;align-items:center;width: 20em; background-opacity:0.5">'
+   //       + '<div class="header1"><question></div>' 
+   //       + '<div class="header-rule-short"></div>' 
+   //       + '<div class="header2" style="font-size: 0.66em;"><summary> (after removing stop words).</div>' 
+   //       + '<div class="header-rule-short"></div>' 
+   //       + '<button type="button" onclick="download(\'labels\')">download labels</button>' 
+   //       + '</div>'
+   summary = summary.substr(0, summary.length - 1)
+   var datatip_question = datatip_question.replace("<id>", id);
+   var datatip_question = datatip_question.replace("<question>", question);
+   var datatip_question = datatip_question.replace("<summary>", summary)
+   d3.select("body").append("div")
+      .attr("class", "vz-weighted_tree-tip" + id
+      .toString())
+      .attr('id', 'labeler')
+      .style("position", "fixed")
+      .style("top", "15%")
+      .style("left", "40%")
+      .style("opacity", 0)
+      .html(datatip_question)
+      .transition()
+      .style("opacity", 1);
+}
+
+function onMeasure() {
+    viz.tree().nodeSize([60, 0])
+}
+
+function click(el, d, i) {
+    onClick(el, d, i)
+}
+$(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+        removeToolTip(toolTipIdStack[toolTipIdStack.length - 1])
+    }
+});
+
+function removeToolTip(id) {
+    val = ".vz-weighted_tree-tip" + id.toString()
+    toolTipIdStack.pop()
+    d3.selectAll(val).transition().style("opacity", 0).remove();
+    tooltipPresent = !1
+}
+
+function onClick(e, d, i) {
+    var rect = e.getBoundingClientRect();
+    if (d == data) {
+        createDataTipQuestion(rect.left, (rect.top + viz.height() * .05), data.name.toString(), d.summary.toString(), d.id);
+        tooltipPresent = !0;
+        return
+    }
+    if (d.target) d = d.target;
+    if (d.topic_no.length === 1) {
+        createDataTipTopic(rect.left, (rect.top + viz.height() * .05), d.proportion.toString(), d.name.toString(), 'Highest Probability: ' + d.prob.toString(), 'FREX: ' + d.frex.toString(), 'Lift: ' + d.lift.toString(), 'Score: ' + d.score.toString(), d.thoughts, d.thought_proportions, d.id, d)
+    }
+    if (d.topic_no.length !== 1 && d !== data) {
+        createDataTipClust(rect.left, (rect.top + viz.height() * .05), labels.clusters[d.id].name, labels.clusters[d.id].words, d.topic_no, d.id, d)
+    }
+    tooltipPresent = !0
+}
+
+function download(content, fileName) {
+    if (content === 'clusters')
+        content = labels.clusters
+    if (content === 'topics')
+        content = labels.topics
+    if (content === 'labels')
+        content = labels
+    if (content === 'data')
+        content = data
+    var a = document.createElement("a");
+    var file = new Blob([JSON.stringify(content)], {
+        type: 'application/json'
+    });
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click()
+}
+
+function onDblClick(g, d, i) {
+    viz.toggleNode(d)
+}
+
+function changeSkin(val) {
+    if (val == "None") {
+        theme.release()
+    } else {
+        theme.viz(viz);
+        theme.skin(val)
+    }
+    viz().update()
+}
+
+function changeSize(width, height) {
+    width = window.innerWidth
+    height = window.innerHeight
+    viz_container.transition().duration(0).style('width').style('height');
+    viz.width(width).height(height).update()
+}
+</script>
+
+<div id="viz_container"></div>
+
+<script>
+   //Once the document is ready we set javascript and page settings
+   var screenWidth;
+   var screenHeight;
+
+   $(document).ready(function () {
+
+      var rect;
+      if (self==top) {
+            rect = document.body.getBoundingClientRect();
+      }
+      else {
+            rect =  parent.document.body.getBoundingClientRect();
+      }
+
+      // Set the size of our container element.
+      viz_container = d3.selectAll("#viz_container")
+               // .style("width", $(window).width().toString() + "px")
+               // .style("height", $(window).height().toString() + "px")
+               .style("width", ($(".c-textbook__page").width()).toString() + "px")
+               .style("height", $(".c-textbook__page").height().toString() + "px")
+               // .on('click', removeToolTip());
+      if(!stm_data.this_root)
+            console.log('data loading error');
+      initialize_graph(stm_data);
+      
+      $(".js-show-sidebar").css("width", "100%")
+      $(".c-textbook__page").css("width", "100%")
+      $(".c-topbar").css("width", "100%")
+      
+      parent = document.getElementsByClassName("c-textbook__page")[0]
+      parent.appendChild(document.getElementById('viz_container'))
+      after_elts = document.getElementsByClassName("after-tree")
+      for (let i = 0; i < after_elts.length; i++) {
+         parent.appendChild(after_elts[i])
+      }
+      parent.appendChild(document.getElementById('textbook_footer'))
+      $(".after-tree").css("width", "37.5%")
+
+      var stm_info_p = document.getElementById("stm-info");
+      var name_text = document.createTextNode(stm_data.name[0]);
+      var summary_text = document.createTextNode(stm_data.summary[0].slice(1)); // removes leading "A"
+    //   stm_info_p.appendChild(document.createTextNode("The stated question for these responses was \""));
+    //   stm_info_p.appendChild(name_text); // stated question, eg. "What is the reason behind your anticipated change in arts involvement?"
+      stm_info_p.appendChild(document.createTextNode("Our methods produced a"));
+      stm_info_p.appendChild(summary_text); // stm stats, eg. "A topic model with 12 topics, 2271 documents and a 375 word dictionary."
+   });
+
+   window.addEventListener("resize", changeSize);
+</script>
+
+<p class="after-tree">
+</p>
+<!-- #endraw -->

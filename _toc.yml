@@ -1,0 +1,71 @@
+- file: intro
+
+- header: Project Overview
+- file: overview/background
+- file: overview/studydesign
+  sections:
+    - file: overview/studylogistics
+    - file: overview/surveydesign
+    - file: overview/datacollection
+    - file: overview/datadescription
+- file: overview/presentations
+
+- header: Insights
+- file: insights/insights
+  title: Insights Overview
+- file: insights/barriers
+  title: Barriers to Involvement
+  sections:
+    - file: insights/barriers/tree
+      title: Topic Tree
+    - file: insights/barriers/topics
+      title: Topic Descriptions
+    - file: insights/barriers/dimensions
+      title: Underlying Factors
+- file: insights/othergrowth
+  title: Personal Growth
+  sections:
+    - file: insights/othergrowth/tree
+      title: Topic Tree
+    - file: insights/othergrowth/topics
+      title: Topic Descriptions
+    - file: insights/othergrowth/dimensions
+      title: Underlying Factors
+- file: insights/feel
+  title: Emotional Impact    
+  sections:
+    - file: insights/feel/tree
+      title: Topic Tree
+    - file: insights/feel/topics
+      title: Topic Descriptions
+    - file: insights/feel/dimensions
+      title: Underlying Factors
+- file: insights/development
+  title: Developmental Role
+  sections:
+    - file: insights/development/tree
+      title: Topic Tree
+    - file: insights/development/topics
+      title: Topic Descriptions
+- file: insights/role
+  title: College Experience   
+  sections:
+    - file: insights/role/tree
+      title: Topic Tree
+    - file: insights/role/topics
+      title: Topic Descriptions
+- file: insights/experience
+  title: Transformative Experiences   
+  sections:
+    - file: insights/experience/tree
+      title: Topic Tree
+
+- header: Analyses
+- file: analysis/methods
+  title: Methods Overview
+- file: analysis/topics
+- file: analysis/stm-workflow
+- file: analysis/dictionaries
+- file: analysis/pca
+- file: analysis/pca-demographics
+- file: analysis/pca-density-plots
