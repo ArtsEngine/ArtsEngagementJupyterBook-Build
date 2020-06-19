@@ -17,11 +17,11 @@ jobs:
         ref: master
         path: master
     
-    - name: Checkout build
+    - name: Checkout gh-pages
       uses: actions/checkout@v2
       with:
-        ref: build
-        path: build
+        ref: gh-pages
+        path: gh-pages
         
     - name: Setup Python
       uses: actions/setup-python@v2
@@ -29,17 +29,16 @@ jobs:
     # It's faster to reinstall from pip each time than to cache
     - name: Build site
       run: |
-        rm -rf build/*
+        rm -rf gh-pages/*
         pip install wheel
         pip install -U jupyter-book
         jupyter-book build master
-        cd build
-        mv ../master/_build/html/* ./
+        mv master/_build/html/* gh-pages
         
     - name: Git push
       uses: EndBug/add-and-commit@v4
       with:
-        cwd: 'build'
-        ref: 'build'
+        cwd: 'gh-pages'
+        ref: 'gh-pages'
         message: 'new build'
         force: true
