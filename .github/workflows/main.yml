@@ -17,6 +17,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       with:
@@ -30,6 +31,14 @@ jobs:
 
     - name: Setup Python
       uses: actions/setup-python@v2
+  
+    - name: Cache
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
 
     # Build
     - name: Build
@@ -42,7 +51,8 @@ jobs:
         cd build
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -a -m "new build"
+        git add -A
+        git commit -m "new build"
         
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.6.0
