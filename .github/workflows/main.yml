@@ -49,6 +49,9 @@ jobs:
         jupyter-book build master
         cd build
         mv ../master/_build/html/* ./
+        ls -la
+        echo "master folder------"
+        ls -la ../master
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -A
