@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Analysis of Principal Components x Demographic Factors &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://artsengagementproject.site/analysis/pca-demographics.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Plots for Principal Components x Demographic Factors" href="pca-density-plots.html" />
+    <link rel="prev" title="Principal Components Analysis" href="pca.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://artsengagementproject.site/analysis/pca-demographics.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Analysis of Principal Components x Demographic Factors" />
+<meta property="og:description" content="Analysis of Principal Components x Demographic Factors  In this notebook, principal components are generated from question topic prevalences and disctionary-bas" />
+<meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
+
+<meta name="twitter:card" content="summary">
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Arts Engagement Project at The University of Michigan</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="">
+    <a href="../intro.html">The Arts Engagement Project</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Project Overview</p>
+</li>
+  <li class="">
+    <a href="../overview/background.html">Background</a>
+  </li>
+  <li class="">
+    <a href="../overview/studydesign.html">Study Design</a>
+  </li>
+  <li class="">
+    <a href="../overview/presentations.html">Presentations</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Insights</p>
+</li>
+  <li class="">
+    <a href="../insights/insights.html">Insights Overview</a>
+  </li>
+  <li class="">
+    <a href="../insights/barriers.html">Barriers to Involvement</a>
+  </li>
+  <li class="">
+    <a href="../insights/othergrowth.html">Personal Growth</a>
+  </li>
+  <li class="">
+    <a href="../insights/feel.html">Emotional Impact</a>
+  </li>
+  <li class="">
+    <a href="../insights/development.html">Developmental Role</a>
+  </li>
+  <li class="">
+    <a href="../insights/role.html">College Experience</a>
+  </li>
+  <li class="">
+    <a href="../insights/experience.html">Transformative Experiences</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Analyses</p>
+</li>
+  <li class="">
+    <a href="methods.html">Methods Overview</a>
+  </li>
+  <li class="">
+    <a href="topics.html">Topic Modeling and Interpretation</a>
+  </li>
+  <li class="">
+    <a href="stm-workflow.html">Structural Topic Model Workflow</a>
+  </li>
+  <li class="">
+    <a href="dictionaries.html">Dictionaries of Language Patterns</a>
+  </li>
+  <li class="">
+    <a href="pca.html">Principal Components Analysis</a>
+  </li>
+  <li class="active">
+    <a href="">Analysis of Principal Components x Demographic Factors</a>
+  </li>
+  <li class="">
+    <a href="pca-density-plots.html">Plots for Principal Components x Demographic Factors</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/analysis/pca-demographics.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+            <div class="dropdown-buttons">
+                
+                <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/analysis/pca-demographics.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="../_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
+                
+                
+                
+            </div>
+        </div>
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="analysis-of-principal-components-x-demographic-factors">
+<h1>Analysis of Principal Components x Demographic Factors<a class="headerlink" href="#analysis-of-principal-components-x-demographic-factors" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook, principal components are generated from question topic prevalences and disctionary-based estimates of linguistic patterns — and their relationships to various demographic data are explored through statistical tests.</p>
+<p>We used a Principle Components Analysis (PCA) in R (‘prcomp’ function) to integrate multiple variables and conduct an analysis for each question and set of responses. PCA is a multivariate statistical technique that extracts important information about the inter-correlations of multiple variables and re-represents that information as new variables called principle components. These new principle components can then be used to show the similarity and graphic relationships between variables as a way of exploring the data. Because PCA condenses multiple variables into fewer dimensions, the new principle components may also be used to integrate new descriptions of the combined variables. These reified principle components may then be used as covariates to estimate relationships with other variables such as demographic factors.</p>
+<p>Twenty-seven dictionary-based variables (LIWC, AIC, and Docuscope) were not relevant and were excluded from the analysis, leaving a total of 221 dictionary-based variables in the PCA. This was in addition to the measures of topic prevalence, which each had different numbers of topic variables depending on the question/response type. In order to remove variables with high numbers of 0s (no observations), we set a 0.3 maximum threshold, leaving variable columns with 70% or more observations in the analysis. The number of responses and variables included for each question in the analysis are provided in Table 1. Because of the different scales used by the different dictionaries and topic measures (for example, topic prevalence is 0-1 while AIC is measured on a scale from 1-7), the PCA was based on a correlation matrix. The data were also centered around zero and rotated.</p>
+</div>
+<div class="section" id="load-libraries-and-data">
+<h1>Load libraries and data<a class="headerlink" href="#load-libraries-and-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">FactoMineR</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">emmeans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/merged_artsengagement.rda&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/tidy_questions_best.Rda&#39;</span><span class="p">)</span>
+<span class="n">source</span><span class="p">(</span><span class="s1">&#39;../scripts/select_helpers.R&#39;</span><span class="p">)</span>
+<span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/pca_labels.rda&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="subset-demographic-variables">
+<h1>Subset demographic variables<a class="headerlink" href="#subset-demographic-variables" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">motiv_demos</span> <span class="o">&lt;-</span> <span class="n">df</span> <span class="o">%&gt;%</span> <span class="n">select</span><span class="p">(</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;sr_motivation&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">names</span>
+<span class="n">identity_demos</span> <span class="o">&lt;-</span> <span class="n">df</span> <span class="o">%&gt;%</span> <span class="n">select</span><span class="p">(</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;sr_identity&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">names</span>
+<span class="n">participation_demos</span> <span class="o">&lt;-</span> <span class="n">df</span> <span class="o">%&gt;%</span> <span class="n">select</span><span class="p">(</span><span class="n">all_arts</span><span class="p">(</span><span class="s1">&#39;participation&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">select</span><span class="p">(</span><span class="n">starts_with</span><span class="p">(</span><span class="s1">&#39;sr&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">names</span>
+<span class="n">real_demos</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;ethnic_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;school&#39;</span><span class="p">,</span> <span class="s1">&#39;parented&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="s1">&#39;artsincollege&#39;</span><span class="p">,</span> <span class="s1">&#39;hstype&#39;</span><span class="p">,</span> <span class="s1">&#39;hssize&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;hslocation&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_arts_freq&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_encouragement&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_required&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_fees&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;so_childhood1&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood3&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood5&#39;</span><span class="p">,</span> <span class="s1">&#39;sr_participated&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;sr_highestdegreeplanned&#39;</span><span class="p">)</span>
+<span class="n">demo_groups</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;real_demos&#39;</span><span class="p">,</span><span class="s1">&#39;motiv_demos&#39;</span><span class="p">,</span><span class="s1">&#39;identity_demos&#39;</span><span class="p">,</span><span class="s1">&#39;participation_demos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-helper-functions">
+<h1>Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Used within the mergeQuestion function to merge variable names
+stripnames &lt;- function(data, question) {
+    data &lt;- data %&gt;% select(&#39;rownums&#39;, starts_with(question))
+    varnames &lt;- names(data)
+    newnames &lt;- varnames
+    for (i in seq(3, length(varnames))) {
+        newnames[i] &lt;- substr(varnames[i], gregexpr(&quot;\\.\\.&quot;, varnames[i])[[1]][1]+2, nchar(varnames[i]))
+    }
+    names(data) &lt;- newnames
+    return(data)
+}
+
+# Remove irrelavant variables
+stripVars &lt;- function(data) {
+    removenames &lt;- names(data %&gt;% select(matches(&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;)))
+    data &lt;- data[ , !names(data) %in% removenames]
+    return(data)
+}
+
+# Merges responses between years
+mergeQuestion &lt;- function(data, question) {
+    if (substr(question, 3,3) == &#39;_&#39;) {
+        question &lt;- substr(question, 4, nchar(question))
+    }
+    # if you&#39;re aware of other prefixes, add them here
+    yrs &lt;- c(NA,&#39;fl&#39;,&#39;f1&#39;,&#39;f2&#39;,&#39;so&#39;,&#39;jr&#39;,&#39;sr&#39;,&#39;sl&#39;)
+    data$rownums &lt;- seq(nrow(data)) # add rownums so resulting data can be re-integrated
+    mergeddf &lt;- data.frame()
+    for (yr in yrs) {
+        if (question == &#39;definition&#39; &amp;&amp; is.na(yr))
+            qyr &lt;- question
+        else if (is.na(yr))
+            next
+        else {
+            qyr &lt;- paste0(yr, &#39;_&#39;, question)
+        }
+        if (data %&gt;% select(starts_with(qyr)) %&gt;% ncol == 0) { next }
+        tempdf &lt;- stripnames(data, qyr)
+        names(tempdf)[2] &lt;- question
+        mergeddf &lt;- bind_rows(mergeddf, tempdf)        
+    }
+    mergeddf &lt;- mergeddf[complete.cases(mergeddf),]
+    mergeddf &lt;- mergeddf %&gt;% stripVars
+    rownames(mergeddf) &lt;- c()
+    return(mergeddf)
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="anova-emmeans-loop">
+<h1>ANOVA, EMMeans Loop<a class="headerlink" href="#anova-emmeans-loop" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove_output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sig_contrasts.demos &lt;- c()
+sig_aov_posthoc &lt;- c()
+dir.create(&#39;./results&#39;, showWarnings = F)
+for(question in question_names[-c(4:6,9:14)]) {
+    # directories
+    dir.create(paste(&#39;./results&#39;, question, sep = &#39;/&#39;), showWarnings = F)
+    
+    # data subsetting
+    data_subset &lt;- mergeQuestion(df, question)
+    data_subset_rows &lt;- data_subset[[1]]
+    data_subset &lt;- data_subset[-1]
+    data_subset &lt;- data_subset[-1]
+    percent &lt;- 0.4
+    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+                                       
+    # generate principal components
+    pd &lt;- prcomp(data_subset, retx= TRUE, center=TRUE, scale=TRUE)
+
+    # merge with demographic cols
+    pcs &lt;- data.frame(rownum = data_subset_rows, pd$x[,seq(5)] %&gt;% as.data.frame)
+    rownums &lt;- pcs$rownum %&gt;% sort
+    pcs &lt;- pcs %&gt;% arrange(rownum)
+    pcs &lt;- pcs[-1]
+    demodfpcs &lt;- bind_cols(df[rownums,c(&#39;key&#39;,real_demos)], pcs)
+
+    # weighting by # of responses per respondent
+    # ( each respondent has up to 4 responses per question, and each response is given a weight between 1/4 and 1 )
+    resps_by_key &lt;- demodfpcs$key %&gt;% table %&gt;% as.data.frame
+    names(resps_by_key) &lt;- c(&#39;key&#39;,&#39;n&#39;)
+    resps_by_key %&lt;&gt;% filter(n!=0)
+    for(r in seq(nrow(demodfpcs))) {
+        nresps &lt;- resps_by_key %&gt;% filter(key == demodfpcs[r,]$key) %&gt;% .$n
+        demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))] &lt;- (1/nresps) *
+                                                            (demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))])
+    }
+    demodfpcs &lt;- demodfpcs %&gt;% select(-&#39;key&#39;)
+    demodf &lt;- demodfpcs %&gt;% select(-matches(&#39;PC[12345]&#39;))
+    pcs &lt;- demodfpcs %&gt;% select(matches(&#39;PC[12345]&#39;))
+
+    # analysis
+    for(p in seq(pcs)) {
+        # creating directories
+        dir.create(paste(&#39;./results&#39;, question, names(pcs)[p], sep = &#39;/&#39;), showWarnings = F)
+        dir.create(paste(&#39;./results&#39;, question, names(pcs)[p], &#39;emmeans&#39;, sep = &#39;/&#39;), showWarnings = F)
+        dir.create(paste(&#39;./results&#39;, question, names(pcs)[p], &#39;anova_tukey&#39;, sep = &#39;/&#39;), showWarnings = F)
+        for(d in seq(demodf)) {
+            temp &lt;- bind_cols(pcs[p], demodf[d])
+            names(temp) &lt;- c(&#39;pc&#39;,&#39;demo&#39;)
+            if((temp$demo %&gt;% table %&gt;% as.data.frame %&gt;% filter(Freq != 0) %&gt;% nrow) == 1) next
+
+            # emmeans contrasts
+            lm.out &lt;- lm(pc ~ demo, data=temp, na.action = na.exclude)
+            em.out &lt;- emmeans(lm.out, ~ demo, data=temp, weights = &#39;proportional&#39;)
+            contrast.out &lt;- contrast(em.out, method=&quot;del.eff&quot;) %&gt;% tidy
+
+            contrast.out$p.value %&lt;&gt;% p.adjust(method=&#39;holm&#39;)
+            contrast.out %&lt;&gt;% mutate(question_name=question,
+                                        PC_num = paste0(&#39;PC&#39;,p), 
+                                        PC_pos = pca_labels %&gt;% 
+                                                  filter(question_name==question) %&gt;% 
+                                                  select(matches(paste0(p,&#39;_pos&#39;))) %&gt;%
+                                                  pull %&gt;% as.character,
+                                        PC_neg = pca_labels %&gt;% 
+                                                  filter(question_name==question) %&gt;% 
+                                                  select(matches(paste0(p,&#39;_neg&#39;))) %&gt;%
+                                                  pull %&gt;% as.character,
+                                        demographic = names(demodf)[d]
+                                     )            
+
+            # anova tukey
+            aov.out &lt;- aov(pc ~ demo, data=temp) %&gt;% TukeyHSD %&gt;% tidy
+            aov.out %&lt;&gt;% select(-term) %&gt;% mutate(question_name=question,
+                                        PC_num = paste0(&#39;PC&#39;,p), 
+                                        PC_pos = pca_labels %&gt;% 
+                                                  filter(question_name==question) %&gt;% 
+                                                  select(matches(paste0(p,&#39;_pos&#39;))) %&gt;%
+                                                  pull %&gt;% as.character,
+                                        PC_neg = pca_labels %&gt;% 
+                                                  filter(question_name==question) %&gt;% 
+                                                  select(matches(paste0(p,&#39;_neg&#39;))) %&gt;%
+                                                  pull %&gt;% as.character,
+                                        demographic = names(demodf)[d]
+                                     )
+            
+            # bind rows
+            options(warn=-1)
+            sig_contrasts.demos %&lt;&gt;% bind_rows(contrast.out)
+            sig_aov_posthoc %&lt;&gt;% bind_rows(aov.out)
+            options(warn=0)
+            
+            # write csvs
+            write.csv(contrast.out, paste(&#39;./results&#39;,question,names(pcs)[p],&#39;emmeans&#39;,paste0(names(demodf)[d],&#39;.csv&#39;),sep=&#39;/&#39;))
+            write.csv(aov.out, paste(&#39;./results&#39;,question,names(pcs)[p],&#39;anova_tukey&#39;,paste0(names(demodf)[d],&#39;.csv&#39;),sep=&#39;/&#39;))
+        }
+    }
+}
+# # write rdas
+save(sig_contrasts.demos, file=&#39;./results/emmeans_contrasts.rda&#39;)
+save(sig_aov_posthoc, file=&#39;./results/anova_tukey.rda&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="manova-loop">
+<h1>MANOVA Loop<a class="headerlink" href="#manova-loop" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># skip aftercollege bc it causes errors (index 7)
+for(question in (question_names[-c(4:6,9:14)])[-7]) {
+    # directories
+    dir.create(paste(&#39;./results&#39;, question, sep = &#39;/&#39;), showWarnings = F)
+    
+    # data subsetting, PC
+    data_subset &lt;- mergeQuestion(df, question)
+    data_subset_rows &lt;- data_subset[[1]]
+    data_subset &lt;- data_subset[-1]
+    data_subset &lt;- data_subset[-1]
+    percent &lt;- 0.4
+    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+    pd &lt;- prcomp(data_subset, retx= TRUE, center=TRUE, scale=TRUE)
+
+    # merge with demographic cols
+    pcs &lt;- data.frame(rownum = data_subset_rows, pd$x[,seq(5)] %&gt;% as.data.frame)
+    rownums &lt;- pcs$rownum %&gt;% sort
+    pcs &lt;- pcs %&gt;% arrange(rownum)
+    pcs &lt;- pcs[-1]
+    demodfpcs &lt;- bind_cols(df[rownums,c(&#39;key&#39;,real_demos)], pcs)
+
+    # weighting by # of responses per respondent
+    resps_by_key &lt;- demodfpcs$key %&gt;% table %&gt;% as.data.frame
+    names(resps_by_key) &lt;- c(&#39;key&#39;,&#39;n&#39;)
+    resps_by_key %&lt;&gt;% filter(n!=0)
+    for(r in seq(nrow(demodfpcs))) {
+        nresps &lt;- resps_by_key %&gt;% filter(key == demodfpcs[r,]$key) %&gt;% .$n
+        demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))] &lt;- (1/nresps) *
+                                                            (demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))])
+    }
+    demodfpcs &lt;- demodfpcs %&gt;% select(-&#39;key&#39;)
+    demodf &lt;- demodfpcs %&gt;% select(-matches(&#39;PC[12345]&#39;))
+    pcs &lt;- demodfpcs %&gt;% select(matches(&#39;PC[12345]&#39;))
+
+    # manova
+    demo_level_nums &lt;- demodf %&gt;% na.omit %&gt;% sapply(function(x)(x %&gt;% table %&gt;% as.data.frame %&gt;% filter(Freq != 0) %&gt;% nrow)) %&gt;% as.data.frame
+    demo_level_nums$demo &lt;- rownames(demo_level_nums)
+    names(demo_level_nums) &lt;- c(&#39;n&#39;,&#39;demo&#39;)
+    filter_list &lt;- demo_level_nums %&gt;% filter(n &lt; 2) %&gt;% pull(demo)
+    man_demodf &lt;- demodf %&gt;% select(-filter_list)
+    print(nrow(man_demodf))
+    man.out &lt;- manova(pcs %&gt;% as.matrix ~ .,
+                    data=man_demodf)
+                                                     
+    # write csv
+    write.csv(tidy(man.out), paste(&#39;./results&#39;,question,&#39;manova_table.csv&#39;,sep=&#39;/&#39;))
+    sink(paste(&#39;./results&#39;,question,&#39;manova_output.txt&#39;,sep=&#39;/&#39;))
+    print(man.out)
+    sink()
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="pca.html" title="previous page">Principal Components Analysis</a>
+    <a class='right-next' id="next-link" href="pca-density-plots.html" title="next page">Plots for Principal Components x Demographic Factors</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gabriel Harp<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-44678143-2', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
