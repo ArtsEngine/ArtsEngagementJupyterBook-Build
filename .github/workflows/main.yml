@@ -49,15 +49,19 @@ jobs:
         jupyter-book build master
         cd build
         mv ../master/_build/html/* ./
-        ls -la
-        echo "master folder------"
-        ls -la ../master
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        git commit -m "new build"
+#       git config --local user.email "action@github.com"
+#       git config --local user.name "GitHub Action"
+#       git add -A
+#       git commit -m "new build"
         
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
+    - uses: EndBug/add-and-commit@v4
       with:
-        branch: build
+        src: '-A'
+        cwd: 'build'
+        ref: 'build'
+        message: 'new build'
+        
+#     - name: GitHub Push
+#       uses: ad-m/github-push-action@v0.6.0
+#       with:
+#         branch: build
