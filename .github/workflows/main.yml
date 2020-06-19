@@ -35,10 +35,16 @@ jobs:
     - name: Build
       run: |
         rm -rf build/*
+        pip install wheel
         pip install -U jupyter-book
         jupyter-book build master
         mv master/_build/html/* build
         cd build
-        git add -A
-        git commit -m "new build"
-        git push
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -a -m "new build"
+        
+    - name: GitHub Push
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        branch: build
