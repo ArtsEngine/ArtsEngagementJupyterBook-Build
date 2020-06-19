@@ -1,4 +1,4 @@
-name: CI
+name: build
 
 # Controls when the action will run.
 # Triggers the workflow on push to master branch
