@@ -1,47 +1,33 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run.
+# Triggers the workflow on push to master branch
 on:
   push:
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout master
+      uses: actions/checkout@v2
       with:
         ref: master
         path: master
     
-    - uses: actions/checkout@v2
+    - name: Checkout build
+      uses: actions/checkout@v2
       with:
         ref: build
         path: build
-
+        
     - name: Setup Python
       uses: actions/setup-python@v2
-  
-    - name: Cache
-      uses: actions/cache@v2
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
 
-    # Build
-    - name: Build
+    # It's faster to reinstall from pip each time than to cache
+    - name: Build site
       run: |
         rm -rf build/*
         pip install wheel
@@ -49,19 +35,11 @@ jobs:
         jupyter-book build master
         cd build
         mv ../master/_build/html/* ./
-#       git config --local user.email "action@github.com"
-#       git config --local user.name "GitHub Action"
-#       git add -A
-#       git commit -m "new build"
         
-    - uses: EndBug/add-and-commit@v4
+    - name: Git push
+      uses: EndBug/add-and-commit@v4
       with:
-        src: '-A'
         cwd: 'build'
         ref: 'build'
         message: 'new build'
-        
-#     - name: GitHub Push
-#       uses: ad-m/github-push-action@v0.6.0
-#       with:
-#         branch: build
+        force: true
