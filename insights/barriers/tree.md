@@ -1,7 +1,5 @@
 # Topic Tree
 
-***Note: If the tree doesn't appear, try refreshing your browser.***
-
 This is a structural topic model visualization, with hierarchical topic clusters. This tree map shows the distribution of topics among the responses to the question, ***“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”***. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of th tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
 
 **Click on any node on the tree below for more information.** Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
@@ -921,7 +919,7 @@ function createDataTipClust(x, y, name, words, topics, id, d) {
 
 <!-- #raw -->
 function createDataTipQuestion(x, y, question, summary, id) {
-    return var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
 
     var datatip_question = '<div class="tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
       + '<div style="display:flex; justify-content: space-between">' 
@@ -1033,7 +1031,7 @@ function changeSkin(val) {
 function changeSize(width, height) {
     width = window.innerWidth
     height = window.innerHeight
-    viz_container.transition().duration(0).style('width').style('height');
+    d3.selectAll("#viz_container").transition().duration(0).style('width').style('height');
     viz.width(width).height(height).update()
 }
 </script>
@@ -1046,49 +1044,51 @@ function changeSize(width, height) {
    var screenHeight;
 
    $(document).ready(function () {
+      d3.selectAll("footer > div.container").style("display", "contents")
 
       var rect;
       if (self==top) {
-            rect = document.body.getBoundingClientRect();
+        rect = document.body.getBoundingClientRect();
       }
       else {
-            rect =  parent.document.body.getBoundingClientRect();
+        rect =  parent.document.body.getBoundingClientRect();
       }
 
       // Set the size of our container element.
       viz_container = d3.selectAll("#viz_container")
                // .style("width", $(window).width().toString() + "px")
                // .style("height", $(window).height().toString() + "px")
-               .style("width", ($(".c-textbook__page").width()).toString() + "px")
-               .style("height", $(".c-textbook__page").height().toString() + "px")
+               .style("width", ($("main").width()).toString() + "px")
+               .style("height", $("main").height().toString() + "px")
+               .style("display", "inline-block")
                // .on('click', removeToolTip());
       if(!stm_data.this_root)
-            console.log('data loading error');
+        console.log('data loading error');
       initialize_graph(stm_data);
       
-      $(".js-show-sidebar").css("width", "100%")
-      $(".c-textbook__page").css("width", "100%")
-      $(".c-topbar").css("width", "100%")
+    //   $(".js-show-sidebar").css("width", "100%")
+      $("main").css("width", "100%")
+    //   $(".c-topbar").css("width", "100%")
       
-      parent = document.getElementsByClassName("c-textbook__page")[0]
-      parent.appendChild(document.getElementById('viz_container'))
-      after_elts = document.getElementsByClassName("after-tree")
-      for (let i = 0; i < after_elts.length; i++) {
-         parent.appendChild(after_elts[i])
-      }
-      parent.appendChild(document.getElementById('textbook_footer'))
-      $(".after-tree").css("width", "37.5%")
+    //   parent = document.getElementsByClassName("c-textbook__page")[0]
+    //   parent.appendChild(document.getElementById('viz_container'))
+    //   after_elts = document.getElementsByClassName("after-tree")
+    //   for (let i = 0; i < after_elts.length; i++) {
+    //      parent.appendChild(after_elts[i])
+    //   }
+    //   parent.appendChild(document.getElementById('textbook_footer'))
+    //   $(".after-tree").css("width", "37.5%")
 
-      var stm_info_p = document.getElementById("stm-info");
-      var name_text = document.createTextNode(stm_data.name[0]);
-      var summary_text = document.createTextNode(stm_data.summary[0].slice(1)); // removes leading "A"
+    //   var stm_info_p = document.getElementById("stm-info");
+    //   var name_text = document.createTextNode(stm_data.name[0]);
+    //   var summary_text = document.createTextNode(stm_data.summary[0].slice(1)); // removes leading "A"
     //   stm_info_p.appendChild(document.createTextNode("The stated question for these responses was \""));
     //   stm_info_p.appendChild(name_text); // stated question, eg. "What is the reason behind your anticipated change in arts involvement?"
-      stm_info_p.appendChild(document.createTextNode("Our methods produced a"));
-      stm_info_p.appendChild(summary_text); // stm stats, eg. "A topic model with 12 topics, 2271 documents and a 375 word dictionary."
+    //   stm_info_p.appendChild(document.createTextNode("Our methods produced a"));
+    //   stm_info_p.appendChild(summary_text); // stm stats, eg. "A topic model with 12 topics, 2271 documents and a 375 word dictionary."
    });
 
-   window.addEventListener("resize", changeSize);
+   window.addEventListener("resize", changeSize());
 </script>
 
 <p class="after-tree">
