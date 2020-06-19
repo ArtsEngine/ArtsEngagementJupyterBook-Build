@@ -17,48 +17,48 @@
   title: Barriers to Involvement
   sections:
     - file: insights/barriers/tree
-      title: Topic Tree
+      title: Barriers Topic Tree
     - file: insights/barriers/topics
-      title: Topic Descriptions
+      title: Barriers Topic Descriptions
     - file: insights/barriers/dimensions
-      title: Underlying Factors
+      title: Barriers Underlying Factors
 - file: insights/othergrowth
   title: Personal Growth
   sections:
     - file: insights/othergrowth/tree
-      title: Topic Tree
+      title: Personal Growth Topic Tree
     - file: insights/othergrowth/topics
-      title: Topic Descriptions
+      title: Personal Growth Topic Descriptions
     - file: insights/othergrowth/dimensions
-      title: Underlying Factors
+      title: Personal Growth Underlying Factors
 - file: insights/feel
   title: Emotional Impact    
   sections:
     - file: insights/feel/tree
-      title: Topic Tree
+      title: Emotional Impacts Topic Tree
     - file: insights/feel/topics
-      title: Topic Descriptions
+      title: Emotional Impacts Topic Descriptions
     - file: insights/feel/dimensions
-      title: Underlying Factors
+      title: Emotional Impacts Underlying Factors
 - file: insights/development
   title: Developmental Role
   sections:
     - file: insights/development/tree
-      title: Topic Tree
+      title: Developmental Role Topic Tree
     - file: insights/development/topics
-      title: Topic Descriptions
+      title: Developmental Role Topic Descriptions
 - file: insights/role
   title: College Experience   
   sections:
     - file: insights/role/tree
-      title: Topic Tree
+      title: College Experience Topic Tree
     - file: insights/role/topics
-      title: Topic Descriptions
+      title: College Experience Topic Descriptions
 - file: insights/experience
   title: Transformative Experiences   
   sections:
     - file: insights/experience/tree
-      title: Topic Tree
+      title: Transformative Experiences Topic Tree
 
 - header: Analyses
 - file: analysis/methods
