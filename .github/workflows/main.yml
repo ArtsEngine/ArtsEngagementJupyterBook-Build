@@ -47,8 +47,8 @@ jobs:
         pip install wheel
         pip install -U jupyter-book
         jupyter-book build master
-        mv master/_build/html/* build
         cd build
+        mv ../master/_build/html/* ./
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -A
