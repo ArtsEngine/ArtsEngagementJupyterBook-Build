@@ -174,35 +174,43 @@
     </div>
     <div class="col pl-2 topbar-main">
         
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-            
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="../../_sources/insights/othergrowth/tree.md"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.md</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
-            
-        </div>
-
-        <!-- Source interaction buttons -->
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/insights/othergrowth/tree.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-        
+
     </div>
     <div class="d-none d-md-block col-md-2 bd-toc show">
 
@@ -242,7 +250,7 @@ div.settings-label {
 	font-weight: 300
 }
 
-div.tooltip {
+div.tree-tooltip {
 	position: absolute;
 	text-align: left;
 	padding: 10px;
@@ -1039,7 +1047,7 @@ function checkAllDone(str) {
 }
 
 function createDataTipTopic(x, y, prop, name, prob, frex, lift, score, thoughts, proportions, id, d) {
-    var datatip_topic = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
+    var datatip_topic = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
     
     if (d.summary !== undefined) {
         datatip_topic += '<div class="header2" style="font-weight:bold;">Topic Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
@@ -1080,7 +1088,7 @@ function setY(y) {
 }
 
 function createDataTipClust(x, y, name, words, topics, id, d) { 
-    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+    var datatip_cluster = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
 
     if (d.summary != null) {
         datatip_cluster += '<div class="header2" style="font-weight:bold;">Topic Cluster Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
@@ -1136,9 +1144,9 @@ function createDataTipClust(x, y, name, words, topics, id, d) {
 
 <!-- #raw -->
 function createDataTipQuestion(x, y, question, summary, id) {
-    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+    var datatip_cluster = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
 
-    var datatip_question = '<div class="tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
+    var datatip_question = '<div class="tree-tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
       + '<div style="display:flex; justify-content: space-between">' 
          + '<div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div>' 
          + '<div class="header1" style="font-weight:bold;margin-right:20px"><question></div>' 
@@ -1152,7 +1160,7 @@ function createDataTipQuestion(x, y, question, summary, id) {
         + '<div class="header-rule" style="margin-bottom:20px;"></div>' 
         + '<div class="header2" style="font-weight:bold;"></div><p style="max-height:50px; overflow:auto; font-size:18px; margin-top:10px">This is a structural topic model visualization, with hierarchical topic clusters. The leaf nodes are topics, the branching nodes are topic clusters, and the numbers are the total prevalence of the topic or cluster as a percentage all the documents. The large partially obscured node represents the entire body of texts. The clusters signify that the connected topics are more likely to co-occur in a single response (each response contains a mixture of multiple topics). Click on any node for more information.</p>' 
     //   + '</div>'
-   //  var datatip_question = '<div class="tooltip" style="display:flex;flex-direction:column;align-items:center;width: 20em; background-opacity:0.5">'
+   //  var datatip_question = '<div class="tree-tooltip" style="display:flex;flex-direction:column;align-items:center;width: 20em; background-opacity:0.5">'
    //       + '<div class="header1"><question></div>' 
    //       + '<div class="header-rule-short"></div>' 
    //       + '<div class="header2" style="font-size: 0.66em;"><summary> (after removing stop words).</div>' 
