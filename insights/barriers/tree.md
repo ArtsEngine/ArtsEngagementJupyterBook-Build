@@ -24,7 +24,7 @@ div.settings-label {
 	font-weight: 300
 }
 
-div.tooltip {
+div.tree-tooltip {
 	position: absolute;
 	text-align: left;
 	padding: 10px;
@@ -822,7 +822,7 @@ function checkAllDone(str) {
 }
 
 function createDataTipTopic(x, y, prop, name, prob, frex, lift, score, thoughts, proportions, id, d) {
-    var datatip_topic = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
+    var datatip_topic = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
     
     if (d.summary !== undefined) {
         datatip_topic += '<div class="header2" style="font-weight:bold;">Topic Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
@@ -863,7 +863,7 @@ function setY(y) {
 }
 
 function createDataTipClust(x, y, name, words, topics, id, d) { 
-    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+    var datatip_cluster = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
 
     if (d.summary != null) {
         datatip_cluster += '<div class="header2" style="font-weight:bold;">Topic Cluster Summary</div><div class="header2"> <div style="margin: 0px 45px 0px 45px; text-align: left;"> ' + d.summary + ' </div></div><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'
@@ -919,9 +919,9 @@ function createDataTipClust(x, y, name, words, topics, id, d) {
 
 <!-- #raw -->
 function createDataTipQuestion(x, y, question, summary, id) {
-    var datatip_cluster = '<div class="tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
+    var datatip_cluster = '<div class="tree-tooltip" style="display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5"><div style="display:flex; justify-content: space-between"> <div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div><div class="header1" style="font-weight:bold;margin-right:20px"> <name> </div><div></div></div><div class="scrollbox" style="overflow:auto;"><div class="header-rule" style="margin-top:0px; margin-bottom:10px"></div>'    
 
-    var datatip_question = '<div class="tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
+    var datatip_question = '<div class="tree-tooltip" style="overflow:hidden; display: flex; flex-direction: column; width: 20em; min-height:16.1em;max-height:20em;background-opacity:0.5">' 
       + '<div style="display:flex; justify-content: space-between">' 
          + '<div onclick="removeToolTip(<id>)" style="align-self:flex-start;cursor:pointer;color:#888;float:left;display:inline;" alt="close">&#10005;</div>' 
          + '<div class="header1" style="font-weight:bold;margin-right:20px"><question></div>' 
@@ -935,7 +935,7 @@ function createDataTipQuestion(x, y, question, summary, id) {
         + '<div class="header-rule" style="margin-bottom:20px;"></div>' 
         + '<div class="header2" style="font-weight:bold;"></div><p style="max-height:50px; overflow:auto; font-size:18px; margin-top:10px">This is a structural topic model visualization, with hierarchical topic clusters. The leaf nodes are topics, the branching nodes are topic clusters, and the numbers are the total prevalence of the topic or cluster as a percentage all the documents. The large partially obscured node represents the entire body of texts. The clusters signify that the connected topics are more likely to co-occur in a single response (each response contains a mixture of multiple topics). Click on any node for more information.</p>' 
     //   + '</div>'
-   //  var datatip_question = '<div class="tooltip" style="display:flex;flex-direction:column;align-items:center;width: 20em; background-opacity:0.5">'
+   //  var datatip_question = '<div class="tree-tooltip" style="display:flex;flex-direction:column;align-items:center;width: 20em; background-opacity:0.5">'
    //       + '<div class="header1"><question></div>' 
    //       + '<div class="header-rule-short"></div>' 
    //       + '<div class="header2" style="font-size: 0.66em;"><summary> (after removing stop words).</div>' 
