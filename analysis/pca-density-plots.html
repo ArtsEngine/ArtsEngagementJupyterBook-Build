@@ -32,7 +32,6 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Analysis of Principal Components x Demographic Factors" href="pca-demographics.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -132,9 +131,6 @@
   </li>
   <li class="">
     <a href="pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
-  <li class="active">
-    <a href="">Plots for Principal Components x Demographic Factors</a>
   </li>
 </ul>
 </nav>
@@ -387,7 +383,16 @@ small_demos
 <p>I recommend letting the code run for say 10 seconds then interrupt code execution to then print out / explore the variables being used within the ggplot code. Alternatively, break the code into chunks to see what each chunk does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dir_to_save_results = &#39;./results&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable
+min = 2
+max = 5
+temp &lt;- demodfpcs %&gt;% sapply(function(x)(x %&gt;% levels %&gt;% length)) %&gt;% as.data.frame
+temp$demo &lt;- rownames(temp)
+temp &lt;- temp %&gt;% filter(. &gt;= min &amp; max &gt;= .)
+small_demos &lt;- temp %&gt;% pull(demo)
+small_demos
+
+dir_to_save_results = &#39;./results&#39;
 plot_type = &#39;density_plots&#39; # plural
 output_format = &#39;.pdf&#39; # with dot
 
@@ -481,7 +486,6 @@ for(question in question_names[-c(4:6,9:14)]) {
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="pca-demographics.html" title="previous page">Analysis of Principal Components x Demographic Factors</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

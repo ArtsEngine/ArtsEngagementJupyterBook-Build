@@ -32,7 +32,6 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Plots for Principal Components x Demographic Factors" href="pca-density-plots.html" />
     <link rel="prev" title="Principal Components Analysis" href="pca.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -134,9 +133,6 @@
   <li class="active">
     <a href="">Analysis of Principal Components x Demographic Factors</a>
   </li>
-  <li class="">
-    <a href="pca-density-plots.html">Plots for Principal Components x Demographic Factors</a>
-  </li>
 </ul>
 </nav>
 
@@ -237,6 +233,10 @@
     
         <li class="nav-item toc-entry toc-h2">
             <a href="#define-helper-functions" class="nav-link">Define helper functions</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#density-plots" class="nav-link">Density Plots</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
@@ -392,6 +392,102 @@ mergeQuestion &lt;- function(data, question) {
 </div>
 </div>
 </div>
+<div class="section" id="density-plots">
+<h1>Density Plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable
+min = 2
+max = 5
+temp &lt;- demodfpcs %&gt;% sapply(function(x)(x %&gt;% levels %&gt;% length)) %&gt;% as.data.frame
+temp$demo &lt;- rownames(temp)
+temp &lt;- temp %&gt;% filter(. &gt;= min &amp; max &gt;= .)
+small_demos &lt;- temp %&gt;% pull(demo)
+small_demos
+
+dir_to_save_results = &#39;./results&#39;
+plot_type = &#39;density_plots&#39; # plural
+output_format = &#39;.png&#39; # with dot
+
+dir.create(dir_to_save_results, showWarnings = F)
+# for all stm&#39;d questions
+for(question in question_names[-c(4:6,9:14)]) {
+    dir.create(paste(dir_to_save_results, question, sep = &#39;/&#39;), showWarnings = F)
+    
+    # data subsetting, PC creation
+    data_subset &lt;- mergeQuestion(df, question)
+    data_subset_rows &lt;- data_subset[[1]]
+    data_subset &lt;- data_subset[-1]
+    data_subset &lt;- data_subset[-1]
+    percent &lt;- 0.4
+    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+                                       
+    # principal component generation
+    pd &lt;- prcomp(data_subset, retx= TRUE, center=TRUE, scale=TRUE)
+
+    # merge PCs with demographic cols
+    pcs &lt;- data.frame(rownum = data_subset_rows, pd$x[,seq(5)] %&gt;% as.data.frame)
+    rownums &lt;- pcs$rownum %&gt;% sort
+    pcs &lt;- pcs %&gt;% arrange(rownum)
+    pcs &lt;- pcs[-1]
+    demodfpcs &lt;- bind_cols(df[rownums,c(&#39;key&#39;,real_demos)], pcs)
+
+    # weighting by # of responses per respondent
+    resps_by_key &lt;- demodfpcs$key %&gt;% table %&gt;% as.data.frame
+    names(resps_by_key) &lt;- c(&#39;key&#39;,&#39;n&#39;)
+    resps_by_key %&lt;&gt;% filter(n!=0)
+    for(r in seq(nrow(demodfpcs))) {
+        nresps &lt;- resps_by_key %&gt;% filter(key == demodfpcs[r,]$key) %&gt;% .$n
+        demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))] &lt;- (1/nresps) *
+                                                        (demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))])
+    }
+                                       
+    # separate PCs and demographics
+    demodfpcs &lt;- demodfpcs %&gt;% select(-&#39;key&#39;)
+    demodf &lt;- demodfpcs %&gt;% select(-matches(&#39;PC[12345]&#39;))
+    pcs &lt;- demodfpcs %&gt;% select(matches(&#39;PC[12345]&#39;))
+                                       
+    # plotting (by PC)
+    for(p in seq(pcs)) {
+        # combine individual PC with demographics
+        temp &lt;- bind_cols(pcs[p], demodf)
+        names(temp) &lt;- c(&quot;pc&quot;, names(temp)[-1])
+        
+        # for each demographic...
+        for(d in seq(small_demos)) {
+            mu &lt;- temp %&gt;% na.omit %&gt;% group_by_at(vars(small_demos[d])) %&gt;%
+                    summarise(grp.median=median(pc))
+
+            ggplot(na.omit(demodfpcs), aes_string(x=names(pcs)[p], fill=small_demos[d])) +
+                geom_density(alpha=0.4) +
+                xlim(round(na.omit(pcs[[p]]) %&gt;% summary %&gt;% tidy %&gt;% .$minimum)-0.5, 
+                     round(na.omit(pcs[[p]]) %&gt;% summary %&gt;% tidy %&gt;% .$maximum)+.5) +
+                geom_vline(data=mu, aes_string(xintercept=&#39;grp.median&#39;, color=names(mu)[1]),
+                         linetype=&quot;dashed&quot;) +
+                labs(subtitle=paste0(&#39;pos-x: &#39;, pca_labels %&gt;% 
+                      filter(question_name==question) %&gt;% 
+                      select(matches(paste0(p,&#39;_pos&#39;))) %&gt;%
+                      pull %&gt;% as.character,
+                     &#39;\nneg-x: &#39;, pca_labels %&gt;% 
+                      filter(question_name==question) %&gt;% 
+                      select(matches(paste0(p,&#39;_neg&#39;))) %&gt;%
+                      pull %&gt;% as.character)) +
+                theme(plot.subtitle = element_text(size=10))
+
+            # saving
+            dir.create(paste(dir_to_save_results, question, names(pcs)[p], sep=&#39;/&#39;), showWarnings = F)
+            dir.create(paste(dir_to_save_results, question, names(pcs)[p], plot_type,sep=&#39;/&#39;), showWarnings = F)
+            ggsave(paste(dir_to_save_results, question, names(pcs)[p], plot_type, 
+                         paste0(small_demos[d], output_format),sep=&#39;/&#39;), 
+                   width = 5, height=4)
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="marginal-plots">
 <h1>Marginal Plots<a class="headerlink" href="#marginal-plots" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
@@ -433,7 +529,7 @@ for(question in question_names[-c(4:6,9:14,16)]) {
     # analysis
     for(p in c(1,3)) {
         # directories
-        cur_dir &lt;- paste(&#39;./results&#39;, question, paste0(&#39;pc&#39;, p, &#39;_pc&#39;, p+1), sep = &#39;/&#39;)
+        cur_dir &lt;- paste(&#39;./results&#39;, question, paste0(&#39;pc&#39;, p, &#39;_pc&#39;, p+1, &#39;_marginal_plots&#39;), sep = &#39;/&#39;)
         dir.create(cur_dir, showWarnings = F)
         for(d in seq(demodf)) {
             temp &lt;- bind_cols(pcs[p], pcs[p+1], demodf[d])
@@ -660,7 +756,6 @@ for(question in (question_names[-c(4:6,9:14)])[-7]) {
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="pca.html" title="previous page">Principal Components Analysis</a>
-    <a class='right-next' id="next-link" href="pca-density-plots.html" title="next page">Plots for Principal Components x Demographic Factors</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
