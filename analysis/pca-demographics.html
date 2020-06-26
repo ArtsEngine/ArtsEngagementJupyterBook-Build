@@ -240,11 +240,15 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#anova-emmeans-loop" class="nav-link">ANOVA, EMMeans Loop</a>
+            <a href="#marginal-plots" class="nav-link">Marginal Plots</a>
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#manova-loop" class="nav-link">MANOVA Loop</a>
+            <a href="#anova-emmeans" class="nav-link">ANOVA, EMMeans</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#manova" class="nav-link">MANOVA</a>
         </li>
     
     </ul>
@@ -273,6 +277,8 @@
 <span class="n">library</span><span class="p">(</span><span class="n">FactoMineR</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
 <span class="n">library</span><span class="p">(</span><span class="n">emmeans</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">library</span><span class="p">(</span><span class="n">ggExtra</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -300,6 +306,32 @@
            <span class="s1">&#39;so_childhood1&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood3&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood5&#39;</span><span class="p">,</span> <span class="s1">&#39;sr_participated&#39;</span><span class="p">,</span>
                <span class="s1">&#39;sr_highestdegreeplanned&#39;</span><span class="p">)</span>
 <span class="n">demo_groups</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;real_demos&#39;</span><span class="p">,</span><span class="s1">&#39;motiv_demos&#39;</span><span class="p">,</span><span class="s1">&#39;identity_demos&#39;</span><span class="p">,</span><span class="s1">&#39;participation_demos&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real_demo_prompts</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span>
+    <span class="s1">&#39;Ethnic Group&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Sex&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;School&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Highest Parent</span><span class="se">\n</span><span class="s1">Education&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Family Income&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Prior to beginning college,</span><span class="se">\n</span><span class="s1">did you expect to be involved in the arts during college?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;High School Type&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;High School Size&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;High School Location&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;How would you rate the frequency</span><span class="se">\n</span><span class="s1">of your overall involvement</span><span class="se">\n</span><span class="s1">in arts events and activities during high school?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Were you encouraged by your high school to be involved in the arts?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Were you required by your high school to be involved in the arts?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Was there a fee associated with participation in arts activities at your high school?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Were you involved in the arts during your childhood?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;During your childhood, did your parents sign you up for art classes of any kind?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;During your childhood, did your parents talk to you about the arts?&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Arts Participation Senior Year&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;What is the</span><span class="se">\n</span><span class="s1">highest academic degree</span><span class="se">\n</span><span class="s1">that you intend on obtaining?&#39;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -360,8 +392,98 @@ mergeQuestion &lt;- function(data, question) {
 </div>
 </div>
 </div>
-<div class="section" id="anova-emmeans-loop">
-<h1>ANOVA, EMMeans Loop<a class="headerlink" href="#anova-emmeans-loop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="marginal-plots">
+<h1>Marginal Plots<a class="headerlink" href="#marginal-plots" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dir.create(&#39;./results&#39;, showWarnings = F)
+for(question in question_names[-c(4:6,9:14,16)]) {
+    # directories
+    dir.create(paste(&#39;./results&#39;, question, sep = &#39;/&#39;), showWarnings = F)
+    
+    # data subsetting, PC
+    data_subset &lt;- mergeQuestion(df, question)
+    data_subset_rows &lt;- data_subset[[1]]
+    data_subset &lt;- data_subset[-1]
+    data_subset &lt;- data_subset[-1]
+    percent &lt;- 0.4
+    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+    pd &lt;- prcomp(data_subset, retx= TRUE, center=TRUE, scale=TRUE)
+
+    # merge with demographic cols
+    pcs &lt;- data.frame(rownum = data_subset_rows, pd$x[,seq(5)] %&gt;% as.data.frame)
+    rownums &lt;- pcs$rownum %&gt;% sort
+    pcs &lt;- pcs %&gt;% arrange(rownum)
+    pcs &lt;- pcs[-1]
+    demodfpcs &lt;- bind_cols(df[rownums,c(&#39;key&#39;,real_demos)], pcs)
+
+    # weighting by # of responses per respondent
+    resps_by_key &lt;- demodfpcs$key %&gt;% table %&gt;% as.data.frame
+    names(resps_by_key) &lt;- c(&#39;key&#39;,&#39;n&#39;)
+    resps_by_key %&lt;&gt;% filter(n!=0)
+    for(r in seq(nrow(demodfpcs))) {
+        nresps &lt;- resps_by_key %&gt;% filter(key == demodfpcs[r,]$key) %&gt;% .$n
+        demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))] &lt;- (1/nresps) *
+                                                            (demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))])
+    }
+    demodfpcs &lt;- demodfpcs %&gt;% select(-&#39;key&#39;)
+    demodf &lt;- demodfpcs %&gt;% select(-matches(&#39;PC[12345]&#39;))
+    pcs &lt;- demodfpcs %&gt;% select(matches(&#39;PC[12345]&#39;))
+
+    # analysis
+    for(p in c(1,3)) {
+        # directories
+        cur_dir &lt;- paste(&#39;./results&#39;, question, paste0(&#39;pc&#39;, p, &#39;_pc&#39;, p+1), sep = &#39;/&#39;)
+        dir.create(cur_dir, showWarnings = F)
+        for(d in seq(demodf)) {
+            temp &lt;- bind_cols(pcs[p], pcs[p+1], demodf[d])
+            names(temp) &lt;- c(paste0(&#39;pc0&#39;),paste0(&#39;pc00&#39;),&#39;demo&#39;) # for easier ggplot column selection
+            if((temp$demo %&gt;% table %&gt;% as.data.frame %&gt;% filter(Freq != 0) %&gt;% nrow) == 1) next
+
+            pca_idx &lt;- 0
+            if (p == 1) {
+                pca_idx &lt;- 2
+            }
+            if (p == 3) {
+                pca_idx &lt;- 6
+            }
+            
+            # hexbins
+            plot &lt;- ggplot(temp %&gt;% na.omit, aes(x=pc0, y=pc00, color=demo)) + geom_point(alpha=4/10) +
+              labs(color=real_demo_prompts[d]) +
+              theme(legend.position = &quot;bottom&quot;, text = element_text(size=22)) +
+              xlab(paste0(as.character(filter(pca_labels, question_name == question)[[pca_idx+1]]),
+                 &#39; (-) v. &#39;,
+                 as.character(filter(pca_labels,question_name == question)[[pca_idx]]), &#39; (+)&#39;)) +
+              ylab(paste0(as.character(filter(pca_labels,question_name == question)[[pca_idx+3]]),
+                 &#39; (-) v. &#39;,
+                 as.character(filter(pca_labels,question_name == question)[[pca_idx+2]]), &#39; (+)&#39;))
+            
+            if ((question == &#39;sr_othergrowth&#39; || question == &#39;sr_society&#39;) &amp;&amp; p == 1) {
+                plot &lt;- plot + xlab(paste0(as.character(filter(pca_labels,question_name == question)$pc1_neg),
+                 &#39; (-) v.\n&#39;,
+                 as.character(filter(pca_labels,question_name == question)$pc1_pos), &#39; (+)&#39;))
+            }
+            
+            plot &lt;- ggMarginal(plot, type=&#39;density&#39;, groupColour=TRUE)
+            
+            size &lt;- 1248
+            if (d == 3) { # school index
+                size &lt;- size * 1.5
+            }
+            png(paste0(cur_dir, &#39;/pc&#39;, p, &#39;_pc&#39;, p+1, &#39;_&#39;, demodf[d] %&gt;% names, &#39;.png&#39;), width = size, height = size, units = &quot;px&quot;)
+            print(plot)
+            dev.off()
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="anova-emmeans">
+<h1>ANOVA, EMMeans<a class="headerlink" href="#anova-emmeans" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sig_contrasts.demos &lt;- c()
@@ -468,8 +590,8 @@ save(sig_aov_posthoc, file=&#39;./results/anova_tukey.rda&#39;)
 </div>
 </div>
 </div>
-<div class="section" id="manova-loop">
-<h1>MANOVA Loop<a class="headerlink" href="#manova-loop" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="manova">
+<h1>MANOVA<a class="headerlink" href="#manova" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># skip aftercollege bc it causes errors (index 7)
