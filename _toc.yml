@@ -68,4 +68,3 @@
 - file: analysis/dictionaries
 - file: analysis/pca
 - file: analysis/pca-demographics
-- file: analysis/pca-density-plots

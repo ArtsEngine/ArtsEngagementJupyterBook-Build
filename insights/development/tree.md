@@ -1,6 +1,8 @@
 # Topic Tree
 
-This is a structural topic model visualization, with hierarchical topic clusters. This tree map shows the distribution of topics among the responses to the question, ***“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”***. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of th tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
+This tree map shows the distribution of topics among the responses to the question, ***“What role did the arts play in your development as a person, friend, colleague, and student during college?”***. It contains 10 topics, and 812 responses. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses.
+
+This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
 
 **Click on any node on the tree below for more information.** Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
 
@@ -982,7 +984,7 @@ function removeToolTip(id) {
 function onClick(e, d, i) {
     var rect = e.getBoundingClientRect();
     if (d == data) {
-        createDataTipQuestion(rect.left, (rect.top + viz.height() * .05), data.name.toString(), d.summary.toString(), d.id);
+        // createDataTipQuestion(rect.left, (rect.top + viz.height() * .05), data.name.toString(), d.summary.toString(), d.id);
         tooltipPresent = !0;
         return
     }
@@ -1056,36 +1058,14 @@ function changeSize(width, height) {
 
       // Set the size of our container element.
       viz_container = d3.selectAll("#viz_container")
-               // .style("width", $(window).width().toString() + "px")
-               // .style("height", $(window).height().toString() + "px")
                .style("width", ($("main").width()).toString() + "px")
                .style("height", $("main").height().toString() + "px")
                .style("display", "inline-block")
-               // .on('click', removeToolTip());
       if(!stm_data.this_root)
         console.log('data loading error');
       initialize_graph(stm_data);
       
-    //   $(".js-show-sidebar").css("width", "100%")
       $("main").css("width", "100%")
-    //   $(".c-topbar").css("width", "100%")
-      
-    //   parent = document.getElementsByClassName("c-textbook__page")[0]
-    //   parent.appendChild(document.getElementById('viz_container'))
-    //   after_elts = document.getElementsByClassName("after-tree")
-    //   for (let i = 0; i < after_elts.length; i++) {
-    //      parent.appendChild(after_elts[i])
-    //   }
-    //   parent.appendChild(document.getElementById('textbook_footer'))
-    //   $(".after-tree").css("width", "37.5%")
-
-    //   var stm_info_p = document.getElementById("stm-info");
-    //   var name_text = document.createTextNode(stm_data.name[0]);
-    //   var summary_text = document.createTextNode(stm_data.summary[0].slice(1)); // removes leading "A"
-    //   stm_info_p.appendChild(document.createTextNode("The stated question for these responses was \""));
-    //   stm_info_p.appendChild(name_text); // stated question, eg. "What is the reason behind your anticipated change in arts involvement?"
-    //   stm_info_p.appendChild(document.createTextNode("Our methods produced a"));
-    //   stm_info_p.appendChild(summary_text); // stm stats, eg. "A topic model with 12 topics, 2271 documents and a 375 word dictionary."
    });
 
    window.addEventListener("resize", changeSize());

@@ -1,4 +1,4 @@
-# Background
+# Project Background
 
 Why the Arts Engagement Project?
 

@@ -1,6 +1,8 @@
 # Topic Tree
 
-This is a structural topic model visualization, with hierarchical topic clusters. This tree map shows the distribution of topics among the responses to the question, ***“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”***. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of th tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
+This tree map shows the distribution of topics among the responses to the question, ***“Please describe any transformative or meaningful arts experience you have had during college.”***. It contains 17 topics, and 1043 responses. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses.
+
+This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
 
 **Click on any node on the tree below for more information.** Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
 
@@ -982,7 +984,7 @@ function removeToolTip(id) {
 function onClick(e, d, i) {
     var rect = e.getBoundingClientRect();
     if (d == data) {
-        createDataTipQuestion(rect.left, (rect.top + viz.height() * .05), data.name.toString(), d.summary.toString(), d.id);
+        // createDataTipQuestion(rect.left, (rect.top + viz.height() * .05), data.name.toString(), d.summary.toString(), d.id);
         tooltipPresent = !0;
         return
     }
