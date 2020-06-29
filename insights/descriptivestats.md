@@ -1,6 +1,6 @@
 # Descriptive Statistics
 
-This page describes characteristics of the samle population, including descriptive statics and patterns present. 
+This page describes characteristics of the sample population, including descriptive statics and patterns present. 
 
 For example: 
 
