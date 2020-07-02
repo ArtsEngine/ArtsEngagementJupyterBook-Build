@@ -17,48 +17,48 @@
   title: Barriers to Involvement
   sections:
     - file: insights/barriers/tree
-      title: Topic Tree
+      title: Barriers Topic Tree
     - file: insights/barriers/topics
-      title: Topic Descriptions
+      title: Barriers Topic Descriptions
     - file: insights/barriers/dimensions
-      title: Underlying Factors
+      title: Barriers Underlying Factors
 - file: insights/othergrowth
   title: Personal Growth
   sections:
     - file: insights/othergrowth/tree
-      title: Topic Tree
+      title: Growth Topic Tree
     - file: insights/othergrowth/topics
-      title: Topic Descriptions
+      title: Growth Topic Descriptions
     - file: insights/othergrowth/dimensions
-      title: Underlying Factors
+      title: Growth Underlying Factors
 - file: insights/feel
   title: Emotional Impact    
   sections:
     - file: insights/feel/tree
-      title: Topic Tree
+      title: Impacts Topic Tree
     - file: insights/feel/topics
-      title: Topic Descriptions
+      title: Impacts Topic Descriptions
     - file: insights/feel/dimensions
-      title: Underlying Factors
+      title: Impacts Underlying Factors
 - file: insights/development
   title: Developmental Role
   sections:
     - file: insights/development/tree
-      title: Topic Tree
+      title: Development Topic Tree
     - file: insights/development/topics
-      title: Topic Descriptions
+      title: Development Topic Descriptions
 - file: insights/role
   title: College Experience   
   sections:
     - file: insights/role/tree
-      title: Topic Tree
+      title: Experience Topic Tree
     - file: insights/role/topics
-      title: Topic Descriptions
+      title: Experience Topic Descriptions
 - file: insights/experience
   title: Transformative Experiences   
   sections:
     - file: insights/experience/tree
-      title: Topic Tree
+      title: Transformation Topic Tree
 
 - header: Analyses
 - file: analysis/methods
