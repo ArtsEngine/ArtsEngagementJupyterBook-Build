@@ -292,7 +292,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set number of cores to use on following computations</span>
 <span class="n">registerDoMC</span><span class="p">(</span><span class="n">cores</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1"># Set seed</span>
-<span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">123</span> <span class="c1"># variable to be used later on</span>
 <span class="nb">set</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -313,10 +313,11 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>start &lt;- Sys.time()
 verbosity &lt;- FALSE
+default_stop_words &lt;- c(&#39;art&#39;,&#39;arts&#39;)
 
 procs &lt;- foreach(n = seq(length(questions))) %dopar% textProcessor(documents = questions[[n]][[1]],
                                                                   metadata = questions[[n]][2],
-                                                                  customstopwords = c(&#39;art&#39;,&#39;arts&#39;),
+                                                                  customstopwords = default_stop_words,
                                                                   verbose = verbosity)
 
 docs &lt;- foreach(n = seq(length(questions))) %dopar% prepDocuments(documents = procs[[n]]$documents, 
@@ -416,6 +417,19 @@ for(i in seq(nbcs)) {
 </div>
 </div>
 </div>
+<p>Save STM settings for easy regeneration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stm_settings &lt;- list()
+for(i in seq(length(questions))) {
+    stm_settings[[i]]$stopwords &lt;- default_stop_words
+    stm_settings[[i]]$ntopics &lt;- k_candidates[i]
+    stm_settings[[i]]$seed &lt;- seed
+}
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="improved-stms">
 <h2>Improved STMs<a class="headerlink" href="#improved-stms" title="Permalink to this headline">¶</a></h2>
@@ -498,10 +512,14 @@ Generating JSON representation of the model ...
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>i &lt;- 1 # question index number to modify
 ntopics &lt;- 17
+stop_words &lt;- c(&#39;art&#39;,&#39;arts&#39;)
+
+stm_settings[[i]]$ntopics &lt;- ntopics
+stm_settings[[i]]$stopwords &lt;- stop_words
 
 procs[[i]] &lt;- textProcessor(documents = questions[[i]][[1]], 
               metadata = questions[[i]][2],
-              customstopwords = c(&#39;art&#39;,&#39;arts&#39;))
+              customstopwords = stop_words)
 
 docs[[i]] &lt;- prepDocuments(documents = procs[[i]]$documents,
               vocab = procs[[i]]$vocab,
@@ -515,6 +533,8 @@ stmobj &lt;- stm(documents = docs[[i]]$documents,
                 data = docs[[i]]$meta,
                 verbose = F, seed = seed)
 print(Sys.time() - start)
+
+save(stm_settings, file=&#39;stm_settings.rda&#39;)
 </pre></div>
 </div>
 </div>
