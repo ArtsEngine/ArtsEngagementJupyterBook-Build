@@ -1,70 +1,75 @@
 - file: intro
 
-- header: Project Overview
-- file: overview/background
-- file: overview/studydesign
+- chapter: Project Overview
   sections:
+  - file: overview/background
+  - file: overview/studydesign
+    sections:
     - file: overview/studylogistics
     - file: overview/surveydesign
     - file: overview/datacollection
     - file: overview/datadescription
-- file: overview/presentations
+  - file: overview/presentations
 
-- header: Insights
-- file: insights/insights
-  title: Insights Overview
-- file: insights/barriers
-  title: Barriers to Involvement
+- chapter: Insights
   sections:
+  - file: insights/insights
+    title: Insights Overview
+  - file: insights/descriptivestats
+    title: Descriptive Statistics
+  - file: insights/barriers
+    title: Barriers to Involvement
+    sections:
     - file: insights/barriers/tree
       title: Barriers Topic Tree
     - file: insights/barriers/topics
       title: Barriers Topic Descriptions
     - file: insights/barriers/dimensions
       title: Barriers Underlying Factors
-- file: insights/othergrowth
-  title: Personal Growth
-  sections:
+  - file: insights/othergrowth
+    title: Personal Growth
+    sections:
     - file: insights/othergrowth/tree
       title: Growth Topic Tree
     - file: insights/othergrowth/topics
       title: Growth Topic Descriptions
     - file: insights/othergrowth/dimensions
       title: Growth Underlying Factors
-- file: insights/feel
-  title: Emotional Impact    
-  sections:
+  - file: insights/feel
+    title: Emotional Impact    
+    sections:
     - file: insights/feel/tree
       title: Impacts Topic Tree
     - file: insights/feel/topics
       title: Impacts Topic Descriptions
     - file: insights/feel/dimensions
       title: Impacts Underlying Factors
-- file: insights/development
-  title: Developmental Role
-  sections:
+  - file: insights/development
+    title: Developmental Role
+    sections:
     - file: insights/development/tree
       title: Development Topic Tree
     - file: insights/development/topics
       title: Development Topic Descriptions
-- file: insights/role
-  title: College Experience   
-  sections:
+  - file: insights/role
+    title: College Experience   
+    sections:
     - file: insights/role/tree
       title: Experience Topic Tree
     - file: insights/role/topics
       title: Experience Topic Descriptions
-- file: insights/experience
-  title: Transformative Experiences   
-  sections:
+  - file: insights/experience
+    title: Transformative Experiences   
+    sections:
     - file: insights/experience/tree
       title: Transformation Topic Tree
 
-- header: Analyses
-- file: analysis/methods
-  title: Methods Overview
-- file: analysis/topics
-- file: analysis/stm-workflow
-- file: analysis/dictionaries
-- file: analysis/pca
-- file: analysis/pca-demographics
+- chapter: Analyses
+  sections:
+  - file: analysis/methods
+    title: Methods Overview
+  - file: analysis/topics
+  - file: analysis/stm-workflow
+  - file: analysis/dictionaries
+  - file: analysis/pca
+  - file: analysis/pca-demographics
