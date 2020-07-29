@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -28,6 +29,13 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/analysis/dictionaries.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -75,66 +83,150 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights/insights.html">Insights Overview</a>
-  </li>
-  <li class="">
-    <a href="../insights/barriers.html">Barriers to Involvement</a>
-  </li>
-  <li class="">
-    <a href="../insights/othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="../insights/feel.html">Emotional Impact</a>
-  </li>
-  <li class="">
-    <a href="../insights/development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="../insights/role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="active">
-    <a href="">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/barriers.html">
+   Barriers to Involvement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights/role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -195,38 +287,42 @@
         <!-- Launch buttons -->
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measuring-linguistic-patterns-within-texts">
+   Measuring linguistic patterns within texts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docuscope-language-action-types-lats">
+   Docuscope Language Action Types (LATs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automated-integrative-complexity-aic">
+   Automated Integrative Complexity (AIC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linguistic-inquiry-and-word-count-liwc">
+   Linguistic Inquiry and Word Count (LIWC)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#citations">
+   Citations
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#measuring-linguistic-patterns-within-texts" class="nav-link">Measuring linguistic patterns within texts</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#docuscope-language-action-types-lats" class="nav-link">Docuscope Language Action Types (LATs)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#automated-integrative-complexity-aic" class="nav-link">Automated Integrative Complexity (AIC)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#linguistic-inquiry-and-word-count-liwc" class="nav-link">Linguistic Inquiry and Word Count (LIWC)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#citations" class="nav-link">Citations</a>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -360,6 +456,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./analysis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

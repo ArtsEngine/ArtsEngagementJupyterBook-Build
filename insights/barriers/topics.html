@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Topic Descriptions &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <title>Barriers Topic Descriptions &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -28,12 +29,19 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/barriers/topics.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Underlying Factors" href="dimensions.html" />
-    <link rel="prev" title="Topic Tree" href="tree.html" />
+    <link rel="next" title="Barriers Underlying Factors" href="dimensions.html" />
+    <link rel="prev" title="Barriers Topic Tree" href="tree.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -42,8 +50,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://artsengagementproject.site/insights/barriers/topics.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Topic Descriptions" />
-<meta property="og:description" content="Topic Descriptions  We estimated a topic model using 3857 open-ended responses, resulting in a 537 word dictionary (after removing stop words) and a model with " />
+<meta property="og:title"       content="Barriers Topic Descriptions" />
+<meta property="og:description" content="Barriers Topic Descriptions  We estimated a topic model using 3857 open-ended responses, resulting in a 537 word dictionary (after removing stop words) and a mo" />
 <meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -75,77 +83,177 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights.html">Insights Overview</a>
-  </li>
-  <li class="active">
-    <a href="../barriers.html">Barriers to Involvement</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="tree.html">Barriers Topic Tree</a>
-    </li>
-    <li class="active">
-      <a href="">Topic Descriptions</a>
-    </li>
-    <li class="">
-      <a href="dimensions.html">Barriers Underlying Factors</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="../othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="../feel.html">Emotional Impact</a>
-  </li>
-  <li class="">
-    <a href="../development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="../role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../barriers.html">
+   Barriers to Involvement
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Barriers Topic Tree
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Barriers Topic Descriptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#university-context">
+     University Context
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#priorities-and-tradeoffs">
+     Priorities and Tradeoffs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dimensions.html">
+     Barriers Underlying Factors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -223,138 +331,15 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#" class="nav-link">Topic Descriptions</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#university-context" class="nav-link">University Context</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#social-climate" class="nav-link">Social Climate</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#apprehension-low-confidence-and-lack-of-familiarity" class="nav-link">Apprehension: Low Confidence and Lack of Familiarity</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#exclusiveness-competitive-auditions-and-unwelcoming-environment" class="nav-link">Exclusiveness: Competitive Auditions and Unwelcoming Environment</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#university-structure" class="nav-link">University Structure</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#academic-program-requirements" class="nav-link">Academic Program Requirements</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#university-priorities" class="nav-link">University Priorities</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#departmental-segregation" class="nav-link">Departmental Segregation</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#publicity" class="nav-link">Publicity</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#awareness" class="nav-link">Awareness</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#accessibility" class="nav-link">Accessibility</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#priorities-and-tradeoffs" class="nav-link">Priorities and Tradeoffs</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#academic-priorities" class="nav-link">Academic Priorities</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#fit-with-major-and-course-scarcity" class="nav-link">Fit With Major and Course Scarcity</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#course-load" class="nav-link">Course Load</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#time" class="nav-link">Time</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#logistics" class="nav-link">Logistics</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#distance-between-campuses" class="nav-link">Distance Between Campuses</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#cost" class="nav-link">Cost</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#friend-cost-ecosystem" class="nav-link">Friend/Cost Ecosystem</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#not-engaged" class="nav-link">Not Engaged</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#no-barriers-except" class="nav-link">No Barriers, Except…</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#lack-of-personal-interest" class="nav-link">Lack of Personal Interest</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#no-barriers" class="nav-link">No Barriers</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#ennui" class="nav-link">Ennui</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -362,38 +347,119 @@
         
               <div>
                 
-  <div class="section" id="topic-descriptions">
-<h1>Topic Descriptions<a class="headerlink" href="#topic-descriptions" title="Permalink to this headline">¶</a></h1>
-<p>We estimated a topic model using 3857 open-ended responses, resulting in a 537 word dictionary (after removing stop words) and a model with 24 topics. The detailed methods for estimating the model can be found in the section on <span class="xref myst">Topic Modeling and Interpretation</span>.</p>
+  <div class="section" id="barriers-topic-descriptions">
+<h1><a class="toc-backref" href="#id2">Barriers Topic Descriptions</a><a class="headerlink" href="#barriers-topic-descriptions" title="Permalink to this headline">¶</a></h1>
+<p>We estimated a topic model using 3857 open-ended responses, resulting in a 537 word dictionary (after removing stop words) and a model with 24 topics. The detailed methods for estimating the model can be found in the section on <a class="reference internal" href="../../analysis/topics.html"><span class="doc">Topic Modeling and Interpretation.</span></a></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/barriers_tree_viz.svg" src="../../_images/barriers_tree_viz.svg" /><p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Tree visualization of the Barriers topic model representing 3857 students responses. <a class="reference internal" href="tree.html"><span class="doc">Go here for the interactive Barriers Topic Tree.</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 <p><strong>University Context</strong> responses are those that have a direct link to the environment at the University of Michigan, a large, highly selective 4-year college. Under <strong>Social Climate</strong>, students reported Apprehension over whether their ability or experience was sufficient to gain access to student arts groups or organizations, or whether the <strong>Exclusiveness</strong> of the audition process, the large U-M student talent pool, or the closed social groupings of student in the arts would conspire to keep them from a successful entry into organized and high level arts participation through primarily student organizations. There were also a number of barriers related to overall the <strong>University Structure</strong>, in both their academic programs (access and availability of courses they could take in the arts) and the lack of priority that was placed on the arts. Finally, U-M’s large decentralized campus environment made finding and accessing <strong>Publicity</strong> very difficult, frustrating students who felt it was a barrier that caused them to miss out on arts opportunities.</p>
 <p>The <strong>Priorities and Tradeoffs</strong> node is fairly self explanatory, with <strong>Academic Priorities</strong> and <strong>Time</strong> being major (and likely expected) reported topic areas. The less reported <strong>Logistics</strong> node encompassed several more tangible barriers, such as <strong>Distance Between Campuses</strong> (time, convenience, transportation), <strong>Cost</strong>, and the <strong>Friend/Cost Ecosystem</strong> that describes not having peers with whom they can engage in arts events, so the <strong>Cost</strong> barrier, however that might be otherwise defined, was not overcome with an expected social outcome.</p>
 <p>Students also described they were just <strong>Not Engaged</strong> around the arts, primarily due to <strong>Lack of Personal Interest</strong> or a sense of <strong>Ennui</strong>. There were also those who reported <strong>No Barriers</strong>, although often with the caveat that upon reflection they could report or imagine some potential barriers (<strong>No Barriers, Except</strong>).</p>
-<p><strong><span class="xref myst">Click here for an interactive tree viewer for the ‘barriers’ topics.</span></strong></p>
-<p><a href="/insights/barriers/tree.html"><img src="/images/barriers/barriers_tree_viz.svg" title="Barriers topics tree visualization -- click to redirect to interactive version" width="800" /></a>ABOVE: Tree visualization of the Barriers topic model representing 3857 students responses.</p>
+<hr class="docutils" />
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#barriers-topic-descriptions" id="id2">Barriers Topic Descriptions</a></p></li>
+<li><p><a class="reference internal" href="#university-context" id="id3">University Context</a></p>
+<ul>
+<li><p><a class="reference internal" href="#social-climate" id="id4">Social Climate</a></p>
+<ul>
+<li><p><a class="reference internal" href="#apprehension-low-confidence-and-lack-of-familiarity" id="id5">Apprehension: Low Confidence and Lack of Familiarity</a></p></li>
+<li><p><a class="reference internal" href="#exclusiveness-competitive-auditions-and-unwelcoming-environment" id="id6">Exclusiveness: Competitive Auditions and Unwelcoming Environment</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#university-structure" id="id7">University Structure</a></p>
+<ul>
+<li><p><a class="reference internal" href="#academic-program-requirements" id="id8">Academic Program Requirements</a></p></li>
+<li><p><a class="reference internal" href="#university-priorities" id="id9">University Priorities</a></p></li>
+<li><p><a class="reference internal" href="#departmental-segregation" id="id10">Departmental Segregation</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#publicity" id="id11">Publicity</a></p>
+<ul>
+<li><p><a class="reference internal" href="#awareness" id="id12">Awareness</a></p></li>
+<li><p><a class="reference internal" href="#accessibility" id="id13">Accessibility</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#priorities-and-tradeoffs" id="id14">Priorities and Tradeoffs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#academic-priorities" id="id15">Academic Priorities</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fit-with-major-and-course-scarcity" id="id16">Fit With Major and Course Scarcity</a></p></li>
+<li><p><a class="reference internal" href="#course-load" id="id17">Course Load</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#time" id="id18">Time</a></p></li>
+<li><p><a class="reference internal" href="#logistics" id="id19">Logistics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#distance-between-campuses" id="id20">Distance Between Campuses</a></p></li>
+<li><p><a class="reference internal" href="#cost" id="id21">Cost</a></p></li>
+<li><p><a class="reference internal" href="#friend-cost-ecosystem" id="id22">Friend/Cost Ecosystem</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#not-engaged" id="id23">Not Engaged</a></p>
+<ul>
+<li><p><a class="reference internal" href="#no-barriers-except" id="id24">No Barriers, Except…</a></p></li>
+<li><p><a class="reference internal" href="#lack-of-personal-interest" id="id25">Lack of Personal Interest</a></p></li>
+<li><p><a class="reference internal" href="#no-barriers" id="id26">No Barriers</a></p></li>
+<li><p><a class="reference internal" href="#ennui" id="id27">Ennui</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="university-context">
-<h1>University Context<a class="headerlink" href="#university-context" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id3">University Context</a><a class="headerlink" href="#university-context" title="Permalink to this headline">¶</a></h1>
 <p>Under the major topic node of <strong>University Context</strong>, students reflected on their lack of confidence in their talent, knowledge, experience or technical abilities in the arts, which they believed would render them unable to participate in often highly competitive opportunities at U-M.  They also spoke to the difficulties in fitting demanding arts courses into their determined or inflexible schedules, the high bar of excellence required for entry into arts groups or programs, and the lack of emphasis the University puts on arts participation through its liberal arts requirements (i.e Creative Expression curricular breadth requirement).  Finally, finding information on arts offerings and events is difficult, leading to less participation than might otherwise be achieved.</p>
 <div class="section" id="social-climate">
-<h2>Social Climate<a class="headerlink" href="#social-climate" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Social Climate</a><a class="headerlink" href="#social-climate" title="Permalink to this headline">¶</a></h2>
 <p>Student responses in the overarching node of <strong>Social Climate</strong> indicate they don’t participate in the arts as a result of a lack of confidence in their artistic abilities due to their current level of expertise, previous experience, or innate talent, especially as it relates to their peers who are involved in the arts.  Students also indicate that they feel they are not welcome in arts groups due to their new or lower skill levels or their “outsider” status. <strong>Apprehension</strong> and <strong>Exclusiveness</strong> are the descriptive labels of the two major topic categories in this node.</p>
 <div class="section" id="apprehension-low-confidence-and-lack-of-familiarity">
-<h3>Apprehension: Low Confidence and Lack of Familiarity<a class="headerlink" href="#apprehension-low-confidence-and-lack-of-familiarity" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Apprehension: Low Confidence and Lack of Familiarity</a><a class="headerlink" href="#apprehension-low-confidence-and-lack-of-familiarity" title="Permalink to this headline">¶</a></h3>
 <p>Responses around <strong>Apprehension</strong> relate to the student’s perceptions of their current abilities, experience, or personal traits in the arts as the impediment to their arts participation. Responses related to <strong>Low Confidence</strong> are typically about their perception that they are not as talented, “artsy,” experienced, or able to benefit from participation in the arts as other students who are participating.  As a large and elite institution, U-M draws a bigger pool of talented, arts-focused individuals, creating an entire category of students who would like to participate but believe they will be  “out-competed” for opportunities by others. This personal evaluation seems to discourage students from even attempting to participate. Responses in the <strong>Lack of Familiarity</strong> area address their desire to try something new in college, but not having the prior arts experiences that would make that possible.  Exposing that inexperience, or having it indeed shut a student out of participation, leads directly to students’ anxiety surrounding college arts participation.</p>
 <p><strong>Representative Quotes</strong></p>
-<p><em>“The great and sad part of UM is the wealth of talented individuals who go here– makes it hard for me, a moderately talented individual in a number of fields, to try out for a play or musical group and actually make it because I’m competing with, for example, percussion majors for Groove and theatre majors for a part in a play.”</em></p>
-<p><em>“I felt that my talents were not on the same high level as those at the University of Michigan or that my interest in the arts was personal and not as a part of my major, therefore I felt less qualified to participate than others.”</em></p>
-<p><em>“No barriers, but many other things to do. Also, UMich has many other talented artists which discourage people who aren’t as naturally talented from participating because they aren’t naturally “artsy;” I don’t think it’s a problem you can fix because it’s benefit to have those who are naturally talented.”</em></p>
-<p><em>“Because I am not skilled in the arts. I feels as though I wouldn’t be able to benefit in being a participant in the arts such as plays or visual art displays.”</em></p>
-<p><em>“Feeling inexperienced or not talented compared to the rest of participants.”</em></p>
-<p><em>“My overall experience with the Arts was limited prior to college. As a result, I had limited interest in becoming involved in the arts at the University of Michigan.”</em></p>
-<p><em>“My own inhibition. Art is new and novel to me–it was highly emphasized at my high school, so it was something that I appreciated, but I was afraid to try.”</em></p>
-<p><em>“Sometimes it is hard for students to try something new with no prior experience in high school (for example writing for a publication without having written for their high school newspaper). Auditions or interviews might scare away prospective students looking to involve themselves in something new…”</em></p>
-<p><em>“I did not have any previous experience with the arts or else very minimal exposure prior to attending U of M, therefore I didn’t feel comfortable joining something that I wasn’t good at or was just a beginner.”</em></p>
-<p><em>“Nervousness about doing something new.”</em></p>
+<blockquote>
+<div><p>“The great and sad part of UM is the wealth of talented individuals who go here– makes it hard for me, a moderately talented individual in a number of fields, to try out for a play or musical group and actually make it because I’m competing with, for example, percussion majors for Groove and theatre majors for a part in a play.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“I felt that my talents were not on the same high level as those at the University of Michigan or that my interest in the arts was personal and not as a part of my major, therefore I felt less qualified to participate than others.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“No barriers, but many other things to do. Also, UMich has many other talented artists which discourage people who aren’t as naturally talented from participating because they aren’t naturally “artsy;” I don’t think it’s a problem you can fix because it’s benefit to have those who are naturally talented.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Because I am not skilled in the arts. I feels as though I wouldn’t be able to benefit in being a participant in the arts such as plays or visual art displays.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Feeling inexperienced or not talented compared to the rest of participants.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“My overall experience with the Arts was limited prior to college. As a result, I had limited interest in becoming involved in the arts at the University of Michigan.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“My own inhibition. Art is new and novel to me–it was highly emphasized at my high school, so it was something that I appreciated, but I was afraid to try.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Sometimes it is hard for students to try something new with no prior experience in high school (for example writing for a publication without having written for their high school newspaper). Auditions or interviews might scare away prospective students looking to involve themselves in something new…”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“I did not have any previous experience with the arts or else very minimal exposure prior to attending U of M, therefore I didn’t feel comfortable joining something that I wasn’t good at or was just a beginner.”</p>
+</div></blockquote>
+<blockquote>
+<div><p>“Nervousness about doing something new.”</p>
+</div></blockquote>
 </div>
 <div class="section" id="exclusiveness-competitive-auditions-and-unwelcoming-environment">
-<h3>Exclusiveness: Competitive Auditions and Unwelcoming Environment<a class="headerlink" href="#exclusiveness-competitive-auditions-and-unwelcoming-environment" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Exclusiveness: Competitive Auditions and Unwelcoming Environment</a><a class="headerlink" href="#exclusiveness-competitive-auditions-and-unwelcoming-environment" title="Permalink to this headline">¶</a></h3>
 <p>Responses under <strong>Exclusiveness</strong> relate to students’ perceptions of the lack of non-competitive arts entry points, existing social bonds that allow only certain students to gain access to opportunities, and the unwillingness for student art organizations to take on less experienced members who are looking for new or growth opportunities.  There is also a frustration reported in having tried to access opportunities multiple times, only to have experienced serial and discouraging rejections, or having to settle for less desirable options. <strong>Competitive Auditions</strong> are a fact of life in many arts activities, especially those in the performance areas.  This is a typical barrier for participation, but students report that in some instances, they present the only option for participation in their desired activity.  The high ability levels of peers competing for these opportunities is also a factor (See <strong>Low Confidence</strong>). Students report wishing there were more informal or broadly accessible opportunities for participation in the arts. In the <strong>Unwelcoming Environment</strong> category, students report on the social barriers in place and the judgement they perceived from those already involved with an arts activity.  Those who were already skilled and passionate were seen as unwelcoming to those who were new, less skilled, less committed, or non-arts majors.  Students reported feeling awkward or intimidated about interjecting themselves into an established “clique” or into arts “territory.” Finally, the expected level of engagement in arts activities was often too high for a more casual participant looking to experiment or just have fun.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Tryouts for dance teams prevented me from joining certain groups.”</em></p>
@@ -409,10 +475,10 @@
 </div>
 </div>
 <div class="section" id="university-structure">
-<h2>University Structure<a class="headerlink" href="#university-structure" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">University Structure</a><a class="headerlink" href="#university-structure" title="Permalink to this headline">¶</a></h2>
 <p><strong>University Structure</strong> refers to reported barriers such as those related to curriculum requirements, class scheduling, and major/minor programs; the lack of value, support or encouragement for engaging in creative or artistic endeavors; poor arts integration across disciplines; the controlled access to specialized major resources or facilities; the high rigor or access requirements for arts-related coursework and activities; and the general paucity of and long wait-lists for arts courses open to non-arts majors.</p>
 <div class="section" id="academic-program-requirements">
-<h3>Academic Program Requirements<a class="headerlink" href="#academic-program-requirements" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Academic Program Requirements</a><a class="headerlink" href="#academic-program-requirements" title="Permalink to this headline">¶</a></h3>
 <p><strong>Academic Program Requirements</strong> are an arts participation barrier, with respondents citing arts-major programs not allowing access to non-majors who want to explore the arts - either through the addition of minors or by making it easy to select outside arts courses. Non-arts academic programs did not include the arts in their required coursework, or enough unstructured time to participate in extra-curricular arts activities.  Schools and colleges  in the arts did not increase the curricular arts options open to non-majors either because of enrollment restrictions or the limited number of courses offered.  Students also reported having to gain acceptance into specialized programs to access lab and studio equipment, which stymied their full arts ambitions.  Finally, the University did not encourage or prioritize robust arts participation through its limited Creative Expression requirements.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“One barrier I would say is with the creative writing program. I applied to be a sub-concentrator and did not make it into the program. Then, the creative writing minor was brought in as a program that I couldn’t participate in because I’m already an English major. As a result, I was closed off from some writing classes and opportunities not because I was disinterested, but because with my major I wasn’t allowed to add on the minor. This was very frustrating for me, as creative writing is the focus of my studies and my goals in life.”</em></p>
@@ -423,7 +489,7 @@
 <p><em>“(I am part of a )Peer Mentor group on campus and have tried several times organize a for-fun activity getting students to try creating art. For example, I wanted to host a photography event where students could shoot a roll of fill, I would send it into the School of Art &amp; Design to have it developed, then we would create prints from the film, but the photo development services are only for Art majors. Also, I tried hosting a clay making event where students could make something out of clay and have it fired for them. Apparently these labs are only for art students as well. It would be nice if services like these were open to the greater student population so that they could (even f there is an associated cost) so that non-art students can engage in and create art.”</em></p>
 </div>
 <div class="section" id="university-priorities">
-<h3>University Priorities<a class="headerlink" href="#university-priorities" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">University Priorities</a><a class="headerlink" href="#university-priorities" title="Permalink to this headline">¶</a></h3>
 <p>Student experience what we are calling <strong>University Priorities</strong> as a barrier to their arts participation.  As a research university, there is little emphasis placed on creativity as a shared value and a desired outcome of student’s educational journey here.  This is evidenced by the perception that a majority of funding, attention and pride flows to business and engineering, versus, say, our top musical theatre programs - both from U-M and the State of Michigan. The small number of arts-related course offerings, each with long waitlists, would indicate the need for more such courses, but that is not viewed as a priority.  Engaging in arts activities, or anything that is not traditionally regarded resume-building, is discouraged.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“The University of Michigan is not a school that particularly encourages creative development. Every CE [Creative Expression requirement] class has an enormous waiting list within a few days of registration. This should lead to the creation of more CE classes. I wish I could have taken one every semester.”</em></p>
@@ -432,7 +498,7 @@
 <p><em>“I am not very talented in the arts and I wish the University of Michigan would help me develop that skill more.”</em></p>
 </div>
 <div class="section" id="departmental-segregation">
-<h3>Departmental Segregation<a class="headerlink" href="#departmental-segregation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Departmental Segregation</a><a class="headerlink" href="#departmental-segregation" title="Permalink to this headline">¶</a></h3>
 <p>Student respondents found that the <strong>Departmental Segregation</strong>–that is, not being allowed to enroll in or have ready access to arts courses offered outside their school, college or academic discipline–kept them from engaging in the arts at U-M.  There is a lack of access to studio space or resources for students not enrolled in specific arts programs or schools, and when enrolled in arts courses, the social isolation of being one of the only “outside” students in an arts course was uncomfortable. There were few “general” arts options for students wanting to explore, and without gaining access to highly competitive student arts organizations, there was an expressed fear that students would not have been able to participate in arts activities at all at college.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“For the most part there are not enough avenues for students interested in visual arts such as woodworking, ceramics, etc to gain studio access or resources to engage their visual art of choice.”</em></p>
@@ -445,10 +511,10 @@
 </div>
 </div>
 <div class="section" id="publicity">
-<h2>Publicity<a class="headerlink" href="#publicity" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Publicity</a><a class="headerlink" href="#publicity" title="Permalink to this headline">¶</a></h2>
 <p>Student respondents expressed frustration with the difficulty in finding, obtaining and acting on information and <strong>Publicity</strong> around arts events and activities.  Having to actively look in multiple places for information, not receiving information in advance of events, and the sheer number of activities and events to sort through hampered their participation.  They also cited the geographic problems with the “split campus” from an information flow standpoint, as they perceived that many arts events occurred on the campus they were less likely to frequent.  Not being a member of a particular school or college also restricted access to information.  Finally, the arts were perceived as being less well-marketed to the students than other types of activities.</p>
 <div class="section" id="awareness">
-<h3>Awareness<a class="headerlink" href="#awareness" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Awareness</a><a class="headerlink" href="#awareness" title="Permalink to this headline">¶</a></h3>
 <p>Not having a good <strong>Awareness</strong> of arts events and activities reportedly kept students from participating in the arts to the extent they would have liked.  Contributing to this barrier area was the lack of coordination between events organizers, calendars, and databases - there was not one good place to see the full picture of arts activities. Clear mechanisms to get both day-of and advance notice of events and activities was desired. Arts marketing efforts do not easily cross the campus divide, and there was a perception that arts activities and events were simply not as comprehensively marketed as other kinds of activities.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Knowledge of functions…other than emails and flyers, there seems to be no popular domain with which to post campus-wide events for not only the arts, but other important events and happenings as well. A program to encourage the existing databases and calendars or the formation of a new one would be greatly beneficial.”</em></p>
@@ -457,7 +523,7 @@
 <p><em>“Events are often not publicized enough. I’d like to hear about events some time in advance as to allow it to fit in my schedule.”</em></p>
 </div>
 <div class="section" id="accessibility">
-<h3>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Accessibility</a><a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h3>
 <p>Students reported needing to actively seek out information about arts events, creating <strong>Accessibility</strong> problems.  Not only is information hard to find, requiring real dedicated effort, but often very little information actually exists.  Conversely, so many seemingly similar choices made it hard to figure out what organization or activity might be right for those looking to participate.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“If you do not seek it, it is hard to find.”</em></p>
@@ -470,13 +536,13 @@
 </div>
 </div>
 <div class="section" id="priorities-and-tradeoffs">
-<h1>Priorities and Tradeoffs<a class="headerlink" href="#priorities-and-tradeoffs" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id14">Priorities and Tradeoffs</a><a class="headerlink" href="#priorities-and-tradeoffs" title="Permalink to this headline">¶</a></h1>
 <p>In the node of <strong>Priorities and Tradeoffs</strong>, students cite their heavy Course Load as one of the greatest barriers.  They also state that the arts are not important enough to their majors or their careers to warrant participation. <strong>Time</strong>, <strong>Distance Between Campuses</strong>, and <strong>Cost (Logistics)</strong> were also major barriers. Finally, some students indicate they were just <strong>Not Engaged</strong> in the arts, or reported they had encountered few or <strong>No Barriers</strong> to participate at the level they desired.</p>
 <div class="section" id="academic-priorities">
-<h2>Academic Priorities<a class="headerlink" href="#academic-priorities" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Academic Priorities</a><a class="headerlink" href="#academic-priorities" title="Permalink to this headline">¶</a></h2>
 <p>In addition to the formidable barrier of Course Load, students also found it difficult to prioritize the arts because they were insufficiently connected to their majors, not offered or encouraged as a part of their coursework, or not obviously aligned with their career goals.</p>
 <div class="section" id="fit-with-major-and-course-scarcity">
-<h3>Fit With Major and Course Scarcity<a class="headerlink" href="#fit-with-major-and-course-scarcity" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Fit With Major and Course Scarcity</a><a class="headerlink" href="#fit-with-major-and-course-scarcity" title="Permalink to this headline">¶</a></h3>
 <p>Students respondents mainly reported difficulties in taking art courses outside their majors because there were few courses open to non-arts majors, and those that were were inaccessible due to few seats or the lack of space in a course schedule designed to fulfill requirements <strong>(Fit With Major and Course Scarcity)</strong>.  They were unsure how they might fit arts courses into their schedule and needed additional help to do so.  They also commented on needing to prioritize activities that more closely aligned with their career goals.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“I don’t have time since it doesn’t correlate with my future career goals or major.”</em></p>
@@ -486,7 +552,7 @@
 <p><em>“It’s hard for me to be involved in the arts because of my major which doesn’t give me much time to pursue things that I would be interested in pursuing. I also don’t know how easy it is for non majors to get into art classes.”</em></p>
 </div>
 <div class="section" id="course-load">
-<h3>Course Load<a class="headerlink" href="#course-load" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Course Load</a><a class="headerlink" href="#course-load" title="Permalink to this headline">¶</a></h3>
 <p>A large percentage of student respondents indicated simply and directly that their academic <strong>Course Load</strong> was too great (sometimes in conjunction with other more highly prioritized activities), to be involved in the arts at college.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“The course work loads are too demanding to leave free time to go to the arts events.”</em></p>
@@ -497,7 +563,7 @@
 </div>
 </div>
 <div class="section" id="time">
-<h2>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Time</a><a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h2>
 <p>Time was the single largest reported barrier cited by students, either that involved in participating in the arts activity itself, or in the logistical effort to do so (i.e. travel). They “could not do everything,” and the arts were sometimes cited as outside the students’ interest areas or priorities, as related to their free time.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Time constraints with school and extracurriculars”</em></p>
@@ -507,10 +573,10 @@
 <p><em>“Time constraints. It’s difficult to do everything.”</em></p>
 </div>
 <div class="section" id="logistics">
-<h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Logistics</a><a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
 <p>Logistical considerations fill out the majority of this topic area, with students reporting difficulties with transportation,  the geographic locations of arts events, the cost of tickets (sometimes within the frame of cost/benefits, sometimes as a pure affordability concern), and the time or resources it takes to attend or participate.  Students also report wanting to go with friends to events, and speaking to the difficulties coordinating those efforts.</p>
 <div class="section" id="distance-between-campuses">
-<h3>Distance Between Campuses<a class="headerlink" href="#distance-between-campuses" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Distance Between Campuses</a><a class="headerlink" href="#distance-between-campuses" title="Permalink to this headline">¶</a></h3>
 <p>The perception that North Campus is too far from Central Campus, where many arts activities occur, was noted as a barrier, and this “split campus” was a factor in learning about arts activities as well.  This is a barrier that might be unique to U-M, though this kind of campus “split” or geographic barrier to various kinds of participation is not uncommon at other institutions.  And although the regular bus  trips between the campuses are relatively short and convenient, weather, commute time, inconvenient activity scheduling, and the poor information flow between the campuses were contributing barrier factors.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Distance - Especially in the winter. I live in Central Campus and the practices were held in North Campus at nights.”</em></p>
@@ -521,7 +587,7 @@
 <p><em>“Transportation sometimes. The bus system can be really slow sometimes, and the prices are sometimes high.”</em></p>
 </div>
 <div class="section" id="cost">
-<h3>Cost<a class="headerlink" href="#cost" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Cost</a><a class="headerlink" href="#cost" title="Permalink to this headline">¶</a></h3>
 <p><strong>Cost</strong>, as expressed here in terms of personal affordability as well as a cost/benefit analysis, was not a large barrier, but an expected one for some students.  The arts were sometimes described as a luxury that was hard to justify against the perceived benefit of participation.  Students expressed a desire for access to more free high-quality events and activities, while acknowledging that those events have justifiable costs and value.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Sometimes I would rather not pay to see performances, but I understand that the performances need to have these fees due to costs of the production.”</em></p>
@@ -532,7 +598,7 @@
 <p><em>“Not willing to spend money to go to shows or performances. Wish there were more free events, and ON CENTRAL CAMPUS.”</em></p>
 </div>
 <div class="section" id="friend-cost-ecosystem">
-<h3>Friend/Cost Ecosystem<a class="headerlink" href="#friend-cost-ecosystem" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">Friend/Cost Ecosystem</a><a class="headerlink" href="#friend-cost-ecosystem" title="Permalink to this headline">¶</a></h3>
 <p>The <strong>Friend/Cost Ecosystem</strong> topic respondents moved from reporting directly on value or affordability barriers to the desire to have U-M offer subsidies or strategies to work around financial constraints.  Students also indicated that their friends not attending (due to perhaps their own time and cost constraints) kept them from participating as well.</p>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“I really appreciate the discounted tickets to Hill Auditorium, but I wish that there were more ways to get complementary tickets to events. For mid-week events, there are often many seats left empty, and I’m sure plenty of students would be willing to write reviews or volunteer in exchange for tickets - something like Arts Ambassador, but not restricted to dorm residents.”</em></p>
@@ -543,10 +609,10 @@
 </div>
 </div>
 <div class="section" id="not-engaged">
-<h2>Not Engaged<a class="headerlink" href="#not-engaged" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">Not Engaged</a><a class="headerlink" href="#not-engaged" title="Permalink to this headline">¶</a></h2>
 <p>Engaging in the arts in college is not a priority or interest area for every student, as should be expected <strong>(Not Engaged)</strong>.  Respondents in this topic listed a variety of personal reasons they were not engaged in the arts at U-M, including but not limited to lack of planning, lack of motivation, lack of art interests, lack of arts talent, and lack of previous exposure.  A percentage of students also indicated they experienced no reportable  barriers to participating at the level to which they had aspired.</p>
 <div class="section" id="no-barriers-except">
-<h3>No Barriers, Except…<a class="headerlink" href="#no-barriers-except" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id24">No Barriers, Except…</a><a class="headerlink" href="#no-barriers-except" title="Permalink to this headline">¶</a></h3>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“I haven’t gotten my schedule down yet so I’m still too scattered to be committed to anything right now.”</em></p>
 <p><em>“I don’t know about anything until it’s already done.”</em></p>
@@ -555,7 +621,7 @@
 <p><em>“I don’t experience any barriers preventing me from being involved in the arts. I’m simply not interested in the arts. If I was interested in the arts, then I am positive that there are many ways at U of M that I could get involved in them.”</em></p>
 </div>
 <div class="section" id="lack-of-personal-interest">
-<h3>Lack of Personal Interest<a class="headerlink" href="#lack-of-personal-interest" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">Lack of Personal Interest</a><a class="headerlink" href="#lack-of-personal-interest" title="Permalink to this headline">¶</a></h3>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“Lack of personal interest. Lack of exposure.”</em></p>
 <p><em>“Time constraints, lack of motivation to initiate involvement, lack of interest.”</em></p>
@@ -563,14 +629,14 @@
 <p><em>“I didn’t experience any barriers, I just didn’t have a very strong interest in the arts coming into college so I didn’t choose to involve myself much in the arts.”</em></p>
 </div>
 <div class="section" id="no-barriers">
-<h3>No Barriers<a class="headerlink" href="#no-barriers" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">No Barriers</a><a class="headerlink" href="#no-barriers" title="Permalink to this headline">¶</a></h3>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“The barriers would be just getting more informed and the desire to become involved in the arts at the University of Michigan.”</em></p>
 <p><em>“I don’t experience any barriers preventing me from being involved in the arts. I’m simply not interested in the arts. If I was interested in the arts, then I am positive that there are many ways at U of M that I could get involved in them.”</em></p>
 <p><em>“I do not see any barriers preventing one from being involved in the arts at the University of Michigan.”</em></p>
 </div>
 <div class="section" id="ennui">
-<h3>Ennui<a class="headerlink" href="#ennui" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">Ennui</a><a class="headerlink" href="#ennui" title="Permalink to this headline">¶</a></h3>
 <p><strong>Representative Quotes</strong></p>
 <p><em>“I didn’t, it’s just something I don’t particularly enjoy.”</em></p>
 <p><em>“I didn’t experience any barriers, I just didn’t have a very strong interest in the arts coming into college so I didn’t choose to involve myself much in the arts.”</em></p>
@@ -581,6 +647,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights/barriers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -590,8 +675,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="tree.html" title="previous page">Topic Tree</a>
-    <a class='right-next' id="next-link" href="dimensions.html" title="next page">Underlying Factors</a>
+    <a class='left-prev' id="prev-link" href="tree.html" title="previous page">Barriers Topic Tree</a>
+    <a class='right-next' id="next-link" href="dimensions.html" title="next page">Barriers Underlying Factors</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

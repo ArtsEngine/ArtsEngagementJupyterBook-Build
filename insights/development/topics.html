@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -28,6 +29,13 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/development/topics.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -75,74 +83,167 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights.html">Insights Overview</a>
-  </li>
-  <li class="">
-    <a href="../barriers.html">Barriers to Involvement</a>
-  </li>
-  <li class="">
-    <a href="../othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="../feel.html">Emotional Impact</a>
-  </li>
-  <li class="active">
-    <a href="../development.html">Developmental Role</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="tree.html">Development Topic Tree</a>
-    </li>
-    <li class="active">
-      <a href="">Social Identity</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="../role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../barriers.html">
+   Barriers to Involvement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../development.html">
+   Developmental Role
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Development Topic Tree
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Social Identity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#different-perspectives">
+     Different Perspectives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -220,94 +321,56 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#social-connections">
+   Social Connections
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strengthened-social-bonds">
+     Strengthened Social Bonds
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supported-friends">
+     Supported Friends
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identity">
+   Identity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#became-part-of-identity">
+     Became Part of Identity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#played-a-developmental-role">
+     Played a Developmental Role
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#didnt-play-a-role">
+     Didn’t Play a  Role
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#" class="nav-link">Social Identity</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#social-connections" class="nav-link">Social Connections</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#strengthened-social-bonds" class="nav-link">Strengthened Social Bonds</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#supported-friends" class="nav-link">Supported Friends</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#identity" class="nav-link">Identity</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#became-part-of-identity" class="nav-link">Became Part of Identity</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#played-a-developmental-role" class="nav-link">Played a Developmental Role</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#didnt-play-a-role" class="nav-link">Didn’t Play a  Role</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#different-perspectives" class="nav-link">Different Perspectives</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#new-social-connections-and-skills" class="nav-link">New Social Connections and Skills</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#gained-skills" class="nav-link">Gained Skills</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#created-new-social-bonds" class="nav-link">Created New Social Bonds</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#deeper-appreciation" class="nav-link">Deeper Appreciation</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#more-open-minded" class="nav-link">More Open Minded</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#cultural-understanding" class="nav-link">Cultural Understanding</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#finding-balance-in-life" class="nav-link">Finding Balance in Life</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -470,6 +533,25 @@ We estimated a topic model with 10 topics, 812 open-ended responses, and a 322 w
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights/development"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Topic Tree &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <title>Barriers Topic Tree &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -28,11 +29,18 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/barriers/tree.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Topic Descriptions" href="topics.html" />
+    <link rel="next" title="Barriers Topic Descriptions" href="topics.html" />
     <link rel="prev" title="Barriers to Involvement" href="../barriers.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,8 +50,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://artsengagementproject.site/insights/barriers/tree.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Topic Tree" />
-<meta property="og:description" content="Topic Tree  This tree map shows the distribution of topics among the responses to the question, “What did you see as the barriers preventing you from being invo" />
+<meta property="og:title"       content="Barriers Topic Tree" />
+<meta property="og:description" content="Barriers Topic Tree  This tree map shows the distribution of topics among the responses to the question, “What did you see as the barriers preventing you from b" />
 <meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -75,77 +83,177 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights.html">Insights Overview</a>
-  </li>
-  <li class="active">
-    <a href="../barriers.html">Barriers to Involvement</a>
-  <ul class="nav sidenav_l2">
-    <li class="active">
-      <a href="">Barriers Topic Tree</a>
-    </li>
-    <li class="">
-      <a href="topics.html">Topic Descriptions</a>
-    </li>
-    <li class="">
-      <a href="dimensions.html">Barriers Underlying Factors</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="../othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="../feel.html">Emotional Impact</a>
-  </li>
-  <li class="">
-    <a href="../development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="../role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../barriers.html">
+   Barriers to Involvement
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Barriers Topic Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html">
+     Barriers Topic Descriptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#university-context">
+     University Context
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#priorities-and-tradeoffs">
+     Priorities and Tradeoffs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dimensions.html">
+     Barriers Underlying Factors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -186,9 +294,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/insights/barriers/tree.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/insights/barriers/tree.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -205,16 +313,33 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/insights/barriers/tree.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
     </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -222,11 +347,13 @@
         
               <div>
                 
-  <div class="section" id="topic-tree">
-<h1>Topic Tree<a class="headerlink" href="#topic-tree" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="barriers-topic-tree">
+<h1>Barriers Topic Tree<a class="headerlink" href="#barriers-topic-tree" title="Permalink to this headline">¶</a></h1>
 <p>This tree map shows the distribution of topics among the responses to the question, <em><strong>“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”</strong></em>. It contains 24 topics, and 3857 responses. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses.</p>
-<p>This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.</p>
-<p><strong>Click on any node on the tree below for more information.</strong> Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic’s identity and description.</p>
+<div class="admonition-click-on-any-node-on-the-tree-below-for-more-information admonition">
+<p class="admonition-title"><strong>Click on any node on the tree below for more information.</strong></p>
+<p>Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic’s identity and description.</p>
+</div>
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Roboto|Raleway:600,400,200' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -1290,8 +1417,28 @@ function changeSize(width, height) {
 <p class="after-tree">
 </p>
 <!-- #endraw -->
+<p>This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.</p>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights/barriers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -1302,7 +1449,7 @@ function changeSize(width, height) {
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../barriers.html" title="previous page">Barriers to Involvement</a>
-    <a class='right-next' id="next-link" href="topics.html" title="next page">Topic Descriptions</a>
+    <a class='right-next' id="next-link" href="topics.html" title="next page">Barriers Topic Descriptions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -28,6 +29,13 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/feel/dimensions.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -75,77 +83,217 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights.html">Insights Overview</a>
-  </li>
-  <li class="">
-    <a href="../barriers.html">Barriers to Involvement</a>
-  </li>
-  <li class="">
-    <a href="../othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="active">
-    <a href="../feel.html">Emotional Impact</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="tree.html">Impacts Topic Tree</a>
-    </li>
-    <li class="">
-      <a href="topics.html">Summary of Topics</a>
-    </li>
-    <li class="active">
-      <a href="">Principal Components Results Summary</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="../development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="../role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../barriers.html">
+   Barriers to Involvement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../feel.html">
+   Emotional Impact
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Impacts Topic Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html">
+     Summary of Topics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#enlightened">
+     Enlightened
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#entertained">
+     Entertained
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#uninvolved">
+     Uninvolved
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Principal Components Results Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#demographic-contrasts-results-summary">
+     Demographic Contrasts Results Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#dimension-1-very-positive-vs-ambivalent-but-positive">
+     Dimension 1: Very Positive -vs- Ambivalent, but Positive
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret">
+     Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#dimension-3-empowered-vs-meaningly-gratified">
+     Dimension 3: Empowered -vs- Meaningly Gratified
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#dimension-4-less-elaborative-vs-more-elaborative">
+     Dimension 4: Less Elaborative -vs- More Elaborative
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#dimension-5-cultured-vs-accomplished">
+     Dimension 5: Cultured -vs- Accomplished
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#selecting-the-dimensions">
+     Selecting the Dimensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -223,118 +371,15 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#" class="nav-link">Principal Components Results Summary</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#demographic-contrasts-results-summary" class="nav-link">Demographic Contrasts Results Summary</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-1-very-positive-vs-ambivalent-but-positive" class="nav-link">Dimension 1: Very Positive -vs- Ambivalent, but Positive</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret" class="nav-link">Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#demographic-factors-for-dimension-2" class="nav-link">Demographic Factors for Dimension 2</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#table-1-demographic-contrasts-for-dimension-2" class="nav-link">TABLE 1: demographic contrasts for Dimension 2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#figure-1-1-high-school-arts-participation-and-dimension-2" class="nav-link">Figure 1.1 High School Arts Participation and Dimension 2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#figure-1-2-participated-in-college-and-dimension-2" class="nav-link">Figure 1.2 Participated in College and Dimension 2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#figure-1-2-arts-in-college-and-dimension-2" class="nav-link">Figure 1.2 Arts in College and Dimension 2</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-3-empowered-vs-meaningly-gratified" class="nav-link">Dimension 3: Empowered -vs- Meaningly Gratified</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-2-demographic-contrasts-for-dimension-3" class="nav-link">TABLE 2: demographic contrasts for Dimension 3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-2-1-high-school-location-and-dimension-3" class="nav-link">Figure 2.1 High School Location and Dimension 3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-2-2-parental-influence-and-dimension-3" class="nav-link">Figure 2.2 Parental Influence and Dimension 3</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-4-less-elaborative-vs-more-elaborative" class="nav-link">Dimension 4: Less Elaborative -vs- More Elaborative</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-3-demographic-contrasts-for-dimension-4" class="nav-link">TABLE 3: demographic contrasts for Dimension 4</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-3-1-high-school-arts-participation-and-dimension-4" class="nav-link">Figure 3.1 High School Arts Participation and Dimension 4</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-5-cultured-vs-accomplished" class="nav-link">Dimension 5: Cultured -vs- Accomplished</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-4-demographic-contrasts-for-dimension-5" class="nav-link">TABLE 4: demographic contrasts for Dimension 5</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-4-1-high-school-arts-participation-and-dimension-5" class="nav-link">Figure 4.1 High School Arts Participation and Dimension 5</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#selecting-the-dimensions" class="nav-link">Selecting the Dimensions</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#scree-plot-and-explained-variance" class="nav-link">Scree Plot and Explained Variance</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#loadings-table-for-variables-included-in-the-analysis" class="nav-link">Loadings Table for Variables Included in the Analysis</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
-</nav>
-
-
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -1018,6 +1063,25 @@ topic..Accomplished_and_Creative
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights/feel"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

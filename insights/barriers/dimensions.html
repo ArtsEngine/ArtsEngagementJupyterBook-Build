@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Underlying Factors &#8212; The Arts Engagement Project at The University of Michigan</title>
+    <title>Barriers Underlying Factors &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
@@ -28,12 +29,19 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/barriers/dimensions.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Personal Growth" href="../othergrowth.html" />
-    <link rel="prev" title="Topic Descriptions" href="topics.html" />
+    <link rel="prev" title="Barriers Topic Descriptions" href="topics.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -42,8 +50,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://artsengagementproject.site/insights/barriers/dimensions.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Underlying Factors" />
-<meta property="og:description" content="Underlying Factors  Principal Components Results Summary  A total of 27 variables and 3852 responses were included in the principal component analysis of respon" />
+<meta property="og:title"       content="Barriers Underlying Factors" />
+<meta property="og:description" content="Barriers Underlying Factors  Contents  Barriers Underlying Factors  Principal Components Results Summary  Demographic Contrasts Results Summary  Dimension 1: Pe" />
 <meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -75,77 +83,177 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="">
-    <a href="../insights.html">Insights Overview</a>
-  </li>
-  <li class="active">
-    <a href="../barriers.html">Barriers to Involvement</a>
-  <ul class="nav sidenav_l2">
-    <li class="">
-      <a href="tree.html">Barriers Topic Tree</a>
-    </li>
-    <li class="">
-      <a href="topics.html">Topic Descriptions</a>
-    </li>
-    <li class="active">
-      <a href="">Barriers Underlying Factors</a>
-    </li>
-  </ul>
-  </li>
-  <li class="">
-    <a href="../othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="../feel.html">Emotional Impact</a>
-  </li>
-  <li class="">
-    <a href="../development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="../role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../insights.html">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="../barriers.html">
+   Barriers to Involvement
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="tree.html">
+     Barriers Topic Tree
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html">
+     Barriers Topic Descriptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#university-context">
+     University Context
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="topics.html#priorities-and-tradeoffs">
+     Priorities and Tradeoffs
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Barriers Underlying Factors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -223,194 +331,233 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
-
-<nav id="bd-toc-nav">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principal-components-results-summary">
+   Principal Components Results Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#demographic-contrasts-results-summary">
+   Demographic Contrasts Results Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-1-personal-capacity-vs-climate-of-exclusion">
+   Dimension 1: Personal Capacity -vs- Climate of Exclusion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demographic-factors-for-dimension-1">
+     Demographic Factors for Dimension 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-1-demographic-contrasts-for-dimension-1">
+     TABLE 1: demographic contrasts for Dimension 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-1-1-family-income-levels-of-student-respondents-and-dimension-1">
+     Figure 1.1 Family income levels of student respondents and Dimension 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figure-1-2-school-of-student-respondents-and-dimension-1">
+     Figure 1.2 School of student respondents and Dimension 1
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-2-clear-barriers-time-major-location-cost-vs-other-interests">
+   Dimension 2: Clear Barriers: Time, Major, Location, Cost -vs- Other Interests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demographic-factors-for-dimension-2">
+     Demographic Factors for Dimension 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-1-demographic-contrasts-for-dimension-2">
+     TABLE 1: demographic contrasts for Dimension 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Figure 1.1 Family income levels of student respondents and Dimension 1
+    </a>
     <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#principal-components-results-summary" class="nav-link">Principal Components Results Summary</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#demographic-contrasts-results-summary" class="nav-link">Demographic Contrasts Results Summary</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-1-personal-capacity-vs-climate-of-exclusion" class="nav-link">Dimension 1: Personal Capacity -vs- Climate of Exclusion</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#demographic-factors-for-dimension-1" class="nav-link">Demographic Factors for Dimension 1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-1-demographic-contrasts-for-dimension-1" class="nav-link">TABLE 1: demographic contrasts for Dimension 1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-1-1-family-income-levels-of-student-respondents-and-dimension-1" class="nav-link">Figure 1.1 Family income levels of student respondents and Dimension 1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#figure-1-2-school-of-student-respondents-and-dimension-1" class="nav-link">Figure 1.2 School of student respondents and Dimension 1</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-2-clear-barriers-time-major-location-cost-vs-other-interests" class="nav-link">Dimension 2: Clear Barriers: Time, Major, Location, Cost -vs- Other Interests</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#demographic-factors-for-dimension-2" class="nav-link">Demographic Factors for Dimension 2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-1-demographic-contrasts-for-dimension-2" class="nav-link">TABLE 1: demographic contrasts for Dimension 2</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id1" class="nav-link">Figure 1.1 Family income levels of student respondents and Dimension 1</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#sex" class="nav-link">sex</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#parented" class="nav-link">parented</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#sr-participated" class="nav-link">sr_participated</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#so-childhood5" class="nav-link">so_childhood5</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#so-childhood3" class="nav-link">so_childhood3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#so-childhood1" class="nav-link">so_childhood1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#hstype" class="nav-link">hstype</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#hs-fees" class="nav-link">hs_fees</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#hs-encouragement" class="nav-link">hs_encouragement</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#hs-arts-freq" class="nav-link">hs_arts_freq</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#artsincollege" class="nav-link">artsincollege</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-3-dialectical-complexity-more-vs-less" class="nav-link">Dimension 3: Dialectical Complexity (more -vs- less)</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness" class="nav-link">Dimension 4: Lack of Personal Interest, Confidence, & Familiarity -vs- Distance Between Campuses & Awareness</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#demographic-factors-for-dimension-4" class="nav-link">Demographic Factors for Dimension 4</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-4-demographic-contrasts-for-dimension-4" class="nav-link">TABLE 4: demographic contrasts for Dimension 4</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id2" class="nav-link">sex</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id3" class="nav-link">so_childhood3</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id4" class="nav-link">so_childhood1</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id5" class="nav-link">sr_participated</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id6" class="nav-link">hs_arts_freq</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id7" class="nav-link">artsincollege</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#dimension-5-course-availability-vs-access-location-and-awareness" class="nav-link">Dimension 5:  Course Availability -vs- Access: Location and Awareness</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#demographic-factors-for-dimension-5" class="nav-link">Demographic Factors for Dimension 5</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#table-5-demographic-contrasts-for-dimension-5" class="nav-link">TABLE 5: demographic contrasts for Dimension 5</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#id8" class="nav-link">sex</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h4">
-            <a href="#sr-highestdegreeplanned" class="nav-link">sr_highestdegreeplanned</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#selecting-the-dimensions" class="nav-link">Selecting the Dimensions</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#scree-plot-and-explained-variance" class="nav-link">Scree Plot and Explained Variance</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#loadings-table-for-variables-included-in-the-analysis" class="nav-link">Loadings Table for Variables Included in the Analysis</a>
-        </li>
-    
-            </ul>
-        </li>
-    
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sex">
+       sex
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#parented">
+       parented
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sr-participated">
+       sr_participated
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#so-childhood5">
+       so_childhood5
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#so-childhood3">
+       so_childhood3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#so-childhood1">
+       so_childhood1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hstype">
+       hstype
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hs-fees">
+       hs_fees
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hs-encouragement">
+       hs_encouragement
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hs-arts-freq">
+       hs_arts_freq
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#artsincollege">
+       artsincollege
+      </a>
+     </li>
     </ul>
-</nav>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-3-dialectical-complexity-more-vs-less">
+   Dimension 3: Dialectical Complexity (more -vs- less)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness">
+   Dimension 4: Lack of Personal Interest, Confidence, &amp; Familiarity -vs- Distance Between Campuses &amp; Awareness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demographic-factors-for-dimension-4">
+     Demographic Factors for Dimension 4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-4-demographic-contrasts-for-dimension-4">
+     TABLE 4: demographic contrasts for Dimension 4
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       sex
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       so_childhood3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       so_childhood1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       sr_participated
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       hs_arts_freq
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       artsincollege
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimension-5-course-availability-vs-access-location-and-awareness">
+   Dimension 5:  Course Availability -vs- Access: Location and Awareness
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#demographic-factors-for-dimension-5">
+     Demographic Factors for Dimension 5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#table-5-demographic-contrasts-for-dimension-5">
+     TABLE 5: demographic contrasts for Dimension 5
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       sex
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sr-highestdegreeplanned">
+       sr_highestdegreeplanned
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-the-dimensions">
+   Selecting the Dimensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scree-plot-and-explained-variance">
+     Scree Plot and Explained Variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loadings-table-for-variables-included-in-the-analysis">
+     Loadings Table for Variables Included in the Analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -418,21 +565,94 @@
         
               <div>
                 
-  <div class="section" id="underlying-factors">
-<h1>Underlying Factors<a class="headerlink" href="#underlying-factors" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="barriers-underlying-factors">
+<h1><a class="toc-backref" href="#id9">Barriers Underlying Factors</a><a class="headerlink" href="#barriers-underlying-factors" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#barriers-underlying-factors" id="id9">Barriers Underlying Factors</a></p>
+<ul>
+<li><p><a class="reference internal" href="#principal-components-results-summary" id="id10">Principal Components Results Summary</a></p></li>
+<li><p><a class="reference internal" href="#demographic-contrasts-results-summary" id="id11">Demographic Contrasts Results Summary</a></p></li>
+<li><p><a class="reference internal" href="#dimension-1-personal-capacity-vs-climate-of-exclusion" id="id12">Dimension 1: Personal Capacity -vs- Climate of Exclusion</a></p>
+<ul>
+<li><p><a class="reference internal" href="#demographic-factors-for-dimension-1" id="id13">Demographic Factors for Dimension 1</a></p></li>
+<li><p><a class="reference internal" href="#table-1-demographic-contrasts-for-dimension-1" id="id14">TABLE 1: demographic contrasts for Dimension 1</a></p></li>
+<li><p><a class="reference internal" href="#figure-1-1-family-income-levels-of-student-respondents-and-dimension-1" id="id15">Figure 1.1 Family income levels of student respondents and Dimension 1</a></p></li>
+<li><p><a class="reference internal" href="#figure-1-2-school-of-student-respondents-and-dimension-1" id="id16">Figure 1.2 School of student respondents and Dimension 1</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#dimension-2-clear-barriers-time-major-location-cost-vs-other-interests" id="id17">Dimension 2: Clear Barriers: Time, Major, Location, Cost -vs- Other Interests</a></p>
+<ul>
+<li><p><a class="reference internal" href="#demographic-factors-for-dimension-2" id="id18">Demographic Factors for Dimension 2</a></p></li>
+<li><p><a class="reference internal" href="#table-1-demographic-contrasts-for-dimension-2" id="id19">TABLE 1: demographic contrasts for Dimension 2</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id20">Figure 1.1 Family income levels of student respondents and Dimension 1</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sex" id="id21">sex</a></p></li>
+<li><p><a class="reference internal" href="#parented" id="id22">parented</a></p></li>
+<li><p><a class="reference internal" href="#sr-participated" id="id23">sr_participated</a></p></li>
+<li><p><a class="reference internal" href="#so-childhood5" id="id24">so_childhood5</a></p></li>
+<li><p><a class="reference internal" href="#so-childhood3" id="id25">so_childhood3</a></p></li>
+<li><p><a class="reference internal" href="#so-childhood1" id="id26">so_childhood1</a></p></li>
+<li><p><a class="reference internal" href="#hstype" id="id27">hstype</a></p></li>
+<li><p><a class="reference internal" href="#hs-fees" id="id28">hs_fees</a></p></li>
+<li><p><a class="reference internal" href="#hs-encouragement" id="id29">hs_encouragement</a></p></li>
+<li><p><a class="reference internal" href="#hs-arts-freq" id="id30">hs_arts_freq</a></p></li>
+<li><p><a class="reference internal" href="#artsincollege" id="id31">artsincollege</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#dimension-3-dialectical-complexity-more-vs-less" id="id32">Dimension 3: Dialectical Complexity (more -vs- less)</a></p></li>
+<li><p><a class="reference internal" href="#dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness" id="id33">Dimension 4: Lack of Personal Interest, Confidence, &amp; Familiarity -vs- Distance Between Campuses &amp; Awareness</a></p>
+<ul>
+<li><p><a class="reference internal" href="#demographic-factors-for-dimension-4" id="id34">Demographic Factors for Dimension 4</a></p></li>
+<li><p><a class="reference internal" href="#table-4-demographic-contrasts-for-dimension-4" id="id35">TABLE 4: demographic contrasts for Dimension 4</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id36">sex</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id37">so_childhood3</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id38">so_childhood1</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id39">sr_participated</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id40">hs_arts_freq</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id41">artsincollege</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#dimension-5-course-availability-vs-access-location-and-awareness" id="id42">Dimension 5:  Course Availability -vs- Access: Location and Awareness</a></p>
+<ul>
+<li><p><a class="reference internal" href="#demographic-factors-for-dimension-5" id="id43">Demographic Factors for Dimension 5</a></p></li>
+<li><p><a class="reference internal" href="#table-5-demographic-contrasts-for-dimension-5" id="id44">TABLE 5: demographic contrasts for Dimension 5</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id8" id="id45">sex</a></p></li>
+<li><p><a class="reference internal" href="#sr-highestdegreeplanned" id="id46">sr_highestdegreeplanned</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#selecting-the-dimensions" id="id47">Selecting the Dimensions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#scree-plot-and-explained-variance" id="id48">Scree Plot and Explained Variance</a></p></li>
+<li><p><a class="reference internal" href="#loadings-table-for-variables-included-in-the-analysis" id="id49">Loadings Table for Variables Included in the Analysis</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="section" id="principal-components-results-summary">
-<h2>Principal Components Results Summary<a class="headerlink" href="#principal-components-results-summary" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Principal Components Results Summary</a><a class="headerlink" href="#principal-components-results-summary" title="Permalink to this headline">¶</a></h2>
 <p>A total of 27 variables and 3852 responses were included in the principal component analysis of responses to the question, <em>“What did you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)?”</em>. A scree plot, dimension eigenvalues, and a loadings table for the variables included in the analysis follow at the bottom of this page.</p>
 <p>Five dimensions <em>(or, interchangeably, principal components)</em> explaining a cumulative 51% of the variation were extracted for further description and analysis. Each dimension is characterized by distributions of responses that illustrate different themes that may sometimes in tension with each other. Each of these dimensions is described in more detail in the sections below.</p>
 </div>
 <div class="section" id="demographic-contrasts-results-summary">
-<h2>Demographic Contrasts Results Summary<a class="headerlink" href="#demographic-contrasts-results-summary" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Demographic Contrasts Results Summary</a><a class="headerlink" href="#demographic-contrasts-results-summary" title="Permalink to this headline">¶</a></h2>
 <p>In addition, we tested for demographic patterns in the responses along each dimension, by conducting an analysis of variance (ANOVA) with a Tukey posthoc test to compare the principal component scores between demographic factor levels. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component.</p>
 <p>The analysis revealed demographic factor level differences for Dimensions 1, 2, 4, and 5. Dimension 3 (<em>Dialectical Complexity</em>) showed no relationship with any of the demographic factors included in the analysis. There were <code class="docutils literal notranslate"><span class="pre">school</span></code> and <code class="docutils literal notranslate"><span class="pre">income</span></code> differences for Dimension 1. Differences for <code class="docutils literal notranslate"><span class="pre">sex</span></code> emerged for Dimensions 2, 4, and 5. Prior exposure to the arts was particularly relevant for Dimensions 2 and 4. Demographic factors that had associations with each of the dimensions are listed below, along with statistical tables and accompanying figures illustrating the contrasts between factor levels. A brief description accompanies each dimension to summarize the results.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="dimension-1-personal-capacity-vs-climate-of-exclusion">
-<h2>Dimension 1: Personal Capacity -vs- Climate of Exclusion<a class="headerlink" href="#dimension-1-personal-capacity-vs-climate-of-exclusion" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Dimension 1: Personal Capacity -vs- Climate of Exclusion</a><a class="headerlink" href="#dimension-1-personal-capacity-vs-climate-of-exclusion" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 1 (the first principal component) explains about 18% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">barriers</span></code> question, and this dimension is characterized by responses focused on <em><strong>Personal Capacity</strong></em> in one direction, and by responses about <em><strong>Climate of Exclusion</strong></em> in the other direction.</p>
 <p><em><strong>Personal Capacity</strong></em> is the label given to describe one direction of this dimension; it is a synthesis of the topic variables of <code class="docutils literal notranslate"><span class="pre">Time</span></code> and <code class="docutils literal notranslate"><span class="pre">Course</span> <span class="pre">Load</span></code>, and <code class="docutils literal notranslate"><span class="pre">LIWC.relativ</span></code>, a spatial language variable indicative of location. Taken together, this direction of the dimension describes personal capacity either in terms of time, logistical effort (i.e. travel), interest, and priorities as a barrier to participating in the arts activities. Many responses indicated that their academic course load was too great (sometimes in conjunction with other more highly prioritized activities), to be involved in the arts at college. Location was also an issue, as the demands of traveling and being in multiple places often diminishes one’s personal capacity.</p>
 <blockquote>
@@ -476,12 +696,12 @@
 <div><p>“Stigma against artistic pursuits as flaky or not productive.”</p>
 </div></blockquote>
 <div class="section" id="demographic-factors-for-dimension-1">
-<h3>Demographic Factors for Dimension 1<a class="headerlink" href="#demographic-factors-for-dimension-1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Demographic Factors for Dimension 1</a><a class="headerlink" href="#demographic-factors-for-dimension-1" title="Permalink to this headline">¶</a></h3>
 <p>Students reporting family income levels of <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">than</span> <span class="pre">\$150,000</span></code> had higher mean principal component scores along Dimension 1 — in contrast to students that reported family income levels of <code class="docutils literal notranslate"><span class="pre">\$50,000-$100,000</span></code> (Table 1). Students in the <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">than</span> <span class="pre">\$150,000</span></code> income group were more likely to have responses that fell into the <em><strong>Climate of Exclusion</strong></em> range of Dimension 1 (Table 1; Figure 1.1).</p>
 <p><code class="docutils literal notranslate"><span class="pre">Engineering</span></code> students tended to have lower mean principal component scores along Dimension 1 in contrast to <code class="docutils literal notranslate"><span class="pre">Literature,</span> <span class="pre">Science</span> <span class="pre">&amp;</span> <span class="pre">the</span> <span class="pre">Arts</span></code> students (Table 1). <code class="docutils literal notranslate"><span class="pre">Engineering</span></code> students were thus more likely to have responses in the <em><strong>Personal Capacity</strong></em> range of Dimension 1 (Table 1; Figure 1.2).</p>
 </div>
 <div class="section" id="table-1-demographic-contrasts-for-dimension-1">
-<h3>TABLE 1: demographic contrasts for Dimension 1<a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id14">TABLE 1: demographic contrasts for Dimension 1</a><a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-1" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -511,17 +731,17 @@
 </table>
 </div>
 <div class="section" id="figure-1-1-family-income-levels-of-student-respondents-and-dimension-1">
-<h3>Figure 1.1 Family income levels of student respondents and Dimension 1<a class="headerlink" href="#figure-1-1-family-income-levels-of-student-respondents-and-dimension-1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Figure 1.1 Family income levels of student respondents and Dimension 1</a><a class="headerlink" href="#figure-1-1-family-income-levels-of-student-respondents-and-dimension-1" title="Permalink to this headline">¶</a></h3>
 <p><img src="/images/barriers/demos/PC1-income.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="figure-1-2-school-of-student-respondents-and-dimension-1">
-<h3>Figure 1.2 School of student respondents and Dimension 1<a class="headerlink" href="#figure-1-2-school-of-student-respondents-and-dimension-1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Figure 1.2 School of student respondents and Dimension 1</a><a class="headerlink" href="#figure-1-2-school-of-student-respondents-and-dimension-1" title="Permalink to this headline">¶</a></h3>
 <p><img src="/images/barriers/demos/PC1-school.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 <p><img src="/images/barriers/barriers_biplot12.png" title="Biplot for Dimensions 1 and 2 for 'Barriers'" width="600">ABOVE: Biplot for Dimensions 1 and 2 for ‘Barriers</img></p>
 </div>
 </div>
 <div class="section" id="dimension-2-clear-barriers-time-major-location-cost-vs-other-interests">
-<h2>Dimension 2: Clear Barriers: Time, Major, Location, Cost -vs- Other Interests<a class="headerlink" href="#dimension-2-clear-barriers-time-major-location-cost-vs-other-interests" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Dimension 2: Clear Barriers: Time, Major, Location, Cost -vs- Other Interests</a><a class="headerlink" href="#dimension-2-clear-barriers-time-major-location-cost-vs-other-interests" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 2 explains about 11% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">barriers</span></code> question, and this dimension is characterized by responses focused on <strong>Clear Barriers: Time, Major, Location, Cost</strong> in one direction, and by responses about <strong>Other Interests</strong> in the other direction.</p>
 <p><strong>Clear Barriers: Time, Major, Location, Cost</strong> is the label given to describe one direction of this dimension; it is a synthesis of the topic variables of <code class="docutils literal notranslate"><span class="pre">LIWC..Analytic</span></code>, <code class="docutils literal notranslate"><span class="pre">LIWC..Clout</span></code>, and <code class="docutils literal notranslate"><span class="pre">LIWC..relativ</span></code>. <code class="docutils literal notranslate"><span class="pre">LIWC..Clout</span></code> is associated with social status and lower use of first person pronouns {% cite kacewicz2014pronoun %}, while <code class="docutils literal notranslate"><span class="pre">LIWC..Analytic</span></code> signifies categorical language combining heightened abstract thinking, greater article use, cognitive complexity, and greater use of prepositions {% cite pennebaker2014small %}. Together, these variables and the content of the responses suggest a directness in the responses and a clearer identification of barrier categories — sometime with elaboration — but more often to the point.</p>
 <blockquote>
@@ -544,11 +764,11 @@
 <div><p>“The only barriers I see is the impracticality of being involved in the arts as a pre-medical mathematics major.”</p>
 </div></blockquote>
 <div class="section" id="demographic-factors-for-dimension-2">
-<h3>Demographic Factors for Dimension 2<a class="headerlink" href="#demographic-factors-for-dimension-2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Demographic Factors for Dimension 2</a><a class="headerlink" href="#demographic-factors-for-dimension-2" title="Permalink to this headline">¶</a></h3>
 <p>A vartiety of demographic variables showed contrasts for Dimension 2. Many of the variables were related to prior experience with the arts — such as having participated in the arts in college, frequency of participation in high school, if students were encouraged in the arts in high school, and whether the arts was something that their parents exposed them to dduring childhood. This suggests two things. First, prior exposure in the arts appears to have a strong, underlying impact on whether students are likely to cite <em><strong>Other Interests</strong></em> as a barrier to arts involvement. The second is that multiple factors impact prior experiences in the arts, from childhood exposure, to availability, encouragement, and actual participation.</p>
 </div>
 <div class="section" id="table-1-demographic-contrasts-for-dimension-2">
-<h3>TABLE 1: demographic contrasts for Dimension 2<a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">TABLE 1: demographic contrasts for Dimension 2</a><a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-2" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -662,55 +882,55 @@
 </table>
 </div>
 <div class="section" id="id1">
-<h3>Figure 1.1 Family income levels of student respondents and Dimension 1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id20">Figure 1.1 Family income levels of student respondents and Dimension 1</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="sex">
-<h4>sex<a class="headerlink" href="#sex" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id21">sex</a><a class="headerlink" href="#sex" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-sex.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="parented">
-<h4>parented<a class="headerlink" href="#parented" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id22">parented</a><a class="headerlink" href="#parented" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-parented.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="sr-participated">
-<h4>sr_participated<a class="headerlink" href="#sr-participated" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id23">sr_participated</a><a class="headerlink" href="#sr-participated" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-sr_participated.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="so-childhood5">
-<h4>so_childhood5<a class="headerlink" href="#so-childhood5" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id24">so_childhood5</a><a class="headerlink" href="#so-childhood5" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-so_childhood5.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="so-childhood3">
-<h4>so_childhood3<a class="headerlink" href="#so-childhood3" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id25">so_childhood3</a><a class="headerlink" href="#so-childhood3" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-so_childhood3.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="so-childhood1">
-<h4>so_childhood1<a class="headerlink" href="#so-childhood1" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id26">so_childhood1</a><a class="headerlink" href="#so-childhood1" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-so_childhood1.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="hstype">
-<h4>hstype<a class="headerlink" href="#hstype" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id27">hstype</a><a class="headerlink" href="#hstype" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-hstype.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="hs-fees">
-<h4>hs_fees<a class="headerlink" href="#hs-fees" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id28">hs_fees</a><a class="headerlink" href="#hs-fees" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-hs_fees.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="hs-encouragement">
-<h4>hs_encouragement<a class="headerlink" href="#hs-encouragement" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id29">hs_encouragement</a><a class="headerlink" href="#hs-encouragement" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-hs_encouragement.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="hs-arts-freq">
-<h4>hs_arts_freq<a class="headerlink" href="#hs-arts-freq" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id30">hs_arts_freq</a><a class="headerlink" href="#hs-arts-freq" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-hs_arts_freq.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="artsincollege">
-<h4>artsincollege<a class="headerlink" href="#artsincollege" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id31">artsincollege</a><a class="headerlink" href="#artsincollege" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC2-artsincollege.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 </div>
 </div>
 <div class="section" id="dimension-3-dialectical-complexity-more-vs-less">
-<h2>Dimension 3: Dialectical Complexity (more -vs- less)<a class="headerlink" href="#dimension-3-dialectical-complexity-more-vs-less" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id32">Dimension 3: Dialectical Complexity (more -vs- less)</a><a class="headerlink" href="#dimension-3-dialectical-complexity-more-vs-less" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 2 explains about 9% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">barriers</span></code> question. This dimension is characterized by higher vs lesser degrees of <strong>Dialectical Complexity</strong> in the structure of their responses. The variables contribiting to <strong>Dialectical Complexity</strong> were<code class="docutils literal notranslate"><span class="pre">AIC..IC</span></code>, <code class="docutils literal notranslate"><span class="pre">AIC..DIAL</span></code>, and <code class="docutils literal notranslate"><span class="pre">AIC..ELAB</span></code>. While the responses exhibit integrative complexity, they also exhibit a more specific form, Dialectical Complexity, indicateing some form of tension is involved. This makes intuitive sense given that many of the responses are describing trade-offs in their lives, tensions that they are reconciling, and competing commitments and interests. <a class="reference external" href="../methods/dictionaries.html#Automated-Integrative-Complexity-(AIC)">A description of Integrative Complexity and Dialectical Complexity measurements and variables can be found in the AIC methods section</a>.</p>
 <blockquote>
 <div><p>“It’s difficult to find time to do art, I have too much schoolwork and the only way I can do art is if I incorporate it into my schoolwork. Another barrier is I’m get intimidated by other’s arts, so I keep my art to myself most of the time.”</p>
@@ -725,7 +945,7 @@
 <p><img src="/images/barriers/barriers_biplot34.png" title="Biplot for Dimensions 3 and 4 for 'Barriers'" width="600">ABOVE: Biplot for Dimensions 3 and 4 for ‘Barriers</img></p>
 </div>
 <div class="section" id="dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness">
-<h2>Dimension 4: Lack of Personal Interest, Confidence, &amp; Familiarity -vs- Distance Between Campuses &amp; Awareness<a class="headerlink" href="#dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id33">Dimension 4: Lack of Personal Interest, Confidence, &amp; Familiarity -vs- Distance Between Campuses &amp; Awareness</a><a class="headerlink" href="#dimension-4-lack-of-personal-interest-confidence-familiarity-vs-distance-between-campuses-awareness" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 4 explains about 7% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">barriers</span></code> question, and this dimension is characterized by responses focused on <strong>Lack of Personal Interest, Confidence, &amp; Familiarity</strong> in one direction, and by responses about <strong>Distance Between Campuses &amp; Awareness</strong> in the other direction. The variables contribiting to <strong>Lack of Personal Interest, Confidence, and/or Familiarity</strong> include <code class="docutils literal notranslate"><span class="pre">topic..Lack_of_Personal_Interest,</span> <span class="pre">topic..Low_Confidence,</span> <span class="pre">topic..Lack_of_Familiarity</span></code>. The variables contribiting to <strong>Distance Between Campuses &amp; Awareness</strong> include <code class="docutils literal notranslate"><span class="pre">topic..Distance_Between_Campuses,</span> <span class="pre">topic..Awareness</span></code>.</p>
 <p><strong>Lack of Personal Interest, Confidence, and/or Familiarity</strong> describes the nexus of academic course offerings, co-curricular opportunities, the level of a course relative to the student’s proficiency, the constraints of one’s major, and the fit, sequence, and timing of scheduling, as well as one’s overall course load. Responses in the direction of</p>
 <blockquote>
@@ -767,11 +987,11 @@
 </div></blockquote>
 <p>What distinguishes the <strong>Distance Between Campuses &amp; Awareness</strong> in Dimension 4 from <strong>Access: Location and Awareness</strong> in Dimension 5? Seemingly little. However, the main difference between dimensions 4 and 5 appears to be a distinction between barriers linked to factors that individual students have some control over (in the case of <strong>Lack of Personal Interest, Confidence, and/or Familiarity</strong> in Dimension 4) and factors that may be more institutionally driven (in the case of <strong>Course Availability</strong> in Dimension 5).</p>
 <div class="section" id="demographic-factors-for-dimension-4">
-<h3>Demographic Factors for Dimension 4<a class="headerlink" href="#demographic-factors-for-dimension-4" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">Demographic Factors for Dimension 4</a><a class="headerlink" href="#demographic-factors-for-dimension-4" title="Permalink to this headline">¶</a></h3>
 <p>Women were more likely to cite <strong>Distance Between Campuses &amp; Awareness</strong> as a barrier in their responses in contrast to men (Table 4; Figure 4.1). Similar to other observations, prior exposure and participation in the arts has a stonger association to material barriers such as <strong>Distance Between Campuses &amp; Awareness</strong>, and less of an association with <strong>Lack of Personal Interest, Confidence, and/or Familiarity</strong>. Put another way, prior exposure and participation in the arts — like many things — may be significant factor in brodening personal interests, confidence and familiarity.</p>
 </div>
 <div class="section" id="table-4-demographic-contrasts-for-dimension-4">
-<h3>TABLE 4: demographic contrasts for Dimension 4<a class="headerlink" href="#table-4-demographic-contrasts-for-dimension-4" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">TABLE 4: demographic contrasts for Dimension 4</a><a class="headerlink" href="#table-4-demographic-contrasts-for-dimension-4" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -842,33 +1062,33 @@
 </tbody>
 </table>
 <div class="section" id="id2">
-<h4>sex<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id36">sex</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-sex.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="id3">
-<h4>so_childhood3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id37">so_childhood3</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-so_childhood3.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="id4">
-<h4>so_childhood1<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id38">so_childhood1</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-so_childhood1.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="id5">
-<h4>sr_participated<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id39">sr_participated</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-sr_participated.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="id6">
-<h4>hs_arts_freq<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id40">hs_arts_freq</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-hs_arts_freq.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="id7">
-<h4>artsincollege<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id41">artsincollege</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC4-artsincollege.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 </div>
 </div>
 <div class="section" id="dimension-5-course-availability-vs-access-location-and-awareness">
-<h2>Dimension 5:  Course Availability -vs- Access: Location and Awareness<a class="headerlink" href="#dimension-5-course-availability-vs-access-location-and-awareness" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">Dimension 5:  Course Availability -vs- Access: Location and Awareness</a><a class="headerlink" href="#dimension-5-course-availability-vs-access-location-and-awareness" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 5 explains about 6% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">barriers</span></code> question, and this dimension is characterized by responses focused on <strong>Course Availability</strong> in one direction, and by responses about <strong>Access: Location and Awareness</strong> in the other direction. The variables contribiting to <strong>Course Availability</strong> include <code class="docutils literal notranslate"><span class="pre">topic..Fit_With_Major_and_Course_Scarcity,</span> <span class="pre">topic..Departmental_Segregation,</span> <span class="pre">and</span> <span class="pre">topic..Course_Load</span></code>. The variables contribiting to <strong>Access: Location and Awareness</strong> include <code class="docutils literal notranslate"><span class="pre">LIWC..Authentic,</span> <span class="pre">topic..Awareness,</span> <span class="pre">LIWC..relativ,</span> <span class="pre">topic..Ennui,</span> <span class="pre">topic..Distance_Between_Campuses</span></code>. The variation explained by this dimension is small, but it is included for description because it helps create a fuller picture of the dynamics facing students, their choices, and how they seek to overcome barriers encountered.</p>
 <p><strong>Course Availability</strong> describes the nexus of academic course offerings, co-curricular opportunities, the level of a course relative to the student’s proficiency, the constraints of one’s major, and the fit, sequence, and timing of scheduling, as well as one’s overall course load.</p>
 <blockquote>
@@ -906,12 +1126,12 @@
 <div><p>“Lack of awareness, and time conflicts with difficult classes. Availability”</p>
 </div></blockquote>
 <div class="section" id="demographic-factors-for-dimension-5">
-<h3>Demographic Factors for Dimension 5<a class="headerlink" href="#demographic-factors-for-dimension-5" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">Demographic Factors for Dimension 5</a><a class="headerlink" href="#demographic-factors-for-dimension-5" title="Permalink to this headline">¶</a></h3>
 <p>Students for whom a Doctoral or professional degree was their highes degree planned were more likely than those planning on a Bachelor’s degree to cite course availabiliy as a barrier. This is presumably because their perceived time and remaining course options are more limited in their current matriculation status than they would be if they planned to pursure graduate education.</p>
 <p>Women were more likely than men to cite <strong>Access: Location and Awareness</strong> as a barrier. Given the somewhat higher overall engagement in the arts by women, potential differences in technology usage providing access to information, well-documented sex differences in access to resources, as well as challenges in getting to and from rehearsals and other spaces may contribute to this contrast.</p>
 </div>
 <div class="section" id="table-5-demographic-contrasts-for-dimension-5">
-<h3>TABLE 5: demographic contrasts for Dimension 5<a class="headerlink" href="#table-5-demographic-contrasts-for-dimension-5" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">TABLE 5: demographic contrasts for Dimension 5</a><a class="headerlink" href="#table-5-demographic-contrasts-for-dimension-5" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -940,19 +1160,19 @@
 </tbody>
 </table>
 <div class="section" id="id8">
-<h4>sex<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id45">sex</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC5-sex.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 <div class="section" id="sr-highestdegreeplanned">
-<h4>sr_highestdegreeplanned<a class="headerlink" href="#sr-highestdegreeplanned" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id46">sr_highestdegreeplanned</a><a class="headerlink" href="#sr-highestdegreeplanned" title="Permalink to this headline">¶</a></h4>
 <p><img src="/images/barriers/demos/PC5-sr_highestdegreeplanned.png" title="Density plot of income contrasts" width="800">ABOVE: Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component. </img></p>
 </div>
 </div>
 </div>
 <div class="section" id="selecting-the-dimensions">
-<h2>Selecting the Dimensions<a class="headerlink" href="#selecting-the-dimensions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id47">Selecting the Dimensions</a><a class="headerlink" href="#selecting-the-dimensions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scree-plot-and-explained-variance">
-<h3>Scree Plot and Explained Variance<a class="headerlink" href="#scree-plot-and-explained-variance" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id48">Scree Plot and Explained Variance</a><a class="headerlink" href="#scree-plot-and-explained-variance" title="Permalink to this headline">¶</a></h3>
 <p>This scree plot shows the explained variance of each of the dimensions and helps illustrate the criteria used for selecting the number of dimensions to be studied. In general, dimensions were included that helped account for at least 50% of the cumulative variance, leaving those dimensions that explained less than about 6% of the response variation uninterpreted.</p>
 <p><img src="/images/barriers/barriers_screeplot.png" title="Barriers Scree Plot" width="600"></img></p>
 <p>Eight components had an eigenvalue greater than 1. The eight components accounted for 64% of the variation among the responses. Five dimensions explaining a cumulative 51% of the variation were extracted for further description.</p>
@@ -1009,7 +1229,7 @@
 </table>
 </div>
 <div class="section" id="loadings-table-for-variables-included-in-the-analysis">
-<h3>Loadings Table for Variables Included in the Analysis<a class="headerlink" href="#loadings-table-for-variables-included-in-the-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">Loadings Table for Variables Included in the Analysis</a><a class="headerlink" href="#loadings-table-for-variables-included-in-the-analysis" title="Permalink to this headline">¶</a></h3>
 <p>The table of loadings shows the loadings of all of the variables for each of the principal components studied for <code class="docutils literal notranslate"><span class="pre">barriers</span></code>. Loadings with absolute values greater than 0.2 have been considered the most important for interpreting and describing each principal component.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1219,6 +1439,25 @@
 </div>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights/barriers"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -1228,7 +1467,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="topics.html" title="previous page">Topic Descriptions</a>
+    <a class='left-prev' id="prev-link" href="topics.html" title="previous page">Barriers Topic Descriptions</a>
     <a class='right-next' id="next-link" href="../othergrowth.html" title="next page">Personal Growth</a>
 
     </div>

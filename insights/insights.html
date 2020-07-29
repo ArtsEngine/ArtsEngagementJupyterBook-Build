@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
@@ -28,12 +29,19 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://artsengagementproject.site/insights/insights.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Barriers to Involvement" href="barriers.html" />
-    <link rel="prev" title="Presentations" href="../overview/presentations.html" />
+    <link rel="next" title="Descriptive Statistics" href="descriptivestats.html" />
+    <link rel="prev" title="Presentations and Publications" href="../overview/presentations.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -43,7 +51,7 @@
 <meta property="og:url"         content="https://artsengagementproject.site/insights/insights.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Insights Overview" />
-<meta property="og:description" content="Insights Overview  There are close to over two dozen different analyses being conducted on this dataset. The results posted here represent a small subset, and m" />
+<meta property="og:description" content="Insights Overview  This study draws from a variety of analytical methods. In addition to multiple choice questions, a set of open-ended questions builds on the " />
 <meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
 
 <meta name="twitter:card" content="summary">
@@ -75,66 +83,150 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
   <ul class="nav sidenav_l1">
-  <li class="">
-    <a href="../intro.html">The Arts Engagement Project</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Project Overview</p>
-</li>
-  <li class="">
-    <a href="../overview/background.html">Project Background</a>
-  </li>
-  <li class="">
-    <a href="../overview/studydesign.html">Study Design</a>
-  </li>
-  <li class="">
-    <a href="../overview/presentations.html">Presentations</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Insights</p>
-</li>
-  <li class="active">
-    <a href="">Insights Overview</a>
-  </li>
-  <li class="">
-    <a href="barriers.html">Barriers to Involvement</a>
-  </li>
-  <li class="">
-    <a href="othergrowth.html">Personal Growth</a>
-  </li>
-  <li class="">
-    <a href="feel.html">Emotional Impact</a>
-  </li>
-  <li class="">
-    <a href="development.html">Developmental Role</a>
-  </li>
-  <li class="">
-    <a href="role.html">College Experience</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Analyses</p>
-</li>
-  <li class="">
-    <a href="../analysis/methods.html">Methods Overview</a>
-  </li>
-  <li class="">
-    <a href="../analysis/topics.html">Topic Modeling and Interpretation</a>
-  </li>
-  <li class="">
-    <a href="../analysis/stm-workflow.html">Structural Topic Model Workflow</a>
-  </li>
-  <li class="">
-    <a href="../analysis/dictionaries.html">Dictionaries of Language Patterns</a>
-  </li>
-  <li class="">
-    <a href="../analysis/pca.html">Principal Components Analysis</a>
-  </li>
-  <li class="">
-    <a href="../analysis/pca-demographics.html">Analysis of Principal Components x Demographic Factors</a>
-  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   The Arts Engagement Project
+  </a>
+ </li>
 </ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/background.html">
+   Project Background
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/studydesign.html">
+   Study Design
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../overview/presentations.html">
+   Presentations and Publications
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Insights
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Insights Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="descriptivestats.html">
+   Descriptive Statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="barriers.html">
+   Barriers to Involvement
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="othergrowth.html">
+   Personal Growth
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feel.html">
+   Emotional Impact
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="development.html">
+   Developmental Role
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="role.html">
+   College Experience
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Analyses
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/methods.html">
+   Methods Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/topics.html">
+   Topic Modeling and Interpretation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/stm-workflow.html">
+   Structural Topic Model Workflow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/dictionaries.html">
+   Dictionaries of Language Patterns
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca.html">
+   Principal Components Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html">
+   Analysis of Principal Components x Demographic Factors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/pca-demographics.html#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
 </nav>
 
  <!-- To handle the deprecated key -->
@@ -212,15 +304,37 @@
 </div>
 
     </div>
+
+    <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#student-development">
+   Student Development
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wellness">
+   Wellness
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#um-experience-policy">
+   UM Experience/Policy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#career-after-college">
+   Career/After College
+  </a>
+ </li>
+</ul>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-    </ul>
-</nav>
-
-
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -230,35 +344,65 @@
                 
   <div class="section" id="insights-overview">
 <h1>Insights Overview<a class="headerlink" href="#insights-overview" title="Permalink to this headline">¶</a></h1>
-<p>There are close to over two dozen different analyses being conducted on this dataset. The results posted here represent a small subset, and many analyses are ongoing in various stages of completion. Rather than waiting for all of the results to be finalized, we are posting the most up-to-date results here — as time and resources permit us to analyze, interpret, and report on the results.</p>
 <p>This study draws from a variety of analytical methods. In addition to multiple choice questions, a set of open-ended questions builds on the multiple choice responses and demographic profiles — providing important insights into the diverse frames of students` experiences with the arts at UM and in their lives.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are close to over two dozen different analyses being conducted on this dataset. The results posted here represent a small subset, and many analyses are ongoing in various stages of completion. Rather than waiting for all of the results to be finalized, we are posting the most up-to-date results here — as time and resources permit us to analyze, interpret, and report on the results.</p>
+</div>
 <p>Available or in-process results from the open-ended question responses are highlighted below and linked to their respective pages. These results — particularly when analyzed in conjunction with demographic factors — begin to provide important insights for the design of arts-based experiences in higher education, as well as the impacts of the arts on student learning and engagement.</p>
-<p>##Student Development##</p>
+<div class="section" id="student-development">
+<h2>Student Development<a class="headerlink" href="#student-development" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">In what ways do you think you can grow (through arts engagement)? (sr_othergrowth)</span></p></li>
-<li><p><span class="xref myst">What role did the arts play in your development as a person, friend, colleague, and student during college? (development)</span></p></li>
-<li><p>Please describe any transformative or meaningful arts experience you had during college. (experience)</p></li>
+<li><p><a class="reference internal" href="othergrowth.html"><span class="doc std std-doc">In what ways do you think you can grow (through arts engagement)? (sr_othergrowth)</span></a></p></li>
+<li><p><a class="reference internal" href="development.html"><span class="doc std std-doc">What role did the arts play in your development as a person, friend, colleague, and student during college? (development)</span></a></p></li>
+<li><p><span class="xref myst">Please describe any transformative or meaningful arts experience you had during college (experience)</span></p></li>
 <li><p>How did your behavior or thinking change (as a result of engaging in the arts)? (behavior2)</p></li>
 </ul>
-<p>##Wellness##</p>
+</div>
+<div class="section" id="wellness">
+<h2>Wellness<a class="headerlink" href="#wellness" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">How did your involvement in the arts in college make you feel? (feel)</span></p></li>
+<li><p><a class="reference internal" href="feel.html"><span class="doc std std-doc">How did your involvement in the arts in college make you feel? (feel)</span></a></p></li>
 <li><p>How did being involved in the arts as a child make you feel? (childhood2)</p></li>
 <li><p>What role do you see the arts playing in society? (society)</p></li>
 </ul>
-<p>##UM Experience/Policy##</p>
+</div>
+<div class="section" id="um-experience-policy">
+<h2>UM Experience/Policy<a class="headerlink" href="#um-experience-policy" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><span class="xref myst">What do you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)? (barriers)</span></p></li>
-<li><p><span class="xref myst">What role did the arts play in your college experience, both positive and negative? (role)</span></p></li>
+<li><p><a class="reference internal" href="barriers.html"><span class="doc std std-doc">What do you see as the barriers preventing you from being involved in the arts at the University of Michigan (if you experienced any)? (barriers)</span></a></p></li>
+<li><p><a class="reference internal" href="role.html"><span class="doc std std-doc">What role did the arts play in your college experience, both positive and negative? (role)</span></a></p></li>
 <li><p>How do you define “the arts”? (definition)</p></li>
 </ul>
-<p>##Career/After College##</p>
+</div>
+<div class="section" id="career-after-college">
+<h2>Career/After College<a class="headerlink" href="#career-after-college" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>If the arts had any impact on your career choice, please describe. (career)</p></li>
 <li><p>In what other ways do you see yourself being involved in the arts after college? (aftercollege4)</p></li>
 </ul>
 </div>
+</div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./insights"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -268,8 +412,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../overview/presentations.html" title="previous page">Presentations</a>
-    <a class='right-next' id="next-link" href="barriers.html" title="next page">Barriers to Involvement</a>
+    <a class='left-prev' id="prev-link" href="../overview/presentations.html" title="previous page">Presentations and Publications</a>
+    <a class='right-next' id="next-link" href="descriptivestats.html" title="next page">Descriptive Statistics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
