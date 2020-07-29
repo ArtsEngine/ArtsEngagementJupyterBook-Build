@@ -189,41 +189,6 @@
    Analysis of Principal Components x Demographic Factors
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#load-libraries-and-data">
-   Load libraries and data
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#subset-demographic-variables">
-   Subset demographic variables
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#define-helper-functions">
-   Define helper functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#density-plots">
-   Density Plots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#marginal-plots">
-   Marginal Plots
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#anova-emmeans">
-   ANOVA, EMMeans
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#manova">
-   MANOVA
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -310,7 +275,44 @@
             <i class="fas fa-list"></i> On this page
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-libraries-and-data">
+   Load libraries and data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subset-demographic-variables">
+   Subset demographic variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-helper-functions">
+   Define helper functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#density-plots">
+   Density Plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#marginal-plots">
+   Marginal Plots
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anova-emmeans">
+   ANOVA, EMMeans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manova">
+   MANOVA
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -324,9 +326,8 @@
 <p>In this notebook, principal components are generated from question topic prevalences and disctionary-based estimates of linguistic patterns — and their relationships to various demographic data are explored through statistical tests.</p>
 <p>We used a Principle Components Analysis (PCA) in R (‘prcomp’ function) to integrate multiple variables and conduct an analysis for each question and set of responses. PCA is a multivariate statistical technique that extracts important information about the inter-correlations of multiple variables and re-represents that information as new variables called principle components. These new principle components can then be used to show the similarity and graphic relationships between variables as a way of exploring the data. Because PCA condenses multiple variables into fewer dimensions, the new principle components may also be used to integrate new descriptions of the combined variables. These reified principle components may then be used as covariates to estimate relationships with other variables such as demographic factors.</p>
 <p>Twenty-seven dictionary-based variables (LIWC, AIC, and Docuscope) were not relevant and were excluded from the analysis, leaving a total of 221 dictionary-based variables in the PCA. This was in addition to the measures of topic prevalence, which each had different numbers of topic variables depending on the question/response type. In order to remove variables with high numbers of 0s (no observations), we set a 0.3 maximum threshold, leaving variable columns with 70% or more observations in the analysis. The number of responses and variables included for each question in the analysis are provided in Table 1. Because of the different scales used by the different dictionaries and topic measures (for example, topic prevalence is 0-1 while AIC is measured on a scale from 1-7), the PCA was based on a correlation matrix. The data were also centered around zero and rotated.</p>
-</div>
 <div class="section" id="load-libraries-and-data">
-<h1>Load libraries and data<a class="headerlink" href="#load-libraries-and-data" title="Permalink to this headline">¶</a></h1>
+<h2>Load libraries and data<a class="headerlink" href="#load-libraries-and-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
@@ -352,7 +353,7 @@
 </div>
 </div>
 <div class="section" id="subset-demographic-variables">
-<h1>Subset demographic variables<a class="headerlink" href="#subset-demographic-variables" title="Permalink to this headline">¶</a></h1>
+<h2>Subset demographic variables<a class="headerlink" href="#subset-demographic-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">motiv_demos</span> <span class="o">&lt;-</span> <span class="n">df</span> <span class="o">%&gt;%</span> <span class="n">select</span><span class="p">(</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;sr_motivation&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">names</span>
@@ -395,7 +396,7 @@
 </div>
 </div>
 <div class="section" id="define-helper-functions">
-<h1>Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permalink to this headline">¶</a></h1>
+<h2>Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Used within the mergeQuestion function to merge variable names
@@ -450,7 +451,7 @@ mergeQuestion &lt;- function(data, question) {
 </div>
 </div>
 <div class="section" id="density-plots">
-<h1>Density Plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">¶</a></h1>
+<h2>Density Plots<a class="headerlink" href="#density-plots" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable
@@ -546,7 +547,7 @@ for(question in question_names[-c(4:6,9:14)]) {
 </div>
 </div>
 <div class="section" id="marginal-plots">
-<h1>Marginal Plots<a class="headerlink" href="#marginal-plots" title="Permalink to this headline">¶</a></h1>
+<h2>Marginal Plots<a class="headerlink" href="#marginal-plots" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>dir.create(&#39;./results&#39;, showWarnings = F)
@@ -636,7 +637,7 @@ for(question in question_names[-c(4:6,9:14,16)]) {
 </div>
 </div>
 <div class="section" id="anova-emmeans">
-<h1>ANOVA, EMMeans<a class="headerlink" href="#anova-emmeans" title="Permalink to this headline">¶</a></h1>
+<h2>ANOVA, EMMeans<a class="headerlink" href="#anova-emmeans" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sig_contrasts.demos &lt;- c()
@@ -744,7 +745,7 @@ save(sig_aov_posthoc, file=&#39;./results/anova_tukey.rda&#39;)
 </div>
 </div>
 <div class="section" id="manova">
-<h1>MANOVA<a class="headerlink" href="#manova" title="Permalink to this headline">¶</a></h1>
+<h2>MANOVA<a class="headerlink" href="#manova" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># skip aftercollege bc it causes errors (index 7)
@@ -798,6 +799,7 @@ for(question in (question_names[-c(4:6,9:14)])[-7]) {
     sink()
 }
 </pre></div>
+</div>
 </div>
 </div>
 </div>
