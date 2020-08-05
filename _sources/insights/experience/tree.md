@@ -1,11 +1,10 @@
-# Topic Tree
+# Transformative Experiences Topic Tree
 
 This tree map shows the distribution of topics among the responses to the question, ***“Please describe any transformative or meaningful arts experience you have had during college.”***. It contains 17 topics, and 1043 responses. The topics identified are located at the ends of the braches, also called leaf nodes, and the branching nodes are topic clusters, or parent nodes. The numbers are the total prevalence (0-100%) of the topic or cluster as a percentage all the documents/responses.
 
-This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
-
-**Click on any node on the tree below for more information.** Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
-
+```{admonition} **Click on any node on the tree below for more information.** 
+Each node contains descriptions of each topic, key words for interpreting the topic, and representative responses that were used to interpret each topic's identity and description.
+```
 
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Roboto|Raleway:600,400,200' rel='stylesheet' type='text/css'>
@@ -1096,3 +1095,6 @@ function changeSize(width, height) {
 <p class="after-tree">
 </p>
 <!-- #endraw -->
+        
+        
+This is a structural topic model visualization, with hierarchical topic clusters. Topic branches that are more likely to co-occur together in a single response are clustered together since each response often contains a mixture of multiple topics. We inferred the topic for each of the parent nodes using the leaf node topics and working towards the base of the tree from right to left. Category descriptions become more general towards the base of the tree and more specific towards the leaves. Prevalence is also reflected in the visual weight of the branches helping show the relative proportion of topics. It is important to keep in mind too that the proportions of topics may be different for different groups, but that the overall types are topics may be more stable across sampled populations. The leaf node topic prevalences are directly estimated, while the parent topic prevalences are a summation of their children/leaf topics. Because of rounding, the total topic prevalance may add up to slightly more than 100%.
