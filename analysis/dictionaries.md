@@ -5,7 +5,7 @@ Topics help to identify *WHAT* the students said in response to different questi
 
 In order to measure different patterns among the student responses, we used three separate linguistic analysis tools to characterize the language used. Each tool has a different focus, utilizing domain-specific dictionaries to search strings of words and classify matching words or patterns of words among a series of categories. 
 
-- **Docuscope Language Action Types (LATs)** analyzes rhetorical features such as persuasiveness or first-person reporting; covers 40 million linguistic patterns of English classified into over 100 categories of rhetorical effects{cite}`kaufer2004power,ishizaki2012computer`. 
+- **Docuscope Language Action Types (LATs)** analyzes rhetorical features such as persuasiveness or first-person reporting; covers 40 million linguistic patterns of English classified into over 100 categories of rhetorical effects {cite}`kaufer2004power,ishizaki2012computer`. 
 
 - **Automated Integrative Complexity (AIC)** measures the cognitive structure implied in a speaker’s verbal content including how well they identify different dimensions of an issue and integrate different ideas {cite}`conway2014automated,houck2014automated`. 
 
@@ -55,10 +55,3 @@ In the above examples, the responses progressively increase in complexity from a
 ## Linguistic Inquiry and Word Count (LIWC)
 
 Linguistic Inquiry and Word Count (LIWC) is a software application and dictionary that looks for and counts words in psychology-relevant categories across multiple written or transcribed verbal text files {cite}`tausczik2010psychological,pennebakerLIWC pennebaker2015development`.  LIWC individually analyses each word in a text sequentially for matches with its internal dictionaries across approximately 94 separate variables. Dictionary categories include a variety of word and punctuation analytics; summary language variables (analytical thinking, clout, authenticity, and emotional tone); standard linguistic dimensions such as the percentage of pronouns or articles; psychological constructs such as anxiety, tentativeness, perceptual processes, achievement, positive emotion, and temporal orientation; and personal concern categories such as work, home, money, religion. After analyzing and classifying the words in the texts, LIWC calculates the percentage of each LIWC category in a text, and the resulting csv output lists all LIWC categories along with the rates for each category used in the given text {cite}`tausczik2010psychological`. 
-
-
-
-## Citations
-
-```{bibliography} ../references.bib
-```

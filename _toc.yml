@@ -10,6 +10,7 @@
     - file: overview/datacollection
     - file: overview/datadescription
   - file: overview/presentations
+  - file: overview/references
 
 - chapter: Insights
   sections:
@@ -30,39 +31,36 @@
     title: Personal Growth
     sections:
     - file: insights/othergrowth/tree
-      title: Growth Topic Tree
+      title: Personal Growth Topic Tree
     - file: insights/othergrowth/topics
-      title: Growth Topic Descriptions
+      title: Personal Growth Topic Descriptions
     - file: insights/othergrowth/dimensions
-      title: Growth Underlying Factors
+      title: Personal Growth Underlying Factors
   - file: insights/feel
     title: Emotional Impact    
     sections:
     - file: insights/feel/tree
-      title: Impacts Topic Tree
+      title: Emotional Impacts Topic Tree
     - file: insights/feel/topics
-      title: Impacts Topic Descriptions
+      title: Emotional Impacts Topic Descriptions
     - file: insights/feel/dimensions
-      title: Impacts Underlying Factors
+      title: Emotional Impacts Underlying Factors
   - file: insights/development
     title: Developmental Role
     sections:
     - file: insights/development/tree
-      title: Development Topic Tree
+      title: Developmental Role Topic Tree
     - file: insights/development/topics
-      title: Development Topic Descriptions
+      title: Developmental Role Topic Descriptions
   - file: insights/role
     title: College Experience   
     sections:
     - file: insights/role/tree
-      title: Experience Topic Tree
+      title: College Experience Topic Tree
     - file: insights/role/topics
-      title: Experience Topic Descriptions
-  - file: insights/experience
-    title: Transformative Experiences   
-    sections:
-    - file: insights/experience/tree
-      title: Transformation Topic Tree
+      title: College Experience Topic Descriptions
+  - file: insights/experience/tree
+    title: Transformative Experiences
 
 - chapter: Analyses
   sections:
