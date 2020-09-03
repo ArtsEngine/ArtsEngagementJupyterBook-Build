@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>artsengine</title>
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" />
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+ <div class="container">
+        <div class="row centered">
+            <div class="ten columns offset-by-one alpha">
+                <h1>Outcome VS Arts</h1>
+            </div>
+        </div>
+        <div class="row centered">
+            <div class="six columns offset-by-three alpha">
+                <p class="desc centered">How do different type of arts participation affect learning and development outcomes? </p>
+            </div>
+        </div>
+
+
+         <div class="row centered">
+            <div class="four columns offset-by-four alpha" id="racesimp" style="margin-top:10px;">
+                <h3>Type of Arts:</h3>
+                <select id="Ultra" onchange="run()">  <!--Call run() function-->
+     <option value="0">Select</option>
+     <option value="1">animation</option>
+     <option value="2">architecture</option>
+     <option value="3">comedy</option>
+     <option value="4">comics</option>
+     <option value="5">crafts</option>
+     <option value="6">creative writing</option>
+     <option value="7">dance</option>
+     <option value="8">film</option>
+     <option value="9">graphic design</option>
+     <option value="10">multimedia</option>
+     <option value="12">music composition</option>
+     <option value="12">music performance</option>
+     <option value="14">theatre</option>
+     <option value="15">visual art</option>
+     <option value="13">other</option>
+</select><br><br>   
+            </div>
+        </div>
+
+      
+         <div class="row centered">
+            <div class="four columns offset-by-four alpha" id="racesimp" style="margin-top:10px;">
+                <h3>Sort by:</h3>
+                <select id="Ultra2" onchange="run2()">  <!--Call run() function-->
+     <option value="0">Select</option>
+     <option value="1">Leadership</option>
+     <option value="2">Participation</option>
+     <option value="3">Attendance</option>
+</select><br><br>   
+            </div>
+        </div>
+
+
+        <div class="row centered">
+    <div class="thirty columns offset-by-one alpha">
+            <svg width=700 height=1000 class="chart" id="chart1"></svg>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+       <script src="jsbin.xeruz.js"></script>
+
+
+    </div>
+        </div>
+
+
+
+</body>
+</html>
