@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Principal Components Analysis &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -24,11 +25,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -274,6 +274,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/analysis/pca.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         
     </div>
 </div>
@@ -283,7 +288,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             
@@ -301,30 +306,30 @@
 <p>Twenty-seven dictionary-based variables (LIWC, AIC, and Docuscope) were not relevant and were excluded from the analysis, leaving a total of 221 dictionary-based variables in the PCA. This was in addition to the measures of topic prevalence, which each had different numbers of topic variables depending on the question/response type. In order to remove variables with high numbers of 0s (no observations), we set a 0.3 maximum threshold, leaving variable columns with 70% or more observations in the analysis. The number of responses and variables included for each question in the analysis are provided in Table 1. Because of the different scales used by the different dictionaries and topic measures (for example, topic prevalence is 0-1 while AIC is measured on a scale from 1-7), the PCA was based on a correlation matrix. The data were also centered around zero and rotated.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;corrplot&quot;)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&quot;corrplot&quot;)</span>
 <span class="c1">#install.packages(&quot;ggplot2&quot;)</span>
 <span class="c1">#install.packages(&quot;plotly&quot;)</span>
-<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;factoextra&quot;</span><span class="p">)</span>
-<span class="n">install</span><span class="o">.</span><span class="n">packages</span><span class="p">(</span><span class="s2">&quot;FactoMineR&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;factoextra&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;FactoMineR&quot;</span><span class="p">)</span>
 
-<span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>   <span class="c1"># plotting;</span>
-<span class="n">library</span><span class="p">(</span><span class="n">plotly</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">haven</span><span class="p">)</span>     <span class="c1"># SPSS/.sav file import</span>
-<span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>     <span class="c1"># data manipulation</span>
-<span class="n">library</span><span class="p">(</span><span class="s2">&quot;corrplot&quot;</span><span class="p">)</span><span class="c1">#</span>
-<span class="n">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>   <span class="c1"># string manipulation</span>
-<span class="n">library</span><span class="p">(</span><span class="n">labelled</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="s2">&quot;FactoMineR&quot;</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="s2">&quot;factoextra&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>   <span class="c1"># plotting;</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">plotly</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">haven</span><span class="p">)</span>     <span class="c1"># SPSS/.sav file import</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>     <span class="c1"># data manipulation</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;corrplot&quot;</span><span class="p">)</span><span class="c1">#</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">stringr</span><span class="p">)</span>   <span class="c1"># string manipulation</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">labelled</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;FactoMineR&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;factoextra&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#data &lt;- read.csv(&#39;pcadata.csv&#39;)</span>
-<span class="n">load</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;merged_artsengagement.rda&#39;</span><span class="p">)</span>
-<span class="n">ls</span><span class="p">()</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#data &lt;- read.csv(&#39;pcadata.csv&#39;)</span>
+<span class="nf">load</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#39;merged_artsengagement.rda&#39;</span><span class="p">)</span>
+<span class="nf">ls</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -337,9 +342,9 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">df</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">&lt;-</span> <span class="n">df</span>
 <span class="c1">#print the dimension of the dataframe</span>
-<span class="n">dim</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">dim</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -352,214 +357,214 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stripnames &lt;- function(data, question) {
-    data &lt;- data %&gt;% select(starts_with(question))
-    varnames &lt;- names(data)
-    newnames &lt;- varnames
-    for (i in seq(2, length(varnames))) {
-        newnames[i] &lt;- substr(varnames[i], gregexpr(&quot;\\.\\.&quot;, varnames[i])[[1]][1]+2, nchar(varnames[i]))
-    }
-    names(data) &lt;- newnames
-    return(data)
-}
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">stripnames</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">data</span> <span class="o">&lt;-</span> <span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="n">question</span><span class="p">))</span>
+    <span class="n">varnames</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">newnames</span> <span class="o">&lt;-</span> <span class="n">varnames</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">varnames</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">newnames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nf">gregexpr</span><span class="p">(</span><span class="s">&quot;\\.\\.&quot;</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">])[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span><span class="m">+2</span><span class="p">,</span> <span class="nf">nchar</span><span class="p">(</span><span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="p">}</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">newnames</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 
-mergeQuestion &lt;- function(data, question) {
-    if(substr(question, 3,3) == &#39;_&#39;) {
-        question &lt;- substr(question, 4, nchar(question))
-    }
-    # if you&#39;re aware of other prefixes, add them here
-    yrs &lt;- c(&#39;&#39;,&#39;fl_&#39;,&#39;f1_&#39;,&#39;f2_&#39;,&#39;so_&#39;,&#39;jr_&#39;,&#39;sr_&#39;,&#39;sl_&#39;)
-    mergeddf &lt;- data.frame()
-    for(yr in yrs) {
-        qyr &lt;- paste0(yr, question)
-        if(data %&gt;% select(starts_with(qyr)) %&gt;% ncol == 0) { next }
-        tempdf &lt;- stripnames(df, qyr)
-        names(tempdf)[1] &lt;- question
-        mergeddf &lt;- bind_rows(mergeddf, tempdf)        
-    }
-    return(mergeddf)
-}
+<span class="n">mergeQuestion</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if</span><span class="p">(</span><span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;_&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">question</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="nf">nchar</span><span class="p">(</span><span class="n">question</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="c1"># if you&#39;re aware of other prefixes, add them here</span>
+    <span class="n">yrs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="s">&#39;fl_&#39;</span><span class="p">,</span><span class="s">&#39;f1_&#39;</span><span class="p">,</span><span class="s">&#39;f2_&#39;</span><span class="p">,</span><span class="s">&#39;so_&#39;</span><span class="p">,</span><span class="s">&#39;jr_&#39;</span><span class="p">,</span><span class="s">&#39;sr_&#39;</span><span class="p">,</span><span class="s">&#39;sl_&#39;</span><span class="p">)</span>
+    <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">()</span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">yr</span> <span class="n">in</span> <span class="n">yrs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">qyr</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
+        <span class="nf">if</span><span class="p">(</span><span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="n">qyr</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">ncol</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">next</span> <span class="p">}</span>
+        <span class="n">tempdf</span> <span class="o">&lt;-</span> <span class="nf">stripnames</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">qyr</span><span class="p">)</span>
+        <span class="nf">names</span><span class="p">(</span><span class="n">tempdf</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">question</span>
+        <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="nf">bind_rows</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">,</span> <span class="n">tempdf</span><span class="p">)</span>        
+    <span class="p">}</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">)</span>
+<span class="p">}</span>
 
-stripVars &lt;- function(data) {
-    #remove irrelavant variables
-    removenames &lt;- names(data %&gt;% select(matches(&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;)))
-    data &lt;- data[ , !names(data) %in% removenames]
-    return(data)
-}
+<span class="n">stripVars</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">#remove irrelavant variables</span>
+    <span class="n">removenames</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="s">&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;</span><span class="p">)))</span>
+    <span class="n">data</span> <span class="o">&lt;-</span> <span class="n">data</span><span class="p">[</span> <span class="p">,</span> <span class="o">!</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">removenames</span><span class="p">]</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 
-#example input for parameter question: &quot;sr_career&quot;
-#threshold: set the threshold for cos2. only variables with cos2&gt; threshold will be kept in biplots
-#percent: set the percentage of 0 in a column; columns with percentage of 0 values &gt; percent will be removed
-pca_biplot &lt;- function(question,threshold,percent) {
+<span class="c1">#example input for parameter question: &quot;sr_career&quot;</span>
+<span class="c1">#threshold: set the threshold for cos2. only variables with cos2&gt; threshold will be kept in biplots</span>
+<span class="c1">#percent: set the percentage of 0 in a column; columns with percentage of 0 values &gt; percent will be removed</span>
+<span class="n">pca_biplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="n">threshold</span><span class="p">,</span><span class="n">percent</span><span class="p">)</span> <span class="p">{</span>
     
     
-    if(substr(question, 3,3) == &#39;_&#39;) {
-        question &lt;- substr(question, 4, nchar(question))
-    }
+    <span class="nf">if</span><span class="p">(</span><span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;_&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">question</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="nf">nchar</span><span class="p">(</span><span class="n">question</span><span class="p">))</span>
+    <span class="p">}</span>
     
-    # select columns relevant to the question
-    data_subset &lt;- mergeQuestion(data, question) %&gt;% stripVars
-    print(dim(data_subset))
-    #create file for eigenvales and output
-    eigfile &lt;- paste(question,&quot;_eigenvalues.txt&quot;, sep=&quot;&quot;)
-    sink(eigfile, append=FALSE, split=TRUE)       
+    <span class="c1"># select columns relevant to the question</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="nf">mergeQuestion</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">stripVars</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">data_subset</span><span class="p">))</span>
+    <span class="c1">#create file for eigenvales and output</span>
+    <span class="n">eigfile</span> <span class="o">&lt;-</span> <span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_eigenvalues.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">)</span>
+    <span class="nf">sink</span><span class="p">(</span><span class="n">eigfile</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>       
     
-    #remove rows with no response
-    data_subset &lt;- data_subset[complete.cases(data_subset),]
-    print(dim(data_subset))
-    # replace NULL with 0
-    # this shouldnt be necessary -- investigate if so
-    # data_subset[is.na(data_subset)] &lt;- 0
+    <span class="c1">#remove rows with no response</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[</span><span class="nf">complete.cases</span><span class="p">(</span><span class="n">data_subset</span><span class="p">),]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">data_subset</span><span class="p">))</span>
+    <span class="c1"># replace NULL with 0</span>
+    <span class="c1"># this shouldnt be necessary -- investigate if so</span>
+    <span class="c1"># data_subset[is.na(data_subset)] &lt;- 0</span>
 
-    #remove columns with percentage of 0 values &gt; percent 
-    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+    <span class="c1">#remove columns with percentage of 0 values &gt; percent </span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[</span> <span class="nf">lapply</span><span class="p">(</span> <span class="n">data_subset</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="m">0</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="n">percent</span> <span class="p">]</span>
 
-    print(dim(data_subset))
+    <span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">data_subset</span><span class="p">))</span>
 
-    print(names(data_subset))
+    <span class="nf">print</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">data_subset</span><span class="p">))</span>
 
-    #scale all the variables
-    data_subset[, -c(1)] &lt;- scale(data_subset[, -c(1)])
+    <span class="c1">#scale all the variables</span>
+    <span class="n">data_subset</span><span class="p">[,</span> <span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">)]</span> <span class="o">&lt;-</span> <span class="nf">scale</span><span class="p">(</span><span class="n">data_subset</span><span class="p">[,</span> <span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">)])</span>
 
-    #create new dataframe pcadata to store scaled variables
-    pcadata&lt;-data_subset[,-c(1)]
-
-
-
-    #remove columns that only have NULL; columns that only have 0 after scaling will become NULL
-    pcadata2=Filter(function(x)!all(is.na(x)), pcadata)
-    print(dim(pcadata2))
+    <span class="c1">#create new dataframe pcadata to store scaled variables</span>
+    <span class="n">pcadata</span><span class="o">&lt;-</span><span class="n">data_subset</span><span class="p">[,</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">)]</span>
 
 
-    #fit PCA uses correlatio matrix, rotation, centered
-    pca.fit &lt;- prcomp(pcadata2, retx= TRUE, center=TRUE, scale=TRUE)
-    eig.val &lt;- get_eigenvalue(pca.fit)
+
+    <span class="c1">#remove columns that only have NULL; columns that only have 0 after scaling will become NULL</span>
+    <span class="n">pcadata2</span><span class="o">=</span><span class="nf">Filter</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!</span><span class="nf">all</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">pcadata</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nf">dim</span><span class="p">(</span><span class="n">pcadata2</span><span class="p">))</span>
 
 
-    #get variable contributions
-    var &lt;- get_pca_var(pca.fit)
-    #print(var$contrib)
-    #print(var$coord)
-    #print(pca.fit)
+    <span class="c1">#fit PCA uses correlatio matrix, rotation, centered</span>
+    <span class="n">pca.fit</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="n">pcadata2</span><span class="p">,</span> <span class="n">retx</span><span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+    <span class="n">eig.val</span> <span class="o">&lt;-</span> <span class="nf">get_eigenvalue</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">)</span>
+
+
+    <span class="c1">#get variable contributions</span>
+    <span class="n">var</span> <span class="o">&lt;-</span> <span class="nf">get_pca_var</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">)</span>
+    <span class="c1">#print(var$contrib)</span>
+    <span class="c1">#print(var$coord)</span>
+    <span class="c1">#print(pca.fit)</span>
 
  
-    # Print Eigenvalues and variable contributions and close sink
-    print(eig.val)
+    <span class="c1"># Print Eigenvalues and variable contributions and close sink</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">eig.val</span><span class="p">)</span>
 
-    sink(append=TRUE, type=&quot;message&quot;)
-    sink()
+    <span class="nf">sink</span><span class="p">(</span><span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;message&quot;</span><span class="p">)</span>
+    <span class="nf">sink</span><span class="p">()</span>
 
-    # Export into a TXT file
-    write.infile(pca.fit, file=paste(question,&quot;_pca_results.txt&quot;, sep=&quot;&quot;), sep = &quot;\t&quot;)
+    <span class="c1"># Export into a TXT file</span>
+    <span class="nf">write.infile</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_pca_results.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">),</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&quot;\t&quot;</span><span class="p">)</span>
 
 
-    #print screeplot              
-    pdf(file=paste(question,&quot;_screeplot.pdf&quot;, sep=&quot;&quot;))    
-    screeplot=fviz_eig(pca.fit, addlabels = TRUE, ylim = c(0, 50))
-    print(screeplot)
-    dev.off()
+    <span class="c1">#print screeplot              </span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_screeplot.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>    
+    <span class="n">screeplot</span><span class="o">=</span><span class="nf">fviz_eig</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">addlabels</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">ylim</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">50</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">screeplot</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
 
-    #make biplot for PC1&amp;2               
-    p12=fviz_pca_var(pca.fit, axes = c(1, 2), col.var = &quot;cos2&quot;, alpha.var=&quot;cos2&quot;, select.var = list(cos2 = threshold),
-                 gradient.cols = c(&quot;goldenrod1&quot;, &quot;firebrick2&quot;, &quot;navy&quot;), 
-                 repel = TRUE # Avoid text overlapping
-                 )+ xlim(-1, 1) + ylim (-1, 1)
+    <span class="c1">#make biplot for PC1&amp;2               </span>
+    <span class="n">p12</span><span class="o">=</span><span class="nf">fviz_pca_var</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">col.var</span> <span class="o">=</span> <span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">alpha.var</span><span class="o">=</span><span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">select.var</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cos2</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">),</span>
+                 <span class="n">gradient.cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;goldenrod1&quot;</span><span class="p">,</span> <span class="s">&quot;firebrick2&quot;</span><span class="p">,</span> <span class="s">&quot;navy&quot;</span><span class="p">),</span> 
+                 <span class="n">repel</span> <span class="o">=</span> <span class="kc">TRUE</span> <span class="c1"># Avoid text overlapping</span>
+                 <span class="p">)</span><span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylim </span><span class="p">(</span><span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
                     
                     
-    #make biplot for PC3&amp;4              
-    p34=fviz_pca_var(pca.fit, axes = c(3, 4), col.var = &quot;cos2&quot;, alpha.var=&quot;cos2&quot;, select.var = list(cos2 = threshold),
-                 gradient.cols = c(&quot;goldenrod1&quot;, &quot;firebrick2&quot;, &quot;navy&quot;), 
-                 repel = TRUE # Avoid text overlapping
-                 )+ xlim(-1, 1) + ylim (-1, 1)
+    <span class="c1">#make biplot for PC3&amp;4              </span>
+    <span class="n">p34</span><span class="o">=</span><span class="nf">fviz_pca_var</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">col.var</span> <span class="o">=</span> <span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">alpha.var</span><span class="o">=</span><span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">select.var</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cos2</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">),</span>
+                 <span class="n">gradient.cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;goldenrod1&quot;</span><span class="p">,</span> <span class="s">&quot;firebrick2&quot;</span><span class="p">,</span> <span class="s">&quot;navy&quot;</span><span class="p">),</span> 
+                 <span class="n">repel</span> <span class="o">=</span> <span class="kc">TRUE</span> <span class="c1"># Avoid text overlapping</span>
+                 <span class="p">)</span><span class="o">+</span> <span class="nf">xlim</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylim </span><span class="p">(</span><span class="m">-1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
 
-    #print biplot                
-    pdf(file=paste(question,&quot;_biplot12.pdf&quot;, sep=&quot;&quot;))
-    print(p12)
-    dev.off()
+    <span class="c1">#print biplot                </span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_biplot12.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">p12</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
                     
-    #print biplot                
-    pdf(file=paste(question,&quot;_biplot34.pdf&quot;, sep=&quot;&quot;))
-    print(p34)
-    dev.off()
+    <span class="c1">#print biplot                </span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_biplot34.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">p34</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
 
-    #print charts of variable contrib and cos2
+    <span class="c1">#print charts of variable contrib and cos2</span>
 
-    pdf(file=paste(question,&quot;_corr_cos2_viz.pdf&quot;, sep=&quot;&quot;))
-    corrcos2viz &lt;- corrplot(var$cos2, is.corr=FALSE, tl.cex = .5)   
-    print(corrcos2viz)
-    dev.off()
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_corr_cos2_viz.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">corrcos2viz</span> <span class="o">&lt;-</span> <span class="nf">corrplot</span><span class="p">(</span><span class="n">var</span><span class="o">$</span><span class="n">cos2</span><span class="p">,</span> <span class="n">is.corr</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">tl.cex</span> <span class="o">=</span> <span class="n">.</span><span class="m">5</span><span class="p">)</span>   
+    <span class="nf">print</span><span class="p">(</span><span class="n">corrcos2viz</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
 
-    pdf(file=paste(question,&quot;_corr_contrib_viz.pdf&quot;, sep=&quot;&quot;))
-    corrcontribviz &lt;- corrplot(var$contrib, is.corr=FALSE, tl.cex = .5)    
-    print(corrcontribviz)
-    dev.off()
-
-
-    # Contributions of variables to PC1
-    pdf(file=paste(question,&quot;_contributionPC1.pdf&quot;, sep=&quot;&quot;))
-    c1=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 1, top = 10)
-    print(c1)              
-    dev.off()
-    # Contributions of variables to PC2
-    pdf(file=paste(question,&quot;_contributionPC2.pdf&quot;, sep=&quot;&quot;))
-    c2=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 2, top = 10)
-    print(c2)
-    dev.off()
-    # Contributions of variables to PC3
-    pdf(file=paste(question,&quot;_contributionPC3.pdf&quot;, sep=&quot;&quot;))
-    c3=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 3, top = 10)
-    print(c3)
-    dev.off()
-    # Contributions of variables to PC4
-    pdf(file=paste(question,&quot;_contributionPC4.pdf&quot;, sep=&quot;&quot;))
-    c4=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 4, top = 10)
-    print(c4)
-    dev.off()
-    # Contributions of variables to PC5
-    pdf(file=paste(question,&quot;_contributionPC5.pdf&quot;, sep=&quot;&quot;))
-    c5=fviz_contrib(pca.fit, choice = &quot;var&quot;, axes = 5, top = 10)
-    print(c5)
-    dev.off()
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_corr_contrib_viz.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">corrcontribviz</span> <span class="o">&lt;-</span> <span class="nf">corrplot</span><span class="p">(</span><span class="n">var</span><span class="o">$</span><span class="n">contrib</span><span class="p">,</span> <span class="n">is.corr</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">tl.cex</span> <span class="o">=</span> <span class="n">.</span><span class="m">5</span><span class="p">)</span>    
+    <span class="nf">print</span><span class="p">(</span><span class="n">corrcontribviz</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
 
 
+    <span class="c1"># Contributions of variables to PC1</span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_contributionPC1.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">c1</span><span class="o">=</span><span class="nf">fviz_contrib</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>              
+    <span class="nf">dev.off</span><span class="p">()</span>
+    <span class="c1"># Contributions of variables to PC2</span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_contributionPC2.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">c2</span><span class="o">=</span><span class="nf">fviz_contrib</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
+    <span class="c1"># Contributions of variables to PC3</span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_contributionPC3.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">c3</span><span class="o">=</span><span class="nf">fviz_contrib</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
+    <span class="c1"># Contributions of variables to PC4</span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_contributionPC4.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">c4</span><span class="o">=</span><span class="nf">fviz_contrib</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c4</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
+    <span class="c1"># Contributions of variables to PC5</span>
+    <span class="nf">pdf</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_contributionPC5.pdf&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+    <span class="n">c5</span><span class="o">=</span><span class="nf">fviz_contrib</span><span class="p">(</span><span class="n">pca.fit</span><span class="p">,</span> <span class="n">choice</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">c5</span><span class="p">)</span>
+    <span class="nf">dev.off</span><span class="p">()</span>
 
-    ###### interactive pca plot
-    #add text response back to pcadata2
-    pcadata2$text&lt;-data_subset[[question]]
-    res.pca &lt;- PCA(pcadata2[,!(colnames(pcadata2) %in% c(&quot;text&quot;))], graph = FALSE)
 
-    #make biplot with individual dots
-    test2&lt;-fviz_pca_biplot(res.pca, axes = c(1, 2), geom=c(&#39;point&#39;,&#39;text&#39;), col.ind = &quot;light blue&quot;,
-                    pointshape = 19, pointsize = 2,alpha.ind = 0.3,
-                    label = &quot;var&quot;, 
-                    alpha.var =&quot;cos2&quot;, select.var = list(cos2 = threshold),
-                     col.var = &quot;cos2&quot;,gradient.cols = c(&quot;blue&quot;, &quot;red&quot;)
 
-                    )
+    <span class="c1">###### interactive pca plot</span>
+    <span class="c1">#add text response back to pcadata2</span>
+    <span class="n">pcadata2</span><span class="o">$</span><span class="n">text</span><span class="o">&lt;-</span><span class="n">data_subset</span><span class="p">[[</span><span class="n">question</span><span class="p">]]</span>
+    <span class="n">res.pca</span> <span class="o">&lt;-</span> <span class="nf">PCA</span><span class="p">(</span><span class="n">pcadata2</span><span class="p">[,</span><span class="o">!</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">pcadata2</span><span class="p">)</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;text&quot;</span><span class="p">))],</span> <span class="n">graph</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+    <span class="c1">#make biplot with individual dots</span>
+    <span class="n">test2</span><span class="o">&lt;-</span><span class="nf">fviz_pca_biplot</span><span class="p">(</span><span class="n">res.pca</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">geom</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;point&#39;</span><span class="p">,</span><span class="s">&#39;text&#39;</span><span class="p">),</span> <span class="n">col.ind</span> <span class="o">=</span> <span class="s">&quot;light blue&quot;</span><span class="p">,</span>
+                    <span class="n">pointshape</span> <span class="o">=</span> <span class="m">19</span><span class="p">,</span> <span class="n">pointsize</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span><span class="n">alpha.ind</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> 
+                    <span class="n">alpha.var</span> <span class="o">=</span><span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">select.var</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cos2</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">),</span>
+                     <span class="n">col.var</span> <span class="o">=</span> <span class="s">&quot;cos2&quot;</span><span class="p">,</span><span class="n">gradient.cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+
+                    <span class="p">)</span>
                     
                     
-      #labs(fill = &quot;identity&quot;)# Change legend title
+      <span class="c1">#labs(fill = &quot;identity&quot;)# Change legend title</span>
 
-    #add hover text
-    mytext=paste(pcadata2$text) 
-    pp=ggplotly(p=test2,width=800,height=800)
-    ppp=style(pp,text=mytext,hoverinfo=&quot;text&quot;, traces = c(1,2,3))
-    htmlwidgets::saveWidget(as_widget(ppp), paste(question,&quot;_plotly12.html&quot;, sep=&quot;&quot;))
+    <span class="c1">#add hover text</span>
+    <span class="n">mytext</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">pcadata2</span><span class="o">$</span><span class="n">text</span><span class="p">)</span> 
+    <span class="n">pp</span><span class="o">=</span><span class="nf">ggplotly</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">test2</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">800</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">800</span><span class="p">)</span>
+    <span class="n">ppp</span><span class="o">=</span><span class="nf">style</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">mytext</span><span class="p">,</span><span class="n">hoverinfo</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">traces</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+    <span class="n">htmlwidgets</span><span class="o">::</span><span class="nf">saveWidget</span><span class="p">(</span><span class="nf">as_widget</span><span class="p">(</span><span class="n">ppp</span><span class="p">),</span> <span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_plotly12.html&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
                     
-    test3&lt;-fviz_pca_biplot(res.pca, axes = c(3, 4), geom=c(&#39;point&#39;,&#39;text&#39;), col.ind = &quot;light blue&quot;,
-                    pointshape = 19, pointsize = 2,alpha.ind = 0.3,
-                    label = &quot;var&quot;, 
-                    alpha.var =&quot;cos2&quot;, select.var = list(cos2 = threshold),
-                     col.var = &quot;cos2&quot;,gradient.cols = c(&quot;blue&quot;, &quot;red&quot;)
+    <span class="n">test3</span><span class="o">&lt;-</span><span class="nf">fviz_pca_biplot</span><span class="p">(</span><span class="n">res.pca</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="n">geom</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;point&#39;</span><span class="p">,</span><span class="s">&#39;text&#39;</span><span class="p">),</span> <span class="n">col.ind</span> <span class="o">=</span> <span class="s">&quot;light blue&quot;</span><span class="p">,</span>
+                    <span class="n">pointshape</span> <span class="o">=</span> <span class="m">19</span><span class="p">,</span> <span class="n">pointsize</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span><span class="n">alpha.ind</span> <span class="o">=</span> <span class="m">0.3</span><span class="p">,</span>
+                    <span class="n">label</span> <span class="o">=</span> <span class="s">&quot;var&quot;</span><span class="p">,</span> 
+                    <span class="n">alpha.var</span> <span class="o">=</span><span class="s">&quot;cos2&quot;</span><span class="p">,</span> <span class="n">select.var</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">cos2</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">),</span>
+                     <span class="n">col.var</span> <span class="o">=</span> <span class="s">&quot;cos2&quot;</span><span class="p">,</span><span class="n">gradient.cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
 
-                    )
+                    <span class="p">)</span>
                     
-    #add hover text
-    mytext=paste(pcadata2$text) 
-    pp=ggplotly(p=test3,width=800,height=800)
-    ppp=style(pp,text=mytext,hoverinfo=&quot;text&quot;, traces = c(1,2,3))
-    htmlwidgets::saveWidget(as_widget(ppp), paste(question,&quot;_plotly34.html&quot;, sep=&quot;&quot;))
-}
+    <span class="c1">#add hover text</span>
+    <span class="n">mytext</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="n">pcadata2</span><span class="o">$</span><span class="n">text</span><span class="p">)</span> 
+    <span class="n">pp</span><span class="o">=</span><span class="nf">ggplotly</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">test3</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="m">800</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="m">800</span><span class="p">)</span>
+    <span class="n">ppp</span><span class="o">=</span><span class="nf">style</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">mytext</span><span class="p">,</span><span class="n">hoverinfo</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">,</span> <span class="n">traces</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+    <span class="n">htmlwidgets</span><span class="o">::</span><span class="nf">saveWidget</span><span class="p">(</span><span class="nf">as_widget</span><span class="p">(</span><span class="n">ppp</span><span class="p">),</span> <span class="nf">paste</span><span class="p">(</span><span class="n">question</span><span class="p">,</span><span class="s">&quot;_plotly34.html&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">))</span>
+<span class="p">}</span>
                 
             
 </pre></div>
@@ -568,21 +573,21 @@ pca_biplot &lt;- function(question,threshold,percent) {
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#example input for parameter question: &quot;career&quot;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#example input for parameter question: &quot;career&quot;</span>
 <span class="c1">#1st is threshold: set the threshold for cos2. only variables with cos2&gt; threshold will be kept in biplots</span>
 <span class="c1">#2nd is percent: set the percentage of 0 in a column; columns with percentage of 0 values &gt; percent will be removedpca_biplot(&#39;barriers&#39;,0.3,0.4)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;career&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;development&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;othergrowth&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;society&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;role&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;barriers&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;feel&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;definition&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;aftercollege4&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;behavior2&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
-<span class="n">pca_biplot</span><span class="p">(</span><span class="s1">&#39;childhood2&#39;</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;career&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;development&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;othergrowth&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;society&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;role&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;barriers&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;feel&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;definition&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;aftercollege4&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;behavior2&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;change&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
+<span class="nf">pca_biplot</span><span class="p">(</span><span class="s">&#39;childhood2&#39;</span><span class="p">,</span><span class="m">0.2</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

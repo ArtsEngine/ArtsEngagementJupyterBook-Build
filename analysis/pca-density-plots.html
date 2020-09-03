@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plots for Principal Components x Demographic Factors &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -24,11 +25,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -272,6 +272,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/analysis/pca-density-plots.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         
     </div>
 </div>
@@ -281,7 +286,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -329,21 +334,21 @@
 <h2>Load libraries, scripts, and data<a class="headerlink" href="#load-libraries-scripts-and-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_remove_output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">FactoMineR</span><span class="p">)</span>
-<span class="n">library</span><span class="p">(</span><span class="n">emmeans</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">magrittr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">FactoMineR</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">emmeans</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/merged_artsengagement.rda&#39;</span><span class="p">)</span>
-<span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/tidy_questions_best.Rda&#39;</span><span class="p">)</span>
-<span class="n">source</span><span class="p">(</span><span class="s1">&#39;../scripts/select_helpers.R&#39;</span><span class="p">)</span>
-<span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/pca_labels.rda&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">load</span><span class="p">(</span><span class="s">&#39;../data/merged_artsengagement.rda&#39;</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&#39;../data/tidy_questions_best.Rda&#39;</span><span class="p">)</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&#39;../scripts/select_helpers.R&#39;</span><span class="p">)</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&#39;../data/pca_labels.rda&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -353,10 +358,10 @@
 <h2>Subset demographic variables<a class="headerlink" href="#subset-demographic-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">real_demos</span> <span class="o">&lt;-</span> <span class="n">c</span><span class="p">(</span><span class="s1">&#39;ethnic_group&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;school&#39;</span><span class="p">,</span> <span class="s1">&#39;parented&#39;</span><span class="p">,</span> <span class="s1">&#39;income&#39;</span><span class="p">,</span> <span class="s1">&#39;artsincollege&#39;</span><span class="p">,</span> <span class="s1">&#39;hstype&#39;</span><span class="p">,</span> <span class="s1">&#39;hssize&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;hslocation&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_arts_freq&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_encouragement&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_required&#39;</span><span class="p">,</span> <span class="s1">&#39;hs_fees&#39;</span><span class="p">,</span>
-           <span class="s1">&#39;so_childhood1&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood3&#39;</span><span class="p">,</span> <span class="s1">&#39;so_childhood5&#39;</span><span class="p">,</span> <span class="s1">&#39;sr_participated&#39;</span><span class="p">,</span>
-               <span class="s1">&#39;sr_highestdegreeplanned&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">real_demos</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;ethnic_group&#39;</span><span class="p">,</span> <span class="s">&#39;sex&#39;</span><span class="p">,</span> <span class="s">&#39;school&#39;</span><span class="p">,</span> <span class="s">&#39;parented&#39;</span><span class="p">,</span> <span class="s">&#39;income&#39;</span><span class="p">,</span> <span class="s">&#39;artsincollege&#39;</span><span class="p">,</span> <span class="s">&#39;hstype&#39;</span><span class="p">,</span> <span class="s">&#39;hssize&#39;</span><span class="p">,</span>
+           <span class="s">&#39;hslocation&#39;</span><span class="p">,</span> <span class="s">&#39;hs_arts_freq&#39;</span><span class="p">,</span> <span class="s">&#39;hs_encouragement&#39;</span><span class="p">,</span> <span class="s">&#39;hs_required&#39;</span><span class="p">,</span> <span class="s">&#39;hs_fees&#39;</span><span class="p">,</span>
+           <span class="s">&#39;so_childhood1&#39;</span><span class="p">,</span> <span class="s">&#39;so_childhood3&#39;</span><span class="p">,</span> <span class="s">&#39;so_childhood5&#39;</span><span class="p">,</span> <span class="s">&#39;sr_participated&#39;</span><span class="p">,</span>
+               <span class="s">&#39;sr_highestdegreeplanned&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -366,50 +371,50 @@
 <h2>Define helper functions<a class="headerlink" href="#define-helper-functions" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>stripnames &lt;- function(data, question) {
-    data &lt;- data %&gt;% select(&#39;rownums&#39;, starts_with(question))
-    varnames &lt;- names(data)
-    newnames &lt;- varnames
-    for (i in seq(3, length(varnames))) {
-        newnames[i] &lt;- substr(varnames[i], gregexpr(&quot;\\.\\.&quot;, varnames[i])[[1]][1]+2, nchar(varnames[i]))
-    }
-    names(data) &lt;- newnames
-    return(data)
-}
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">stripnames</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">data</span> <span class="o">&lt;-</span> <span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="s">&#39;rownums&#39;</span><span class="p">,</span> <span class="nf">starts_with</span><span class="p">(</span><span class="n">question</span><span class="p">))</span>
+    <span class="n">varnames</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">newnames</span> <span class="o">&lt;-</span> <span class="n">varnames</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="nf">seq</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="nf">length</span><span class="p">(</span><span class="n">varnames</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">newnames</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nf">gregexpr</span><span class="p">(</span><span class="s">&quot;\\.\\.&quot;</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">])[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="p">]</span><span class="m">+2</span><span class="p">,</span> <span class="nf">nchar</span><span class="p">(</span><span class="n">varnames</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="p">}</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">newnames</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 
-stripVars &lt;- function(data) {
-    #remove irrelavant variables
-    removenames &lt;- names(data %&gt;% select(matches(&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;)))
-    data &lt;- data[ , !names(data) %in% removenames]
-    return(data)
-}
+<span class="n">stripVars</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">#remove irrelavant variables</span>
+    <span class="n">removenames</span> <span class="o">&lt;-</span> <span class="nf">names</span><span class="p">(</span><span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="s">&quot;AIC..Words|AIC..IC_Differentiation|AIC..IC_Integration|AIC..DIAL_Differentiation|AIC..DIAL_Integration|AIC..ELAB_Differentiation|AIC..ELAB_Integration|docuscope..OralCues|docuscope..DialogCues|docuscope..XWordTokens|docuscope..XPunctuationTokens|docuscope..XTokens|LIWC..WC|LIWC..Sixltr|LIWC..Dic|LIWC..WPS|LIWC..swear|LIWC..netspeak|LIWC..assent|LIWC..nonflu|LIWC..filler|LIWC..AllPunc|LIWC..Period|LIWC..Comma|LIWC..Colon|LIWC..SemiC|LIWC..QMark|LIWC..Exclam|LIWC..Dash|LIWC..Quote|LIWC..Apostro|LIWC..Parenth|LIWC..OtherP&quot;</span><span class="p">)))</span>
+    <span class="n">data</span> <span class="o">&lt;-</span> <span class="n">data</span><span class="p">[</span> <span class="p">,</span> <span class="o">!</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%in%</span> <span class="n">removenames</span><span class="p">]</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="p">}</span>
 
-mergeQuestion &lt;- function(data, question) {
-    if (substr(question, 3,3) == &#39;_&#39;) {
-        question &lt;- substr(question, 4, nchar(question))
-    }
-    # if you&#39;re aware of other prefixes, add them here
-    yrs &lt;- c(NA,&#39;fl&#39;,&#39;f1&#39;,&#39;f2&#39;,&#39;so&#39;,&#39;jr&#39;,&#39;sr&#39;,&#39;sl&#39;)
-    data$rownums &lt;- seq(nrow(data)) # add rownums so resulting data can be re-integrated
-    mergeddf &lt;- data.frame()
-    for (yr in yrs) {
-        if (question == &#39;definition&#39; &amp;&amp; is.na(yr))
-            qyr &lt;- question
-        else if (is.na(yr))
-            next
-        else {
-            qyr &lt;- paste0(yr, &#39;_&#39;, question)
-        }
-        if (data %&gt;% select(starts_with(qyr)) %&gt;% ncol == 0) { next }
-        tempdf &lt;- stripnames(data, qyr)
-        names(tempdf)[2] &lt;- question
-        mergeddf &lt;- bind_rows(mergeddf, tempdf)        
-    }
-    mergeddf &lt;- mergeddf[complete.cases(mergeddf),]
-    mergeddf &lt;- mergeddf %&gt;% stripVars
-    rownames(mergeddf) &lt;- c()
-    return(mergeddf)
-}
+<span class="n">mergeQuestion</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">if </span><span class="p">(</span><span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;_&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">question</span> <span class="o">&lt;-</span> <span class="nf">substr</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="nf">nchar</span><span class="p">(</span><span class="n">question</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="c1"># if you&#39;re aware of other prefixes, add them here</span>
+    <span class="n">yrs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="s">&#39;fl&#39;</span><span class="p">,</span><span class="s">&#39;f1&#39;</span><span class="p">,</span><span class="s">&#39;f2&#39;</span><span class="p">,</span><span class="s">&#39;so&#39;</span><span class="p">,</span><span class="s">&#39;jr&#39;</span><span class="p">,</span><span class="s">&#39;sr&#39;</span><span class="p">,</span><span class="s">&#39;sl&#39;</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">$</span><span class="n">rownums</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="c1"># add rownums so resulting data can be re-integrated</span>
+    <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">()</span>
+    <span class="nf">for </span><span class="p">(</span><span class="n">yr</span> <span class="n">in</span> <span class="n">yrs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">if </span><span class="p">(</span><span class="n">question</span> <span class="o">==</span> <span class="s">&#39;definition&#39;</span> <span class="o">&amp;&amp;</span> <span class="nf">is.na</span><span class="p">(</span><span class="n">yr</span><span class="p">))</span>
+            <span class="n">qyr</span> <span class="o">&lt;-</span> <span class="n">question</span>
+        <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">yr</span><span class="p">))</span>
+            <span class="n">next</span>
+        <span class="n">else</span> <span class="p">{</span>
+            <span class="n">qyr</span> <span class="o">&lt;-</span> <span class="nf">paste0</span><span class="p">(</span><span class="n">yr</span><span class="p">,</span> <span class="s">&#39;_&#39;</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nf">if </span><span class="p">(</span><span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="n">qyr</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">ncol</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span> <span class="n">next</span> <span class="p">}</span>
+        <span class="n">tempdf</span> <span class="o">&lt;-</span> <span class="nf">stripnames</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">qyr</span><span class="p">)</span>
+        <span class="nf">names</span><span class="p">(</span><span class="n">tempdf</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">question</span>
+        <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="nf">bind_rows</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">,</span> <span class="n">tempdf</span><span class="p">)</span>        
+    <span class="p">}</span>
+    <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="n">mergeddf</span><span class="p">[</span><span class="nf">complete.cases</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">),]</span>
+    <span class="n">mergeddf</span> <span class="o">&lt;-</span> <span class="n">mergeddf</span> <span class="o">%&gt;%</span> <span class="n">stripVars</span>
+    <span class="nf">rownames</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">()</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">mergeddf</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -418,13 +423,13 @@ mergeQuestion &lt;- function(data, question) {
 <h3>Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable<a class="headerlink" href="#filter-demographics-to-those-within-min-max-levels-inclusive-into-small-demos-variable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>min = 2
-max = 5
-temp &lt;- demodfpcs %&gt;% sapply(function(x)(x %&gt;% levels %&gt;% length)) %&gt;% as.data.frame
-temp$demo &lt;- rownames(temp)
-temp &lt;- temp %&gt;% filter(. &gt;= min &amp; max &gt;= .)
-small_demos &lt;- temp %&gt;% pull(demo)
-small_demos
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">min</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">max</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">temp</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span> <span class="o">%&gt;%</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">x</span> <span class="o">%&gt;%</span> <span class="n">levels</span> <span class="o">%&gt;%</span> <span class="n">length</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">as.data.frame</span>
+<span class="n">temp</span><span class="o">$</span><span class="n">demo</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">&lt;-</span> <span class="n">temp</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">.</span> <span class="o">&gt;=</span> <span class="n">min</span> <span class="o">&amp;</span> <span class="n">max</span> <span class="o">&gt;=</span> <span class="n">.</span><span class="p">)</span>
+<span class="n">small_demos</span> <span class="o">&lt;-</span> <span class="n">temp</span> <span class="o">%&gt;%</span> <span class="nf">pull</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+<span class="n">small_demos</span>
 </pre></div>
 </div>
 </div>
@@ -454,93 +459,93 @@ small_demos
 <p>I recommend letting the code run for say 10 seconds then interrupt code execution to then print out / explore the variables being used within the ggplot code. Alternatively, break the code into chunks to see what each chunk does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable
-min = 2
-max = 5
-temp &lt;- demodfpcs %&gt;% sapply(function(x)(x %&gt;% levels %&gt;% length)) %&gt;% as.data.frame
-temp$demo &lt;- rownames(temp)
-temp &lt;- temp %&gt;% filter(. &gt;= min &amp; max &gt;= .)
-small_demos &lt;- temp %&gt;% pull(demo)
-small_demos
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter demographics to those within min &amp; max levels (inclusive) into small_demos variable</span>
+<span class="n">min</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">max</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">temp</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span> <span class="o">%&gt;%</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">x</span> <span class="o">%&gt;%</span> <span class="n">levels</span> <span class="o">%&gt;%</span> <span class="n">length</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">as.data.frame</span>
+<span class="n">temp</span><span class="o">$</span><span class="n">demo</span> <span class="o">&lt;-</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">&lt;-</span> <span class="n">temp</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">.</span> <span class="o">&gt;=</span> <span class="n">min</span> <span class="o">&amp;</span> <span class="n">max</span> <span class="o">&gt;=</span> <span class="n">.</span><span class="p">)</span>
+<span class="n">small_demos</span> <span class="o">&lt;-</span> <span class="n">temp</span> <span class="o">%&gt;%</span> <span class="nf">pull</span><span class="p">(</span><span class="n">demo</span><span class="p">)</span>
+<span class="n">small_demos</span>
 
-dir_to_save_results = &#39;./results&#39;
-plot_type = &#39;density_plots&#39; # plural
-output_format = &#39;.pdf&#39; # with dot
+<span class="n">dir_to_save_results</span> <span class="o">=</span> <span class="s">&#39;./results&#39;</span>
+<span class="n">plot_type</span> <span class="o">=</span> <span class="s">&#39;density_plots&#39;</span> <span class="c1"># plural</span>
+<span class="n">output_format</span> <span class="o">=</span> <span class="s">&#39;.pdf&#39;</span> <span class="c1"># with dot</span>
 
-dir.create(dir_to_save_results, showWarnings = F)
-# for all stm&#39;d questions
-for(question in question_names[-c(4:6,9:14)]) {
-    dir.create(paste(dir_to_save_results, question, sep = &#39;/&#39;), showWarnings = F)
+<span class="nf">dir.create</span><span class="p">(</span><span class="n">dir_to_save_results</span><span class="p">,</span> <span class="n">showWarnings</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+<span class="c1"># for all stm&#39;d questions</span>
+<span class="nf">for</span><span class="p">(</span><span class="n">question</span> <span class="n">in</span> <span class="n">question_names</span><span class="p">[</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="m">9</span><span class="o">:</span><span class="m">14</span><span class="p">)])</span> <span class="p">{</span>
+    <span class="nf">dir.create</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">dir_to_save_results</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span><span class="p">),</span> <span class="n">showWarnings</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
     
-    # data subsetting, PC creation
-    data_subset &lt;- mergeQuestion(df, question)
-    data_subset_rows &lt;- data_subset[[1]]
-    data_subset &lt;- data_subset[-1]
-    data_subset &lt;- data_subset[-1]
-    percent &lt;- 0.4
-    data_subset &lt;- data_subset[ lapply( data_subset, function(x) sum(x==0) / length(x) ) &lt; percent ]
+    <span class="c1"># data subsetting, PC creation</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="nf">mergeQuestion</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
+    <span class="n">data_subset_rows</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+    <span class="n">percent</span> <span class="o">&lt;-</span> <span class="m">0.4</span>
+    <span class="n">data_subset</span> <span class="o">&lt;-</span> <span class="n">data_subset</span><span class="p">[</span> <span class="nf">lapply</span><span class="p">(</span> <span class="n">data_subset</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">sum</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="m">0</span><span class="p">)</span> <span class="o">/</span> <span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span> <span class="o">&lt;</span> <span class="n">percent</span> <span class="p">]</span>
                                        
-    # principal component generation
-    pd &lt;- prcomp(data_subset, retx= TRUE, center=TRUE, scale=TRUE)
+    <span class="c1"># principal component generation</span>
+    <span class="n">pd</span> <span class="o">&lt;-</span> <span class="nf">prcomp</span><span class="p">(</span><span class="n">data_subset</span><span class="p">,</span> <span class="n">retx</span><span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 
-    # merge PCs with demographic cols
-    pcs &lt;- data.frame(rownum = data_subset_rows, pd$x[,seq(5)] %&gt;% as.data.frame)
-    rownums &lt;- pcs$rownum %&gt;% sort
-    pcs &lt;- pcs %&gt;% arrange(rownum)
-    pcs &lt;- pcs[-1]
-    demodfpcs &lt;- bind_cols(df[rownums,c(&#39;key&#39;,real_demos)], pcs)
+    <span class="c1"># merge PCs with demographic cols</span>
+    <span class="n">pcs</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rownum</span> <span class="o">=</span> <span class="n">data_subset_rows</span><span class="p">,</span> <span class="n">pd</span><span class="o">$</span><span class="n">x</span><span class="p">[,</span><span class="nf">seq</span><span class="p">(</span><span class="m">5</span><span class="p">)]</span> <span class="o">%&gt;%</span> <span class="n">as.data.frame</span><span class="p">)</span>
+    <span class="n">rownums</span> <span class="o">&lt;-</span> <span class="n">pcs</span><span class="o">$</span><span class="n">rownum</span> <span class="o">%&gt;%</span> <span class="n">sort</span>
+    <span class="n">pcs</span> <span class="o">&lt;-</span> <span class="n">pcs</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">rownum</span><span class="p">)</span>
+    <span class="n">pcs</span> <span class="o">&lt;-</span> <span class="n">pcs</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
+    <span class="n">demodfpcs</span> <span class="o">&lt;-</span> <span class="nf">bind_cols</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">rownums</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;key&#39;</span><span class="p">,</span><span class="n">real_demos</span><span class="p">)],</span> <span class="n">pcs</span><span class="p">)</span>
 
-    # weighting by # of responses per respondent
-    resps_by_key &lt;- demodfpcs$key %&gt;% table %&gt;% as.data.frame
-    names(resps_by_key) &lt;- c(&#39;key&#39;,&#39;n&#39;)
-    resps_by_key %&lt;&gt;% filter(n!=0)
-    for(r in seq(nrow(demodfpcs))) {
-        nresps &lt;- resps_by_key %&gt;% filter(key == demodfpcs[r,]$key) %&gt;% .$n
-        demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))] &lt;- (1/nresps) *
-                                                        (demodfpcs[r, names(select(demodfpcs,matches(&#39;PC[12345]&#39;)))])
-    }
+    <span class="c1"># weighting by # of responses per respondent</span>
+    <span class="n">resps_by_key</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span><span class="o">$</span><span class="n">key</span> <span class="o">%&gt;%</span> <span class="n">table</span> <span class="o">%&gt;%</span> <span class="n">as.data.frame</span>
+    <span class="nf">names</span><span class="p">(</span><span class="n">resps_by_key</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;key&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">)</span>
+    <span class="n">resps_by_key</span> <span class="o">%&lt;&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="m">0</span><span class="p">)</span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">r</span> <span class="n">in</span> <span class="nf">seq</span><span class="p">(</span><span class="nf">nrow</span><span class="p">(</span><span class="n">demodfpcs</span><span class="p">)))</span> <span class="p">{</span>
+        <span class="n">nresps</span> <span class="o">&lt;-</span> <span class="n">resps_by_key</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">key</span> <span class="o">==</span> <span class="n">demodfpcs</span><span class="p">[</span><span class="n">r</span><span class="p">,]</span><span class="o">$</span><span class="n">key</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">.</span><span class="o">$</span><span class="n">n</span>
+        <span class="n">demodfpcs</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">demodfpcs</span><span class="p">,</span><span class="nf">matches</span><span class="p">(</span><span class="s">&#39;PC[12345]&#39;</span><span class="p">)))]</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">nresps</span><span class="p">)</span> <span class="o">*</span>
+                                                        <span class="p">(</span><span class="n">demodfpcs</span><span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="nf">select</span><span class="p">(</span><span class="n">demodfpcs</span><span class="p">,</span><span class="nf">matches</span><span class="p">(</span><span class="s">&#39;PC[12345]&#39;</span><span class="p">)))])</span>
+    <span class="p">}</span>
                                        
-    # separate PCs and demographics
-    demodfpcs &lt;- demodfpcs %&gt;% select(-&#39;key&#39;)
-    demodf &lt;- demodfpcs %&gt;% select(-matches(&#39;PC[12345]&#39;))
-    pcs &lt;- demodfpcs %&gt;% select(matches(&#39;PC[12345]&#39;))
+    <span class="c1"># separate PCs and demographics</span>
+    <span class="n">demodfpcs</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="s">&#39;key&#39;</span><span class="p">)</span>
+    <span class="n">demodf</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="nf">matches</span><span class="p">(</span><span class="s">&#39;PC[12345]&#39;</span><span class="p">))</span>
+    <span class="n">pcs</span> <span class="o">&lt;-</span> <span class="n">demodfpcs</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="s">&#39;PC[12345]&#39;</span><span class="p">))</span>
                                        
-    # plotting (by PC)
-    for(p in seq(pcs)) {
-        # combine individual PC with demographics
-        temp &lt;- bind_cols(pcs[p], demodf)
-        names(temp) &lt;- c(&quot;pc&quot;, names(temp)[-1])
+    <span class="c1"># plotting (by PC)</span>
+    <span class="nf">for</span><span class="p">(</span><span class="n">p</span> <span class="n">in</span> <span class="nf">seq</span><span class="p">(</span><span class="n">pcs</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1"># combine individual PC with demographics</span>
+        <span class="n">temp</span> <span class="o">&lt;-</span> <span class="nf">bind_cols</span><span class="p">(</span><span class="n">pcs</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">demodf</span><span class="p">)</span>
+        <span class="nf">names</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;pc&quot;</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">temp</span><span class="p">)[</span><span class="m">-1</span><span class="p">])</span>
         
-        # for each demographic...
-        for(d in seq(small_demos)) {
-            mu &lt;- temp %&gt;% na.omit %&gt;% group_by_at(vars(small_demos[d])) %&gt;%
-                    summarise(grp.median=median(pc))
+        <span class="c1"># for each demographic...</span>
+        <span class="nf">for</span><span class="p">(</span><span class="n">d</span> <span class="n">in</span> <span class="nf">seq</span><span class="p">(</span><span class="n">small_demos</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">mu</span> <span class="o">&lt;-</span> <span class="n">temp</span> <span class="o">%&gt;%</span> <span class="n">na.omit</span> <span class="o">%&gt;%</span> <span class="nf">group_by_at</span><span class="p">(</span><span class="nf">vars</span><span class="p">(</span><span class="n">small_demos</span><span class="p">[</span><span class="n">d</span><span class="p">]))</span> <span class="o">%&gt;%</span>
+                    <span class="nf">summarise</span><span class="p">(</span><span class="n">grp.median</span><span class="o">=</span><span class="nf">median</span><span class="p">(</span><span class="n">pc</span><span class="p">))</span>
 
-            ggplot(na.omit(demodfpcs), aes_string(x=names(pcs)[p], fill=small_demos[d])) +
-                geom_density(alpha=0.4) +
-                xlim(round(na.omit(pcs[[p]]) %&gt;% summary %&gt;% tidy %&gt;% .$minimum)-0.5, 
-                     round(na.omit(pcs[[p]]) %&gt;% summary %&gt;% tidy %&gt;% .$maximum)+.5) +
-                geom_vline(data=mu, aes_string(xintercept=&#39;grp.median&#39;, color=names(mu)[1]),
-                         linetype=&quot;dashed&quot;) +
-                labs(subtitle=paste0(&#39;pos-x: &#39;, pca_labels %&gt;% 
-                      filter(question_name==question) %&gt;% 
-                      select(matches(paste0(p,&#39;_pos&#39;))) %&gt;%
-                      pull %&gt;% as.character,
-                     &#39;\nneg-x: &#39;, pca_labels %&gt;% 
-                      filter(question_name==question) %&gt;% 
-                      select(matches(paste0(p,&#39;_neg&#39;))) %&gt;%
-                      pull %&gt;% as.character)) +
-                theme(plot.subtitle = element_text(size=10))
+            <span class="nf">ggplot</span><span class="p">(</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">demodfpcs</span><span class="p">),</span> <span class="nf">aes_string</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">names</span><span class="p">(</span><span class="n">pcs</span><span class="p">)[</span><span class="n">p</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="n">small_demos</span><span class="p">[</span><span class="n">d</span><span class="p">]))</span> <span class="o">+</span>
+                <span class="nf">geom_density</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">xlim</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">pcs</span><span class="p">[[</span><span class="n">p</span><span class="p">]])</span> <span class="o">%&gt;%</span> <span class="n">summary</span> <span class="o">%&gt;%</span> <span class="n">tidy</span> <span class="o">%&gt;%</span> <span class="n">.</span><span class="o">$</span><span class="n">minimum</span><span class="p">)</span><span class="m">-0.5</span><span class="p">,</span> 
+                     <span class="nf">round</span><span class="p">(</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">pcs</span><span class="p">[[</span><span class="n">p</span><span class="p">]])</span> <span class="o">%&gt;%</span> <span class="n">summary</span> <span class="o">%&gt;%</span> <span class="n">tidy</span> <span class="o">%&gt;%</span> <span class="n">.</span><span class="o">$</span><span class="n">maximum</span><span class="p">)</span><span class="m">+.5</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">geom_vline</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="nf">aes_string</span><span class="p">(</span><span class="n">xintercept</span><span class="o">=</span><span class="s">&#39;grp.median&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nf">names</span><span class="p">(</span><span class="n">mu</span><span class="p">)[</span><span class="m">1</span><span class="p">]),</span>
+                         <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span> <span class="o">+</span>
+                <span class="nf">labs</span><span class="p">(</span><span class="n">subtitle</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#39;pos-x: &#39;</span><span class="p">,</span> <span class="n">pca_labels</span> <span class="o">%&gt;%</span> 
+                      <span class="nf">filter</span><span class="p">(</span><span class="n">question_name</span><span class="o">==</span><span class="n">question</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+                      <span class="nf">select</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s">&#39;_pos&#39;</span><span class="p">)))</span> <span class="o">%&gt;%</span>
+                      <span class="n">pull</span> <span class="o">%&gt;%</span> <span class="n">as.character</span><span class="p">,</span>
+                     <span class="s">&#39;\nneg-x: &#39;</span><span class="p">,</span> <span class="n">pca_labels</span> <span class="o">%&gt;%</span> 
+                      <span class="nf">filter</span><span class="p">(</span><span class="n">question_name</span><span class="o">==</span><span class="n">question</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+                      <span class="nf">select</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="s">&#39;_neg&#39;</span><span class="p">)))</span> <span class="o">%&gt;%</span>
+                      <span class="n">pull</span> <span class="o">%&gt;%</span> <span class="n">as.character</span><span class="p">))</span> <span class="o">+</span>
+                <span class="nf">theme</span><span class="p">(</span><span class="n">plot.subtitle</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">10</span><span class="p">))</span>
 
-            # saving
-            dir.create(paste(dir_to_save_results, question, names(pcs)[p], sep=&#39;/&#39;), showWarnings = F)
-            dir.create(paste(dir_to_save_results, question, names(pcs)[p], plot_type,sep=&#39;/&#39;), showWarnings = F)
-            ggsave(paste(dir_to_save_results, question, names(pcs)[p], plot_type, 
-                         paste0(small_demos[d], output_format),sep=&#39;/&#39;), 
-                   width = 5, height=4)
-        }
-    }
-}
+            <span class="c1"># saving</span>
+            <span class="nf">dir.create</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">dir_to_save_results</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">pcs</span><span class="p">)[</span><span class="n">p</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">),</span> <span class="n">showWarnings</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+            <span class="nf">dir.create</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">dir_to_save_results</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">pcs</span><span class="p">)[</span><span class="n">p</span><span class="p">],</span> <span class="n">plot_type</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">),</span> <span class="n">showWarnings</span> <span class="o">=</span> <span class="bp">F</span><span class="p">)</span>
+            <span class="nf">ggsave</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="n">dir_to_save_results</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="nf">names</span><span class="p">(</span><span class="n">pcs</span><span class="p">)[</span><span class="n">p</span><span class="p">],</span> <span class="n">plot_type</span><span class="p">,</span> 
+                         <span class="nf">paste0</span><span class="p">(</span><span class="n">small_demos</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">output_format</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">),</span> 
+                   <span class="n">width</span> <span class="o">=</span> <span class="m">5</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

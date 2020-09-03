@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Descriptive Statistics &#8212; The Arts Engagement Project at The University of Michigan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -24,11 +25,10 @@
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/mystnb.js"></script>
     <script src="../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -274,6 +274,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/insights/descriptivestats.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         
     </div>
 </div>
@@ -283,7 +288,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             
@@ -305,79 +310,6 @@
 <li><p>demographic breakdowns</p></li>
 <li><p>etc</p></li>
 </ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/skeleton.css&quot; /&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot; /&gt;
-&lt;link href=&#39;https://fonts.googleapis.com/css?family=Inconsolata&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; /&gt;
-</pre></div>
-</div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-  <meta charset="utf-8">
-  <title>JS Bin</title>
-</head>
-<body>
- <div class="container">
-        <div class="row centered">
-            <div class="ten columns offset-by-one alpha">
-                <h1>Outcome VS Arts</h1>
-            </div>
-        </div>
-        <div class="row centered">
-            <div class="six columns offset-by-three alpha">
-                <p class="desc centered">How do different type of arts participation affect learning and development outcomes? </p>
-            </div>
-        </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     &lt;div class=&quot;row centered&quot;&gt;
-        &lt;div class=&quot;four columns offset-by-four alpha&quot; id=&quot;racesimp&quot; style=&quot;margin-top:10px;&quot;&gt;
-            &lt;h3&gt;Type of Arts:&lt;/h3&gt;
-            &lt;select id=&quot;Ultra&quot; onchange=&quot;run()&quot;&gt;  &lt;!--Call run() function--&gt;
- &lt;option value=&quot;0&quot;&gt;Select&lt;/option&gt;
- &lt;option value=&quot;1&quot;&gt;animation&lt;/option&gt;
- &lt;option value=&quot;2&quot;&gt;architecture&lt;/option&gt;
- &lt;option value=&quot;3&quot;&gt;comedy&lt;/option&gt;
- &lt;option value=&quot;4&quot;&gt;comics&lt;/option&gt;
- &lt;option value=&quot;5&quot;&gt;crafts&lt;/option&gt;
- &lt;option value=&quot;6&quot;&gt;creative writing&lt;/option&gt;
- &lt;option value=&quot;7&quot;&gt;dance&lt;/option&gt;
- &lt;option value=&quot;8&quot;&gt;film&lt;/option&gt;
- &lt;option value=&quot;9&quot;&gt;graphic design&lt;/option&gt;
- &lt;option value=&quot;10&quot;&gt;multimedia&lt;/option&gt;
- &lt;option value=&quot;12&quot;&gt;music composition&lt;/option&gt;
- &lt;option value=&quot;12&quot;&gt;music performance&lt;/option&gt;
- &lt;option value=&quot;14&quot;&gt;theatre&lt;/option&gt;
- &lt;option value=&quot;15&quot;&gt;visual art&lt;/option&gt;
- &lt;option value=&quot;13&quot;&gt;other&lt;/option&gt;
-</pre></div>
-</div>
-<p></select><br><br><br />
-</div>
-</div></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>     &lt;div class=&quot;row centered&quot;&gt;
-        &lt;div class=&quot;four columns offset-by-four alpha&quot; id=&quot;racesimp&quot; style=&quot;margin-top:10px;&quot;&gt;
-            &lt;h3&gt;Sort by:&lt;/h3&gt;
-            &lt;select id=&quot;Ultra2&quot; onchange=&quot;run2()&quot;&gt;  &lt;!--Call run() function--&gt;
- &lt;option value=&quot;0&quot;&gt;Select&lt;/option&gt;
- &lt;option value=&quot;1&quot;&gt;Leadership&lt;/option&gt;
- &lt;option value=&quot;2&quot;&gt;Participation&lt;/option&gt;
- &lt;option value=&quot;3&quot;&gt;Attendance&lt;/option&gt;
-</pre></div>
-</div>
-<p></select><br><br><br />
-</div>
-</div></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &lt;div class=&quot;row centered&quot;&gt;
-&lt;div class=&quot;thirty columns offset-by-one alpha&quot;&gt;
-        &lt;svg width=700 height=1000 class=&quot;chart&quot; id=&quot;chart1&quot;&gt;&lt;/svg&gt;
-        &lt;script src=&quot;https://code.jquery.com/jquery-3.1.1.min.js&quot;
-        integrity=&quot;sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=&quot;
-        crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
-   &lt;script src=&quot;jsbin.xeruz.js&quot;&gt;&lt;/script&gt;
-
-
-&lt;/div&gt;
-    &lt;/div&gt;
-</pre></div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
