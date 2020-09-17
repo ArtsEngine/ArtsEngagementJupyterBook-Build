@@ -18,6 +18,8 @@
     title: Insights Overview
   - file: insights/descriptivestats
     title: Descriptive Statistics
+  - file: insights/learning-outcomes
+    title: Learning Outcomes
   - file: insights/barriers
     title: Barriers to Involvement
     sections:

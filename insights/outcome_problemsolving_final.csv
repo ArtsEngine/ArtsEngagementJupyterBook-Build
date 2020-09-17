@@ -1,0 +1,61 @@
+"","value","sig","level","arts","overall_sig"
+"animationattendance",-0.00953501589101051,NA,"attendance","animation",NA
+"animationparticipation",0.0780702417188826,"*  ","participation","animation",NA
+"animationleadership",-0.063901970542771,NA,"leadership","animation",NA
+"4",0,NA,"overall_pvalue","animation","     *  "
+"architectureattendance",-0.00189310554287078,NA,"attendance","architecture",NA
+"architectureparticipation",0.0461787177411943,NA,"participation","architecture",NA
+"architectureleadership",-0.0113300164230614,NA,"leadership","architecture",NA
+"8",0,NA,"overall_pvalue","architecture",NA
+"comedyattendance",-0.00398906748926145,NA,"attendance","comedy",NA
+"comedyparticipation",-0.0592700679298611,"*  ","participation","comedy",NA
+"comedyleadership",0.0127097143055798,NA,"leadership","comedy",NA
+"12",0,NA,"overall_pvalue","comedy",NA
+"comicsattendance",0.0181304237375841,NA,"attendance","comics",NA
+"comicsparticipation",-0.0155480524304293,NA,"participation","comics",NA
+"comicsleadership",-0.186098478734994,"***","leadership","comics",NA
+"16",0,NA,"overall_pvalue","comics","     ** "
+"craftsattendance",0.0334726023969138,NA,"attendance","crafts",NA
+"craftsparticipation",0.0119296073588441,NA,"participation","crafts",NA
+"craftsleadership",0.0439472605233674,NA,"leadership","crafts",NA
+"20",0,NA,"overall_pvalue","crafts",NA
+"cwritingattendance",-0.0213620645637141,NA,"attendance","cwriting",NA
+"cwritingparticipation",0.0160915808598164,NA,"participation","cwriting",NA
+"cwritingleadership",0.050128975095698,NA,"leadership","cwriting",NA
+"24",0,NA,"overall_pvalue","cwriting",NA
+"danceattendance",0.00548832695300406,NA,"attendance","dance",NA
+"danceparticipation",0.0210889711613448,NA,"participation","dance",NA
+"danceleadership",0.135953106170408,"***","leadership","dance",NA
+"28",0,NA,"overall_pvalue","dance","     ***"
+"filmattendance",0.015680375528524,NA,"attendance","film",NA
+"filmparticipation",0.0112460223963278,NA,"participation","film",NA
+"filmleadership",0.104318075146537,"** ","leadership","film",NA
+"32",0,NA,"overall_pvalue","film","     *  "
+"gdesignattendance",0.0256995156290233,NA,"attendance","gdesign",NA
+"gdesignparticipation",0.0502840417922774,"** ","participation","gdesign",NA
+"gdesignleadership",0.111889140566319,"** ","leadership","gdesign",NA
+"36",0,NA,"overall_pvalue","gdesign","     ** "
+"multimediaattendance",0.0182408302780045,NA,"attendance","multimedia",NA
+"multimediaparticipation",0.0777240666939007,"***","participation","multimedia",NA
+"multimedialeadership",0.0269642015151244,NA,"leadership","multimedia",NA
+"40",0,NA,"overall_pvalue","multimedia","     ***"
+"muscompattendance",0.0204491089845046,NA,"attendance","muscomp",NA
+"muscompparticipation",0.0359620448621145,NA,"participation","muscomp",NA
+"muscompleadership",-0.0627160956560472,NA,"leadership","muscomp",NA
+"44",0,NA,"overall_pvalue","muscomp","     *  "
+"musperfattendance",-0.00166209454397709,NA,"attendance","musperf",NA
+"musperfparticipation",0.045744740176976,"** ","participation","musperf",NA
+"musperfleadership",0.212615306493225,"***","leadership","musperf",NA
+"48",0,NA,"overall_pvalue","musperf","     ***"
+"theatreattendance",0.0296074765409922,"*  ","attendance","theatre",NA
+"theatreparticipation",0.0736947968002077,"** ","participation","theatre",NA
+"theatreleadership",0.0797009594624106,"*  ","leadership","theatre",NA
+"52",0,NA,"overall_pvalue","theatre","     ** "
+"visartattendance",-0.0077513114162888,NA,"attendance","visart",NA
+"visartparticipation",0.0352754894600251,"*  ","participation","visart",NA
+"visartleadership",0.157227533797516,"***","leadership","visart",NA
+"56",0,NA,"overall_pvalue","visart","     ***"
+"otherattendance",0.0449977088041695,NA,"attendance","other",NA
+"otherparticipation",-0.0126499190073951,NA,"participation","other",NA
+"otherleadership",0.115461855741101,"** ","leadership","other",NA
+"60",0,NA,"overall_pvalue","other","     *  "
