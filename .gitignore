@@ -1,3 +1,4 @@
 _build
 **/.ipynb_checkpoints
 /insights/data/*
+.DS_Store
