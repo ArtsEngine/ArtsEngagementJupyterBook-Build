@@ -14,8 +14,6 @@ Results from the project have been presented at conferences and convenings. Here
 
 
 
-
-
 ***Student Impacts of Collegiate Arts Experiences***
 [A2RU Webinar: The Arts Engagement Project](https://www.a2ru.org/events/circuits-webinar-arts-engagement-project-2/)
 
@@ -23,4 +21,16 @@ Results from the project have been presented at conferences and convenings. Here
 
 ***Impacts Map***
 [Topics concerning the impacts of the arts on student experiences have been integrated with other data as part of a2ru's map of impacts](https://doi.org/10.3998/mpub.11660399)
+
+
+
+From Skills Diversity to Integrative Learning Pathways: The Comparative Advantages of the Arts and Design for Science and Society. Harp, G. (2019, December). In AGU Fall Meeting 2019. AGU.
+
+
+
+From Skills Diversity to Integrative Learning Pathways. Harp, G. (2019, December). In College Art Association Annual Meeting, Chicago, 2020. CAA.
+
+
+
+[Evaluating the Impacts of Arts-Based Experiences. Harp, G. (2020, April) Advancing Research Impact in Society (ARIS), Annual Summit 2020.](https://www.youtube.com/watch?v=0VZpfFa58JM&list=PLgjgKtueGBteN2vhfUe7uKOqSXYCkn5Nx&index=12&t=0s)
 

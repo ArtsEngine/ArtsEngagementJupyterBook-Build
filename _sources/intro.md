@@ -39,12 +39,13 @@ Harp, G., Mexicotte, D., and Bowman, J. *Impacts of Curricular and Co-Curricular
 
 **Deb Mexicotte**
 * Principal Investigator, Arts Engagement Project
-* Managing Director ArtsEngine 2015-Present 
+* Managing Director ArtsEngine 2015-present 
 * Program Director Arts at Michigan 2007-2015
 
 **Gabriel Harp** 
 * Principal Investigator, NEA Impacts Project 
-* Research Director, ArtsEngine/A2RU, 2016-present
+* Director of Research + Creative Practice Development, Taubman College of Architecture and Urban Planning, 2020-present
+* Research Director, ArtsEngine/A2RU, 2016-2020
 
 **Jack Bowman**
 * Research Assistant, ArtsEngine, 2018-2020 
