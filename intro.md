@@ -34,6 +34,8 @@ Funding and support for the Arts Engagement project has come from a number of so
 
 ## Acknowledgements
 
+"Draft version 1.3, 10/5/20. This work has not been peer reviewed. Please do not copy or cite without author's permission."
+
 **Suggested Citation:** 
 Harp, G., Mexicotte, D., and Bowman, J. *Impacts of Curricular and Co-Curricular Arts Engagement on Post-Secondary Student Development* [Arts Engagement Project Working Paper]. (2020, March 1). url: https://artsengagementproject.site
 
@@ -51,7 +53,7 @@ Harp, G., Mexicotte, D., and Bowman, J. *Impacts of Curricular and Co-Curricular
 * Research Assistant, ArtsEngine, 2018-2020 
 
 **Mengdan Yuan**
-* Research Assistant, ArtsEngine, 2018-2019
+* Research Assistant, ArtsEngine, 2018-2020
 
 Veronica Stanich, Research Program Manager, A2RU, 2017-current
 

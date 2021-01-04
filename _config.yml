@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : The Arts Engagement Project at The University of Michigan  # The title of the book. Will be placed in the left navbar.
-author                      :   # The author of the book
+author                      : Gabriel Harp  # The author of the book
 email: gharp@umich.edu
 description: >-
   The Arts Engagement project is a study of ~4000 undergraduate students at the University

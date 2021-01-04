@@ -34,3 +34,5 @@ From Skills Diversity to Integrative Learning Pathways. Harp, G. (2019, December
 
 [Evaluating the Impacts of Arts-Based Experiences. Harp, G. (2020, April) Advancing Research Impact in Society (ARIS), Annual Summit 2020.](https://www.youtube.com/watch?v=0VZpfFa58JM&list=PLgjgKtueGBteN2vhfUe7uKOqSXYCkn5Nx&index=12&t=0s)
 
+
+[Arts Engagement Project Site (2020, December). Gallery of Jupyter Books. Executable Book Project.](https://executablebooks.org/en/latest/gallery.html)
