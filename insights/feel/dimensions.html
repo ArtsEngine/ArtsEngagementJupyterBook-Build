@@ -40,7 +40,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -70,7 +69,7 @@
 <meta property="og:url"         content="https://artsengagementproject.site/insights/feel/dimensions.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Emotional Impacts Underlying Factors" />
-<meta property="og:description" content="Emotional Impacts Underlying Factors  Contents  Emotional Impacts Underlying Factors  Principal Components Results Summary  Demographic Contrasts Results Summar" />
+<meta property="og:description" content="Emotional Impacts Underlying Factors  Contents  Emotional Impacts Underlying Factors  Principal Components Results Summary  MANOVA Results Summary  Demographic " />
 <meta property="og:image"       content="https://artsengagementproject.site/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -423,6 +422,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manova-results-summary">
+   MANOVA Results Summary
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#demographic-contrasts-results-summary">
    Demographic Contrasts Results Summary
   </a>
@@ -564,52 +568,53 @@
 <li><p><a class="reference internal" href="#emotional-impacts-underlying-factors" id="id6">Emotional Impacts Underlying Factors</a></p>
 <ul>
 <li><p><a class="reference internal" href="#principal-components-results-summary" id="id7">Principal Components Results Summary</a></p></li>
-<li><p><a class="reference internal" href="#demographic-contrasts-results-summary" id="id8">Demographic Contrasts Results Summary</a></p></li>
-<li><p><a class="reference internal" href="#dimension-1-very-positive-vs-ambivalent-but-positive" id="id9">Dimension 1: Very Positive -vs- Ambivalent, but Positive</a></p></li>
-<li><p><a class="reference internal" href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret" id="id10">Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret</a></p>
+<li><p><a class="reference internal" href="#manova-results-summary" id="id8">MANOVA Results Summary</a></p></li>
+<li><p><a class="reference internal" href="#demographic-contrasts-results-summary" id="id9">Demographic Contrasts Results Summary</a></p></li>
+<li><p><a class="reference internal" href="#dimension-1-very-positive-vs-ambivalent-but-positive" id="id10">Dimension 1: Very Positive -vs- Ambivalent, but Positive</a></p></li>
+<li><p><a class="reference internal" href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret" id="id11">Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret</a></p>
 <ul>
-<li><p><a class="reference internal" href="#demographic-factors-for-dimension-2" id="id11">Demographic Factors for Dimension 2</a></p></li>
-<li><p><a class="reference internal" href="#table-1-demographic-contrasts-for-dimension-2" id="id12">TABLE 1: demographic contrasts for Dimension 2</a></p>
+<li><p><a class="reference internal" href="#demographic-factors-for-dimension-2" id="id12">Demographic Factors for Dimension 2</a></p></li>
+<li><p><a class="reference internal" href="#table-1-demographic-contrasts-for-dimension-2" id="id13">TABLE 1: demographic contrasts for Dimension 2</a></p>
 <ul>
-<li><p><a class="reference internal" href="#high-school-arts-participation" id="id13">High School Arts Participation</a></p></li>
-<li><p><a class="reference internal" href="#participated-in-college" id="id14">Participated in College</a></p></li>
-<li><p><a class="reference internal" href="#arts-in-college" id="id15">Arts in College</a></p></li>
+<li><p><a class="reference internal" href="#high-school-arts-participation" id="id14">High School Arts Participation</a></p></li>
+<li><p><a class="reference internal" href="#participated-in-college" id="id15">Participated in College</a></p></li>
+<li><p><a class="reference internal" href="#arts-in-college" id="id16">Arts in College</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#dimension-3-empowered-vs-meaningly-gratified" id="id16">Dimension 3: Empowered -vs- Meaningly Gratified</a></p>
+<li><p><a class="reference internal" href="#dimension-3-empowered-vs-meaningly-gratified" id="id17">Dimension 3: Empowered -vs- Meaningly Gratified</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-2-demographic-contrasts-for-dimension-3" id="id17">TABLE 2: demographic contrasts for Dimension 3</a></p>
+<li><p><a class="reference internal" href="#table-2-demographic-contrasts-for-dimension-3" id="id18">TABLE 2: demographic contrasts for Dimension 3</a></p>
 <ul>
-<li><p><a class="reference internal" href="#high-school-location" id="id18">High School Location</a></p></li>
-<li><p><a class="reference internal" href="#parental-influence" id="id19">Parental Influence</a></p></li>
+<li><p><a class="reference internal" href="#high-school-location" id="id19">High School Location</a></p></li>
+<li><p><a class="reference internal" href="#parental-influence" id="id20">Parental Influence</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#dimension-4-less-elaborative-vs-more-elaborative" id="id20">Dimension 4: Less Elaborative -vs- More Elaborative</a></p>
+<li><p><a class="reference internal" href="#dimension-4-less-elaborative-vs-more-elaborative" id="id21">Dimension 4: Less Elaborative -vs- More Elaborative</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-3-demographic-contrasts-for-dimension-4" id="id21">TABLE 3: demographic contrasts for Dimension 4</a></p>
+<li><p><a class="reference internal" href="#table-3-demographic-contrasts-for-dimension-4" id="id22">TABLE 3: demographic contrasts for Dimension 4</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id4" id="id22">High School Arts Participation</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id23">High School Arts Participation</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#dimension-5-cultured-vs-accomplished" id="id23">Dimension 5: Cultured -vs- Accomplished</a></p>
+<li><p><a class="reference internal" href="#dimension-5-cultured-vs-accomplished" id="id24">Dimension 5: Cultured -vs- Accomplished</a></p>
 <ul>
-<li><p><a class="reference internal" href="#table-4-demographic-contrasts-for-dimension-5" id="id24">TABLE 4: demographic contrasts for Dimension 5</a></p>
+<li><p><a class="reference internal" href="#table-4-demographic-contrasts-for-dimension-5" id="id25">TABLE 4: demographic contrasts for Dimension 5</a></p>
 <ul>
-<li><p><a class="reference internal" href="#id5" id="id25">High School Arts Participation</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id26">High School Arts Participation</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#selecting-the-dimensions" id="id26">Selecting the Dimensions</a></p>
+<li><p><a class="reference internal" href="#selecting-the-dimensions" id="id27">Selecting the Dimensions</a></p>
 <ul>
-<li><p><a class="reference internal" href="#scree-plot-and-explained-variance" id="id27">Scree Plot and Explained Variance</a></p></li>
-<li><p><a class="reference internal" href="#loadings-table-for-variables-included-in-the-analysis" id="id28">Loadings Table for Variables Included in the Analysis</a></p></li>
+<li><p><a class="reference internal" href="#scree-plot-and-explained-variance" id="id28">Scree Plot and Explained Variance</a></p></li>
+<li><p><a class="reference internal" href="#loadings-table-for-variables-included-in-the-analysis" id="id29">Loadings Table for Variables Included in the Analysis</a></p></li>
 </ul>
 </li>
 </ul>
@@ -621,14 +626,224 @@
 <p>A total of 24 variables and 654 responses were included in the analysis of responses to the question, <em>“How did your involvement in the arts during college make you feel?”</em> Eight components overall had an eigenvalue greater than 1, explaining a cumulative 70% of the variation. Five components explaining a cumulative 56% of the variation were extracted for description. Each dimension is characterized by distributions of responses that illustrate different themes that may sometimes in tension with each other. Each of these dimensions is described in more detail in the sections below.</p>
 <p>A scree plot, dimension eigenvalues, and a loadings table for the variables included in the analysis follow at the bottom of this page.</p>
 </div>
+<div class="section" id="manova-results-summary">
+<h2><a class="toc-backref" href="#id8">MANOVA Results Summary</a><a class="headerlink" href="#manova-results-summary" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p>term</p></th>
+<th class="text-align:left head"><p>df</p></th>
+<th class="text-align:left head"><p>pillai</p></th>
+<th class="text-align:left head"><p>statistic</p></th>
+<th class="text-align:left head"><p>num.df</p></th>
+<th class="text-align:left head"><p>den.df</p></th>
+<th class="text-align:left head"><p>p.value</p></th>
+<th class="text-align:left head"><p>signif.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>ethnic_group</p></td>
+<td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>0.332569131660344</p></td>
+<td class="text-align:left"><p>1.2876811694926</p></td>
+<td class="text-align:left"><p>20</p></td>
+<td class="text-align:left"><p>284</p></td>
+<td class="text-align:left"><p>0.18573425920309</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>sex</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0269053509302252</p></td>
+<td class="text-align:left"><p>0.376029991533562</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.863461045559523</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>3</p></td>
+<td class="text-align:left"><p>school</p></td>
+<td class="text-align:left"><p>12</p></td>
+<td class="text-align:left"><p>0.763742714208868</p></td>
+<td class="text-align:left"><p>1.08172284545211</p></td>
+<td class="text-align:left"><p>60</p></td>
+<td class="text-align:left"><p>360</p></td>
+<td class="text-align:left"><p>0.326936434357077</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>parented</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>0.385979340819069</p></td>
+<td class="text-align:left"><p>1.20461153478694</p></td>
+<td class="text-align:left"><p>25</p></td>
+<td class="text-align:left"><p>360</p></td>
+<td class="text-align:left"><p>0.230569162573251</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>income</p></td>
+<td class="text-align:left"><p>3</p></td>
+<td class="text-align:left"><p>0.288396005748896</p></td>
+<td class="text-align:left"><p>1.4889873628467</p></td>
+<td class="text-align:left"><p>15</p></td>
+<td class="text-align:left"><p>210</p></td>
+<td class="text-align:left"><p>0.111197827750187</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>6</p></td>
+<td class="text-align:left"><p>artsincollege</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0990669586078516</p></td>
+<td class="text-align:left"><p>1.49546145514308</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.202849053127901</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>7</p></td>
+<td class="text-align:left"><p>hstype</p></td>
+<td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>0.273867367814517</p></td>
+<td class="text-align:left"><p>1.04368711660303</p></td>
+<td class="text-align:left"><p>20</p></td>
+<td class="text-align:left"><p>284</p></td>
+<td class="text-align:left"><p>0.410611290603862</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>8</p></td>
+<td class="text-align:left"><p>hssize</p></td>
+<td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>0.420623335454927</p></td>
+<td class="text-align:left"><p>1.6686847804041</p></td>
+<td class="text-align:left"><p>20</p></td>
+<td class="text-align:left"><p>284</p></td>
+<td class="text-align:left"><p>0.0378880475966631</p></td>
+<td class="text-align:left"><p>*</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>9</p></td>
+<td class="text-align:left"><p>hslocation</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>0.196567301479799</p></td>
+<td class="text-align:left"><p>1.504147486428</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>138</p></td>
+<td class="text-align:left"><p>0.144007814919684</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>hs_arts_freq</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>0.126059353165991</p></td>
+<td class="text-align:left"><p>0.928321330043046</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>138</p></td>
+<td class="text-align:left"><p>0.509350552124451</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>11</p></td>
+<td class="text-align:left"><p>hs_encouragement</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0843792468203794</p></td>
+<td class="text-align:left"><p>1.25331121293626</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.294287280101754</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>12</p></td>
+<td class="text-align:left"><p>hs_required</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0422815663922278</p></td>
+<td class="text-align:left"><p>0.600415824479994</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.699720051569038</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>13</p></td>
+<td class="text-align:left"><p>hs_fees</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0199296267923608</p></td>
+<td class="text-align:left"><p>0.276554553413364</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.924445211375083</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>14</p></td>
+<td class="text-align:left"><p>so_childhood1</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0272706136968855</p></td>
+<td class="text-align:left"><p>0.381278032205014</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.859939378313645</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>15</p></td>
+<td class="text-align:left"><p>so_childhood3</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0591848852567305</p></td>
+<td class="text-align:left"><p>0.855550072355269</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.515562339645883</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>16</p></td>
+<td class="text-align:left"><p>so_childhood5</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.0358565295314321</p></td>
+<td class="text-align:left"><p>0.505784477688246</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.770885927313458</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>17</p></td>
+<td class="text-align:left"><p>sr_participated</p></td>
+<td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>0.104024592999827</p></td>
+<td class="text-align:left"><p>1.57898805452075</p></td>
+<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>68</p></td>
+<td class="text-align:left"><p>0.177769524775319</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>18</p></td>
+<td class="text-align:left"><p>sr_highestdegreeplanned</p></td>
+<td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>0.0957637568024133</p></td>
+<td class="text-align:left"><p>0.693999942808661</p></td>
+<td class="text-align:left"><p>10</p></td>
+<td class="text-align:left"><p>138</p></td>
+<td class="text-align:left"><p>0.728725038163163</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>19</p></td>
+<td class="text-align:left"><p>Residuals</p></td>
+<td class="text-align:left"><p>72</p></td>
+<td class="text-align:left"><p>NA</p></td>
+<td class="text-align:left"><p>NA</p></td>
+<td class="text-align:left"><p>NA</p></td>
+<td class="text-align:left"><p>NA</p></td>
+<td class="text-align:left"><p>NA</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Signif. codes:  0 ‘ *** ‘ 0.001 ‘ ** ‘ 0.01 ‘ * ‘ 0.05 ‘ . ‘ 0.1 ‘  ‘ 1</p>
+</div>
 <div class="section" id="demographic-contrasts-results-summary">
-<h2><a class="toc-backref" href="#id8">Demographic Contrasts Results Summary</a><a class="headerlink" href="#demographic-contrasts-results-summary" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Demographic Contrasts Results Summary</a><a class="headerlink" href="#demographic-contrasts-results-summary" title="Permalink to this headline">¶</a></h2>
 <p>In addition, we tested for demographic patterns in the responses along each dimension, by conducting an analysis of variance (ANOVA) with a Tukey posthoc test to compare the principal component scores between demographic factor levels. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the areas of emotional impact described by the accompanying dimension/principal component.</p>
 <p>Demographic factor level contrasts were observed for Dimensions 2, 3, 4, and 5. Dimensions 2, 4, and 5 each showed an association with High School Arts Frequency (<code class="docutils literal notranslate"><span class="pre">hs_arts_freq</span></code>). <code class="docutils literal notranslate"><span class="pre">sr_participated</span></code> and <code class="docutils literal notranslate"><span class="pre">artsincollege</span></code> also showed contrasts for Dimension 2, suggesting a firm role of prior exposure to the arts for Dimension 2. High School Location (<code class="docutils literal notranslate"><span class="pre">hslocation</span></code>) and <code class="docutils literal notranslate"><span class="pre">so_childhood5</span></code> differences emerged for for Dimension 3. Demographic factors that had associations with each of the dimensions are listed below, along with statistical tables and accompanying figures illustrating the contrasts between factor levels. A brief description accompanies each dimension to summarize the results.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="dimension-1-very-positive-vs-ambivalent-but-positive">
-<h2><a class="toc-backref" href="#id9">Dimension 1: Very Positive -vs- Ambivalent, but Positive</a><a class="headerlink" href="#dimension-1-very-positive-vs-ambivalent-but-positive" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Dimension 1: Very Positive -vs- Ambivalent, but Positive</a><a class="headerlink" href="#dimension-1-very-positive-vs-ambivalent-but-positive" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 1 (the first principal component) explains about 19% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">feel</span></code> question. Responses that characterize this dimension are <em><strong>Very Positive</strong></em> in one direction, and <em><strong>Ambivalent, but Positive</strong></em> in the other direction.</p>
 <p>Resonses that are <em><strong>Very Positive</strong></em> are a synthesis of the topic variables of:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LIWC..Analytic
@@ -690,7 +905,7 @@ AIC..IC
 </div>
 </div>
 <div class="section" id="dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret">
-<h2><a class="toc-backref" href="#id10">Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret</a><a class="headerlink" href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Dimension 2: Connected and Fulfilled -vs- Enjoyment and Regret</a><a class="headerlink" href="#dimension-2-connected-and-fulfilled-vs-enjoyment-and-regret" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 2 explains about 14% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">feel</span></code> question, and this dimension is characterized by responses that expressed feelings of being <em><strong>Connected and Fulfilled</strong></em> in one direction, and by responses expressing <em><strong>Enjoyment and Regret</strong></em> in the other direction.</p>
 <p><em><strong>Connected and Fulfilled</strong></em> is the label describing one direction of this dimension; it is a synthesis of the topic variables of:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AIC..ELAB
@@ -756,12 +971,12 @@ topic..Entertained
 <div><p>“I wish I would have attended more performances.”</p>
 </div></blockquote>
 <div class="section" id="demographic-factors-for-dimension-2">
-<h3><a class="toc-backref" href="#id11">Demographic Factors for Dimension 2</a><a class="headerlink" href="#demographic-factors-for-dimension-2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Demographic Factors for Dimension 2</a><a class="headerlink" href="#demographic-factors-for-dimension-2" title="Permalink to this headline">¶</a></h3>
 <p>Students who participated in the arts in high school or in college had higher mean principal component scores along Dimension 2 — in contrast to students that reported no participation (Table 1). Students that occasionally or frequently participated in the arts in high school — as well as those who participated in college — were more likely to have responses that fell into the <em><strong>Enjoyment and Regret</strong></em> range of Dimension 1 (Table 1; Figures 1.1, 1.2, and 1.3).</p>
 <p>One explanation for this pattern is that not all students are art majors or plan to do the arts in their career, and while they are expressing a sense of enjoyment from it, they are also expressing regret at having to make trade-offs. These trade-offs (time, schedule, attention, etc) show up in responses to other questions as well.</p>
 </div>
 <div class="section" id="table-1-demographic-contrasts-for-dimension-2">
-<h3><a class="toc-backref" href="#id12">TABLE 1: demographic contrasts for Dimension 2</a><a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-2" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">TABLE 1: demographic contrasts for Dimension 2</a><a class="headerlink" href="#table-1-demographic-contrasts-for-dimension-2" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -804,21 +1019,21 @@ topic..Entertained
 </tbody>
 </table>
 <div class="section" id="high-school-arts-participation">
-<h4><a class="toc-backref" href="#id13">High School Arts Participation</a><a class="headerlink" href="#high-school-arts-participation" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id14">High School Arts Participation</a><a class="headerlink" href="#high-school-arts-participation" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim2-x-hs-arts-freq">
 <a class="reference internal image-reference" href="../../_images/PC2-hs_arts_freq1.png"><img alt="../../_images/PC2-hs_arts_freq1.png" src="../../_images/PC2-hs_arts_freq1.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">hs_arts_freq</span> <span class="pre">contrasts</span></code>. Density plot of income contrasts Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the barriers described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim2-x-hs-arts-freq" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="participated-in-college">
-<h4><a class="toc-backref" href="#id14">Participated in College</a><a class="headerlink" href="#participated-in-college" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id15">Participated in College</a><a class="headerlink" href="#participated-in-college" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim2-x-sr-participated">
 <a class="reference internal image-reference" href="../../_images/PC2-sr_participated1.png"><img alt="../../_images/PC2-sr_participated1.png" src="../../_images/PC2-sr_participated1.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">sr_participated</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim2-x-sr-participated" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="arts-in-college">
-<h4><a class="toc-backref" href="#id15">Arts in College</a><a class="headerlink" href="#arts-in-college" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id16">Arts in College</a><a class="headerlink" href="#arts-in-college" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim2-x-artsincollege">
 <a class="reference internal image-reference" href="../../_images/PC2-artsincollege1.png"><img alt="../../_images/PC2-artsincollege1.png" src="../../_images/PC2-artsincollege1.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">artsincollege</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim2-x-artsincollege" title="Permalink to this image">¶</a></p>
@@ -827,7 +1042,7 @@ topic..Entertained
 </div>
 </div>
 <div class="section" id="dimension-3-empowered-vs-meaningly-gratified">
-<h2><a class="toc-backref" href="#id16">Dimension 3: Empowered -vs- Meaningly Gratified</a><a class="headerlink" href="#dimension-3-empowered-vs-meaningly-gratified" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Dimension 3: Empowered -vs- Meaningly Gratified</a><a class="headerlink" href="#dimension-3-empowered-vs-meaningly-gratified" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 3 explains about 9% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">feel</span></code> question. This dimension is characterized by responses focused on <em><strong>Empowered</strong></em> in one direction, and by responses about <em><strong>Meaningly Gratified</strong></em> in the other direction.</p>
 <p><em><strong>Empowered</strong></em> is the label given to describe one direction of this dimension; it is a synthesis of the topic variables of:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>topic..Entertained
@@ -884,7 +1099,7 @@ topic..Happy
 <p>Students from rural high schools had higher mean principal component scores, compared to students from suburban high schools, and were thus more likely to have responses in the <em><strong>Meaningly Gratified</strong></em> direction (Table 1; Figure 2.1).</p>
 <p>Students whose parents did not talk to them about the arts were also more likely to have responses in the <em><strong>Meaningly Gratified</strong></em> direction (Table 1; Figure 2.2).</p>
 <div class="section" id="table-2-demographic-contrasts-for-dimension-3">
-<h3><a class="toc-backref" href="#id17">TABLE 2: demographic contrasts for Dimension 3</a><a class="headerlink" href="#table-2-demographic-contrasts-for-dimension-3" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">TABLE 2: demographic contrasts for Dimension 3</a><a class="headerlink" href="#table-2-demographic-contrasts-for-dimension-3" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -913,14 +1128,14 @@ topic..Happy
 </tbody>
 </table>
 <div class="section" id="high-school-location">
-<h4><a class="toc-backref" href="#id18">High School Location</a><a class="headerlink" href="#high-school-location" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id19">High School Location</a><a class="headerlink" href="#high-school-location" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim3-x-hslocation">
 <a class="reference internal image-reference" href="../../_images/PC3-hslocation.png"><img alt="../../_images/PC3-hslocation.png" src="../../_images/PC3-hslocation.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">hslocation</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim3-x-hslocation" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="parental-influence">
-<h4><a class="toc-backref" href="#id19">Parental Influence</a><a class="headerlink" href="#parental-influence" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id20">Parental Influence</a><a class="headerlink" href="#parental-influence" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim3-x-so-childhood5">
 <a class="reference internal image-reference" href="../../_images/PC3-so_childhood5.png"><img alt="../../_images/PC3-so_childhood5.png" src="../../_images/PC3-so_childhood5.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">so_childhood5</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim3-x-so-childhood5" title="Permalink to this image">¶</a></p>
@@ -933,7 +1148,7 @@ topic..Happy
 </div>
 </div>
 <div class="section" id="dimension-4-less-elaborative-vs-more-elaborative">
-<h2><a class="toc-backref" href="#id20">Dimension 4: Less Elaborative -vs- More Elaborative</a><a class="headerlink" href="#dimension-4-less-elaborative-vs-more-elaborative" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id21">Dimension 4: Less Elaborative -vs- More Elaborative</a><a class="headerlink" href="#dimension-4-less-elaborative-vs-more-elaborative" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 4 explains about 8% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">feel</span></code> question, and this dimension is characterized by responses that are <em><strong>Less Elaborative</strong></em> in one direction, and by responses about <em><strong>More Elaborative</strong></em> in the other direction.</p>
 <p><em><strong>More Elaborative</strong></em> describes the other direction of this dimension, synthesizing the topic variables:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>AIC..IC
@@ -969,7 +1184,7 @@ AIC..DIAL
 </div></blockquote>
 <p>Students who frequently participated in the arts in high school had higher mean principal component scores for Dimension 4 than students who occasionally participated (Table 3; Figure 3.1). These students tended to be more elaborative about the emotional impacts of their experience, perhaps because they have had a stronger basis of experience to draw from.</p>
 <div class="section" id="table-3-demographic-contrasts-for-dimension-4">
-<h3><a class="toc-backref" href="#id21">TABLE 3: demographic contrasts for Dimension 4</a><a class="headerlink" href="#table-3-demographic-contrasts-for-dimension-4" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">TABLE 3: demographic contrasts for Dimension 4</a><a class="headerlink" href="#table-3-demographic-contrasts-for-dimension-4" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -991,7 +1206,7 @@ AIC..DIAL
 </tbody>
 </table>
 <div class="section" id="id4">
-<h4><a class="toc-backref" href="#id22">High School Arts Participation</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id23">High School Arts Participation</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim4-x-hs-arts-freq">
 <a class="reference internal image-reference" href="../../_images/PC4-hs_arts_freq1.png"><img alt="../../_images/PC4-hs_arts_freq1.png" src="../../_images/PC4-hs_arts_freq1.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">hs_arts_freq</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim4-x-hs-arts-freq" title="Permalink to this image">¶</a></p>
@@ -1000,7 +1215,7 @@ AIC..DIAL
 </div>
 </div>
 <div class="section" id="dimension-5-cultured-vs-accomplished">
-<h2><a class="toc-backref" href="#id23">Dimension 5: Cultured -vs- Accomplished</a><a class="headerlink" href="#dimension-5-cultured-vs-accomplished" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id24">Dimension 5: Cultured -vs- Accomplished</a><a class="headerlink" href="#dimension-5-cultured-vs-accomplished" title="Permalink to this headline">¶</a></h2>
 <p>Dimension 5 explains about 6% of the variation among responses to the <code class="docutils literal notranslate"><span class="pre">feel</span></code> question, and this dimension is characterized by responses focused on <em><strong>Cultured</strong></em> in one direction, and by responses about <em><strong>Accomplished</strong></em> in the other direction.</p>
 <p><em><strong>Cultured</strong></em> descibes one direction of this dimension, and it synthesizes the variables:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LIWC..Analytic
@@ -1041,7 +1256,7 @@ topic..Accomplished_and_Creative
 </div></blockquote>
 <p>Students who frequently participated in the arts in high school had higher mean principal component scores for Dimension 5 than students who occasionally participated (Table 4; Figure 4.1). Thus students who frequently participated in the arts in high school were more likely to gain a feeling of being <em><strong>Accomplished</strong></em>.</p>
 <div class="section" id="table-4-demographic-contrasts-for-dimension-5">
-<h3><a class="toc-backref" href="#id24">TABLE 4: demographic contrasts for Dimension 5</a><a class="headerlink" href="#table-4-demographic-contrasts-for-dimension-5" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">TABLE 4: demographic contrasts for Dimension 5</a><a class="headerlink" href="#table-4-demographic-contrasts-for-dimension-5" title="Permalink to this headline">¶</a></h3>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>question_name</p></th>
@@ -1063,7 +1278,7 @@ topic..Accomplished_and_Creative
 </tbody>
 </table>
 <div class="section" id="id5">
-<h4><a class="toc-backref" href="#id25">High School Arts Participation</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id26">High School Arts Participation</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="figure align-default" id="feel-dim5-x-hs-arts-freq">
 <a class="reference internal image-reference" href="../../_images/PC5-hs_arts_freq.png"><img alt="../../_images/PC5-hs_arts_freq.png" src="../../_images/PC5-hs_arts_freq.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">ABOVE: Density plot of <code class="docutils literal notranslate"><span class="pre">hs_arts_freq</span></code> contrasts. Demographic variables that showed contrasts (Tukey adj.p.value &lt; 0.05) between factor levels indicated differences that are unlikely to be due to chance. These differences may suggest an association between the direction of the demographic factors difference and the emotional impact described by the accompanying dimension/principal component.</span><a class="headerlink" href="#feel-dim5-x-hs-arts-freq" title="Permalink to this image">¶</a></p>
@@ -1072,9 +1287,9 @@ topic..Accomplished_and_Creative
 </div>
 </div>
 <div class="section" id="selecting-the-dimensions">
-<h2><a class="toc-backref" href="#id26">Selecting the Dimensions</a><a class="headerlink" href="#selecting-the-dimensions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id27">Selecting the Dimensions</a><a class="headerlink" href="#selecting-the-dimensions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scree-plot-and-explained-variance">
-<h3><a class="toc-backref" href="#id27">Scree Plot and Explained Variance</a><a class="headerlink" href="#scree-plot-and-explained-variance" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">Scree Plot and Explained Variance</a><a class="headerlink" href="#scree-plot-and-explained-variance" title="Permalink to this headline">¶</a></h3>
 <p>This scree plot shows the explained variance of each of the dimensions and helps illustrate the criteria used for selecting the number of dimensions to be studied. In general, dimensions were included that helped account for at least 50% of the cumulative variance, leaving those dimensions that explained less than about 6% of the response variation uninterpreted.</p>
 <div class="figure align-default" id="emotional-impacts-scree-plot">
 <a class="reference internal image-reference" href="../../_images/feel_screeplot.png"><img alt="../../_images/feel_screeplot.png" src="../../_images/feel_screeplot.png" style="width: 800px;" /></a>
@@ -1134,7 +1349,7 @@ topic..Accomplished_and_Creative
 </table>
 </div>
 <div class="section" id="loadings-table-for-variables-included-in-the-analysis">
-<h3><a class="toc-backref" href="#id28">Loadings Table for Variables Included in the Analysis</a><a class="headerlink" href="#loadings-table-for-variables-included-in-the-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id29">Loadings Table for Variables Included in the Analysis</a><a class="headerlink" href="#loadings-table-for-variables-included-in-the-analysis" title="Permalink to this headline">¶</a></h3>
 <p>The table of loadings shows the loadings of all of the variables for each of the principal components studied for Emotional Impact (<code class="docutils literal notranslate"><span class="pre">feel</span></code>). Loadings with absolute values greater than 0.2 have been considered the most important for interpreting and describing each principal component.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1358,6 +1573,8 @@ topic..Accomplished_and_Creative
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
+        
+          By Gabriel Harp<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
