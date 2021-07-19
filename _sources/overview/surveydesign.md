@@ -5,7 +5,7 @@ Five main cohort surveys have been developed, with sections/modules reflecting t
 
 As there was almost no research looking at college age arts integration to use as a model, we consulted examples of surveying used to gauge impact through community service. Through developing the initial research questions, most of which were focused toward the expected story-telling and case-making that could be done to the U-M community initially, we created survey sections with questions asked in a variety of formats in the hopes of capturing not just the expected data, but that which might lead to new areas of inquiry. 
 
-[Sample Survey Instrument of Questions Used (pdf)](../overview/QuestionTypes-SeniorLate.pdf). 
+{download}`Sample Survey Instrument of Question Types (pdf) <../overview/QuestionTypes-SeniorLate.pdf>` 
 
 We also aligned the attributes/skills questions around our Arts at Michigan learning outcomes (see learning outcomes list).  
 
