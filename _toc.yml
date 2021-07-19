@@ -1,7 +1,8 @@
-- file: intro
-
-- chapter: Project Overview
-  sections:
+format: jb-book
+root: intro
+parts:
+- caption: Project Overview
+  chapters:
   - file: overview/background
   - file: overview/studydesign
     sections:
@@ -11,9 +12,8 @@
     - file: overview/datadescription
   - file: overview/presentations
   - file: overview/references
-
-- chapter: Insights
-  sections:
+- caption: Insights
+  chapters:
   - file: insights/insights
     title: Insights Overview
   - file: insights/descriptivestats
@@ -39,7 +39,7 @@
     - file: insights/othergrowth/dimensions
       title: Personal Growth Underlying Factors
   - file: insights/feel
-    title: Emotional Impact    
+    title: Emotional Impact
     sections:
     - file: insights/feel/tree
       title: Emotional Impacts Topic Tree
@@ -55,7 +55,7 @@
     - file: insights/development/topics
       title: Developmental Role Topic Descriptions
   - file: insights/role
-    title: College Experience   
+    title: College Experience
     sections:
     - file: insights/role/tree
       title: College Experience Topic Tree
@@ -63,9 +63,8 @@
       title: College Experience Topic Descriptions
   - file: insights/experience/tree
     title: Transformative Experiences
-
-- chapter: Analyses
-  sections:
+- caption: Analyses
+  chapters:
   - file: analysis/methods
     title: Methods Overview
   - file: analysis/topics

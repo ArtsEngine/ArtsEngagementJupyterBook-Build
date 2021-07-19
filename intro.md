@@ -14,7 +14,7 @@ This project studied only University of Michigan Students, but the study design 
 The results of this work have been used to add an array of categories of impacts to [A2RU's Impacts Map.](https://www.a2ru.org/projects/impacts-map/)
 
 Source code for this book is maintained at: [https://github.com/ArtsEngine/ArtsEngagementProjectSite](https://github.com/ArtsEngine/ArtsEngagementProjectSite)
- 
+
 
 ## Study Funding/Support
 

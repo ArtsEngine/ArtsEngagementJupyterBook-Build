@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : The Arts Engagement Project at The University of Michigan  # The title of the book. Will be placed in the left navbar.
-author                      : Gabriel Harp  # The author of the book
+author                      : The Arts Engagement Project  # The author of the book
 email: gharp@umich.edu
 description: >-
   The Arts Engagement project is a study of ~4000 undergraduate students at the University
@@ -15,9 +15,12 @@ description: >-
   site documents asepcts of the study, as well as providing methods and results of
   topc modeling, principal components analysis, dictionary-based text analysis, and
   demographic analyses of open-ended survey responses from the groups sampled. 
-copyright                   : "2020"  # Copyright year to be placed in the footer
+copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : "images/logo/logo.png"  # A path to the book logo
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
+
+bibtex_bibfiles:
+    - references.bib
 
 #######################################################################################
 # Execution settings
@@ -25,7 +28,7 @@ execute:
   execute_notebooks         : off  # Whether to execute notebooks at build time. Must be one of ("auto", "force", "cache", "off")
   cache                     : ""  # A path to the jupyter cache that will be used to store execution artifacs. Defaults to `_build/.jupyter_cache/`
   exclude_patterns          : []  # A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)
-
+  
 #######################################################################################
 # HTML-specific settings
 html:
@@ -57,4 +60,4 @@ repository:
 # Advanced and power-user settings
 sphinx:
   extra_extensions          :   # A list of extra extensions to load by Sphinx.
-  config                    :   # key-value pairs to directly over-ride the Sphinx configuration
+  config                    :   
